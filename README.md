@@ -1,4 +1,4 @@
 bibicoin
 ========
 
-Bibicoin website.
+Bibicoin
