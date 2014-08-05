@@ -21,3 +21,230 @@
 
 en:
   hello: "Hello world"
+  home_txt: "Y"
+  about_h1: "About Bibicoins Taiwan"
+  about_b1: "Bibicoins Taiwan specializes in delivering Bitcoins to Taiwan customers.  We achieve this by dealing only with New Taiwan Dollars and working with local Taiwan bank accounts.  Bibicoins Taiwan is an Taiwan incorporated company owned and operated by Taiwanese.  Our goal is to establish ourselves as the most trustworthy place for people in Taiwan to purchase and sell bitcoins and other crypto-currencies and help develop bitcoins as a long-term payment tool for the people of Taiwan."
+  about_h2: "The Bitcoin Foundation"
+  about_b2: "The Bitcoin Foundation is the worlds leading global organization determined to keep Bitcoin rooted in its core principles: non-political economy, openness and independence. With its aim to advance standards and security, the foundation remains strong advocates of the liberating power of decentralized money. The Bitcoin Foundation’s goal is to act as both an organizing body for Bitcoin and simultaneously be inclusive of the general Bitcoin community. As Taiwan’s Bitcoin service provider, Bibicoin is proud to be a Member of the global Bitcoin Foundation."			
+  about_h3: "Our Team"
+  about_b3: "Bibicoins brings together skill, insight and passion to offer the best reach to the global bitcoin market for people of Taiwan.  Like the Bitcoin market, the people who work in our company come from with a unique blend of experience and talents ranging from legal to business to technology.  Combined our team has over 30 years of IT, finance and entrepreneur experience."	
+  about_h4: "Our Team"
+  about_b4: "Bibicoins brings together skill, insight and passion to offer the best reach to the global bitcoin market for people of Taiwan.  Like the Bitcoin market, the people who work in our company come from with a unique blend of experience and talents ranging from legal to business to technology.  Combined our team has over 30 years of IT, finance and entrepreneur experience."	
+  about_h5: "Bibcoins’ management team consist of:"
+  about_b5: ""	
+  about_h6: "P. Chen – General Manager & Director of Business Development "
+  about_b6: "P. Chen is a successful entrepreneur in the gaming industry with extensive experience in both Asia and in the U.S."	
+  about_h7: "V. Ha – Technology Advisor & Support "
+  about_b7: "V. Ha has over a decade of work experience at one of the top technology consulting firms in the U.S. and extensive experience in developing websites and consulting on e-commerce."	
+  about_h8: "W. Leung – Finance & Compliance Director "
+  about_b8: "W. Leung is a qualified lawyer and has close to a decade of experience working in the financial industry."	
+  date:
+    abbr_day_names:
+    - Sun
+    - Mon
+    - Tue
+    - Wed
+    - Thu
+    - Fri
+    - Sat
+    abbr_month_names:
+    -
+    - Jan
+    - Feb
+    - Mar
+    - Apr
+    - May
+    - Jun
+    - Jul
+    - Aug
+    - Sep
+    - Oct
+    - Nov
+    - Dec
+    day_names:
+    - Sunday
+    - Monday
+    - Tuesday
+    - Wednesday
+    - Thursday
+    - Friday
+    - Saturday
+    formats:
+      default: ! '%Y-%m-%d'
+      long: ! '%B %d, %Y'
+      short: ! '%b %d'
+    month_names:
+    -
+    - January
+    - February
+    - March
+    - April
+    - May
+    - June
+    - July
+    - August
+    - September
+    - October
+    - November
+    - December
+    order:
+    - :year
+    - :month
+    - :day
+  datetime:
+    distance_in_words:
+      about_x_hours:
+        one: about 1 hour
+        other: about %{count} hours
+      about_x_months:
+        one: about 1 month
+        other: about %{count} months
+      about_x_years:
+        one: about 1 year
+        other: about %{count} years
+      almost_x_years:
+        one: almost 1 year
+        other: almost %{count} years
+      half_a_minute: half a minute
+      less_than_x_minutes:
+        one: less than a minute
+        other: less than %{count} minutes
+      less_than_x_seconds:
+        one: less than 1 second
+        other: less than %{count} seconds
+      over_x_years:
+        one: over 1 year
+        other: over %{count} years
+      x_days:
+        one: 1 day
+        other: ! '%{count} days'
+      x_minutes:
+        one: 1 minute
+        other: ! '%{count} minutes'
+      x_months:
+        one: 1 month
+        other: ! '%{count} months'
+      x_seconds:
+        one: 1 second
+        other: ! '%{count} seconds'
+    prompts:
+      day: Day
+      hour: Hour
+      minute: Minute
+      month: Month
+      second: Seconds
+      year: Year
+  errors: &errors
+    format: ! '%{attribute} %{message}'
+    messages:
+      accepted: must be accepted
+      blank: can't be blank
+      present: must be blank
+      confirmation: ! "doesn't match %{attribute}"
+      empty: can't be empty
+      equal_to: must be equal to %{count}
+      even: must be even
+      exclusion: is reserved
+      greater_than: must be greater than %{count}
+      greater_than_or_equal_to: must be greater than or equal to %{count}
+      inclusion: is not included in the list
+      invalid: is invalid
+      less_than: must be less than %{count}
+      less_than_or_equal_to: must be less than or equal to %{count}
+      not_a_number: is not a number
+      not_an_integer: must be an integer
+      odd: must be odd
+      record_invalid: ! 'Validation failed: %{errors}'
+      restrict_dependent_destroy:
+        one: "Cannot delete record because a dependent %{record} exists"
+        many: "Cannot delete record because dependent %{record} exist"
+      taken: has already been taken
+      too_long:
+        one: is too long (maximum is 1 character)
+        other: is too long (maximum is %{count} characters)
+      too_short:
+        one: is too short (minimum is 1 character)
+        other: is too short (minimum is %{count} characters)
+      wrong_length:
+        one: is the wrong length (should be 1 character)
+        other: is the wrong length (should be %{count} characters)
+      other_than: "must be other than %{count}"
+    template:
+      body: ! 'There were problems with the following fields:'
+      header:
+        one: 1 error prohibited this %{model} from being saved
+        other: ! '%{count} errors prohibited this %{model} from being saved'
+  helpers:
+    select:
+      prompt: Please select
+    submit:
+      create: Create %{model}
+      submit: Save %{model}
+      update: Update %{model}
+  number:
+    currency:
+      format:
+        delimiter: ! ','
+        format: ! '%u%n'
+        precision: 2
+        separator: .
+        significant: false
+        strip_insignificant_zeros: false
+        unit: $
+    format:
+      delimiter: ! ','
+      precision: 3
+      separator: .
+      significant: false
+      strip_insignificant_zeros: false
+    human:
+      decimal_units:
+        format: ! '%n %u'
+        units:
+          billion: Billion
+          million: Million
+          quadrillion: Quadrillion
+          thousand: Thousand
+          trillion: Trillion
+          unit: ''
+      format:
+        delimiter: ''
+        precision: 3
+        significant: true
+        strip_insignificant_zeros: true
+      storage_units:
+        format: ! '%n %u'
+        units:
+          byte:
+            one: Byte
+            other: Bytes
+          gb: GB
+          kb: KB
+          mb: MB
+          tb: TB
+    percentage:
+      format:
+        delimiter: ''
+        format: "%n%"
+    precision:
+      format:
+        delimiter: ''
+  support:
+    array:
+      last_word_connector: ! ', and '
+      two_words_connector: ! ' and '
+      words_connector: ! ', '
+  time:
+    am: am
+    formats:
+      default: ! '%a, %d %b %Y %H:%M:%S %z'
+      long: ! '%B %d, %Y %H:%M'
+      short: ! '%d %b %H:%M'
+    pm: pm
+  # remove these aliases after 'activemodel' and 'activerecord' namespaces are removed from Rails repository
+  activemodel:
+    errors:
+      <<: *errors
+  activerecord:
+    errors:
+      <<: *errors

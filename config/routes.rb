@@ -19,6 +19,11 @@ Rails.application.routes.draw do
   
   # Bibicoin Root Route
   root 'static_pages#home' 
+  
+  # Locale settings
+  scope "(:locale)", locale: /en|zh/ do
+    resources :static_pages
+  end  
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
