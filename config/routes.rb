@@ -1,10 +1,31 @@
 Rails.application.routes.draw do
+  get 'static_pages/bitcoins', :as => :bitcoins
+  get 'static_pages/terms', :as => :terms
+  get 'static_pages/buy', :as => :buy
+  get 'static_pages/sell', :as => :sell
+  get 'static_pages/howtobuy', :as => :howtobuy
+  get 'static_pages/howtosell', :as => :howtosell
+  get 'static_pages/jobs', :as => :jobs
+  get 'static_pages/faq', :as => :faq
+  get 'static_pages/privacy', :as => :privacy
+  get 'static_pages/legal', :as => :legal
+  get 'static_pages/why', :as => :why
+  get 'static_pages/wallets', :as => :wallets
+  get 'static_pages/news', :as => :news
+  get 'static_pages/reviews', :as => :reviews
+  get 'static_pages/about', :as => :about
+  get 'static_pages/contact', :as => :contact
+  get 'static_pages/home', :as => :home
+  
+  # Bibicoin Root Route
+  root 'static_pages#home' 
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
-
+  
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
-
+  
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
