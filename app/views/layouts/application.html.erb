@@ -8,7 +8,7 @@
 </head>
 <body>
 	
-<p><%= link_to 'Chinese', params.merge({:locale => :zh})%> | <%= link_to 'English', params.merge({:locale => :en})%> </p>
+<p><%= link_to 'Chinese', params.merge({:locale => :zh})%> | <%= link_to 'English', params.merge({:locale => :en})%> | 	<%= link_to "Home", :home %> </p>
 <%= image_tag("logo.png", :alt => "logo") %><br>
 <%= yield %>
 
