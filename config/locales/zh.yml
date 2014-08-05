@@ -1,0 +1,249 @@
+# Files in the config/locales directory are used for internationalization
+# and are automatically loaded by Rails. If you want to use locales other
+# than English, add the necessary files in this directory.
+#
+# To use the locales, use `I18n.t`:
+#
+#     I18n.t 'hello'
+#
+# In views, this is aliased to just `t`:
+#
+#     <%= t('hello') %>
+#
+# To use a different locale, set it with `I18n.locale`:
+#
+#     I18n.locale = :es
+#
+# This would use the information in config/locales/es.yml.
+#
+# To learn more, please read the Rails Internationalization guide
+# available at http://guides.rubyonrails.org/i18n.html.
+
+zh:
+  hello: "Hello world"
+  home_txt: "Y"
+  about_h1: "關於台灣 Bibicoins 公司"
+  about_b1: "台灣 Bibicoins 公司專門協助台灣客戶買賣比特幣。為此，我們只使用新台幣與台灣當地銀行交易。台灣 Bibicoins "
+  about_h2: "比特幣基金會"
+  about_b2: "比特幣基金會是一個領導比特幣的國際組織，致力於使比特幣保有其核心原則：非政治性經濟體、開放和獨立。帶著增進標準化和安全性的目標，比特幣基金會是一個主張非中央控制貨幣的解"			
+  about_h3: "我們的團隊"
+  about_b3: "Bibicoins公司集結了擁有技術、遠見和熱情的員工，提供台灣民眾接觸全球的比特幣市場最好的管道。有如比特幣市場的多樣性，我們的員工是由一個有獨特經驗和才能的團隊所組成，包括法律、業務和科技業界的人才。我們團隊合起來擁有30年以上資訊、金融和經營企業的經驗。"	
+  about_h4: "我們的團隊"
+  about_b4: "Bibicoins公司集結了擁有技術、遠見和熱情的員工，提供台灣民眾接觸全球的比特幣市場最好的管道。有如比特幣市場的多樣性，我們的員工是由一個有獨特經驗和才能的團隊所組成，包括法律、業務和科技業界的人才。我們團隊合起來擁有30年以上資訊、金融和經營企業的經驗。"	
+  about_h5: "Bibcoin 公司的管理團隊："
+  about_b5: ""	
+  about_h6: "P. Chen  – 總經理及業務發展總監"
+  about_b6: "P.Chen博彩業的成功企業家，擁有亞洲和美國的豐富經驗。"	
+  about_h7: "V. Ha - 技術顧問與支援"
+  about_b7: "V.Ha 在美國知名技術諮詢公司服務超過十年的經驗，以及網站開發和電子商務諮詢的豐富經驗。"
+  about_h8: "W.Leung-財務及合規性的總監 "
+  about_b8: "W.Leung 合格律師，將近10年金融界工作經驗。"	
+  date:
+    abbr_day_names:
+    - 日
+    - 一
+    - 二
+    - 三
+    - 四
+    - 五
+    - 六
+    abbr_month_names:
+    -
+    - 1月
+    - 2月
+    - 3月
+    - 4月
+    - 5月
+    - 6月
+    - 7月
+    - 8月
+    - 9月
+    - 10月
+    - 11月
+    - 12月
+    day_names:
+    - 星期日
+    - 星期一
+    - 星期二
+    - 星期三
+    - 星期四
+    - 星期五
+    - 星期六
+    formats:
+      default: ! '%Y-%m-%d'
+      long: ! '%Y年%b%d日'
+      short: ! '%b%d日'
+    month_names:
+    -
+    - 一月
+    - 二月
+    - 三月
+    - 四月
+    - 五月
+    - 六月
+    - 七月
+    - 八月
+    - 九月
+    - 十月
+    - 十一月
+    - 十二月
+    order:
+    - :year
+    - :month
+    - :day
+  datetime:
+    distance_in_words:
+      about_x_hours:
+        one: 大約一小時
+        other: 大約 %{count} 小時
+      about_x_months:
+        one: 大約一個月
+        other: 大約 %{count} 個月
+      about_x_years:
+        one: 大約一年
+        other: 大約 %{count} 年
+      almost_x_years:
+        one: 接近一年
+        other: 接近 %{count} 年
+      half_a_minute: 半分鐘
+      less_than_x_minutes:
+        one: 不到一分鐘
+        other: 不到 %{count} 分鐘
+      less_than_x_seconds:
+        one: 不到一秒
+        other: 不到 %{count} 秒
+      over_x_years:
+        one: 一年多
+        other: ! '%{count} 年多'
+      x_days:
+        one: 一天
+        other: ! '%{count} 天'
+      x_minutes:
+        one: 一分鐘
+        other: ! '%{count} 分鐘'
+      x_months:
+        one: 一個月
+        other: ! '%{count} 個月'
+      x_seconds:
+        one: 一秒
+        other: ! '%{count} 秒'
+    prompts:
+      day: 日
+      hour: 時
+      minute: 分
+      month: 月
+      second: 秒
+      year: 年
+  errors: &errors
+    format: ! '%{attribute} %{message}'
+    messages:
+      accepted: 必須是可被接受的
+      blank: 不能是空白字元
+      present: 必須是空白
+      confirmation: 不符合確認值
+      empty: 不能留空
+      equal_to: 必須等於 %{count}
+      even: 必須是偶數
+      exclusion: 是被保留的關鍵字
+      greater_than: 必須大於 %{count}
+      greater_than_or_equal_to: 必須大於或等於 %{count}
+      inclusion: 沒有包含在列表中
+      invalid: 是無效的
+      less_than: 必須小於 %{count}
+      less_than_or_equal_to: 必須小於或等於 %{count}
+      not_a_number: 不是數字
+      not_an_integer: 必須是整數
+      odd: 必須是奇數
+      record_invalid: ! '校驗失敗: %{errors}'
+      restrict_dependent_destroy: 
+        one: 由於 %{record} 需要此記錄，所以無法移除記錄
+        many: 由於 %{record} 需要此記錄，所以無法移除記錄
+      taken: 已經被使用
+      too_long: 
+        one: 過長（最長是一個字）
+        other: 過長（最長是 %{count} 個字）
+      too_short: 
+        one: 過短（最短是一個字）
+        other: 過短（最短是 %{count} 個字）
+      wrong_length: 
+        one: 字數錯誤 (必須是一個字)
+        other: 字數錯誤 (必須是 %{count} 個字)
+      other_than: 不可以是 %{count} 個字
+    template:
+      body: 以下欄位發生問題：
+      header:
+        one: 有 1 個錯誤發生使得「%{model}」無法被儲存。
+        other: 有 %{count} 個錯誤發生使得「%{model}」無法被儲存。
+  helpers:
+    select:
+      prompt: 請選擇
+    submit:
+      create: 新增%{model}
+      submit: 儲存%{model}
+      update: 更新%{model}
+  number:
+    currency:
+      format:
+        delimiter: ! ','
+        format: ! '%u %n'
+        precision: 2
+        separator: .
+        significant: false
+        strip_insignificant_zeros: false
+        unit: NT$
+    format:
+      delimiter: ! ','
+      precision: 3
+      separator: .
+      significant: false
+      strip_insignificant_zeros: false
+    human:
+      decimal_units:
+        format: ! '%n %u'
+        units:
+          billion: 十億
+          million: 百萬
+          quadrillion: 千兆
+          thousand: 千
+          trillion: 兆
+          unit: ''
+      format:
+        delimiter: ''
+        precision: 1
+        significant: false
+        strip_insignificant_zeros: false
+      storage_units:
+        format: ! '%n %u'
+        units:
+          byte: 
+            one: 位元組
+            other: 位元組
+          gb: GB
+          kb: KB
+          mb: MB
+          tb: TB
+    percentage:
+      format:
+        delimiter: ''
+    precision:
+      format:
+        delimiter: ''
+  support:
+    array:
+      last_word_connector: ! ', 和 '
+      two_words_connector: ! ' 和 '
+      words_connector: ! ', '
+  time:
+    am: 上午
+    formats:
+      default: ! '%Y年%b%d日 %A %H:%M:%S %Z'
+      long: ! '%Y年%b%d日 %H:%M'
+      short: ! '%b%d日 %H:%M'
+    pm: 下午
+  # remove these aliases after 'activemodel' and 'activerecord' namespaces are removed from Rails repository
+  activemodel:
+    errors:
+      <<: *errors
+  activerecord:
+    errors:
+      <<: *errors
