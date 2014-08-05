@@ -1,4 +1,4 @@
 bibicoin
 ========
 
-Bibicoin
+Bibicoin Base HTML Pages for deployment.
