@@ -15,12 +15,6 @@ gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 
-# Documentation
-
-group :doc do
-  gem 'sdoc', '~> 0.4.0', require: false
-end
-
 # Environment Settings
 
 group :development do
@@ -38,6 +32,12 @@ end
 
 group :production do
   gem 'rails_12factor', '0.0.2'
+end
+
+# Documentation
+
+group :doc do
+  gem 'sdoc', '~> 0.4.0', require: false
 end
 
 # Default Rails Gemfile Settings
