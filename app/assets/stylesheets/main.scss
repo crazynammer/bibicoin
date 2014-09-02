@@ -1,0 +1,98 @@
+// Place all the styles related to the Bibicoin Site  here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.bibicoin-header-bg-orange {
+	background: #eb7314;
+}
+
+.bibicoin-footer-bg-black {
+	background: #333333;
+}
+
+#before-content-area { 
+	padding: 20px 0 10px; 
+}
+
+#before-content-area h1, #before-content-area h2 {
+	margin-left: 10px;
+	color: #f8f8f8;
+	font-weight: 600;
+	font-size: 36px;
+	line-height: 50px;
+}
+
+#before-content-area p, #before-content-area h4  {
+	margin-left: 15px;
+	margin-right: 15px;
+}
+
+.row {
+  max-width: 80rem; }
+  .row.display-end {
+    background: #fff;
+    font-size: 11px;
+    margin-bottom: 10px;
+    line-height: 2rem;
+    border: solid 1px #c6c6c6;
+    margin-left: 0 !important;
+    margin-right: 0 !important; }
+    .row.display-end .columns {
+      background: #e1e1e1;
+      border-left: 1px solid #c6c6c6; }
+      .row.display-end .columns.color-end {
+        background: #d4d4d4; }
+		  
+/* -----------------------------------------
+   Footer
+----------------------------------------- */
+.bibicoin-footer-bottom {
+  background: #333;
+  padding: 24px 0 10px; }
+  .bibicoin-footer-bottom .design-border {
+    border-bottom: 1px solid #484848;
+    padding-bottom: 5px;
+    margin-bottom: 25px; }
+  .bibicoin-footer-bottom ul.bibicoin-links {
+    margin: 0;
+    display: inline-block; }
+    .bibicoin-footer-bottom ul.bibicoin-links li {
+      display: block;
+      float: left;
+      margin-left: 6px;
+      text-transform: uppercase;
+      font-weight: 700;
+      font-size: 0.77778rem; }
+      .bibicoin-footer-bottom ul.bibicoin-links li a {
+        color: #666;
+        padding: 3px 6px; }
+        .bibicoin-footer-bottom ul.bibicoin-links li a:hover {
+          color: #777; }
+  .bibicoin-footer-bottom p.copyright {
+    margin: 6px 0 0;
+    font-size: 0.66667rem;
+    color: #666; }
+  .bibicoin-footer-bottom ul.home-social {
+    display: block;
+    float: right;
+    margin-bottom: 8px; }
+    .bibicoin-footer-bottom ul.home-social li {
+      list-style: none;
+      display: block;
+      float: left;
+      margin-left: 10px; }
+      .bibicoin-footer-bottom ul.home-social li:first-child {
+        margin-left: 0; }
+      .bibicoin-footer-bottom ul.home-social li a {
+        display: block;
+        height: 50px;
+        width: 50px;
+        background: url(social.png) no-repeat center 0; }
+        .bibicoin-footer-bottom ul.home-social li a:hover {
+          opacity: 0.8; }
+        .bibicoin-footer-bottom ul.home-social li a.twitter {
+          background-position: center 0; }
+        .bibicoin-footer-bottom ul.home-social li a.facebook {
+          background-position: center -200px; }
+        .bibicoin-footer-bottom ul.home-social li a.mail {
+          background-position: center -400px; }		  

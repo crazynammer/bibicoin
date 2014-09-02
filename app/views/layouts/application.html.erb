@@ -1,16 +1,95 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <title><%= full_title(yield(:title)) %></title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
-	
-<p><%= link_to 'Chinese', params.merge({:locale => :zh})%> | <%= link_to 'English', params.merge({:locale => :en})%> | 	<%= link_to "Home", :home %> </p>
-<%= image_tag("logo.png", :alt => "logo") %><br>
-<%= yield %>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-</body>
+    <title><%= content_for?(:title) ? yield(:title) : "Bibicoin" %></title>
+
+    <%= stylesheet_link_tag "application" %>
+    <%= javascript_include_tag "vendor/modernizr" %>
+    <%= csrf_meta_tags %>
+  </head>
+
+  <body>
+	   <!-- Top Nav Bar -->			
+		<nav class="top-bar" data-topbar role="navigation">
+		  <ul class="title-area">
+		    <li class="name">
+		      <h1><%= link_to "bibicoins.com.tw", :home %></h2>
+		    </li>
+		     <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
+		    <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+		  </ul>
+
+		  <section class="top-bar-section">
+		    <!-- Right Nav Section -->
+		    <ul class="right">
+		      <li><a href="#">Buy Bitcoin</a></li>
+				<li class="divider"></li>
+				<li><a href="#">Sell Bitcoin</a></li>
+				<li class="divider"></li>
+				<!-- Learn Menu -->
+		      <li class="has-dropdown">
+		        <a href="#">Learn</a>
+		        <ul class="dropdown">
+		          <li><%= link_to "About Bitcoins", :bitcoins %></li>
+					 <li><%= link_to "About Wallets", :wallets %></li>
+		          <li><%= link_to "How To Buy", :howtobuy %></li>
+					 <li><%= link_to "How To Sell", :howtosell %></li>
+		        </ul>
+		      </li>
+				<li class="divider"></li>
+				<!-- About Menu -->				
+		      <li class="has-dropdown">
+		        <a href="#">About</a>
+		        <ul class="dropdown">
+		          <li><%= link_to "About Us", :about %></li>
+					 <li><%= link_to "Why Choose Bibicoins?", :why %></li>
+		          <li><%= link_to "FAQs", :faq %></li>
+					 <li><%= link_to "Terms &amp; Conditions", :terms %></li>
+					 <li><%= link_to "Privacy Policy", :privacy %></li>					  
+					 <li><%= link_to "Legal", :legal %> </li>
+					 <li><%= link_to "Jobs", :jobs %></li>
+					 <li><%= link_to "Contact Us", :contact %></li>					 
+		        </ul>
+		      </li>
+		    </ul>
+			 
+		    <!-- Left Nav Section for Language Menu -->
+		    <ul class="left">
+				<li class="divider"></li>
+				<li><%= link_to 'English', params.merge({:locale => :en})%></li>
+				<li class="divider"></li>
+				<li><%= link_to 'Chinese', params.merge({:locale => :zh})%></li>
+		    </ul>
+			 
+		  </section>
+		</nav>
+
+   <%= yield %>
+   <%= javascript_include_tag "application" %>		
+			 
+	 <div class="bibicoin-footer-bottom">
+ 		<div class="row">
+   		<div class="medium-4 medium-4 push-8 columns">
+     		 <ul class="home-social">
+          <li><a href="http://www.twitter.com/Bibicoin" class="twitter"></a></li>
+          <li><a href="http://www.facebook.com/Bibicoin" class="facebook"></a></li>
+          <li><a href="http://www.bibicoin.com.tw/contact" class="mail"></a></li>
+        </ul>
+     </div>
+     <div class="medium-8 medium-8 pull-4 columns">
+        <ul class="bibicoin-links">
+          <li><a href="#">Home</a></li>
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">Terms &amp; Conditions</a></li>
+          <li><a href="#">Contact</a></li>
+       </ul>
+       <p class="copyright">© 2014 Bibicoin, Inc. All rights reserved.</p>
+  	  </div>
+ 	 </div>
+	</div>	
+	 
+  </body>
 </html>

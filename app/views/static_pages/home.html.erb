@@ -1,11 +1,84 @@
 <% provide(:title, 'Home') %>
+		<%= image_tag("logo.png", :alt => "logo") %><br>
+<table>
+  <thead>
+    <tr>
+      <th width="400">Table Header</th>
+      <th>Table Header</th>
+      <th width="150">Table Header</th>
+      <th width="150">Table Header</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+				<ul class="tabs vertical" data-tab>
+					<li class="tab-title"><%= link_to "Buy", :buy %></li>
+				  <li class="tab-title"><%= link_to "Buy", :buy %></li>
+				  <li class="tab-title"><%= link_to "Sell", :sell %></li>
+				  <li class="tab-title"><%= link_to "How To Buy", :howtobuy %></li>
+				  <li class="tab-title"><%= link_to "How To Sell", :howtosell %></li>
+				  <li class="tab-title"><%= link_to "About Bitcoins", :bitcoins %></li>
+				  <li class="tab-title"><%= link_to "About Wallets", :wallets %></li>	
+				  <li class="tab-title"><%= link_to "Why Choose Bibicoins?", :why %></li>							
+				<ul>
+				</td>
+      <td>This is longer content Donec id elit non mi porta gravida at eget metus.</td>
+      <td>Content Goes Here</td>
+      <td>Content Goes Here</td>
+    </tr>
+    <tr>
+      <td>Sell</td>
+      <td>This is longer Content Goes Here Donec id elit non mi porta gravida at eget metus.</td>
+      <td>Content Goes Here</td>
+      <td>Content Goes Here</td>
+    </tr>
+    <tr>
+      <td>How To Buy</td>
+      <td>This is longer Content Goes Here Donec id elit non mi porta gravida at eget metus.</td>
+      <td>Content Goes Here</td>
+      <td>Content Goes Here</td>
+    </tr>
+    <tr>
+      <td>How To Sell</td>
+      <td>This is longer Content Goes Here Donec id elit non mi porta gravida at eget metus.</td>
+      <td>Content Goes Here</td>
+      <td>Content Goes Here</td>
+    </tr>
+    <tr>
+      <td>About Bitcoins/td>
+      <td>This is longer Content Goes Here Donec id elit non mi porta gravida at eget metus.</td>
+      <td>Content Goes Here</td>
+      <td>Content Goes Here</td>
+    </tr>
+    <tr>
+      <td>About Wallets</td>
+      <td>This is longer Content Goes Here Donec id elit non mi porta gravida at eget metus.</td>
+      <td>Content Goes Here</td>
+      <td>Content Goes Here</td>
+    </tr>	
+    <tr>
+      <td>Why Choose Bitcoins</td>
+      <td>This is longer Content Goes Here Donec id elit non mi porta gravida at eget metus.</td>
+      <td>Content Goes Here</td>
+      <td>Content Goes Here</td>
+    </tr>					
+  </tbody>
+</table>
 
-<br>
-<%=t :home_txt %>
-<br>
-<br>
-<p>Links</p>
-<br>
+<ul class="tabs vertical" data-tab>
+
+</ul>
+<div class="tabs-content vertical">
+  <div class="content" id="panel1a">
+    <p>Panel 1 content goes here.</p>
+  </div>
+</div>
+<div class="row" data-equalizer>
+  <div class="large-6 columns panel" data-equalizer-watch>text</div>
+</div>
+
+<h1>Links</h1>
 <p>
 	<%= link_to "About Us", :about %> | 	
 	<%= link_to "Contact Us", :contact %> | 
