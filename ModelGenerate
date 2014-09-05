@@ -1,0 +1,4 @@
+rails generate model transaction_types type:text description:string
+rails generate model fx_rates marketBTCtoUSDRate:decimal marketBTCtoRMBRate:decimal marketBTCtoHKDRate:decimal marketBTCtoEURRate:decimal fxRateUSDtoTWD:decimal fxRateRMBtoTWD:decimal fxRateHKDtoTWD:decimal fxRateEURtoTWD:decimal bibicoinBTCtoTWD:decimal dateTimeStamp:timestamp
+rails generate model configs adminID:text bankInfo:string defaultCurrency:text email:text commRateBuy1:decimal commRateBuy2:decimal commRateBuy3:decimal commRateSell1:decimal commRateSell2:decimal commRateSell3:decimal refreshInterval:integer
+rails generate model transactions transaction_types_id:integer walletid:text name:text email:text dob:date BTCamt:decimal BTCweightedfxrate:decimal BTCtoNTDamt:decimal commAmt:decimal commrate:decimal orderdate:datetime moneyreceiveddate:datetime BTCreceievedDate:datetime bankname:text bankacctnumber:integer isComplete:boolean
