@@ -13,7 +13,7 @@ require 'nokogiri'
 	XCODE_USD = "USD"
 	XCODE_EUR = "EUR"
 	XCODE_HKD = "HKD"
-	XCODE_CNY = "CNY"
+	XCODE_RMB = "CNY"
 	HASH_XRATE_CODE = "code"
 	HASH_XRATE_RATE = "rate"
   
@@ -23,9 +23,9 @@ require 'nokogiri'
 		exchangeRateRawData = response.body
 	  
 		#Array to store the required exchange rate information
-		exchangeRateArray = Array.new
+		@exchangeRateArray = Array.new
 	  
-		@referenceRateArray = [XCODE_USD, XCODE_EUR, XCODE_HKD, XCODE_CNY]
+		@referenceRateArray = [XCODE_USD, XCODE_EUR, XCODE_HKD, XCODE_RMB]
 	  
 		#go through each of the reference rate code and find the matching rate hash from the exchange rate raw data
 		@rawExchangeRateArray = JSON.parse(exchangeRateRawData)
@@ -45,8 +45,8 @@ require 'nokogiri'
 			@ratesHash[rate.fetch(HASH_XRATE_CODE)] = rate.fetch(HASH_XRATE_RATE)
 		end
 		#END TEMPORARY
+		#render :text => @ratesHash
 	  
-		#render :text => ratesHash
 		
 		#Change all four rates into TWD
 		@twdRatesHash = Hash.new
@@ -73,13 +73,18 @@ require 'nokogiri'
 				
 		#get the BTC Value from all four currencies and add them up
 		for rateCode in @referenceRateArray
-			@totalBTCValue = totalBTCValue + (@ratesHash.fetch(rateCode).to_f / @twdRatesHash.fetch(rateCode).to_f)  
+			totalBTCValue = totalBTCValue + (@ratesHash.fetch(rateCode).to_f / @twdRatesHash.fetch(rateCode).to_f)  
 		end
 		
 		#average to get TWD Value for 1 BTC
-		@twdValue = @totalBTCValue / @referenceRateArray.length
+		@twdValue = totalBTCValue / @referenceRateArray.length
 		
 		#render :text =>  twdValue
+		
+		
+		
+		
+		
   end
 
   def contact

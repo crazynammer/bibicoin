@@ -11,66 +11,60 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140901234131) do
+ActiveRecord::Schema.define(version: 20140905035133) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "configs", force: true do |t|
     t.text     "adminID"
-    t.string   "bankinfo"
-    t.text     "defaultcurrency"
+    t.string   "bankInfo"
+    t.text     "defaultCurrency"
     t.text     "email"
-    t.decimal  "commratebuy1"
-    t.decimal  "commratebuy2"
-    t.decimal  "commratebuy3"
-    t.decimal  "commratesell1"
-    t.decimal  "commratesell2"
-    t.decimal  "commratesell3"
-    t.integer  "refreshinternval"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "fx_rates", force: true do |t|
-    t.decimal  "marketBTCtoUSDRate"
-    t.decimal  "marketBTCtoRMBRate"
-    t.decimal  "marketBTCtoHKDRate"
-    t.decimal  "marketBTCtoEURRate"
-    t.decimal  "fxRateUSDtoTWD"
-    t.decimal  "fxRateRMBtoTWD"
-    t.decimal  "fxRateEURtoTWD"
-    t.decimal  "bibicoinBTCtoTWD"
+    t.decimal  "commRateBuy1"
+    t.decimal  "commRateBuy2"
+    t.decimal  "commRateBuy3"
+    t.decimal  "commRateSell1"
+    t.decimal  "commRateSell2"
+    t.decimal  "commRateSell3"
+    t.text     "adminWalletID"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "transaction_types", force: true do |t|
     t.text     "type"
-    t.string   "description"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "transactions", force: true do |t|
-    t.text     "walletid"
+    t.integer  "transaction_types_id"
+    t.text     "walletID"
     t.text     "name"
     t.text     "email"
     t.date     "dob"
-    t.decimal  "BTCamt"
-    t.decimal  "BTCweightedfxrate"
-    t.decimal  "BTCtoNTDamt"
-    t.decimal  "commAmt"
-    t.decimal  "commrate"
-    t.datetime "orderdate"
-    t.datetime "moneyreceiveddate"
-    t.datetime "BTCreceievedDate"
-    t.text     "bankname"
-    t.integer  "bankacctnumber"
+    t.decimal  "BTCAmt"
+    t.decimal  "BTCtoTWDAmt"
+    t.decimal  "CommAmt"
+    t.decimal  "CommRate"
+    t.datetime "OrderDate"
+    t.datetime "moneyReceivedDate"
+    t.datetime "BTCreceivedDate"
+    t.text     "bankName"
+    t.text     "bankAcctNumber"
+    t.decimal  "marketBTCtoUSDRate"
+    t.decimal  "marketBTCtoRMBRate"
+    t.decimal  "marketBTCtoHKDRate"
+    t.decimal  "marketBTCtoEURate"
+    t.decimal  "fxRateUSDtoTWD"
+    t.decimal  "fxRateRMBtoTWD"
+    t.decimal  "fxRateHKDtoTWD"
+    t.decimal  "fxRateEURtoTWD"
+    t.decimal  "bibicoinBTCtoTWD"
     t.boolean  "isComplete"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "transaction_types_id"
   end
 
 end
