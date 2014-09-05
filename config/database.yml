@@ -7,7 +7,7 @@
 
 # Bibicoin Database Setting
 
-#default: &default
+##default: &default
 #  adapter: postgresql
 #  encoding: unicode
 #  database: bibicoin_development
