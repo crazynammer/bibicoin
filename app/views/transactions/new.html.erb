@@ -1,0 +1,59 @@
+<div class="bibicoin-header-bg-orange">
+	<div id="before-content-area">
+		<h1><%=t :header_buy %></h1>
+	</div>
+	
+	<div class ="row">
+	
+	<% if @currentTransaction.transaction_type_id == 0 %>
+		Buying
+	<% elsif @currentTransaction.transaction_type_id == 1 %>
+		Selling
+	<% end %>
+	
+		<%= form_for @currentTransaction do |f| %>
+		
+			<%= f.label :walletID, "Wallet Address" %>
+			<%= f.text_field :walletID %>
+			
+			<%= f.label :name %>
+			<%= f.text_field :name %>
+			
+			<%= f.label :email, "Email Address" %>
+			<%= f.text_field :email %>
+			
+			<%= f.label :DoB, "Date of Birth" %>
+			<%= f.text_field :DoB %>
+			
+			<%= f.label :TWDAmt, "NTD Amount" %>
+			<%= f.text_field :TWDAmt, :oninput => "updateBTCAmt()" %>
+			
+			<%= f.label :BTCAmt, "Bitcoin Amount" %>
+			<%= f.text_field :BTCAmt, :readonly => true %>
+								
+			<%= f.label :bankName, "Bank Name" %>
+			<%= f.text_field :bankName %>
+			
+			<%= f.label :bankAcctNumber, "Bank Account Number" %>
+			<%= f.text_field :bankAcctNumber %>
+			
+			
+		<% end %>
+	
+	</div>
+	
+<script type="text/javascript">
+function updateBTCAmt()
+{
+	var twdAmt = document.getElementById("transaction_TWDAmt").value;
+	var btcToTwd = "<%= @currentTransaction.bibicoinBTCtoTWD %>";
+	var btcAmt = twdAmt / btcToTwd;
+	document.getElementById("transaction_BTCAmt").value = btcAmt;
+}
+</script>
+	
+	
+	
+	
+	
+</div>

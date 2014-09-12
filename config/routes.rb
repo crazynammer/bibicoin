@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  
+  resources :transactions
+
   get 'static_pages/how', :as => :how
   get 'static_pages/bitcoins', :as => :bitcoins
   get 'static_pages/terms', :as => :terms

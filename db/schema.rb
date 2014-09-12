@@ -11,12 +11,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140905035133) do
+ActiveRecord::Schema.define(version: 20140912040627) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "configs", force: true do |t|
+  create_table "admin_configs", force: true do |t|
     t.text     "adminID"
     t.string   "bankInfo"
     t.text     "defaultCurrency"
@@ -39,24 +39,24 @@ ActiveRecord::Schema.define(version: 20140905035133) do
   end
 
   create_table "transactions", force: true do |t|
-    t.integer  "transaction_types_id"
+    t.integer  "transaction_type_id"
     t.text     "walletID"
     t.text     "name"
     t.text     "email"
-    t.date     "dob"
+    t.date     "DoB"
     t.decimal  "BTCAmt"
-    t.decimal  "BTCtoTWDAmt"
-    t.decimal  "CommAmt"
-    t.decimal  "CommRate"
-    t.datetime "OrderDate"
+    t.decimal  "TWDAmt"
+    t.decimal  "commAmt"
+    t.decimal  "commRate"
+    t.datetime "orderDate"
     t.datetime "moneyReceivedDate"
-    t.datetime "BTCreceivedDate"
+    t.datetime "BTCReceivedDate"
     t.text     "bankName"
     t.text     "bankAcctNumber"
     t.decimal  "marketBTCtoUSDRate"
     t.decimal  "marketBTCtoRMBRate"
     t.decimal  "marketBTCtoHKDRate"
-    t.decimal  "marketBTCtoEURate"
+    t.decimal  "marketBTCtoEURRate"
     t.decimal  "fxRateUSDtoTWD"
     t.decimal  "fxRateRMBtoTWD"
     t.decimal  "fxRateHKDtoTWD"
