@@ -2,11 +2,12 @@ Rails.application.routes.draw do
   
   resources :transactions
 
+  post 'transactions/confirm'
   get 'static_pages/how', :as => :how
   get 'static_pages/bitcoins', :as => :bitcoins
   get 'static_pages/terms', :as => :terms
-  get 'static_pages/buy', :as => :buy
-  get 'static_pages/sell', :as => :sell
+  get 'transactions/new?ttype=0', :as => :buy, :controller => "transactions", :action => "new"
+  get 'transactions/new?ttype=1', :as => :sell, :controller => "transactions", :action => "new"
   get 'static_pages/howtobuy', :as => :howtobuy
   get 'static_pages/howtosell', :as => :howtosell
   get 'static_pages/jobs', :as => :jobs
@@ -26,7 +27,7 @@ Rails.application.routes.draw do
   
   # Locale settings
   scope "(:locale)", locale: /en|zh/ do
-    resources :static_pages
+    resources :static_pages 
   end  
 
   # The priority is based upon order of creation: first created -> highest priority.

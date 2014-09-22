@@ -1,0 +1,41 @@
+<div class="bibicoin-header-bg-orange">
+	<div id="before-content-area">
+		<h1><%=t :header_buy %></h1>
+	</div>
+	
+	<div class ="row">
+	
+	<% if @transaction.transaction_type_id == 0 %>
+		Transaction Saved - Buy
+	<% elsif @transaction.transaction_type_id == 1 %>
+		Transaction Saved - Sell
+	<% end %>
+	
+			<%= @transaction.walletID %>
+			<br />
+						
+			<%= @transaction.name %>
+			<br />
+			
+			<%= @transaction.email %>
+			<br />
+			
+			<%= @transaction.DoB %>
+			<br />
+			
+			<%= @transaction.TWDAmt %>
+			<br />
+			
+			<%= @transaction.BTCAmt %>
+			<br />
+								
+			<%= @transaction.bankName %>
+			<br />
+			
+			<%= @transaction.bankAcctNumber %>
+			<br />
+		
+		
+	
+	</div>
+</div>

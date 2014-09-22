@@ -1,0 +1,50 @@
+<div class="bibicoin-header-bg-orange">
+	<div id="before-content-area">
+		<h1><%=t :header_buy %></h1>
+	</div>
+	
+	<div class ="row">
+	
+	<% if @transaction.transaction_type_id == 0 %>
+		Confirmation Buying
+	<% elsif @transaction.transaction_type_id == 1 %>
+		Confirmation Selling
+	<% end %>
+	
+		<%= form_for @transaction do |f| %>
+		
+			<%= f.label :walletID, "Wallet Address" %>
+			<%= f.text_field :walletID, :value => @transaction.walletID, :readonly => true %>
+			
+			<%= f.label :name %>
+			<%= f.text_field :name, :value => @transaction.name, :readonly => true %>
+			
+			<%= f.label :email, "Email Address" %>
+			<%= f.text_field :email, :value => @transaction.email, :readonly => true %>
+			
+			<%= f.label :DoB, "Date of Birth" %>
+			<%= f.text_field :DoB, :value => @transaction.DoB, :readonly => true %>
+			
+			<%= f.label :TWDAmt, "NTD Amount" %>
+			<%= f.text_field :TWDAmt, :value => @transaction.TWDAmt, :readonly => true %>
+			
+			<%= f.label :BTCAmt, "Bitcoin Amount" %>
+			<%= f.text_field :BTCAmt, :value => @transaction.BTCAmt, :readonly => true %>
+								
+			<%= f.label :bankName, "Bank Name" %>
+			<%= f.text_field :bankName, :value => @transaction.bankName, :readonly => true %>
+			
+			<%= f.label :bankAcctNumber, "Bank Account Number" %>
+			<%= f.text_field :bankAcctNumber, :value => @transaction.bankAcctNumber, :readonly => true %>
+			
+			<%= f.hidden_field :transaction_type_id, :value => @transaction.transaction_type_id %>
+			<%= f.hidden_field :bibicoinBTCtoTWD, :value => @transaction.bibicoinBTCtoTWD %>
+			
+			<%= f.submit "Create" %>
+			
+		<% end %>
+		
+		
+	
+	</div>
+</div>

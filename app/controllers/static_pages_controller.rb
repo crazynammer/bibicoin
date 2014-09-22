@@ -1,6 +1,6 @@
 class StaticPagesController < ApplicationController
 
-require 'nokogiri'
+ require 'nokogiri'
   
     respond_to :json
     $bitcoinChartsURI = "https://bitpay.com/api/rates"
@@ -18,7 +18,7 @@ require 'nokogiri'
 	HASH_XRATE_RATE = "rate"
   
   def home
-  #need to add error handling in case the site is down
+   #need to add error handling in case the site is down
 		response = Net::HTTP.get_response(URI.parse($bitcoinChartsURI))
 		exchangeRateRawData = response.body
 	  
@@ -80,11 +80,7 @@ require 'nokogiri'
 		@twdValue = totalBTCValue / @referenceRateArray.length
 		
 		#render :text =>  twdValue
-		
-		
-		
-		
-		
+				
   end
 
   def contact
