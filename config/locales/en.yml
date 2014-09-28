@@ -22,6 +22,33 @@
 en:
   hello: "Hello World!"
 # ---------------------------------------------------------------------------------------------------------------------------
+# Common Links
+# ---------------------------------------------------------------------------------------------------------------------------
+  links_home: "Home"
+  links_buybitcoin: "Buy Bitcoin"  
+  links_sellbitcoin: "Sell Bitcoin"
+  links_learn: "Learn"
+  links_about: "About"
+  links_bitcoins: "About Bitcoins"
+  links_wallets: "About Wallets"
+  links_howtobuy: "How to Buy"
+  links_howtobuyfrombibicoin: "How to Buy from Bibicoin?"
+  links_howtosell: "How to Sell"
+  links_howtosellfrombibicoin: "How to Sell from Bibicoin?"
+  links_howtoprotect: "How to Protect Yourself Online"
+  links_aboutus: "About Us"
+  links_why: "Why Choose Bibicoins?"
+  links_reviews: "Customer Reviews"
+  links_faq: "FAQs"
+  links_terms: "Terms & Conditions"
+  links_privacy: "Privacy Policy"
+  links_legal: "Legal"
+  links_jobs: "Jobs"
+  links_contact: "Contact Us"
+  links_buy: "Buy"
+  links_sell: "Sell"
+  links_traditional: "Bitcoin vs Traditional Currencies"
+# ---------------------------------------------------------------------------------------------------------------------------
 # Section Headers
 # ---------------------------------------------------------------------------------------------------------------------------
   header_about: "About Us"
@@ -41,6 +68,7 @@ en:
   header_terms: "Terms & Conditions"
   header_wallets: "About Wallets"
   header_why: "Why Choose Bibicoins?"
+  header_traditional: "Bitcoin vs Traditional Currencies"
 # ---------------------------------------------------------------------------------------------------------------------------
 # About Us
 # ---------------------------------------------------------------------------------------------------------------------------

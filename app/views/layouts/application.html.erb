@@ -23,37 +23,44 @@
 		  </ul>
 
 		  <section class="top-bar-section">
+
 		    <!-- Right Nav Section -->
 		    <ul class="right">
-		      <li><%= link_to "Buy Bitcoin", :buy %></li>
+ 		      <li><%= link_to(t('links_home'), :home) %></li>
+ 				<li class="divider"></li>
+		      <li><%= link_to(t('links_buybitcoin'), :buy) %></li>
 				<li class="divider"></li>
-				<li><%= link_to "Sell Bitcoin", :sell %></li>
+				<li><%= link_to(t('links_sellbitcoin'), :sell) %></li>
 				<li class="divider"></li>
+
 				<!-- Learn Menu -->
 		      <li class="has-dropdown">
-		        <%= link_to "Learn", :bitcoins %>
+		        <%= link_to(t('links_learn'), :bitcoins) %>
 		        <ul class="dropdown">
-		          <li><%= link_to "About Bitcoins", :bitcoins %></li>
-					 <li><%= link_to "About Wallets", :wallets %></li>
-		          <li><%= link_to "How To Buy", :howtobuy %></li>
-					 <li><%= link_to "How To Sell", :howtosell %></li>
-					 <li><%= link_to "How To Protect Yourself Online", :how %></li>					 
+		          <li><%= link_to(t('links_bitcoins'), :bitcoins) %></li>
+					 <li><%= link_to(t('links_wallets'), :wallets) %></li>
+		          <li><%= link_to(t('links_howtobuy'), :howtobuy) %></li>
+					 <li><%= link_to(t('links_howtosell'), :howtosell) %></li>
+					 <li><%= link_to(t('links_howtoprotect'), :how) %></li>
+		          <li><%= link_to(t('links_traditional'), :traditional) %></li>					 					 
+		          <li><%= link_to(t('links_faq'), :faq) %></li>					 					 
 		        </ul>
 		      </li>
 				<li class="divider"></li>
+
 				<!-- About Menu -->				
 		      <li class="has-dropdown">
-		        <%= link_to "About", :about %>
+		         <%= link_to(t('links_about'), :about) %>
 		        <ul class="dropdown">
-		          <li><%= link_to "About Us", :about %></li>
-					 <li><%= link_to "Why Choose Bibicoins?", :why %></li>
-					 <li><%= link_to "Customer Reviews", :reviews %></li>					 
-		          <li><%= link_to "FAQs", :faq %></li>
-					 <li><%= link_to "Terms & Conditions", :terms %></li>
-					 <li><%= link_to "Privacy Policy", :privacy %></li>					  
-					 <li><%= link_to "Legal", :legal %> </li>
-					 <li><%= link_to "Jobs", :jobs %></li>
-					 <li><%= link_to "Contact Us", :contact %></li>					 
+		          <li><%= link_to(t('links_aboutus'), :about) %></li>
+					 <li><%= link_to(t('links_why'), :why) %></li>
+					 <li><%= link_to(t('links_reviews'), :reviews) %></li>					 
+		          <li><%= link_to(t('links_faq'), :faq) %></li>
+					 <li><%= link_to(t('links_terms'), :terms) %></li>
+					 <li><%= link_to(t('links_privacy'), :privacy) %></li>					  
+					 <li><%= link_to(t('links_legal'), :legal) %></li>
+					 <li><%= link_to(t('links_jobs'), :jobs) %></li>
+					 <li><%= link_to(t('links_contact'), :contact) %><</li>					 
 		        </ul>
 		      </li>
 		    </ul>
@@ -71,7 +78,8 @@
 
    <%= yield %>
    <%= javascript_include_tag "application" %>		
-			 
+
+	 <!-- Social Media Icons -->			 
 	 <div class="bibicoin-footer-bottom">
  		<div class="row">
    		<div class="medium-4 medium-4 push-8 columns">
@@ -81,20 +89,22 @@
           <li><a href="http://www.bibicoin.com.tw/contact" class="mail"></a></li>
         </ul>
      </div>
-     <div class="medium-8 medium-8 pull-4 columns">
+	  
+	 <!-- Footer Menu Links -->		
+	 <div class="medium-8 medium-8 pull-4 columns">
         <ul class="bibicoin-links">
-          <li><%= link_to "Home", :home %></li>
-			 <li><%= link_to "Buy", :buy %></li>
-			 <li><%= link_to "Sell", :buy %></li>
-			 <li><%= link_to "Contact Us", :contact %></li>
-          <li><%= link_to "About Us", :about %></li>
-			 <li><%= link_to "FAQ", :faq %></li>
-          <li><%= link_to "Terms & Conditions of Use", :terms %></li>
-			 <li><%= link_to "Privacy Policy", :privacy %></li>
-			 <li><%= link_to "Legal", :legal %> </li>
-			 <li><%= link_to "Jobs", :jobs %></li>			 
+          <li><%= link_to(t('links_home'), :home) %></li>
+			 <li><%= link_to(t('links_buy'), :buy) %></li>
+			 <li><%= link_to(t('links_sell'), :buy) %></li>
+			 <li><%= link_to(t('links_contact'), :contact) %></li>
+          <li><%= link_to(t('links_aboutus'), :about) %></li>
+			 <li><%= link_to(t('links_faq'), :faq) %></li>
+          <li><%= link_to(t('links_terms'), :terms) %></li>
+			 <li><%= link_to(t('links_privacy'), :privacy) %></li>
+			 <li><%= link_to(t('links_legal'), :legal) %></li>
+			 <li><%= link_to(t('links_jobs'), :jobs) %></li>			 
        </ul>
-       <p class="copyright">© 2014 bibicoins.com.tw Copyright</p>
+       <p class="copyright">© Copyright 2014 bibicoins.com.tw </p>
   	  </div>
  	 </div>
 	</div>	

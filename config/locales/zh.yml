@@ -22,6 +22,33 @@
 zh:
   hello: "Ni Hao World!"
 # ---------------------------------------------------------------------------------------------------------------------------
+# Common Links
+# ---------------------------------------------------------------------------------------------------------------------------
+  links_home: "家"
+  links_buybitcoin: "買比特幣"
+  links_sellbitcoin: "賣比特幣"
+  links_learn: "学习"
+  links_about: "關於我們"
+  links_bitcoins: "關於比特幣"
+  links_wallets: "關於錢包"
+  links_howtobuy: "如何買"
+  links_howtobuyfrombibicoin: "如何買?"
+  links_howtosell: "如何賣"
+  links_howtosellfrombibicoin: "如何賣?"
+  links_howtoprotect: "如何保護您的上網安全"
+  links_aboutus: "關於我們"
+  links_why: "為何選擇比特幣?"
+  links_reviews: "TODO: Customer Reviews"
+  links_faq: "TODO: FAQs"
+  links_terms: "使用條款"
+  links_privacy: "隱私"
+  links_legal: "法規"
+  links_jobs: "工作機會"
+  links_contact: "聯絡方法"
+  links_buy: "買"
+  links_sell: "賣"
+  links_traditional: "TODO: BTC vs Traditional Currencies"
+# ---------------------------------------------------------------------------------------------------------------------------
 # Section Headers
 # ---------------------------------------------------------------------------------------------------------------------------
   header_about: "關於我們"
@@ -41,6 +68,7 @@ zh:
   header_terms: "使用條款"
   header_wallets: "關於錢包"
   header_why: "為何選擇比特幣"
+  header_traditional: "TODO: Bitcoin vs Traditional Currencies"
 # ---------------------------------------------------------------------------------------------------------------------------
 # About Us
 # ---------------------------------------------------------------------------------------------------------------------------

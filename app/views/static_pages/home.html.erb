@@ -66,23 +66,23 @@
 </div>
 <br><br>
 <div class="row">
-  <div class="small-12 columns"><h3><%=t :header_howtobuy %><h3></div>   
+  <div class="small-12 columns"><h3><%= link_to(t('links_howtobuyfrombibicoin'), :buy) %><h3></div>   
 </div>
 <div class="row">
-  	<div class="small-3 columns"><%= image_tag("step1.png", :alt => "Step 1") %><p><b>Get a Bitcoin Wallet</b><br>To begin, you will need a Bitcoin “wallet” to receive and store your Bitcoins.</p></div>
-  	<div class="small-3 columns"><%= image_tag("step2.png", :alt => "Step 2") %><p><b>Place Your Order</b><br>Fill out a “Buy Bitcoins” form to submit an order.  You will need to enter your wallet address to receive your Bitcoins and your email address for us to send you an email confirmation.</p></div>
-  	<div class="small-3 columns"><%= image_tag("step3.png", :alt => "Step 3") %><p><b>Make a deposit/transfer</b><br>Make a deposit at Bibicoins’ local Taiwan bank account. Deposits can be made through ATM or your local Taiwan Bank.</div>
-	<div class="small-3 columns"><%= image_tag("step4.png", :alt => "Step 4") %><p><b>Make a deposit/transfer</b><br>Once we have confirmed your deposit. your Bitcoins will arrive in the wallet  address</p></div> 
+  	<div class="small-3 columns"><%= link_to image_tag("step1.png"), :buy %><p><b>Get a Bitcoin Wallet</b><br>To begin, you will need a Bitcoin “wallet” to receive and store your Bitcoins.</p></div>
+  	<div class="small-3 columns"><%= link_to image_tag("step2.png"), :buy %><p><b>Place Your Order</b><br>Fill out a “Buy Bitcoins” form to submit an order.  You will need to enter your wallet address to receive your Bitcoins and your email address for us to send you an email confirmation.</p></div>
+  	<div class="small-3 columns"><%= link_to image_tag("step3.png"), :buy %><p><b>Make a deposit/transfer</b><br>Make a deposit at Bibicoins’ local Taiwan bank account. Deposits can be made through ATM or your local Taiwan Bank.</div>
+	<div class="small-3 columns"><%= link_to image_tag("step4.png"), :buy %><p><b>Make a deposit/transfer</b><br>Once we have confirmed your deposit. your Bitcoins will arrive in the wallet  address</p></div> 
 </div>
 
 <div class="row">
-  <div class="small-12 columns"><h3><%=t :header_howtosell %><h3></div>   
+  <div class="small-12 columns"><h3><%= link_to(t('links_howtosellfrombibicoin'), :buy) %></h3></div>   
 </div>
 <div class="row">
-  	<div class="small-3 columns"><%= image_tag("step1.png", :alt => "Step 1") %><p><b>Place a Sell Request</b><br>Fill out a quick “Sell Bitcoins”  form to submit an order.</p></div>
-  	<div class="small-3 columns"><%= image_tag("step2.png", :alt => "Step 2") %><p><b>Confirm Your Order</b><br>Bibicoins will provide you with a unique Bitcoin wallet address which will allow you to transfer your Bitcoins to us.</p></div>
-  	<div class="small-3 columns"><%= image_tag("step3.png", :alt => "Step 3") %><p><b>Transfer Your Bitcoins</b><br>Transfer the amount in Bitcoins to the unique wallet address provided in your order confirmation.</div>
-	<div class="small-3 columns"><%= image_tag("step4.png", :alt => "Step 4") %><p><b>Make a deposit/transfer</b><br>Once we have confirmed your deposit. your Bitcoins will arrive in the wallet  address</p></div> 
+  	<div class="small-3 columns"><%= link_to image_tag("step1.png"), :buy %><p><b>Place a Sell Request</b><br>Fill out a quick “Sell Bitcoins”  form to submit an order.</p></div>
+  	<div class="small-3 columns"><%= link_to image_tag("step2.png"), :buy %><p><b>Confirm Your Order</b><br>Bibicoins will provide you with a unique Bitcoin wallet address which will allow you to transfer your Bitcoins to us.</p></div>
+  	<div class="small-3 columns"><%= link_to image_tag("step3.png"), :buy %><p><b>Transfer Your Bitcoins</b><br>Transfer the amount in Bitcoins to the unique wallet address provided in your order confirmation.</div>
+	<div class="small-3 columns"><%= link_to image_tag("step4.png"), :buy %><p><b>Make a deposit/transfer</b><br>Once we have confirmed your deposit. your Bitcoins will arrive in the wallet  address</p></div> 
 </div>			
 
 <div class="row">

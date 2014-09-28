@@ -21,7 +21,8 @@ Rails.application.routes.draw do
   get 'static_pages/about', :as => :about
   get 'static_pages/contact', :as => :contact
   get 'static_pages/home', :as => :home
-  
+  get 'static_pages/traditional', :as => :traditional
+    
   # Bibicoin Root Route
   root 'static_pages#home' 
   

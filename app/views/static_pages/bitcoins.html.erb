@@ -1,8 +1,4 @@
-<div class="bibicoin-header-bg-orange">
-	<div id="before-content-area">
-		<h1><%=t :header_bitcoins %></h1>
-	</div>
-</div>
+<%= render 'layouts/header', :locals => {:page_header => t('header_bitcoins')} %>
 
 <div id="before-content-area">
 	<div class="row">
@@ -50,7 +46,7 @@
 	<div class="row">
 	  	<div class="small-2 columns"><%= image_tag("bw_graduation.png", :alt => "graduation") %></div>
 	  	<div class="small-10 columns">	
-			<h5><%=t :bitcoins_h7 %></h5>
+			<h5><%= link_to(t('bitcoins_h7'), :how) %></h5>
 			<p><%=t :bitcoins_b7 %></p>
 			<p><%=t :bitcoins_link1 %></p>
 			<p><%=t :bitcoins_link2 %></p>
