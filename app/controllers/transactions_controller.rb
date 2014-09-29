@@ -2,6 +2,7 @@ class TransactionsController < ApplicationController
   def new
 	#get the admin configs and commission rate constants
   	#@adminConfig = AdminConfig.find(1)
+	#update with real limits when admin populated
 	@COMM_LIMIT_1 = 1
 	@COMM_LIMIT_2 = 5
 	
@@ -12,7 +13,8 @@ class TransactionsController < ApplicationController
 	#0 for buy 1 for sell
 	@transaction.transaction_type_id = 0
 	#@transaction.transaction_type_id = params[:ttype]
-	@transaction.bibicoinBTCtoTWD = 100
+	#update with real value
+	@transaction.bibicoinBTCtoTWD = 400
 
 	
   
@@ -39,6 +41,6 @@ class TransactionsController < ApplicationController
   
   private
 	def transaction_params
-		params.require(:transaction).permit(:transaction_type_id, :walletID, :name, :email, :DoB, :TWDAmt, :BTCAmt, :bankName, :bankAcctNumber, :bibicoinBTCtoTWD)
+		params.require(:transaction).permit(:transaction_type_id, :walletID, :name, :email, :DoB, :TWDAmt, :BTCAmt, :commAmt, :bankName, :bankAcctNumber, :bibicoinBTCtoTWD)
 	end
 end

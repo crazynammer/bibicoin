@@ -6,9 +6,9 @@
 	<div class ="row">
 	
 	<% if @transaction.transaction_type_id == 0 %>
-		Confirmation Buying
+		Confirm Buy
 	<% elsif @transaction.transaction_type_id == 1 %>
-		Confirmation Selling
+		Confirm Sell
 	<% end %>
 	
 		<%= form_for @transaction do |f| %>
@@ -25,11 +25,22 @@
 			<%= f.label :DoB, "Date of Birth" %>
 			<%= f.text_field :DoB, :value => @transaction.DoB, :readonly => true %>
 			
+			<!-- Update to Whole number-->
 			<%= f.label :TWDAmt, "NTD Amount" %>
 			<%= f.text_field :TWDAmt, :value => @transaction.TWDAmt, :readonly => true %>
 			
 			<%= f.label :BTCAmt, "Bitcoin Amount" %>
 			<%= f.text_field :BTCAmt, :value => @transaction.BTCAmt, :readonly => true %>
+			
+			<!-- Update to Whole number-->
+			<%= f.label :commAmt, "Commission Amount" %>
+			<%= f.text_field :commAmt, :value => @transaction.commAmt, :readonly => true %>
+		
+		
+			Total Amount 
+			<br />
+			<!-- Update to Whole number-->
+			<p id = "totalAmt"><%= @transaction.TWDAmt + @transaction.commAmt %></p>
 								
 			<%= f.label :bankName, "Bank Name" %>
 			<%= f.text_field :bankName, :value => @transaction.bankName, :readonly => true %>

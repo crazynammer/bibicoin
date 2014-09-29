@@ -6,15 +6,18 @@
 	<div class ="row">
 	
 	<% if @transaction.transaction_type_id == 0 %>
-		Buying
+		Buy Bitcoin
 	<% elsif @transaction.transaction_type_id == 1 %>
-		Selling
+		Sell Bitcoin
 	<% end %>
+	
 	
 	
 		<%= form_for @transaction, :url => {:action => "confirm"} do |f| %>
 		
 		<!-- Shared -->
+		
+			<br />
 		
 			<%= f.label :walletID, "Wallet Address" %>
 			<%= f.text_field :walletID %>
@@ -25,37 +28,37 @@
 			<%= f.label :email, "Email Address" %>
 			<%= f.text_field :email %>
 			
-			<!-- TODO: split this out to year / month / day then merge to form date of birth -->
 			<%= f.label :DoB, "Date of Birth" %>
-			<%= f.text_field :DoB %>
-			
-			<!-- Buy -> confirm how they want to handlt the transaction - by BTC to NTD?-->	
+			<%= f.date_field:DoB %>
+				
+			<!-- Buy: allow inputs form both sides and change values as needed -->	
 			<% if @transaction.transaction_type_id == 0 %>
 		
 				<%= f.label :TWDAmt, "NTD Amount to Buy" %>
 				<%= f.text_field :TWDAmt, :oninput => "updateBTCAmt()", :onkeyup => "calculateTotal()" %>
 			
-				<%= f.label :BTCAmt, "Bitcoin Amount" %>
-				<%= f.text_field :BTCAmt, :readonly => true %>
+				<!-- minimum value is 0.25 -->
+				<%= f.label :BTCAmt, "Bitcoin Amount to Buy" %>
+				<%= f.text_field :BTCAmt, :oninput => "updateNTDAmt()", :onkeyup => "calculateTotal()" %>
 						
 			<!-- Sell -->
 			<% elsif @transaction.transaction_type_id == 1 %>
 			
-				<%= f.label :TWDAmt, "NTD Amount" %>
-				<%= f.text_field :TWDAmt, :readonly => true %>
+				<%= f.label :TWDAmt, "NTD Amount to Sell" %>
+				<%= f.text_field :TWDAmt, :oninput => "updateBTCAmt()", :onkeyup => "calculateTotal()" %>
 				
+				<!-- minimum value is 0.25 -->
 				<%= f.label :BTCAmt, "Bitcoin Amount to Sell" %>
-				<%= f.text_field :BTCAmt, :oninput => "updateNTDAmt()" %>
+				<%= f.text_field :BTCAmt, :oninput => "updateNTDAmt()", :onkeyup => "calculateTotal()" %>
 				
 								
 			<% end %>
 			
 			
 			<%= f.label :commAmt, "Commission Amount" %>
-			<%= f.text_field :commAmt %>
+			<%= f.text_field :commAmt, :readonly => true %>
 		
-			Total Amount 
-			<br />
+			<%= f.label :totalAmt,  "Total Amount" %> 
 			<p id = "totalAmt">0</p>
 					
 		<!-- Shared -->
@@ -67,12 +70,10 @@
 			<%= f.text_field :bankAcctNumber %>
 			
 			<%= f.hidden_field :transaction_type_id, :value => @transaction.transaction_type_id %>
-			<%= f.hidden_field :bibicoinBTCtoTWD, :value => @transaction.bibicoinBTCtoTWD %>		
+			<%= f.hidden_field :bibicoinBTCtoTWD, :value => @transaction.bibicoinBTCtoTWD %>				
 		
-			<%= f.hidden_field :commAmt, :value => @transaction.commAmt %>
-		
-			
-			<%= f.submit "Confirm" %>
+			<!-- make the total come up -->
+			<%= f.submit "Confirm", :onload => "calculateTotal()" %>
 			
 		<% end %>
 		
@@ -87,8 +88,8 @@ function updateBTCAmt()
 {
 	var twdAmt = document.getElementById("transaction_TWDAmt").value;
 	var btcToTwd = "<%= @transaction.bibicoinBTCtoTWD %>";
-	var btcAmt = twdAmt / btcToTwd;
-	document.getElementById("transaction_BTCAmt").value = btcAmt;
+	var btcAmt = +twdAmt / +btcToTwd;
+	document.getElementById("transaction_BTCAmt").value = parseFloat(+btcAmt).toFixed(5);
 }
 
 <!-- function for sale going from BTC to NTD -->
@@ -96,38 +97,42 @@ function updateNTDAmt()
 {
 	var btcAmt = document.getElementById("transaction_BTCAmt").value;
 	var btcToTwd = "<%= @transaction.bibicoinBTCtoTWD %>";
-	var twdAmt = btcAmt * btcToTwd;
-	document.getElementById("transaction_TWDAmt").value = twdAmt;
+	var twdAmt = +btcAmt * +btcToTwd;
+	document.getElementById("transaction_TWDAmt").value = parseFloat(+twdAmt).toFixed(0);
 }
 <!-- function to calculate commission and display on the screen -->
 function calculateTotal()
 {
 	var twdAmt = parseFloat(document.getElementById("transaction_TWDAmt").value).toFixed(2);
+	var btcAmt = parseFloat(document.getElementById("transaction_BTCAmt").value).toFixed(2);
+	<!-- this is twd for 1 BTC -->
+	var btcToTwd = "<%= @transaction.bibicoinBTCtoTWD %>";
 	var commRate = parseFloat(0).toFixed(2);
 	var commAmt = parseFloat(0).toFixed(2);
 	var COMM_LIMIT_1 = parseFloat("<%= @COMM_LIMIT_1 %>").toFixed(2);
 	var COMM_LIMIT_2 = parseFloat("<%= @COMM_LIMIT_2 %>").toFixed(2);
 	
-	if (twdAmt < COMM_LIMIT_1)
+	<!-- Update with actual rates once the 
+	if (+btcAmt < +COMM_LIMIT_1)
 	{
-		commRate = parseFloat(0.01).toFixed(2);
+		commRate = (+0.01).toFixed(2);
 	}
-	else if (twdAmt >= COMM_LIMIT_1 && twdAmt < COMM_LIMIT_2)
+	else if (+btcAmt >= +COMM_LIMIT_1 && +btcAmt < +COMM_LIMIT_2)
 	{
-		commRate = parseFloat(0.02).toFixed(2);
+		commRate = (+0.02).toFixed(2);
 	}
-	else if (twdAmt >= COMM_LIMIT_2)
+	else if (+btcAmt >= +COMM_LIMIT_2)
 	{
-		commRate = parseFloat(0.03).toFixed(2);
+		commRate = (+0.03).toFixed(2);
 	}
 	
 	 	
-	commAmt = parseFloat(twdAmt * commRate).toFixed(2);
+	commAmt = parseFloat(+twdAmt * +commRate).toFixed(0);
 	if (commAmt == 'NaN')
 	{
-		commAmt = parseFloat(0).toFixed(2);
+		commAmt = 0;
 	}
-	var totalAmt = parseFloat(twdAmt - commAmt).toFixed(2);
+	var totalAmt = parseFloat(+twdAmt + +commAmt).toFixed(0);
 	if (totalAmt == 'NaN')
 	{
 		totalAmt = 0	;

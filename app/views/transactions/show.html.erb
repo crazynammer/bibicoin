@@ -10,29 +10,37 @@
 	<% elsif @transaction.transaction_type_id == 1 %>
 		Transaction Saved - Sell
 	<% end %>
-	
-			<%= @transaction.walletID %>
+	<br />
+	<br />
+			
+			Wallet ID: <%= @transaction.walletID %>
 			<br />
 						
-			<%= @transaction.name %>
+			Name: <%= @transaction.name %>
 			<br />
 			
-			<%= @transaction.email %>
+			Email: <%= @transaction.email %>
 			<br />
 			
-			<%= @transaction.DoB %>
+			Date of Birth: <%= @transaction.DoB %>
+			<br />
+					
+			Total BTC <%= @transaction.BTCAmt %>
 			<br />
 			
-			<%= @transaction.TWDAmt %>
+			Transaction Cost: <%= @transaction.TWDAmt %>
 			<br />
 			
-			<%= @transaction.BTCAmt %>
+			Commission Cost: <%= @transaction.commAmt %>
+			<br />
+			
+			Total Cost: <%= @transaction.TWDAmt + @transaction.commAmt %>
 			<br />
 								
-			<%= @transaction.bankName %>
+			Bank Name: <%= @transaction.bankName %>
 			<br />
 			
-			<%= @transaction.bankAcctNumber %>
+			Bank Acct: <%= @transaction.bankAcctNumber %>
 			<br />
 		
 		
