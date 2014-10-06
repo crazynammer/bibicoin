@@ -2,6 +2,15 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+/* -----------------------------------------
+   Footer
+----------------------------------------- */
+/*.bibicoin-sidebar {
+	padding-left: 18px;
+	background: url(image-path('bullet.png')) no-repeat 5px 16px;
+	border-top: 1px dashed #ccc;
+}*/
+
 .bibicoin-header-bg-orange {
 	background: #eb7314;
 }
@@ -70,6 +79,7 @@
           color: #777; }
   .bibicoin-footer-bottom p.copyright {
     margin: 0px 0 0;
+	 padding: 3px 6px;
     font-size: 0.66667rem;
     color: #666; }
   .bibicoin-footer-bottom ul.home-social {
