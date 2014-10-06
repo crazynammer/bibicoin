@@ -1,12 +1,15 @@
 class StaticPagesController < ApplicationController
 
  require 'nokogiri'
+ require 'rss'
   
     respond_to :json
     $bitcoinChartsURI = "https://bitpay.com/api/rates"
+	$bitcoinStatsURI = "http://blockchain.info/stats?format=json"
 	
 	
 	TWDEXCHANGERATEXML = "http://themoneyconverter.com/rss-feed/TWD/rss.xml"
+	RSSNEWSFEED = "http://newsbtc.com/feed/"
 	
 	
  
@@ -80,6 +83,17 @@ class StaticPagesController < ApplicationController
 		@twdValue = totalBTCValue / @referenceRateArray.length
 		
 		#render :text =>  twdValue
+		
+	#rss section
+	@rssNewsFeed = RSS::Parser.parse(RSSNEWSFEED, false).items[0..4]
+	
+	#statistic info
+	statsResponse = Net::HTTP.get_response(URI.parse($bitcoinStatsURI))
+	statsBody = statsResponse.body
+	@stats = JSON.parse(statsBody)
+	
+	
+		
 				
   end
 

@@ -101,10 +101,11 @@
 <div class="row">
   <div class="small-12 columns">
 	  <ul>
-		  <li>Mobile Payments Giant Square Introduces ‘Pay with Bitcoin’ Option on Square Market</li>
-		  <li>PBOC Officials Discuss Bitcoin as China’s Central Bank Stays Silent on Rumours</li>
-		  <li>Mobile Gamers Can Now Buy In-Game Perks with BTC Through SuperRewards</li>
-		  <li>‘Micky’ Malka on How Bitcoin Can Help the World’s Unbanker</li>
+		  <% @rssNewsFeed.each do |item| %>
+			<li><a href = <%= item.link %>> <%= item.title %> </a></li>
+			<br />
+		  <% end %>
+	
 	  </ul>
   </div>   
 </div>
@@ -114,22 +115,10 @@
 		</div>
 		<div class="row">
 		  <div class="small-12 columns">
-			Bitcoin<br>
-			Litecoin<br>
-			Total blocks 293,502<br>
-			Total bitcoins 12,587,525<br>
-			Current reward per block 25 XBT ($11,471)<br>
-			Network difficulty 5,006,860,800<br>
-			Market cap $5,775,502,626.94 <br>
-			First block mined 2009-01-03 <br>
-			Last 24 hours <br>
-			Number of blocks 182<br>
-			Avg. blocks per hour 7<br>
-			Avg. time to mine a block 07m 54s<br>
-			Latest block creation time 2014-04-01 02:10:06<br>
-			Time taken to mine latest block 59m 49s<br>
-			Avg. transactions per hour 2,691<br>
-			Number of transactions 64,606<br><br><br>
+			<% @stats.each do |stat| %>
+				<%= stat %>
+				<br />
+			<% end %>
 		  </div>   
 		</div>
 </div>
