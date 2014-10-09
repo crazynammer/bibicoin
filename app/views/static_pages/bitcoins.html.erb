@@ -1,6 +1,8 @@
 <%= render 'layouts/header', :locals => {:page_header => t('header_bitcoins')} %>
 
 <div id="before-content-area">
+	<div class="row"> 
+	  <div class="small-9 columns">
 	<div class="row">
 	  	<div class="small-2 columns"><%= image_tag("bw_mobile.png", :alt => "house") %></div>
 	  	<div class="small-10 columns">	
@@ -51,6 +53,13 @@
 			<p><%=t :bitcoins_link2 %></p>
 			<p><%=t :bitcoins_link3 %></p>				
 		</div>
-	</div>			
-
+	</div>	
+	</div> 
+	  <div class="small-3 columns">
+		<h4>Learn About Bitcoin</h4>
+		<ul class="bibicoin-sidebar">
+			<%= render 'layouts/learn_menu'%>
+		</ul>		  
+	  </div>		  
+	</div>		
 </div>

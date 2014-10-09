@@ -2,23 +2,33 @@
 
 <div id="before-content-area">
 	<div class="row">
-	  	<div class="small-2 columns"><%= image_tag("house.png", :alt => "house") %></div>
-	  	<div class="small-10 columns"><p><%=t :why_h1 %></p></div>
-	</div>
-	<div class="row">
-	  	<div class="small-2 columns"><%= image_tag("coin.png", :alt => "coin") %></div>
-	  	<div class="small-10 columns"><p><%=t :why_h2 %></p></div>
-	</div>
-	<div class="row">
-	  	<div class="small-2 columns"><%= image_tag("drawer.png", :alt => "drawer") %></div>
-	  	<div class="small-10 columns"><p><%=t :why_h3 %></p></div>
-	</div>
-	<div class="row">
-	  	<div class="small-2 columns"><%= image_tag("arrows_circle.png", :alt => "arrows") %></div>
-	  	<div class="small-10 columns"><p><%=t :why_h4 %></p></div>
+	  <div class="small-9 columns">
+			<div class="row">
+			  	<div class="small-2 columns"><%= image_tag("house.png", :alt => "house") %></div>
+			  	<div class="small-10 columns"><p><%=t :why_h1 %></p></div>
+			</div>
+			<div class="row">
+			  	<div class="small-2 columns"><%= image_tag("coin.png", :alt => "coin") %></div>
+			  	<div class="small-10 columns"><p><%=t :why_h2 %></p></div>
+			</div>
+			<div class="row">
+			  	<div class="small-2 columns"><%= image_tag("drawer.png", :alt => "drawer") %></div>
+			  	<div class="small-10 columns"><p><%=t :why_h3 %></p></div>
+			</div>
+			<div class="row">
+			  	<div class="small-2 columns"><%= image_tag("arrows_circle.png", :alt => "arrows") %></div>
+			  	<div class="small-10 columns"><p><%=t :why_h4 %></p></div>
+			</div>	
+			<div class="row">
+			  	<div class="small-2 columns"><%= image_tag("lock.png", :alt => "lock") %></div>
+			  	<div class="small-10 columns"><p><%=t :why_h5 %></p></div>
+			</div>
+	  </div>	  
+	  <div class="small-3 columns">
+		<h4><%=t :links_about %></h4>
+		<ul class="bibicoin-sidebar">
+			<%= render 'layouts/about_menu'%>
+		</ul>		  
+	  </div>
 	</div>	
-	<div class="row">
-	  	<div class="small-2 columns"><%= image_tag("lock.png", :alt => "lock") %></div>
-	  	<div class="small-10 columns"><p><%=t :why_h5 %></p></div>
-	</div>
 </div>

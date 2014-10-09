@@ -1,26 +1,36 @@
 <%= render 'layouts/header', :locals => {:page_header => t('header_jobs')} %>
 
 <div id="before-content-area">
-	<h4><%=t :jobs_h1 %></h4>
-	<p><%=t :jobs_b1 %></p>
-	<p><%=t :jobs_h2 %></p>
-	<p><%=t :jobs_b2 %></p>
-	<h4><%=t :jobs_h3 %></h4><br>
-	<h5><%=t :jobs_b3 %></h5>
-	<p><%=t :jobs_b3_1 %></p>
-	<p><%=t :jobs_b3_2 %></p>	
-	<p><%=t :jobs_b3_3 %></p>
-	<ul>	
-		<li><%=t :jobs_b3_4 %></li>	
-	</ul>
-	<p><%=t :jobs_b3_5 %></p>	
-	<ul>
-		<li><%=t :jobs_b3_6 %></li>	
-		<li><%=t :jobs_b3_7 %></li>	
-		<li><%=t :jobs_b3_8 %></li>	
-		<li><%=t :jobs_b3_9 %></li>	
-		<li><%=t :jobs_b3_10 %></li>			
-	</ul>
-	<p><%=t :jobs_h4 %></p>
-	<p><%=t :jobs_b4 %><a href="mailto:recruitment@bibicoins.com.tw"><%=t :jobs_email %></a></p>
+	<div class="row">
+	  <div class="small-9 columns">
+			<h4><%=t :jobs_h1 %></h4>
+			<p><%=t :jobs_b1 %></p>
+			<p><%=t :jobs_h2 %></p>
+			<p><%=t :jobs_b2 %></p>
+			<h4><%=t :jobs_h3 %></h4><br>
+			<h5><%=t :jobs_b3 %></h5>
+			<p><%=t :jobs_b3_1 %></p>
+			<p><%=t :jobs_b3_2 %></p>	
+			<p><%=t :jobs_b3_3 %></p>
+			<ul>	
+				<li><%=t :jobs_b3_4 %></li>	
+			</ul>
+			<p><%=t :jobs_b3_5 %></p>	
+			<ul>
+				<li><%=t :jobs_b3_6 %></li>	
+				<li><%=t :jobs_b3_7 %></li>	
+				<li><%=t :jobs_b3_8 %></li>	
+				<li><%=t :jobs_b3_9 %></li>	
+				<li><%=t :jobs_b3_10 %></li>			
+			</ul>
+			<p><%=t :jobs_h4 %></p>
+			<p><%=t :jobs_b4 %><a href="mailto:recruitment@bibicoins.com.tw"><%=t :jobs_email %></a></p>
+	  </div> 	  
+	  <div class="small-3 columns">
+		<h4><%=t :links_about %></h4>
+		<ul class="bibicoin-sidebar">
+			<%= render 'layouts/about_menu'%>
+		</ul>		  
+	  </div>
+	</div>	
 </div>

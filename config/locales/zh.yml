@@ -25,6 +25,12 @@ zh:
 # Common Text
 # ---------------------------------------------------------------------------------------------------------------------------
   footer_copyright: "© 2014 bibicoin.com.tw 的版權"
+  common_email: "电子邮件"
+  common_phone: "电子邮件"
+  common_address: "地址"
+  common_email_value: "bibicoins@gmail.com"
+  common_phone_value: "+886 989 627 705"
+  common_address_value: "Zhongxiao Dong Lu, Unit 18/C"
 # ---------------------------------------------------------------------------------------------------------------------------
 # Common Links
 # ---------------------------------------------------------------------------------------------------------------------------
@@ -65,15 +71,74 @@ zh:
   header_howtosell: "如何賣?"
   header_jobs: "工作機會"
   header_legal: "法規"
-  header_news: "TODO: Translate to Chinese -News"
+  header_news: "TODO: Translate to Chinese - News"
   header_privacy: "隱私"
-  header_reviews: "TODO: Translate to Chinese -Customer Reviews"
+  header_reviews: "TODO: Translate to Chinese - Customer Reviews"
   header_sell: "賣比特幣"
   header_terms: "使用條款"
   header_wallets: "關於錢包"
   header_why: "為何選擇比特幣"
   header_traditional: "TODO: Bitcoin vs Traditional Currencies"
   header_protectonline: "如何保護您的上網安全"
+# ---------------------------------------------------------------------------------------------------------------------------
+# Ticker
+# ---------------------------------------------------------------------------------------------------------------------------
+  ticker_trading: "比特幣交易 "
+  ticker_buy: "買: "
+  ticker_sell: "賣: "
+  ticker_spot: "現貨交易: "
+  ticker_open: "開賣: "
+  ticker_change: "交換: "
+# ---------------------------------------------------------------------------------------------------------------------------
+# Home Page
+# ---------------------------------------------------------------------------------------------------------------------------
+  home_slogan1: "TODO: Fast, low cost and trustworthy way to buy and sell bitcoins in Taiwan!"
+  home_slogan2: "TODO: We help people of Taiwan buy and sell Bitcoins Safe.  Secure.  Convenient. "
+  home_facebook: "bibicoin.com.tw 的粉絲網頁 "
+  home_buystep1: "TODO: Get a Bitcoin Wallet "
+  home_buystep1a: "TODO: To begin, you will need a Bitcoin “wallet” to receive and store your Bitcoins. "
+  home_buystep2: "TODO: Place Your Order"
+  home_buystep2a: "TODO: Fill out a “Buy Bitcoins” form to submit an order.  You will need to enter your wallet address to receive your Bitcoins and your email address for us to send you an email confirmation. "
+  home_buystep3: "TODO: Make a deposit/transfer "
+  home_buystep3a: "TODO: Make a deposit at Bibicoins’ local Taiwan bank account. Deposits can be made through ATM or your local Taiwan Bank."
+  home_buystep4: "TODO: Make a deposit/transfer "
+  home_buystep4a: "TODO: Once we have confirmed your deposit, your Bitcoins will arrive in the wallet address. "
+  home_sellstep1: "TODO: Place a Sell Request "
+  home_sellstep1a: "TODO: Fill out a quick “Sell Bitcoins” form to submit an order. "
+  home_sellstep2: "Confirm Your Order "
+  home_sellstep2a: "TODO: Bibicoins will provide you with a unique Bitcoin wallet address which will allow you to transfer your Bitcoins to us. "
+  home_sellstep3: "TODO: Transfer Your Bitcoins "
+  home_sellstep3a: "TODO: Transfer the amount in Bitcoins to the unique wallet address provided in your order confirmation. "
+  home_sellstep4: "TODO: Make a deposit/transfer "
+  home_sellstep4a: "TODO: Once we have confirmed your deposit. your Bitcoins will arrive in the wallet address"
+  home_aboutbibicoin: "TODO: About Bibicoin"
+  home_aboutbibicoin_text: "TODO: Bibicoins Taiwan specializes in delivering Bitcoins to Taiwan customers.  We achieve this by dealing only with New Taiwan Dollars and working with local Taiwan bank accounts.  Bibicoins Taiwan is an Taiwan incorporated company owned and operated by Taiwanese.  Our goal is to establish ourselves as the most trustworthy place for people in Taiwan to purchase and sell bitcoins and other crypto-currencies and help develop bitcoins as a long-term payment tool for the people of Taiwan.  (“Why Choose Bibicoins?)"
+  home_newsfeed: "TODO: News Feed"
+  home_btcnetworkdata: "TODO: Bitcoin Network Data"
+  home_contactus_text: "TODO: For any questions or concerns regarding our site or any other questions, please kindly email or call us at the below email and number.  Looking forward to speaking to you soon!"
+  home_learn: "TODO: Learn About Bitcoins:"
+  home_about: "TODO: About:"
+# ---------------------------------------------------------------------------------------------------------------------------
+# Conversion
+# ---------------------------------------------------------------------------------------------------------------------------
+  conversion_buy: "購買轉換權"
+  conversion_sell: "賣出轉換權"
+  conversion_convert: "轉換為"
+  conversion_ntdamt: "新台幣金額"
+  conversion_btcamt: "比特幣金額"
+# ---------------------------------------------------------------------------------------------------------------------------
+# Buy / Sell Page
+# ---------------------------------------------------------------------------------------------------------------------------
+  buy_newrequest: "新的購買訂單"
+  buy_newrequest_b1: "詳填表格以便提出新的訂單。在下一個步驟，您可以檢閱並確認這些細節。"
+  buy_newrequest_b2: "目前，每個客戶每天購買訂單的最大數量為新台幣30萬元。每個客戶每天購買訂單的最小數量為新台幣3000元。如果對每日限額仍有其他的疑問，請直接與我們聯繫."
+  buy_reviewconfirm: "Review & Confirm"
+  buy_reviewconfirm_b1: "您的訂單尚未開出  請檢閱左方的訊息並點選 '確認並開出訂單', 以便繼續處理"
+  buy_reviewconfirm_b2: "請注意：由比特幣的匯率會波動，如果在下單的8小時後才將錢存入，我們將保留以現有匯率來處理訂單的權利。我們將盡可能處理所有的訂單。但我們保 留因任何原因而不處理訂單的權力，在這種情況下，我們會將款項退還給您."
+  buy_confirmation: "查閱您的電子郵件信箱"
+  buy_confirmation_b1: "電子郵件確認函已送到您的電子郵件信箱，內含有關下個步驟的詳細指示。若您未收到這封電子郵件，請檢查您的垃圾郵件夾."
+  buy_confirmation_b2: "您必須在8小時內，將新台幣7500元存入台新銀行帳號 1234567"
+  buy_confirmation_b3: "在存款時， 請記得填入訂單號碼(65220)已做為參考"
 # ---------------------------------------------------------------------------------------------------------------------------
 # About Us
 # ---------------------------------------------------------------------------------------------------------------------------
@@ -259,6 +324,16 @@ zh:
   why_h3: "向我們買賣比特幣不需要設立帳戶或做任何存款。一旦你向我們買了比特幣，比特幣會直接匯給您，也就是說，您直接持有比特幣。"	
   why_h4: "我們只用新台幣和台灣當地銀行交易。我們同時也有雇用當地的員工。以上做法，可以確保您可以比用其他方式更快得到比特幣及現金。"	
   why_h5: "Bibicoins 公司非常重視安全性。我們有幾道安全措施，比如專用的伺服器，100%離線的儲存錢包，以及安全的紙本備份。"	
+# ---------------------------------------------------------------------------------------------------------------------------
+# Bitcoin Vs Traditional Currencies
+# ---------------------------------------------------------------------------------------------------------------------------
+  traditional_b1: "TODO: In many ways Bitcoin is similar to traditional currencies: it is recognized and has a value, it can be used to buy things, and its value can change according to market variables. Increased demand for Bitcoin over the last few years has seen an increase in its circulation and its value.
+Unlike most traditional currencies, however, Bitcoin is not bound to an institution or country. It is in a sense, international, and it is not subject to authorities like banks or governments that are typically associated with other currencies."	
+  traditional_b2: "TODO:Despite being manufactured around complex technology, Bitcoin actually springs from a simple concept: that people all over the world, from any class or country, can exchange products, services and credits freely, instantly and easily – without the need for intermediary bodies like banks, merchant accounts or payment gateways. In a way it is a throwback to a purer form of trade, and it is for this reason that the potential and future of digital currencies has generated a lot of interest and investment. In today’s free, global and digital market, Bitcoin is standing up as a robust and recognized form of payment."	
+  traditional_b3: "TODO:Bitcoin is based on some fundamental characteristics of currency (or any thing of worth for that matter). In fact, Bitcoin follows the characteristics of a common pillar of today’s traditional currency market: gold. Like gold, Bitcoin is bound by some real world principles. Firstly, it needs to be reasonably difficult to produce (or find). Secondly, it needs to have a limited supply. And thirdly, it needs to be recognized."	
+  traditional_b4: "TODO:Like gold, Bitcoin is governed by principles that can’t now be changed. Bitcoin technology can only ever produce a certain amount of Bitcoins. The more Bitcoins that are produced, the harder it is to create new ones. In this way, the value of Bitcoins is being regulated. Because of its parallels with gold, the production of Bitcoins is referred to as “mining”. Computers can be purchased that evaluate the complex Bitcoin algorithm and produce Bitcoins. The speed at which a Bitcoin computer can produce Bitcoins is mostly determined by its processing speed. A computer designed to produce Bitcoins is known as a “Bitcoin miner”."	
+  traditional_b5: "TODO:Historically, humanity has used a variety of methods to trade other than just traditional money. Payment has often been made in produce or in services, and in some societies people have less need for money. Currencies do, however, fix some problems associated with trading in products and services, but even traditional currencies have some disadvantages. For one, trading with people internationally often involves the management of one or several third-parties, for example, a bank and a credit card company. The provision of these facilities has created opportunity, but it is also making a simple exchange more complicated and regulated than it needs to be, especially given today’s connectivity."	
+  traditional_b6: "TODO:Bitcoin’s purpose is to get around the disadvantages of trading in traditional currencies. It provides an instantaneous, free and reliable way of exchanging goods and services with people over the world. This, combined with the principles over which it has been built, has seen Bitcoin become one of the most exciting currency advancements over recent years and similar systems may evolve in conjunction with Bitcoin to facility easy, free, and fast exchange of goods and services."	
 # ---------------------------------------------------------------------------------------------------------------------------
 # Legal Information
 # ---------------------------------------------------------------------------------------------------------------------------

@@ -1,17 +1,27 @@
 <%= render 'layouts/header', :locals => {:page_header => t('header_howtosell')} %>
 
 <div id="before-content-area">
-	<h4><%=t :howtosell_h1 %></h4>
-	<p><%=t :howtosell_b1 %></p>
-	<p><%=t :howtosell_h2 %></p>
-	<p><%=t :howtosell_b2 %></p>
-	<p><%=t :howtosell_h3 %></p>
-	<p><%=t :howtosell_b3 %></p>
-	<p><%=t :howtosell_h4 %></p>
-	<p><%=t :howtosell_b4 %></p>
-	<p><%=t :howtosell_h5 %></p>
-	<p><%=t :howtosell_b5 %></p>
-	<p><%=t :howtosell_b5_1 %></p>
-	<h4><%=t :howtosell_h6 %></h4>
-	<p><%=t :howtosell_b6 %></p>
+	<div class="row">
+	  <div class="small-9 columns">
+			<h4><%=t :howtosell_h1 %></h4>
+			<p><%=t :howtosell_b1 %></p>
+			<p><%=t :howtosell_h2 %></p>
+			<p><%=t :howtosell_b2 %></p>
+			<p><%=t :howtosell_h3 %></p>
+			<p><%=t :howtosell_b3 %></p>
+			<p><%=t :howtosell_h4 %></p>
+			<p><%=t :howtosell_b4 %></p>
+			<p><%=t :howtosell_h5 %></p>
+			<p><%=t :howtosell_b5 %></p>
+			<p><%=t :howtosell_b5_1 %></p>
+			<h4><%=t :howtosell_h6 %></h4>
+			<p><%=t :howtosell_b6 %></p>
+	  </div> 	  
+	  <div class="small-3 columns">
+		<h4>Learn About Bitcoin</h4>
+		<ul class="bibicoin-sidebar">
+			<%= render 'layouts/learn_menu'%>
+		</ul>		  
+	  </div> 	  
+	</div>	
 </div>

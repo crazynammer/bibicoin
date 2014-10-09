@@ -1,36 +1,46 @@
 <%= render 'layouts/header', :locals => {:page_header => t('header_about')} %>
 
-<div id="before-content-area">	
-	<h4 class="subheader"><%=t :about_h1 %></h4>
-	<p><%=t :about_b1 %></p>
-	<h4 class="subheader"><%=t :about_h2 %></h4>
-	<p><%=t :about_b2 %></p>
-	<h4 class="subheader"><%=t :about_h3 %></h4>
-	<p><%=t :about_b3 %></p>
-	<p><%=t :about_b4 %></p>
-	<p><%=t :about_h5 %></p>
+<div id="before-content-area">
+	<div class="row">
+	  <div class="small-9 columns">
+	  	<h4 class="subheader"><%=t :about_h1 %></h4>
+	  	<p><%=t :about_b1 %></p>
+	  	<h4 class="subheader"><%=t :about_h2 %></h4>
+	  	<p><%=t :about_b2 %></p>
+	  	<h4 class="subheader"><%=t :about_h3 %></h4>
+	  	<p><%=t :about_b3 %></p>
+	  	<p><%=t :about_b4 %></p>
+	  	<p><%=t :about_h5 %></p>
 
-	<div id="before-content-area">
-		<div class="row">
-		  	<div class="small-2 columns"><%= image_tag("cartoonhead1.png", :alt => "P. Chen") %></div>
-		  	<div class="small-10 columns">
-			 <%=t :about_h6 %><br><br>
-			 <%=t :about_b6 %><br><br>
-			</div>
-		</div>
-		<div class="row">
-		  	<div class="small-2 columns"><%= image_tag("cartoonhead2.png", :alt => "V. Ha") %></div>
-		  	<div class="small-10 columns">
-			 <%=t :about_h7 %><br><br>
-			 <%=t :about_b7 %><br><br>
-			</div>
-		</div>
-		<div class="row">
-		  	<div class="small-2 columns"><%= image_tag("cartoonhead3.png", :alt => "W. Leung") %></div>
-		  	<div class="small-10 columns">
-			 <%=t :about_h8 %><br><br>
-			 <%=t :about_b8 %><br><br>
-			</div>
-		</div>	
-	</div>
+	  	<div id="before-content-area">
+	  		<div class="row">
+	  		  	<div class="small-2 columns"><%= image_tag("cartoonhead1.png", :alt => "P. Chen") %></div>
+	  		  	<div class="small-10 columns">
+	  			 <%=t :about_h6 %><br><br>
+	  			 <%=t :about_b6 %><br><br>
+	  			</div>
+	  		</div>
+	  		<div class="row">
+	  		  	<div class="small-2 columns"><%= image_tag("cartoonhead2.png", :alt => "V. Ha") %></div>
+	  		  	<div class="small-10 columns">
+	  			 <%=t :about_h7 %><br><br>
+	  			 <%=t :about_b7 %><br><br>
+	  			</div>
+	  		</div>
+	  		<div class="row">
+	  		  	<div class="small-2 columns"><%= image_tag("cartoonhead3.png", :alt => "W. Leung") %></div>
+	  		  	<div class="small-10 columns">
+	  			 <%=t :about_h8 %><br><br>
+	  			 <%=t :about_b8 %><br><br>
+	  			</div>
+	  		</div>	
+	  	</div>
+	  </div> 	  
+	  <div class="small-3 columns">
+		<h4><%=t :links_about %></h4>
+		<ul class="bibicoin-sidebar">
+			<%= render 'layouts/about_menu'%>
+		</ul>		  
+	  </div>
+	</div>			
 </div>

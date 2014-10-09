@@ -1,14 +1,19 @@
-<div class="bibicoin-header-bg-orange">
-	<div id="before-content-area">
+<div>
+	<div id="before-content-area" class="bibicoin-header-bg-orange">
 		<h1><%=t :header_buy %></h1>
 	</div>
+
+	<div class="row">
+
+	</div>	
 	
 	<div class ="row">
-	
+
+	  <div class="small-8 columns">
 	<% if @transaction.transaction_type_id == 0 %>
-		Buy Bitcoin
+		<h4>Buy Bitcoin</h4>
 	<% elsif @transaction.transaction_type_id == 1 %>
-		Sell Bitcoin
+		<h4>Sell Bitcoin</h4>
 	<% end %>
 	
 	
@@ -73,12 +78,16 @@
 			<%= f.hidden_field :bibicoinBTCtoTWD, :value => @transaction.bibicoinBTCtoTWD %>				
 		
 			<!-- make the total come up -->
-			<%= f.submit "Confirm", :onload => "calculateTotal()" %>
+			<%= f.submit "Confirm", :onload => "calculateTotal()" %><br><br>
 			
 		<% end %>
-		
-		
-	
+
+	  </div> 	  
+	  <div class="small-4 columns">
+		<h4><%=t :buy_newrequest %></h4><br><br>
+		<p><%=t :buy_newrequest_b1%></p>
+		<p><%=t :buy_newrequest_b2%></p>		
+	  </div> 	  	
 	</div>
 	
 <script type="text/javascript">
