@@ -1,93 +1,202 @@
 <div>
-	<div id="before-content-area" class="bibicoin-header-bg-orange">
-		<h1><%=t :header_buy %></h1>
-	</div>
+	
+	<% if @transaction.transaction_type_id == 0 %>
+		<div id="before-content-area" class="bibicoin-header-bg-orange">
+			<h1><%=t :header_buy %></h1>
+		</div>
+	<% elsif @transaction.transaction_type_id == 1 %>
+		<div id="before-content-area" class="bibicoin-header-bg-orange">
+			<h1><%=t :header_sell %></h1>
+		</div>
+	<% end %>
 
 	<div class="row">
+		<br><br>
+	</div>		
 
-	</div>	
+	<% if @transaction.transaction_type_id == 0 %>
+		<div class="row">
+		  <div class="small-3 columns"><a href="#" class="[tiny small large] button"><b><%=t :buy_step1 %></b> <%=t :buy_step1_text %></a></div>
+		  <div class="small-3 columns"><a href="#" class="[tiny small large] button disabled"><b><%=t :buy_step2 %></b> <%=t :buy_step2_text %></a></div>
+		  <div class="small-3 columns"><a href="#" class="[tiny small large] button disabled"><b><%=t :buy_step3 %></b> <%=t :buy_step3_text %></a></div>
+		  <div class="small-3 columns"><a href="#" class="[tiny small large] button disabled"><b><%=t :buy_step4 %></b> <%=t :buy_step4_text %></a></div>	  
+		</div>	
+	<% elsif @transaction.transaction_type_id == 1 %>
+		<div class="row">
+		  <div class="small-3 columns"><a href="#" class="[tiny small large] button"><b><%=t :sell_step1 %></b> <%=t :sell_step2_text %></a></div>
+		  <div class="small-3 columns"><a href="#" class="[tiny small large] button disabled"><b><%=t :sell_step2 %></b> <%=t :sell_step2_text %></a></div>
+		  <div class="small-3 columns"><a href="#" class="[tiny small large] button disabled"><b><%=t :sell_step3 %></b> <%=t :sell_step3_text %></a></div>
+		  <div class="small-3 columns"><a href="#" class="[tiny small large] button disabled"><b><%=t :sell_step4 %></b> <%=t :sell_step4_text %></a></div>	  
+		</div>
+	<% end %>
+	
+
 	
 	<div class ="row">
 
-	  <div class="small-8 columns">
+	  <div class="small-7 columns">
 	<% if @transaction.transaction_type_id == 0 %>
-		<h4>Buy Bitcoin</h4>
+		<h4><%=t :header_buy %></h4>
 	<% elsif @transaction.transaction_type_id == 1 %>
-		<h4>Sell Bitcoin</h4>
+		<h4><%=t :header_sell %></h4>
 	<% end %>
-	
-	
-	
+		
 		<%= form_for @transaction, :url => {:action => "confirm"} do |f| %>
 		
 		<!-- Shared -->
 		
 			<br />
-		
-			<%= f.label :walletID, "Wallet Address" %>
-			<%= f.text_field :walletID %>
-			
-			<%= f.label :name %>
-			<%= f.text_field :name %>
-			
-			<%= f.label :email, "Email Address" %>
-			<%= f.text_field :email %>
-			
-			<%= f.label :DoB, "Date of Birth" %>
-			<%= f.date_field:DoB %>
-				
+			<table>		
 			<!-- Buy: allow inputs form both sides and change values as needed -->	
 			<% if @transaction.transaction_type_id == 0 %>
-		
-				<%= f.label :TWDAmt, "NTD Amount to Buy" %>
-				<%= f.text_field :TWDAmt, :oninput => "updateBTCAmt()", :onkeyup => "calculateTotal()" %>
 			
+					<tr>
+						<td></td>
+						<td><%= f.label :TWDAmt, t('form_ntdamt') %></td>
+						<td></td>
+						<td><%= f.label :BTCAmt, t('form_btcamt') %></td>
+					</tr>
+					<tr>
+						<td><%=t :form_purchaseamt %></td>
 				<!-- minimum value is 0.25 -->
-				<%= f.label :BTCAmt, "Bitcoin Amount to Buy" %>
-				<%= f.text_field :BTCAmt, :oninput => "updateNTDAmt()", :onkeyup => "calculateTotal()" %>
-						
+						<td>
+							<%= f.text_field :TWDAmt, :maxlength=>"10", :oninput => "updateBTCAmt()", :onkeyup => "calculateTotal()" %></td>
+						<td><%=t :form_to%></td>
+						<td><%= f.text_field :BTCAmt, :oninput => "updateNTDAmt()", :onkeyup => "calculateTotal()" %></td>
+					</tr>
+
+				<tr>
+					<td><%= f.label :walletID, t('form_wallet') %><a href=""><%=t :buy_whatiswallet %></a></td>
+					<td colspan='3'><%= f.text_field :walletID, :maxlength=>"75" %></td>
+				</tr>
+				<tr>
+					<td><%= f.label :email, t('form_email') %></td>
+					<td colspan='3'><%= f.text_field :email, :maxlength=>"75" %></td>
+				</tr>
+				<tr>
+					<td><%= f.label :name %></td>
+					<td colspan='3'><%= f.text_field :name, :maxlength=>"50" %></td>
+				</tr>
+				<tr>
+					<td><%= f.label :DoB, t('form_birthdate') %></td>
+					<td><%= f.date_field:DoB, :maxlength=>"10" %></td>
+					<td colspan='2'></td>
+				</tr>
+				<tr>
+					<td><%=t :form_payment %><br><a href=""><%=t :buy_paymentmethod %></a></td>
+					<td colspan='3'><%=t :form_bankinfo %></td>
+				</tr>
+				<tr>
+					<td><%= f.label :commAmt, "Commission Amount" %></td>
+					<td colspan='3'><%= f.text_field :commAmt, :readonly => true %></td>
+				</tr>
+				<tr>
+					<td><%= f.label :totalAmt,  "Total Amount" %> </td>
+					<td colspan='3'><p id = "totalAmt">0</p></td>
+				</tr>
+		<!-- Shared -->
+				<tr>
+					<td><%= f.label :bankName, t('form_bankname') %> </td>
+					<td colspan='3'><%= f.text_field :bankName %></td>
+				</tr>
+				<tr>
+					<td><%= f.label :bankAcctNumber, t('form_banknumber') %> </td>
+					<td colspan='3'><%= f.text_field :bankAcctNumber %></td>
+				</tr>	
+			
 			<!-- Sell -->
 			<% elsif @transaction.transaction_type_id == 1 %>
-			
-				<%= f.label :TWDAmt, "NTD Amount to Sell" %>
-				<%= f.text_field :TWDAmt, :oninput => "updateBTCAmt()", :onkeyup => "calculateTotal()" %>
-				
+
+
+					<tr>
+						<td></td>
+						<td><%= f.label :BTCAmt, t('form_btcamt') %></td>
+						<td></td>
+						<td><%= f.label :TWDAmt, t('form_ntdamt') %></td>
+					</tr>
+					<tr>
+						<td><%=t :form_sellamt %></td>
 				<!-- minimum value is 0.25 -->
-				<%= f.label :BTCAmt, "Bitcoin Amount to Sell" %>
-				<%= f.text_field :BTCAmt, :oninput => "updateNTDAmt()", :onkeyup => "calculateTotal()" %>
-				
-								
-			<% end %>
-			
-			
-			<%= f.label :commAmt, "Commission Amount" %>
-			<%= f.text_field :commAmt, :readonly => true %>
-		
-			<%= f.label :totalAmt,  "Total Amount" %> 
-			<p id = "totalAmt">0</p>
+						<td><%= f.text_field :BTCAmt, :oninput => "updateNTDAmt()", :onkeyup => "calculateTotal()" %></td>
+						<td><%=t :form_to%></td>
+						<td><%= f.text_field :TWDAmt, :oninput => "updateBTCAmt()", :onkeyup => "calculateTotal()" %></td>
+					</tr>
 					
-		<!-- Shared -->
-		
-			<%= f.label :bankName, "Bank Name" %>
-			<%= f.text_field :bankName %>
-			
-			<%= f.label :bankAcctNumber, "Bank Account Number" %>
-			<%= f.text_field :bankAcctNumber %>
-			
+				<tr>
+					<td><%= f.label :walletID, t('form_wallet') %><a href=""><%=t :buy_whatiswallet %></a><br><%=t :sell_returnbitcoin%></td>
+					<td colspan='3'><%= f.text_field :walletID, :maxlength=>"75" %></td>
+				</tr>
+				<tr>
+					<td><%= f.label :email, t('form_email') %></td>
+					<td colspan='3'><%= f.text_field :email, :maxlength=>"75" %></td>
+				</tr>
+	
+				<tr>
+					<td cospan='4'><%=t :sell_bankdepositdetails%><br><a href="#"><%=t :sell_howtosell%></a></td>
+				</tr>			
+				<tr>
+					<td><%= f.label :bankName, t('form_bankname') %> </td>
+					<td colspan='3'><%= f.text_field :bankName %></td>
+				</tr>		
+				<!-- TODO: BUG, Can't get the "Account Holder Name" Working -->		
+				<tr>
+					<td><%= f.label :name %></td>
+					<td colspan='3'><%= f.text_field :name, :maxlength=>"50" %></td>
+				</tr>
+				<tr>
+					<td><%= f.label :bankAcctNumber, t('form_banknumber') %> </td>
+					<td colspan='3'><%= f.text_field :bankAcctNumber %></td>
+				</tr>	
+				<tr>
+					<td><%= f.label :DoB, t('form_birthdate') %></td>
+					<td><%= f.date_field:DoB, :maxlength=>"10" %></td>
+					<td colspan='2'></td>
+				</tr>
+				<tr>
+					<td><%= f.label :commAmt, "Commission Amount" %></td>
+					<td colspan='3'><%= f.text_field :commAmt, :readonly => true %></td>
+				</tr>
+				<tr>
+					<td><%= f.label :totalAmt,  "Total Amount" %> </td>
+					<td colspan='3'><p id = "totalAmt">0</p></td>
+				</tr>
+												
+			<% end %>
+							
 			<%= f.hidden_field :transaction_type_id, :value => @transaction.transaction_type_id %>
 			<%= f.hidden_field :bibicoinBTCtoTWD, :value => @transaction.bibicoinBTCtoTWD %>				
-		
+				<tr>
+					<td colspan='4'><%= f.check_box :bankAcctNumber %>&nbsp;&nbsp;<%=t :form_terms %></td>
+				</tr>							
+	
+
+			</table>
+
+
+		<!-- TODO: Temporary placeholder for check_box -->
+			
+
 			<!-- make the total come up -->
-			<%= f.submit "Confirm", :onload => "calculateTotal()" %><br><br>
+			<%= f.submit t('form_next'), :onload => "calculateTotal()" %><br><br>
 			
 		<% end %>
 
-	  </div> 	  
-	  <div class="small-4 columns">
+	  </div> 
+
+	<% if @transaction.transaction_type_id == 0 %>
+	  <div class="small-5 columns">
 		<h4><%=t :buy_newrequest %></h4><br><br>
 		<p><%=t :buy_newrequest_b1%></p>
 		<p><%=t :buy_newrequest_b2%></p>		
-	  </div> 	  	
+	  </div> 
+	<% elsif @transaction.transaction_type_id == 1 %>
+	  <div class="small-5 columns">
+		<h4><%=t :sell_newrequest %></h4><br><br>
+		<p><%=t :sell_newrequest_b1%></p>
+		<p><%=t :sell_newrequest_b2%></p>		
+	  </div> 
+	<% end %>	  	  
+	  	
 	</div>
 	
 <script type="text/javascript">

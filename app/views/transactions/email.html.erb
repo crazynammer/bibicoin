@@ -8,7 +8,7 @@
 			<h1><%=t :header_sell %></h1>
 		</div>
 	<% end %>
-		
+	
 	<div class="row">
 		<br><br>
 	</div>		
@@ -17,37 +17,35 @@
 		<div class="row">
 		  <div class="small-3 columns"><a href="#" class="[tiny small large] button disabled"><b><%=t :buy_step1 %></b> <%=t :buy_step1_text %></a></div>
 		  <div class="small-3 columns"><a href="#" class="[tiny small large] button disabled"><b><%=t :buy_step2 %></b> <%=t :buy_step2_text %></a></div>
-		  <div class="small-3 columns"><a href="#" class="[tiny small large] button"><b><%=t :buy_step3 %></b> <%=t :buy_step3_text %></a></div>
-		  <div class="small-3 columns"><a href="#" class="[tiny small large] button disabled"><b><%=t :buy_step4 %></b> <%=t :buy_step4_text %></a></div>	  
+		  <div class="small-3 columns"><a href="#" class="[tiny small large] button disabled"><b><%=t :buy_step3 %></b> <%=t :buy_step3_text %></a></div>
+		  <div class="small-3 columns"><a href="#" class="[tiny small large] button"><b><%=t :buy_step4 %></b> <%=t :buy_step4_text %></a></div>	  
 		</div>	
 	<% elsif @transaction.transaction_type_id == 1 %>
 		<div class="row">
 		  <div class="small-3 columns"><a href="#" class="[tiny small large] button disabled"><b><%=t :sell_step1 %></b> <%=t :sell_step2_text %></a></div>
 		  <div class="small-3 columns"><a href="#" class="[tiny small large] button disabled"><b><%=t :sell_step2 %></b> <%=t :sell_step2_text %></a></div>
-		  <div class="small-3 columns"><a href="#" class="[tiny small large] button"><b><%=t :sell_step3 %></b> <%=t :sell_step3_text %></a></div>
-		  <div class="small-3 columns"><a href="#" class="[tiny small large] button disabled"><b><%=t :sell_step4 %></b> <%=t :sell_step4_text %></a></div>	  
+		  <div class="small-3 columns"><a href="#" class="[tiny small large] button disabled"><b><%=t :sell_step3 %></b> <%=t :sell_step3_text %></a></div>
+		  <div class="small-3 columns"><a href="#" class="[tiny small large] button"><b><%=t :sell_step4 %></b> <%=t :sell_step4_text %></a></div>	  
 		</div>
 	<% end %>
-
-
+	
+	
+			
 	<div class ="row">
 		<div class="small-6 columns">	
 	
 	<% if @transaction.transaction_type_id == 0 %>
-		<h4><%=t :header_buy_sell_complete %></h4>
+		<p><%=t :buy_email_b3 %></p>
 	<% elsif @transaction.transaction_type_id == 1 %>
-		<h4><%=t :header_buy_sell_complete %></h4>
+		<p><%=t :sell_email_b3 %></p>
 	<% end %>
+	
 	<br />
 
-		<table>
-
 	<% if @transaction.transaction_type_id == 0 %>
+
+		<table>
 			
-			<tr>
-				<td><%=t :form_orderid %></td>
-				<td><b>TODO: Insert ORDER ID here.</b></td>
-			<tr>
 			<tr>
 				<td><%=t :form_buyrate %></td>
 				<td>TODO: Calculate the Buy Rate</td>
@@ -61,33 +59,34 @@
 				<td><%= @transaction.BTCAmt %> Bitcoins</td>
 			<tr>
 			<tr>
-				<td><%=t :form_email %></td>
-				<td><%= @transaction.email %></td>
-			<tr>
-			<tr>
-				<td><%=t :form_name %></td>
-				<td><%= @transaction.name %></td>
-			<tr>
-			<tr>
 				<td><%=t :form_wallet %></td>
 				<td><%= @transaction.walletID %></td>
 			<tr>
+      </table>
+		
+		<p><%=t :buy_email_b4 %></p>
+		<table>
 			<tr>
 				<td><%=t :form_makedepositto %></td>
 				<td><%=t :form_bankaccount %></td>
 			<tr>
 			<tr>
-				<td><%=t :form_buyrequestsubmitted %></td>
-				<td>TODO: Insert DATE TIME STAMP here.</td>
-			<tr>
-	<% elsif @transaction.transaction_type_id == 1 %>
-			<tr>
 				<td><%=t :form_orderid %></td>
 				<td><b>TODO: Insert ORDER ID here.</b></td>
 			<tr>
+		</table>
+		
+		<p><%=t :buy_email_b5 %></p>
+		<p><%=t :buy_email_b6 %></p>				
+
+	</div>	
+
+	<% elsif @transaction.transaction_type_id == 1 %>
+		<table>
+			
 			<tr>
-				<td><%=t :form_buyrate %></td>
-				<td>TODO: Calculate the Sell Rate</td>
+				<td><%=t :form_sellrate %></td>
+				<td>TODO: Calculate the Buy Rate</td>
 			<tr>
 			<tr>
 				<td><%=t :form_sellamt %></td>
@@ -98,66 +97,52 @@
 				<td><%= @transaction.BTCAmt %> Bitcoins</td>
 			<tr>
 			<tr>
-				<td><%=t :form_email %></td>
-				<td><%= @transaction.email %></td>
-			<tr>
-			<tr>
 				<td><%=t :form_wallet %></td>
 				<td><%= @transaction.walletID %></td>
 			<tr>
 			<tr>
+				<td><%=t :form_bankname %></td>
+				<td><%= @transaction.bankName %></td>
+			<tr>				
+			<tr>
+				<td><%=t :form_name %></td>
+				<td><%= @transaction.name %></td>
+			<tr>				
+			<tr>
+				<td><%=t :form_banknumber %></td>
+				<td><%= @transaction.bankAcctNumber %></td>
+			<tr>				
+      </table>
+		
+		<p><%=t :sell_email_b4 %></p>
+		<table>
+			<tr>
 				<td><%=t :form_sellbibiwallet %></td>
-				<td><b>TODO: Insert Bibi Wallet Address here.</b></td>
+				<td><b>TODO: Insert Bibicoin's Wallet Address here.</b></td>
 			<tr>
-			<tr>
-				<td><%=t :form_sellbankdetails %></td>
-				<td><%= @transaction.bankName %> <%=t :form_sellaccountnumber %> <%= @transaction.bankAcctNumber %></td>
-			<tr>
+		</table>
+		
+		<p><%=t :sell_email_b5 %></p>
+		<p><%=t :sell_email_b6 %></p>				
 
-			<tr>
-				<td><%=t :form_sellrequestsubmitted %></td>
-				<td>TODO: Insert DATE TIME STAMP here.</td>
-			<tr>
-
+	</div>		
 	<% end %>
 	
-		</table>
-					
-			Commission Cost: <%= @transaction.commAmt %>
-			<br />
-			
-			Total Cost: <%= @transaction.TWDAmt + @transaction.commAmt %>
-			<br />
-								
-			Bank Name: <%= @transaction.bankName %>
-			<br />
-			
-			Bank Acct: <%= @transaction.bankAcctNumber %>
-			<br /><br>
-
-		<%= form_for @transaction do |f| %>
-
-			<%= f.button t('form_ok') %>
-		<%end%>
-		
-	</div>	
-
-
+	
 	<% if @transaction.transaction_type_id == 0 %>
 	  <div class="small-6 columns">
-		<h4><%=t :buy_confirmation %></h4><br><br>
-		<p><%=t :buy_confirmation_b1%></p>
-		<p><%=t :buy_confirmation_b2%></p>		
-		<p><%=t :buy_confirmation_b3%></p>	
+		<h4><%=t :buy_email %></h4><br>
+		<p><%=t :buy_email_b1%></p>
+		<p><%=t :buy_email_b2%></p>	
 	  </div> 
 	<% elsif @transaction.transaction_type_id == 1 %>
 	  <div class="small-6 columns">
-		<h4><%=t :sell_confirmation %></h4><br><br>
-		<p><%=t :sell_confirmation_b1%></p>
-		<p><%=t :sell_confirmation_b2%></p>		
+		<h4><%=t :sell_email %></h4><br>
+		<p><%=t :sell_email_b1%></p>
+		<p><%=t :sell_email_b2%></p>		
 	  </div> 
 	<% end %>	
- 
+
 	  </div> 	  	
 	</div>		
 	</div>

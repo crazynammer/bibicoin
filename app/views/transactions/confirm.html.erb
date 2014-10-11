@@ -1,68 +1,170 @@
 <div>
-	<div id="before-content-area" class="bibicoin-header-bg-orange">
-		<h1><%=t :header_buy %></h1>
-	</div>
+	<% if @transaction.transaction_type_id == 0 %>
+		<div id="before-content-area" class="bibicoin-header-bg-orange">
+			<h1><%=t :header_buy %></h1>
+		</div>
+	<% elsif @transaction.transaction_type_id == 1 %>
+		<div id="before-content-area" class="bibicoin-header-bg-orange">
+			<h1><%=t :header_sell %></h1>
+		</div>
+	<% end %>
+	
+	<div class="row">
+		<br><br>
+	</div>		
+
+	<% if @transaction.transaction_type_id == 0 %>
+		<div class="row">
+		  <div class="small-3 columns"><a href="#" class="[tiny small large] button disabled"><b><%=t :buy_step1 %></b> <%=t :buy_step1_text %></a></div>
+		  <div class="small-3 columns"><a href="#" class="[tiny small large] button"><b><%=t :buy_step2 %></b> <%=t :buy_step2_text %></a></div>
+		  <div class="small-3 columns"><a href="#" class="[tiny small large] button disabled"><b><%=t :buy_step3 %></b> <%=t :buy_step3_text %></a></div>
+		  <div class="small-3 columns"><a href="#" class="[tiny small large] button disabled"><b><%=t :buy_step4 %></b> <%=t :buy_step4_text %></a></div>	  
+		</div>	
+	<% elsif @transaction.transaction_type_id == 1 %>
+		<div class="row">
+		  <div class="small-3 columns"><a href="#" class="[tiny small large] button disabled"><b><%=t :sell_step1 %></b> <%=t :sell_step2_text %></a></div>
+		  <div class="small-3 columns"><a href="#" class="[tiny small large] button"><b><%=t :sell_step2 %></b> <%=t :sell_step2_text %></a></div>
+		  <div class="small-3 columns"><a href="#" class="[tiny small large] button disabled"><b><%=t :sell_step3 %></b> <%=t :sell_step3_text %></a></div>
+		  <div class="small-3 columns"><a href="#" class="[tiny small large] button disabled"><b><%=t :sell_step4 %></b> <%=t :sell_step4_text %></a></div>	  
+		</div>
+	<% end %>
 	
 	<div class ="row">
-	  <div class="small-8 columns">	
+	  <div class="small-7 columns">	
 	<% if @transaction.transaction_type_id == 0 %>
-		<h4>Confirm Buy</h4>
+		<h4><%=t :header_buy_sell_confirm %></h4>
 	<% elsif @transaction.transaction_type_id == 1 %>
-		<h4>Confirm Sell</h4>
+		<h4><%=t :header_buy_sell_confirm %></h4>
 	<% end %>
 	
 		<%= form_for @transaction do |f| %>
-		
-			<%= f.label :walletID, "Wallet Address" %>
-			<%= f.text_field :walletID, :value => @transaction.walletID, :readonly => true %>
+
+		<table>
 			
-			<%= f.label :name %>
-			<%= f.text_field :name, :value => @transaction.name, :readonly => true %>
-			
-			<%= f.label :email, "Email Address" %>
-			<%= f.text_field :email, :value => @transaction.email, :readonly => true %>
-			
-			<%= f.label :DoB, "Date of Birth" %>
-			<%= f.text_field :DoB, :value => @transaction.DoB, :readonly => true %>
-			
+	<% if @transaction.transaction_type_id == 0 %>
+				
 			<!-- Update to Whole number-->
-			<%= f.label :TWDAmt, "NTD Amount" %>
-			<%= f.text_field :TWDAmt, :value => @transaction.TWDAmt, :readonly => true %>
-			
-			<%= f.label :BTCAmt, "Bitcoin Amount" %>
-			<%= f.text_field :BTCAmt, :value => @transaction.BTCAmt, :readonly => true %>
-			
+			<tr>
+				<!--TODO: Need to calculate this Buy Rate Amount -->
+				<td><%= f.label :TWDAmt, t('form_buyrate') %></td>
+				<td><%= f.text_field :TWDAmt, :value => @transaction.TWDAmt, :readonly => true %></td>
+			<tr>
+			<tr>			
+				<td><%= f.label :TWDAmt, t('form_purchaseamt') %></td>
+				<td><%= f.text_field :TWDAmt, :value => @transaction.TWDAmt, :readonly => true %></td>
+			</tr>
+			<tr>
+				<td><%= f.label :BTCAmt, t('form_btcamt') %></td>
+				<td><%= f.text_field :BTCAmt, :value => @transaction.BTCAmt, :readonly => true %></td>
+			</tr>
+<!-- Update to Whole number-->				
+			<tr>
+				<td><%= f.label :commAmt, "Commission Amount" %></td>
+				<td><%= f.text_field :commAmt, :value => @transaction.commAmt, :readonly => true %></td>
+			</tr>	
+			<tr>
+				<td><%= f.label :walletID, t('form_wallet') %></td>
+				<td><%= f.text_field :walletID, :value => @transaction.walletID, :readonly => true %></td>
+			</tr>					
+			<tr>
+				<td><%= f.label :email, t('form_email') %></td>
+				<td><%= f.text_field :email, :value => @transaction.email, :readonly => true %></td>
+			</tr>					
+			<tr>
+				<td><%= f.label :name, t('form_name') %></td>
+				<td><%= f.text_field :name, :value => @transaction.name, :readonly => true %></td>
+			</tr>					
+			<tr>
+				<td><%= f.label :DoB, t('form_birthdate') %></td>
+				<td><%= f.text_field :DoB, :value => @transaction.DoB, :readonly => true %></td>
+			</tr>					
+			<tr>
+				<td><%= f.label :totalAmt,  "Total Amount" %> </td>
+				<td><p id = "totalAmt"><%= @transaction.TWDAmt + @transaction.commAmt %></p></td>
+			</tr>					
+			<tr>
+				<td><%= f.label :bankName, t('form_bankname') %> </td>
+				<td><%= f.text_field :bankName, :value => @transaction.bankName, :readonly => true %></td>
+			</tr>					
+			<tr>
+				<td><%= f.label :bankAcctNumber, t('form_banknumber') %></td>
+				<td><%= f.text_field :bankAcctNumber, :value => @transaction.bankAcctNumber, :readonly => true %></td>
+			</tr>					
+
+	<% elsif @transaction.transaction_type_id == 1 %>
 			<!-- Update to Whole number-->
-			<%= f.label :commAmt, "Commission Amount" %>
-			<%= f.text_field :commAmt, :value => @transaction.commAmt, :readonly => true %>
-		
-		
-			Total Amount 
-			<br />
-			<!-- Update to Whole number-->
-			<p id = "totalAmt"><%= @transaction.TWDAmt + @transaction.commAmt %></p>
-								
-			<%= f.label :bankName, "Bank Name" %>
-			<%= f.text_field :bankName, :value => @transaction.bankName, :readonly => true %>
-			
-			<%= f.label :bankAcctNumber, "Bank Account Number" %>
-			<%= f.text_field :bankAcctNumber, :value => @transaction.bankAcctNumber, :readonly => true %>
-			
+			<tr>
+				<!--TODO: Need to calculate this Buy Rate Amount -->
+				<td><%= f.label :TWDAmt, t('form_sellrate') %></td>
+				<td><%= f.text_field :TWDAmt, :value => @transaction.TWDAmt, :readonly => true %></td>
+			<tr>
+			<tr>			
+				<td><%= f.label :TWDAmt, t('form_sellamt') %></td>
+				<td><%= f.text_field :TWDAmt, :value => @transaction.TWDAmt, :readonly => true %></td>
+			</tr>
+			<tr>
+				<td><%= f.label :BTCAmt, t('form_btcamt') %></td>
+				<td><%= f.text_field :BTCAmt, :value => @transaction.BTCAmt, :readonly => true %></td>
+			</tr>
+			<tr>
+				<td><%= f.label :email, t('form_email') %></td>
+				<td><%= f.text_field :email, :value => @transaction.email, :readonly => true %></td>
+			</tr>					
+			<tr>
+				<td><%= f.label :walletID, t('form_wallet') %></td>
+				<td><%= f.text_field :walletID, :value => @transaction.walletID, :readonly => true %></td>
+			</tr>					
+			<tr>
+				<td colspan='2'><%=t :form_sellbibiwallet %></td>
+			</tr>					
+			<tr>
+				<td><%=t :form_paymentmethod %></td>
+				<td><%=t :form_paymentmethod_text %></td>
+			</tr>					
+
+<!-- Update to Whole number-->				
+			<tr>
+				<td><%= f.label :commAmt, "Commission Amount" %></td>
+				<td><%= f.text_field :commAmt, :value => @transaction.commAmt, :readonly => true %></td>
+			</tr>	
+			<tr>
+				<td><%= f.label :totalAmt,  "Total Amount" %> </td>
+				<td><p id = "totalAmt"><%= @transaction.TWDAmt + @transaction.commAmt %></p></td>
+			</tr>					
+	<% end %>
+
+	<!-- TODO: Captcha Verification -->
+			<tr>
+				<td><%= f.label :bankAcctNumber, "The sum of 1 + 5 is:" %><%=t :form_verification %></td>
+				<td><%= f.text_field :bankAcctNumber, :value => @transaction.bankAcctNumber  %></td>
+			</tr>											
+
 			<%= f.hidden_field :transaction_type_id, :value => @transaction.transaction_type_id %>
 			<%= f.hidden_field :bibicoinBTCtoTWD, :value => @transaction.bibicoinBTCtoTWD %>
 			
-			<%= f.submit "Create" %>
-			
+		</table>							
+			<%= f.button t('form_back') %>
+			<%= f.submit t('form_confirmsubmit') %><br><br>
+				
 		<% end %>
-	  </div> 	  
-	  <div class="small-4 columns">
+	  </div> 
+
+	<% if @transaction.transaction_type_id == 0 %>
+	  <div class="small-5 columns">
 		<h4><%=t :buy_reviewconfirm %></h4><br><br>
 		<p><%=t :buy_reviewconfirm_b1%></p>
-		<p><%=t :buy_reviewconfirm_b2%></p>				
+		<p><%=t :buy_reviewconfirm_b2%></p>	
 	  </div> 
+	<% elsif @transaction.transaction_type_id == 1 %>
+	  <div class="small-5 columns">
+		<h4><%=t :sell_reviewconfirm %></h4><br><br>
+		<p><%=t :sell_reviewconfirm_b1%></p>
+		<p><%=t :sell_reviewconfirm_b2%></p>		
+	  </div> 
+	<% end %>	
+	  	  
 	  </div> 	  	
 	</div>		
-		
-	
+
 	</div>
 </div>
