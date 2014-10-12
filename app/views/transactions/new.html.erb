@@ -166,14 +166,12 @@
 			<%= f.hidden_field :transaction_type_id, :value => @transaction.transaction_type_id %>
 			<%= f.hidden_field :bibicoinBTCtoTWD, :value => @transaction.bibicoinBTCtoTWD %>				
 				<tr>
-					<td colspan='4'><%= f.check_box :bankAcctNumber %>&nbsp;&nbsp;<%=t :form_terms %></td>
+					<!-- TODO: need to change the model to include checkbox -->
+					<td colspan="4"><%= f.check_box :name %> <%=t :form_terms %></td>
 				</tr>							
 	
 
 			</table>
-
-
-		<!-- TODO: Temporary placeholder for check_box -->
 			
 
 			<!-- make the total come up -->

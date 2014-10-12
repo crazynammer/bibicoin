@@ -46,11 +46,11 @@
 			
 			<tr>
 				<td><%=t :form_orderid %></td>
-				<td><b>TODO: Insert ORDER ID here.</b></td>
+				<td><%= @transaction.id %></td>
 			<tr>
 			<tr>
 				<td><%=t :form_buyrate %></td>
-				<td>TODO: Calculate the Buy Rate</td>
+				<td><%= @transaction.TWDAmt/@transaction.BTCAmt %></td>
 			<tr>
 			<tr>
 				<td><%=t :form_purchaseamt %></td>
@@ -78,12 +78,12 @@
 			<tr>
 			<tr>
 				<td><%=t :form_buyrequestsubmitted %></td>
-				<td>TODO: Insert DATE TIME STAMP here.</td>
+				<td><%= @transaction.created_at %></td>
 			<tr>
 	<% elsif @transaction.transaction_type_id == 1 %>
 			<tr>
 				<td><%=t :form_orderid %></td>
-				<td><b>TODO: Insert ORDER ID here.</b></td>
+				<td><%= @transaction.id %></td>
 			<tr>
 			<tr>
 				<td><%=t :form_buyrate %></td>
@@ -116,7 +116,7 @@
 
 			<tr>
 				<td><%=t :form_sellrequestsubmitted %></td>
-				<td>TODO: Insert DATE TIME STAMP here.</td>
+				<td><%= @transaction.created_at %></td>
 			<tr>
 
 	<% end %>

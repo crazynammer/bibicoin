@@ -11,11 +11,11 @@
     <div class="panel">	
 		 <div class="small-12 columns">
 			 <%=t :ticker_trading %>
-			 <%=t :ticker_buy%><%= number_with_precision(@ratesHash["USD"], precision: 2) %>
-			 <%=t :ticker_sell %><%= number_with_precision(@twdRatesHash["USD"], precision: 2) %>
-			 <%=t :ticker_spot %><%= number_with_precision(@twdValue, precision: 2) %>
-			 <%=t :ticker_open %><%= number_with_precision(@twdValue, precision: 2) %>
-			 <%=t :ticker_change %><%= number_with_precision(@twdValue, precision: 2) %>
+			 <%=t :ticker_buy%><%= number_with_precision(@twdValue, precision: 2) %> NTD
+			 <%=t :ticker_sell %><%= number_with_precision(@twdValue, precision: 2) %> NTD
+			 <%=t :ticker_spot %><%= number_with_precision(1, precision: 2) %>
+			 <%=t :ticker_open %><%= number_with_precision(2, precision: 2) %>
+			 <%=t :ticker_change %><%= number_with_precision(3, precision: 2) %>
 		 </div>	 		 		 		 		 
     </div>
   </div> 
@@ -60,12 +60,12 @@
   </div> 
   <div class="medium-1 columns">
     <div class="row" data-equalizer="">&nbsp;</div>
-	 <div class="row" data-equalizer=""><input type="text" placeholder="30,000"/></div>
+	 <div class="row" data-equalizer=""><input type="text" id="NTDBuy" placeholder="30,000" oninput="updateBuyAmt()"/></div>
+	 <div class="row" data-equalizer=""><p id="BTCBuy"> </p></div>
 	 <div class="row" data-equalizer="">&nbsp;</div>
 	 <div class="row" data-equalizer="">&nbsp;</div>
-	 <div class="row" data-equalizer="">&nbsp;</div>
-	 <div class="row" data-equalizer=""><input type="text" placeholder="30,000"/></div>
-	 <div class="row" data-equalizer="">&nbsp;</div>
+	 <div class="row" data-equalizer=""><input type="text" id="NTDSell" placeholder="30,000" oninput="updateSellAmt()"/></div>
+	 <div class="row" data-equalizer=""><p id="BTCSell"> </p></div>
 	 <div class="row" data-equalizer="">&nbsp;</div>
   </div>      
 </div>
@@ -187,3 +187,22 @@
     <p>Panel 1 content goes here.</p>
   </div>
 </div>
+
+
+<script>
+function updateBuyAmt()
+{
+	var twdAmt = document.getElementById("NTDBuy").value;
+	var btcToTwd = "<%= @twdValue %>";
+	var btcAmt = +twdAmt / +btcToTwd;
+	document.getElementById("BTCBuy").innerHTML = parseFloat(+btcAmt).toFixed(5);
+}
+
+function updateSellAmt()
+{
+	var twdAmt = document.getElementById("NTDSell").value;
+	var btcToTwd = "<%= @twdValue %>";
+	var btcAmt = +twdAmt / +btcToTwd;
+	document.getElementById("BTCSell").innerHTML = parseFloat(+btcAmt).toFixed(5);
+}
+</script>
