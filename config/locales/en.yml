@@ -126,7 +126,7 @@ en:
 # ---------------------------------------------------------------------------------------------------------------------------
   conversion_buy: "Buy Conversion"
   conversion_sell: "Sell Conversion"
-  conversion_convert: "Convert to"
+  conversion_convert: "Conversion Rate"
   conversion_ntdamt: "NTD Amount"
   conversion_btcamt: "Bitcoin Amount"
 # ---------------------------------------------------------------------------------------------------------------------------
