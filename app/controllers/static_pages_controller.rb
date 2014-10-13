@@ -90,11 +90,54 @@ class StaticPagesController < ApplicationController
 	#statistic info
 	statsResponse = Net::HTTP.get_response(URI.parse($bitcoinStatsURI))
 	statsBody = statsResponse.body
-	@stats = JSON.parse(statsBody)
+	@statsRaw = JSON.parse(statsBody)
+	@statsHash = Hash.new
+	#populate the stats hash with legible values
+
+	#example of json raw
+=begin
+["market_price_usd", 397.11] 
+["hash_rate", 271437319.7991543] 
+["total_fees_btc", 1318454998] 
+["n_btc_mined", 390000000000] 
+["n_tx", 78460] 
+["n_blocks_mined", 156] 
+["minutes_between_blocks", 9.230769230769232] 
+["totalbc", 1337165000000000] 
+["n_blocks_total", 325211] 
+["trade_volume_usd", 10355479.510351954] 
+["estimated_transaction_volume_usd", 70166033.5973468] 
+["blocks_size", 46171311] 
+["miners_revenue_usd", 1553891.4300000002] 
+["nextretarget", 326591] 
+["difficulty", 35002482026.13323] 
+["trade_volume_btc", 26077.10586576] 
+["estimated_btc_sent", 17669168139142] 
+["miners_revenue_btc", 3913] 
+["days_destroyed", 0.0] 
+["total_btc_sent", 78438104183790] 
+["timestamp", 1413240242465] 
+=end
 	
 	
+	@statsHash.store("Blocked Mined", @statsRaw["n_blocks_mined"].round(2).to_s)
+	@statsHash.store("Time Between Blocks", @statsRaw["minutes_between_blocks"].round(2).to_s + " minutes")
+	@statsHash.store("Bitcoins Mined", (@statsRaw["n_btc_mined"] / 100000000).to_s + " BTC")
+	@statsHash.store("Total Transaction Fees", (@statsRaw["total_fees_btc"].to_f / 100000000).round(2).to_s + " BTC")
+	@statsHash.store("Number of Transactions", @statsRaw["n_tx"].to_s)
+	@statsHash.store("Total Output Volume", (@statsRaw["total_btc_sent"].to_f / 100000000).to_s + " BTC")
+	@statsHash.store("Estimated Transaction Volume", (@statsRaw["estimated_btc_sent"].to_f / 100000000).to_s + " BTC")
+	@statsHash.store("Estimated Transaction Volume (USD)", "$" + @statsRaw["estimated_transaction_volume_usd"].round(2).to_s)
+	
+	@statsHash.store("Market Price (USD)", "$" + @statsRaw["market_price_usd"].to_s)
+	@statsHash.store("Trade Volume (USD)", "$" + @statsRaw["trade_volume_usd"].round(2).to_s)
+	@statsHash.store("Trade Volume", @statsRaw["trade_volume_btc"].round(2).to_s + " BTC")
+	
+	@statsHash.store("Total Miners Revenue (USD)", "$" + @statsRaw["miners_revenue_usd"].round(2).to_s)
 		
-				
+	@statsHash.store("Difficulty", @statsRaw["difficulty"].round(2).to_s)
+	@statsHash.store("Hash Rate", @statsRaw["hash_rate"].to_s + " GH/s")
+	
   end
 
   def contact

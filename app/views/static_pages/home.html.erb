@@ -119,9 +119,8 @@
 		</div>
 		<div class="row">
 		  <div class="small-12 columns">
-			<% @stats.each do |stat| %>
-				<%= stat %>
-				<br />
+			<% @statsHash.each_pair do |key, value| %>
+				<div class="row"><%= key %> | <%= value %></div>
 			<% end %>
 		  </div>   
 		</div>
