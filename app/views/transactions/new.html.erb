@@ -16,17 +16,15 @@
 
 	<% if @transaction.transaction_type_id == 0 %>
 		<div class="row">
-		  <div class="small-3 columns"><a href="#" class="[tiny small large] button"><b><%=t :buy_step1 %></b> <%=t :buy_step1_text %></a></div>
-		  <div class="small-3 columns"><a href="#" class="[tiny small large] button disabled"><b><%=t :buy_step2 %></b> <%=t :buy_step2_text %></a></div>
-		  <div class="small-3 columns"><a href="#" class="[tiny small large] button disabled"><b><%=t :buy_step3 %></b> <%=t :buy_step3_text %></a></div>
-		  <div class="small-3 columns"><a href="#" class="[tiny small large] button disabled"><b><%=t :buy_step4 %></b> <%=t :buy_step4_text %></a></div>	  
+		  <div class="small-4 columns"><a href="#" class="[tiny small large] button"><b><%=t :buy_step1 %></b> <%=t :buy_step1_text %></a></div>
+		  <div class="small-4 columns"><a href="#" class="[tiny small large] button disabled"><b><%=t :buy_step2 %></b> <%=t :buy_step2_text %></a></div>
+		  <div class="small-4 columns"><a href="#" class="[tiny small large] button disabled"><b><%=t :buy_step3 %></b> <%=t :buy_step3_text %></a></div>  
 		</div>	
 	<% elsif @transaction.transaction_type_id == 1 %>
 		<div class="row">
-		  <div class="small-3 columns"><a href="#" class="[tiny small large] button"><b><%=t :sell_step1 %></b> <%=t :sell_step2_text %></a></div>
-		  <div class="small-3 columns"><a href="#" class="[tiny small large] button disabled"><b><%=t :sell_step2 %></b> <%=t :sell_step2_text %></a></div>
-		  <div class="small-3 columns"><a href="#" class="[tiny small large] button disabled"><b><%=t :sell_step3 %></b> <%=t :sell_step3_text %></a></div>
-		  <div class="small-3 columns"><a href="#" class="[tiny small large] button disabled"><b><%=t :sell_step4 %></b> <%=t :sell_step4_text %></a></div>	  
+		  <div class="small-4 columns"><a href="#" class="[tiny small large] button"><b><%=t :sell_step1 %></b> <%=t :sell_step2_text %></a></div>
+		  <div class="small-4 columns"><a href="#" class="[tiny small large] button disabled"><b><%=t :sell_step2 %></b> <%=t :sell_step2_text %></a></div>
+		  <div class="small-4 columns"><a href="#" class="[tiny small large] button disabled"><b><%=t :sell_step3 %></b> <%=t :sell_step3_text %></a></div> 
 		</div>
 	<% end %>
 	

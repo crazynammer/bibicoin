@@ -13,9 +13,6 @@
 			 <%=t :ticker_trading %>
 			 <%=t :ticker_buy%><%= number_with_precision(@twdValue, precision: 2) %> NTD
 			 <%=t :ticker_sell %><%= number_with_precision(@twdValue, precision: 2) %> NTD
-			 <%=t :ticker_spot %><%= number_with_precision(1, precision: 2) %>
-			 <%=t :ticker_open %><%= number_with_precision(2, precision: 2) %>
-			 <%=t :ticker_change %><%= number_with_precision(3, precision: 2) %>
 		 </div>	 		 		 		 		 
     </div>
   </div> 
@@ -58,10 +55,6 @@
 		    <td><input type="text" id="NTDBuy" placeholder="30,000" oninput="updateBuyAmt()"/></td>
 		 </tr>
 		 <tr>
-			 <td><%=t :conversion_convert %></td>
-			 <td></td>
-		 </tr>
-		 <tr>
 			 <td><%=t :conversion_btcamt %></td>
 			 <td><p id="BTCBuy"> </p></td>
 		 </tr>
@@ -71,10 +64,6 @@
 		 <tr>
 			 <td><%=t :conversion_btcamt %></td>
 		    <td><input type="text" id="NTDSell" placeholder="30,000" oninput="updateSellAmt()"/></td>
-		 </tr>
-		 <tr>
-			 <td><%=t :conversion_convert %></td>
-			 <td></td>
 		 </tr>
 		 <tr>
 			 <td><%=t :conversion_ntdamt %></td>
@@ -89,8 +78,8 @@
   <div class="small-12 columns"><h3><%= link_to(t('links_howtobuyfrombibicoin'), :howtobuy) %><h3></div>   
 </div>
 <div class="row">
-  	<div class="small-3 columns"><%= link_to image_tag("step1.png"), :howtobuy, anchor: "#1" %><p><b><%=t :home_buystep1 %></b><br><%=t :home_buystep1a %></p></div>
-  	<div class="small-3 columns"><%= link_to image_tag("step2.png"), :howtobuy %><p><b><%=t :home_buystep2 %></b><br><%=t :home_buystep2a %></p></div>
+  	<div class="small-3 columns"><%= link_to image_tag("step1.png"), :howtobuy, anchor: "#1" %><p><b><%=t :home_buystep1 %></b><br><%=t :home_buystep1a %><%= link_to(t('home_buystep1b'), :wallets) %><%=t :home_buystep1c %></p></div>
+  	<div class="small-3 columns"><%= link_to image_tag("step2.png"), :howtobuy %><p><b><%=t :home_buystep2 %></b><br><%=t :home_buystep2a %><%= link_to(t('home_buystep2b'), :buy) %><%=t :home_buystep2c %></p></div>
   	<div class="small-3 columns"><%= link_to image_tag("step3.png"), :howtobuy %><p><b><%=t :home_buystep3 %></b><br><%=t :home_buystep3a %></div>
 	<div class="small-3 columns"><%= link_to image_tag("step4.png"), :howtobuy %><p><b><%=t :home_buystep4 %></b><br><%=t :home_buystep4a %></p></div> 
 </div>
@@ -99,7 +88,7 @@
   <div class="small-12 columns"><h3><%= link_to(t('links_howtosellfrombibicoin'), :howtosell) %></h3></div>   
 </div>
 <div class="row">
-  	<div class="small-3 columns"><%= link_to image_tag("step1.png"), :howtosell, anchor: "#1" %><p><b><%=t :home_sellstep1 %><</b><br><%=t :home_sellstep1a %></p></div>
+  	<div class="small-3 columns"><%= link_to image_tag("step1.png"), :howtosell, anchor: "#1" %><p><b><%=t :home_sellstep1 %></b><br><%=t :home_sellstep1a %><%= link_to(t('home_sellstep1b'), :sell) %><%=t :home_sellstep1c %></p></div>
   	<div class="small-3 columns"><%= link_to image_tag("step2.png"), :howtosell %><p><b><%=t :home_sellstep2 %></b><br><%=t :home_sellstep2a %></p></div>
   	<div class="small-3 columns"><%= link_to image_tag("step3.png"), :howtosell %><p><b><%=t :home_sellstep3 %></b><br><%=t :home_sellstep3a %></div>
 	<div class="small-3 columns"><%= link_to image_tag("step4.png"), :howtosell %><p><b><%=t :home_sellstep4 %></b><br><%=t :home_sellstep4a %></p></div> 
@@ -108,7 +97,7 @@
 <div class="row">
   <div class="small-12 columns"><h3><%=t :home_aboutbibicoin %><h3></div>   
 
-<div class="small-12 columns"><p><%=t :home_aboutbibicoin_text %></p></div>
+<div class="small-12 columns"><p><%=t :home_aboutbibicoin_text %>("<%= link_to(t('header_why'), :why) %>")</p></div>
 </div>
 <div class="row">
   <div class="small-12 columns"><%= image_tag("bitcoin_graph.png", :alt => "Graph") %></div>   
@@ -147,7 +136,7 @@
 		 <h5><%=t :header_contact %>:</h5>
 		 <p><%=t :home_contactus_text %></p>
 		 <p>
-			 <%=t :common_email %>: <%=t :common_email_value %><br>
+			 <%=t :common_email %>: <%= mail_to t('common_email_value'), t('common_email_value') %><br>
 			 <%=t :common_phone %>: <%=t :common_phone_value %><br>
 			 <%=t :common_address %>: <%=t :common_address_value %><br>
 		 </p>
@@ -174,12 +163,12 @@
 			 <%= link_to(t('links_aboutus'), :about) %><br>
 			 <%= link_to(t('links_why'), :why) %><br>
 			 <%= link_to(t('links_reviews'), :reviews) %><br>
-			 <%= link_to(t('links_faq'), :faq) %><br>
 			 <%= link_to(t('links_terms'), :terms) %><br>
 			 <%= link_to(t('links_privacy'), :privacy) %><br>
 		    <%= link_to(t('links_legal'), :legal) %><br>
 			 <%= link_to(t('links_jobs'), :jobs) %><br>
-			 <%= link_to(t('links_contact'), :contact) %><br><br>
+			 <%= link_to(t('links_contact'), :contact) %><br>
+			 <%= link_to(t('links_faq'), :faq) %><br><br>
 		 </p>		 
     </div>
   </div>  

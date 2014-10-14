@@ -11,8 +11,8 @@ class TransactionsController < ApplicationController
   
 	@transaction = Transaction.new
 	#0 for buy 1 for sell
-	@transaction.transaction_type_id = 0
-	#@transaction.transaction_type_id = params[:ttype]
+	#@transaction.transaction_type_id = 0
+	@transaction.transaction_type_id = params[:ttype]
 	#update with real value
 	@transaction.bibicoinBTCtoTWD = 400
 
