@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   get 'static_pages/how', :as => :how
   get 'static_pages/bitcoins', :as => :bitcoins
   get 'static_pages/terms', :as => :terms
+  #Need to get the variable :locale to generate uri 'transactions/new?locale=zh&ttype=0'
   get 'transactions/new?ttype=0', :as => :buy, :controller => "transactions", :action => "new"
   get 'transactions/new?ttype=1', :as => :sell, :controller => "transactions", :action => "new"
   get 'static_pages/howtobuy', :as => :howtobuy
@@ -26,9 +27,11 @@ Rails.application.routes.draw do
   # Bibicoin Root Route
   root 'static_pages#home' 
   
+  #TODO: Need to add this for production https://github.com/iain/http_accept_language/tree/master
+  
   # Locale settings
   scope "(:locale)", locale: /en|zh/ do
-    resources :static_pages 
+    resources :static_pages
   end  
 
   # The priority is based upon order of creation: first created -> highest priority.
