@@ -2,6 +2,7 @@ class StaticPagesController < ApplicationController
 
  require 'nokogiri'
  require 'rss'
+ require 'date'
   
     respond_to :json
     $bitcoinChartsURI = "https://bitpay.com/api/rates"
@@ -81,6 +82,8 @@ class StaticPagesController < ApplicationController
 		
 		#average to get TWD Value for 1 BTC
 		@twdValue = totalBTCValue / @referenceRateArray.length
+		@buyValue = @twdValue * 1.0525
+		@sellValue = @twdValue * 1.0525
 		
 		#render :text =>  twdValue
 		
@@ -118,6 +121,9 @@ class StaticPagesController < ApplicationController
 ["total_btc_sent", 78438104183790] 
 ["timestamp", 1413240242465] 
 =end
+
+	
+	@statsDateTime = DateTime.now.in_time_zone("Taipei")
 	
 	
 	@statsHash.store("Blocked Mined", @statsRaw["n_blocks_mined"].round(2).to_s)

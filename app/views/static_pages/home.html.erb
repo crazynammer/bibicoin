@@ -11,8 +11,8 @@
     <div class="panel">	
 		 <div class="small-12 columns">
 			 <%=t :ticker_trading %>
-			 <%=t :ticker_buy%><%= number_with_precision(@twdValue, precision: 2) %> NTD
-			 <%=t :ticker_sell %><%= number_with_precision(@twdValue, precision: 2) %> NTD
+			 <%=t :ticker_buy%><%= number_with_precision(@buyValue, precision: 0) %> NTD
+			 <%=t :ticker_sell %><%= number_with_precision(@sellValue, precision: 0) %> NTD
 		 </div>	 		 		 		 		 
     </div>
   </div> 
@@ -111,7 +111,7 @@
   <div class="small-12 columns">
 	  <ul>
 		  <% @rssNewsFeed.each do |item| %>
-			<li><a href = <%= item.link %> target="_blank"> <%= item.title %> </a></li>
+			<li><a href = <%= item.link %> target="_blank"> <%= item.title %> </a> <br /> <%= item.pubDate %></li>
 			<br/>
 		  <% end %>
 	  </ul>
@@ -120,9 +120,12 @@
 
 	<div class="row">
   	 <div class="small-12 columns"><h3><%=t :home_btcnetworkdata %><h3></div>   
+	 <div class="row"><h4><%= @statsDateTime %><h4></div>
 		</div>
+		
 		<div class="row">
 		  <div class="small-12 columns">
+			
 			<% @statsHash.each_pair do |key, value| %>
 				<div class="row"><%= key %> | <%= value %></div>
 			<% end %>
@@ -203,9 +206,9 @@ function updateBuyAmt()
 
 function updateSellAmt()
 {
-	var twdAmt = document.getElementById("NTDSell").value;
+	var btcAmt = document.getElementById("NTDSell").value;
 	var btcToTwd = "<%= @twdValue %>";
-	var btcAmt = +twdAmt / +btcToTwd;
-	document.getElementById("BTCSell").innerHTML = parseFloat(+btcAmt).toFixed(5);
+	var twdAmt = +btcAmt * +btcToTwd;
+	document.getElementById("BTCSell").innerHTML = parseFloat(+twdAmt).toFixed(0);
 }
 </script>
