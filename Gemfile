@@ -15,6 +15,7 @@ gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 gem 'nokogiri', '~> 1.6.3.1'
+gem 'googlecharts', '~> 1.6.8'
 
 # Environment Settings
 

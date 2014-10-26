@@ -3,10 +3,12 @@ class StaticPagesController < ApplicationController
  require 'nokogiri'
  require 'rss'
  require 'date'
+ require 'gchart'
   
     respond_to :json
-    $bitcoinChartsURI = "https://bitpay.com/api/rates"
+    $bitcoinRatesURI = "https://bitpay.com/api/rates"
 	$bitcoinStatsURI = "http://blockchain.info/stats?format=json"
+	$bitcoinChartsURI = "http://blockchain.info/charts/market-price?format=json"
 	
 	
 	TWDEXCHANGERATEXML = "http://themoneyconverter.com/rss-feed/TWD/rss.xml"
@@ -23,7 +25,7 @@ class StaticPagesController < ApplicationController
   
   def home
    #need to add error handling in case the site is down
-		response = Net::HTTP.get_response(URI.parse($bitcoinChartsURI))
+		response = Net::HTTP.get_response(URI.parse($bitcoinRatesURI))
 		exchangeRateRawData = response.body
 	  
 		#Array to store the required exchange rate information
@@ -82,10 +84,27 @@ class StaticPagesController < ApplicationController
 		
 		#average to get TWD Value for 1 BTC
 		@twdValue = totalBTCValue / @referenceRateArray.length
+		#buy/sell values for 1BTC + Commission
 		@buyValue = @twdValue * 1.0525
 		@sellValue = @twdValue * 1.0525
 		
 		#render :text =>  twdValue
+		
+		
+	#charts section
+	chartResponse = Net::HTTP.get_response(URI.parse($bitcoinChartsURI))	
+	chartBody = chartResponse.body
+	@chartRaw = JSON.parse(chartBody)
+	@chartValues = @chartRaw["values"]
+	@chartXValues = Array.new
+	@chartYValues = Array.new
+	for value in @chartValues
+		@chartXValues.push(Time.at(value["x"]))
+		@chartYValues.push(value["y"])
+	end	
+	
+	#need to figure out how to dynamically size the charts
+	@marketValueChart = Gchart.line(:width => 750, :height => 400, :grid_lines => (100/(@chartYValues.max+100))*100, :data => @chartYValues, :title => 'BTC Market Value (USD)', :axis_with_labels => [['y']], :max_value => @chartYValues.max + 100, :min_value => 0)
 		
 	#rss section
 	@rssNewsFeed = RSS::Parser.parse(RSSNEWSFEED, false).items[0..4]
