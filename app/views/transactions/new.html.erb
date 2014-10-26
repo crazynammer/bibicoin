@@ -48,20 +48,20 @@
 			<!-- Buy: allow inputs form both sides and change values as needed -->	
 			<% if @transaction.transaction_type_id == 0 %>
 			
-					<tr>
-						<td></td>
-						<td><%= f.label :TWDAmt, t('form_ntdamt') %></td>
-						<td></td>
-						<td><%= f.label :BTCAmt, t('form_btcamt') %></td>
-					</tr>
-					<tr>
-						<td><%=t :form_purchaseamt %></td>
+				<tr>
+					<td></td>
+					<td><%= f.label :TWDAmt, t('form_ntdamt') %></td>
+					<td></td>
+					<td><%= f.label :BTCAmt, t('form_btcamt') %></td>
+				</tr>
+				<tr>
+					<td><%=t :form_purchaseamt %></td>
 				<!-- minimum value is 0.25 -->
-						<td>
-							<%= f.text_field :TWDAmt, :maxlength=>"10", :oninput => "updateBTCAmt()", :onkeyup => "calculateTotal()" %></td>
-						<td><%=t :form_to%></td>
-						<td><%= f.text_field :BTCAmt, :oninput => "updateNTDAmt()", :onkeyup => "calculateTotal()" %></td>
-					</tr>
+					<td>
+						<%= f.text_field :TWDAmt, :maxlength=>"10", :oninput => "updateBTCAmt()", :onkeyup => "calculateTotal()" %></td>
+					<td><%=t :form_to%></td>
+					<td><%= f.text_field :BTCAmt, :oninput => "updateNTDAmt()", :onkeyup => "calculateTotal()" %></td>
+				</tr>
 
 				<tr>
 					<td><%= f.label :walletID, t('form_wallet') %><a href=""><%=t :buy_whatiswallet %></a></td>
@@ -92,7 +92,7 @@
 					<td><%= f.label :totalAmt,  "Total Amount" %> </td>
 					<td colspan='3'><p id = "totalAmt">0</p></td>
 				</tr>
-		<!-- Shared -->
+		
 				<tr>
 					<td><%= f.label :bankName, t('form_bankname') %> </td>
 					<td colspan='3'><%= f.text_field :bankName %></td>
@@ -106,19 +106,19 @@
 			<% elsif @transaction.transaction_type_id == 1 %>
 
 
-					<tr>
-						<td></td>
-						<td><%= f.label :BTCAmt, t('form_btcamt') %></td>
-						<td></td>
-						<td><%= f.label :TWDAmt, t('form_ntdamt') %></td>
-					</tr>
-					<tr>
+				<tr>
+					<td></td>
+					<td><%= f.label :BTCAmt, t('form_btcamt') %></td>
+					<td></td>
+					<td><%= f.label :TWDAmt, t('form_ntdamt') %></td>
+				</tr>
+				<tr>
 						<td><%=t :form_sellamt %></td>
 				<!-- minimum value is 0.25 -->
-						<td><%= f.text_field :BTCAmt, :oninput => "updateNTDAmt()", :onkeyup => "calculateTotal()" %></td>
-						<td><%=t :form_to%></td>
-						<td><%= f.text_field :TWDAmt, :oninput => "updateBTCAmt()", :onkeyup => "calculateTotal()" %></td>
-					</tr>
+					<td><%= f.text_field :BTCAmt, :oninput => "updateNTDAmt()", :onkeyup => "calculateTotal()" %></td>
+					<td><%=t :form_to%></td>
+					<td><%= f.text_field :TWDAmt, :oninput => "updateBTCAmt()", :onkeyup => "calculateTotal()" %></td>
+				</tr>
 					
 				<tr>
 					<td><%= f.label :walletID, t('form_wallet') %><a href=""><%=t :buy_whatiswallet %></a><br><%=t :sell_returnbitcoin%></td>
@@ -172,8 +172,8 @@
 			</table>
 			
 
-			<!-- make the total come up -->
-			<%= f.submit t('form_next'), :onload => "calculateTotal()" %><br><br>
+			<!-- submit button -->
+			<%= f.submit t('form_next')%><br><br>
 			
 		<% end %>
 
@@ -197,12 +197,17 @@
 	
 <script type="text/javascript">
 
+
 <!-- function for buy going from NTD to BTC -->
 function updateBTCAmt()
 {
 	var twdAmt = document.getElementById("transaction_TWDAmt").value;
 	var btcToTwd = "<%= @transaction.bibicoinBTCtoTWD %>";
 	var btcAmt = +twdAmt / +btcToTwd;
+	if (btcAmt == 'NaN')
+	{
+		btcAmt = 0;
+	}
 	document.getElementById("transaction_BTCAmt").value = parseFloat(+btcAmt).toFixed(5);
 }
 
@@ -212,6 +217,10 @@ function updateNTDAmt()
 	var btcAmt = document.getElementById("transaction_BTCAmt").value;
 	var btcToTwd = "<%= @transaction.bibicoinBTCtoTWD %>";
 	var twdAmt = +btcAmt * +btcToTwd;
+	if (twdAmt == 'NaN')
+	{
+		twdAmt = 0;
+	}
 	document.getElementById("transaction_TWDAmt").value = parseFloat(+twdAmt).toFixed(0);
 }
 <!-- function to calculate commission and display on the screen -->
