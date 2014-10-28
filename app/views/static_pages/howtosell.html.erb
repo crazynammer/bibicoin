@@ -5,20 +5,20 @@
 	  <div class="small-9 columns">
 			<h4><%=t :howtosell_h1 %></h4>
 			<p><%=t :howtosell_b1 %></p>
-			<p><%=t :howtosell_h2 %></p>
-			<p><%=t :howtosell_b2 %></p>
-			<p><%=t :howtosell_h3 %></p>
+			<p><b><%=t :howtosell_h2 %></b></p>
+			<p><%=t :howtosell_b2 %><%= link_to(t('howtosell_b2a'), :sell) %><%=t :howtosell_b2b %></p>
+			<p><b><%=t :howtosell_h3 %></b></p>
 			<p><%=t :howtosell_b3 %></p>
-			<p><%=t :howtosell_h4 %></p>
+			<p><b><%=t :howtosell_h4 %></b></p>
 			<p><%=t :howtosell_b4 %></p>
-			<p><%=t :howtosell_h5 %></p>
+			<p><b><%=t :howtosell_h5 %></b></p>
 			<p><%=t :howtosell_b5 %></p>
-			<p><%=t :howtosell_b5_1 %></p>
-			<h4><%=t :howtosell_h6 %></h4>
-			<p><%=t :howtosell_b6 %></p>
+			<p><%=t :howtosell_b5a%><%= link_to(t('howtosell_b5b'), :contact) %><%=t :howtosell_b5c%></p>
+			<p><b><%=t :howtosell_h6 %></b></p>
+			<p><%=t :howtosell_b6 %><%= link_to(t('howtosell_b6a'), :terms) %><%=t :howtosell_b6b %><%= link_to(t('howtosell_b6c'), :contact) %><%=t :howtosell_b6d %></p>
 	  </div> 	  
 	  <div class="small-3 columns">
-		<h4>Learn About Bitcoin</h4>
+		<h4><%=t :links_learnaboutbitcoin %></h4>
 		<ul class="bibicoin-sidebar">
 			<%= render 'layouts/learn_menu'%>
 		</ul>		  
