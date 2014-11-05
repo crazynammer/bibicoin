@@ -9,6 +9,8 @@
     <%= stylesheet_link_tag "application" %>
     <%= javascript_include_tag "vendor/modernizr" %>
     <%= csrf_meta_tags %>
+	 <link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,300italic,700' rel='stylesheet' type='text/css'>
+	 
   </head>
 
   <body>
@@ -37,13 +39,13 @@
 		      <li class="has-dropdown">
 		        <%= link_to(t('links_learn'), :bitcoins) %>
 		        <ul class="dropdown">
-		          <li><%= link_to(t('links_bitcoins'), :bitcoins) %></li>
-					 <li><%= link_to(t('links_wallets'), :wallets) %></li>
-		          <li><%= link_to(t('links_howtobuy'), :howtobuy) %></li>
-					 <li><%= link_to(t('links_howtosell'), :howtosell) %></li>
-					 <li><%= link_to(t('links_howtoprotect'), :how) %></li>
-		          <li><%= link_to(t('links_traditional'), :traditional) %></li>					 					 
-		          <li><%= link_to(t('links_faq'), :faq) %></li>					 					 
+					<li><%= link_to(t('links_bitcoins'), :bitcoins) %></li>
+					<li><%= link_to(t('links_wallets'), :wallets) %></li>
+					<li><%= link_to(t('links_howtobuy'), :howtobuy) %></li>
+					<li><%= link_to(t('links_howtosell'), :howtosell) %></li>
+					<li><%= link_to(t('links_howtoprotect'), :how) %></li>
+					<li><%= link_to(t('links_traditional'), :traditional) %></li>					 					 
+					<li><%= link_to(t('links_faq'), :faq) %></li>					 					 
 		        </ul>
 		      </li>
 				<li class="divider"></li>
