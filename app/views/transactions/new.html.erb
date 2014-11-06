@@ -92,11 +92,11 @@
 		
 				<tr>
 					<td><%= f.label :bankName, t('form_bankname') %> </td>
-					<td colspan='3'><%= f.text_field :bankName %></td>
+					<td colspan='3'><%= f.text_field :bankName, :readonly => true %></td>
 				</tr>
 				<tr>
 					<td><%= f.label :bankAcctNumber, t('form_banknumber') %> </td>
-					<td colspan='3'><%= f.text_field :bankAcctNumber %></td>
+					<td colspan='3'><%= f.text_field :bankAcctNumber, :readonly => true %></td>
 				</tr>	
 			
 			<!-- Sell -->
@@ -131,7 +131,7 @@
 				</tr>			
 				<tr>
 					<td><%= f.label :bankName, t('form_bankname') %> </td>
-					<td colspan='3'><%= f.text_field :bankName , :readonly => true %></td>
+					<td colspan='3'><%= f.text_field :bankName %></td>
 				</tr>		
 				<!-- TODO: BUG, Can't get the "Account Holder Name" Working -->		
 				<tr>
@@ -140,7 +140,7 @@
 				</tr>
 				<tr>
 					<td><%= f.label :bankAcctNumber, t('form_banknumber') %> </td>
-					<td colspan='3'><%= f.text_field :bankAcctNumber, :readonly => true %></td>
+					<td colspan='3'><%= f.text_field :bankAcctNumber %></td>
 				</tr>	
 				<tr>
 					<td><%= f.label :DoB, t('form_birthdate') %></td>
