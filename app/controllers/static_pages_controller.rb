@@ -86,7 +86,7 @@ class StaticPagesController < ApplicationController
 		@twdValue = totalBTCValue / @referenceRateArray.length
 		#buy/sell values for 1BTC + Commission
 		@buyValue = @twdValue * 1.0525
-		@sellValue = @twdValue * 1.0525
+		@sellValue = @twdValue * 0.9475
 		
 		#render :text =>  twdValue
 		

@@ -133,11 +133,12 @@
 			Bank Acct: <%= @transaction.bankAcctNumber %>
 			<br /><br>
 
-		<%= form_for @transaction do |f| %>
-
-			<%= f.button t('form_ok') %>
-		<%end%>
-		
+		<% if @transaction.transaction_type_id == 0 %>
+			<%= link_to t('form_ok'), buy_path, :class => "button" %>
+		<% else if @transaction.transaction_type_id == 1 %>
+			<%= link_to t('form_ok'), sell_path, :class => "button" %>
+		<% end >
+			
 	</div>	
 
 

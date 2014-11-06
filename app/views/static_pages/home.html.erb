@@ -63,7 +63,7 @@
 		 </tr>
 		 <tr>
 			 <td><%=t :conversion_btcamt %></td>
-		    <td><input type="text" id="NTDSell" placeholder="30,000" oninput="updateSellAmt()"/></td>
+		    <td><input type="text" id="NTDSell" placeholder="10" oninput="updateSellAmt()"/></td>
 		 </tr>
 		 <tr>
 			 <td><%=t :conversion_ntdamt %></td>
@@ -200,7 +200,7 @@
 function updateBuyAmt()
 {
 	var twdAmt = document.getElementById("NTDBuy").value;
-	var btcToTwd = "<%= @twdValue %>";
+	var btcToTwd = "<%= @buyValue %>";
 	var btcAmt = +twdAmt / +btcToTwd;
 	document.getElementById("BTCBuy").innerHTML = parseFloat(+btcAmt).toFixed(5);
 }
@@ -208,7 +208,7 @@ function updateBuyAmt()
 function updateSellAmt()
 {
 	var btcAmt = document.getElementById("NTDSell").value;
-	var btcToTwd = "<%= @twdValue %>";
+	var btcToTwd = "<%= @sellValue %>";
 	var twdAmt = +btcAmt * +btcToTwd;
 	document.getElementById("BTCSell").innerHTML = parseFloat(+twdAmt).toFixed(0);
 }

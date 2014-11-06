@@ -57,10 +57,6 @@
 			</tr>
 <!-- Update to Whole number-->				
 			<tr>
-				<td><%= f.label :commAmt, "Commission Amount" %></td>
-				<td><%= f.text_field :commAmt, :value => @transaction.commAmt, :readonly => true %></td>
-			</tr>	
-			<tr>
 				<td><%= f.label :walletID, t('form_wallet') %></td>
 				<td><%= f.text_field :walletID, :value => @transaction.walletID, :readonly => true %></td>
 			</tr>					
@@ -122,14 +118,19 @@
 
 <!-- Update to Whole number-->				
 			<tr>
-				<td><%= f.label :commAmt, "Commission Amount" %></td>
-				<td><%= f.text_field :commAmt, :value => @transaction.commAmt, :readonly => true %></td>
-			</tr>	
-			<tr>
 				<td><%= f.label :totalAmt,  "Total Amount" %> </td>
 				<td><p id = "totalAmt"><%= @transaction.TWDAmt + @transaction.commAmt %></p></td>
 			</tr>					
 	<% end %>
+
+			<tr>
+				<td><%= f.label :commAmt, "Commission Amount" %></td>
+				<td><%= f.text_field :commAmt, :value => @transaction.commAmt, :readonly => true %></td>
+			</tr>
+	
+			<tr>
+				<td><%= f.check_box :agreeTerms, :value =>@transaction.agreeTerms, :disabled => true %> <%=t :form_terms %></td>
+			</tr>
 
 	<!-- TODO: Captcha Verification -->
 			<tr>

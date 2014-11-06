@@ -41,6 +41,6 @@ class TransactionsController < ApplicationController
   
   private
 	def transaction_params
-		params.require(:transaction).permit(:transaction_type_id, :walletID, :name, :email, :DoB, :TWDAmt, :BTCAmt, :commAmt, :bankName, :bankAcctNumber, :bibicoinBTCtoTWD)
+		params.require(:transaction).permit(:transaction_type_id, :walletID, :name, :email, :DoB, :TWDAmt, :BTCAmt, :commAmt, :bankName, :bankAcctNumber, :bibicoinBTCtoTWD, :agreeTerms)
 	end
 end

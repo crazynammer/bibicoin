@@ -84,10 +84,7 @@
 					<td><%=t :form_payment %><br><a href=""><%=t :buy_paymentmethod %></a></td>
 					<td colspan='3'><%=t :form_bankinfo %></td>
 				</tr>
-				<tr>
-					<td><%= f.label :commAmt, "Commission Amount" %></td>
-					<td colspan='3'><%= f.text_field :commAmt, :readonly => true %></td>
-				</tr>
+				
 				<tr>
 					<td><%= f.label :totalAmt,  "Total Amount" %> </td>
 					<td colspan='3'><p id = "totalAmt">0</p></td>
@@ -134,7 +131,7 @@
 				</tr>			
 				<tr>
 					<td><%= f.label :bankName, t('form_bankname') %> </td>
-					<td colspan='3'><%= f.text_field :bankName %></td>
+					<td colspan='3'><%= f.text_field :bankName , :readonly => true %></td>
 				</tr>		
 				<!-- TODO: BUG, Can't get the "Account Holder Name" Working -->		
 				<tr>
@@ -143,7 +140,7 @@
 				</tr>
 				<tr>
 					<td><%= f.label :bankAcctNumber, t('form_banknumber') %> </td>
-					<td colspan='3'><%= f.text_field :bankAcctNumber %></td>
+					<td colspan='3'><%= f.text_field :bankAcctNumber, :readonly => true %></td>
 				</tr>	
 				<tr>
 					<td><%= f.label :DoB, t('form_birthdate') %></td>
@@ -151,29 +148,34 @@
 					<td colspan='2'></td>
 				</tr>
 				<tr>
-					<td><%= f.label :commAmt, "Commission Amount" %></td>
-					<td colspan='3'><%= f.text_field :commAmt, :readonly => true %></td>
-				</tr>
-				<tr>
 					<td><%= f.label :totalAmt,  "Total Amount" %> </td>
 					<td colspan='3'><p id = "totalAmt">0</p></td>
 				</tr>
 												
 			<% end %>
+			
+			<tr>
+				<td><%= f.label :commAmt, "Commission Amount" %></td>
+				<td colspan='3'><%= f.text_field :commAmt, :readonly => true %></td>
+			</tr>
 							
 			<%= f.hidden_field :transaction_type_id, :value => @transaction.transaction_type_id %>
 			<%= f.hidden_field :bibicoinBTCtoTWD, :value => @transaction.bibicoinBTCtoTWD %>				
 				<tr>
-					<!-- TODO: need to change the model to include checkbox -->
-					<td colspan="4"><%= f.check_box :name %> <%=t :form_terms %></td>
+					
+					<td colspan="4"><%= f.check_box :agreeTerms %> <%=t :form_terms %></td>
 				</tr>							
 	
-
+				<tr>
+					<td>1 BTC to TWD Rate:<%= @transaction.bibicoinBTCtoTWD %></td>
+				</tr>
+					
 			</table>
 			
 
 			<!-- submit button -->
 			<%= f.submit t('form_next')%><br><br>
+			
 			
 		<% end %>
 

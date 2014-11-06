@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140912040627) do
+ActiveRecord::Schema.define(version: 20141106012239) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -40,9 +40,9 @@ ActiveRecord::Schema.define(version: 20140912040627) do
 
   create_table "transactions", force: true do |t|
     t.integer  "transaction_type_id"
-    t.text     "walletID"
-    t.text     "name"
-    t.text     "email"
+    t.string   "walletID"
+    t.string   "name"
+    t.string   "email"
     t.date     "DoB"
     t.decimal  "BTCAmt"
     t.decimal  "TWDAmt"
@@ -62,6 +62,7 @@ ActiveRecord::Schema.define(version: 20140912040627) do
     t.decimal  "fxRateHKDtoTWD"
     t.decimal  "fxRateEURtoTWD"
     t.decimal  "bibicoinBTCtoTWD"
+    t.boolean  "agreeTerms"
     t.boolean  "isComplete"
     t.datetime "created_at"
     t.datetime "updated_at"
