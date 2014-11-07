@@ -2,19 +2,21 @@
 
 <div id="before-content-area">
 	<div class="row">
-	  <div class="small-9 columns">
-		  <p><%=t :traditional_b1 %></p>
-		  <p><%=t :traditional_b2 %></p>
-		  <p><%=t :traditional_b3 %></p>
-		  <p><%=t :traditional_b4 %></p>
-		  <p><%=t :traditional_b5 %></p>
-		  <p><%=t :traditional_b6 %></p>
+	  <div class="small-12 medium-9 large-9 columns">
+		  <p><%=t :traditional_b1 %></p><br>
+		  <p><%=t :traditional_b2 %></p><br>
+		  <p><%=t :traditional_b3 %></p><br>
+		  <p><%=t :traditional_b4 %></p><br>
+		  <p><%=t :traditional_b5 %></p><br>
+		  <p><%=t :traditional_b6 %></p><br>
 	  </div> 	  
-	  <div class="small-3 columns">
-		<h4><%=t :links_learnaboutbitcoin %></h4>
-		<ul class="bibicoin-sidebar">
-			<%= render 'layouts/learn_menu'%>
-		</ul>		  
+	  <div class="small-12 medium-3 large-3 columns">
+	  	<div class="hide-for-small-only">
+			<h4 class="subheader"><%=t :links_learnaboutbitcoin %></h4>
+			<ul>
+				<%= render 'layouts/learn_menu'%>
+			</ul>
+		</div>		  
 	  </div> 	  
 	</div>	
 </div>

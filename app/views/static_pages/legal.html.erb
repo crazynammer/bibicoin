@@ -2,18 +2,18 @@
 
 <div id="before-content-area">
 	<div class="row">
-	  <div class="small-9 columns">
-			<h4><%=t :legal_h1 %></h4>
-			<p><%=t :legal_b1 %><%= link_to(t('legal_b1a'), t('legal_b1a'), :target => "_blank") %></p>
-			<h4><%=t :legal_h2 %></h4>
-			<p><%=t :legal_b2 %></p>	
-			<p><%=t :legal_b2_1 %></p>
-			<p><%=t :legal_b2_2 %></p>
+	  <div class="small-12 medium-9 large-9 columns">
+			<h4 class="subheader"><%=t :legal_h1 %></h4>
+			<p><%=t :legal_b1 %><%= link_to(t('legal_b1a'), t('legal_b1a'), :target => "_blank") %></p><br>
+			<h4 class="subheader"><%=t :legal_h2 %></h4>
+			<p><%=t :legal_b2 %></p><br>	
+			<p><%=t :legal_b2_1 %></p><br>
+			<p><%=t :legal_b2_2 %></p><br>
 			<ol>
 				<li><%=t :legal_b2_3 %></li>
 				<li><%=t :legal_b2_4 %></li>
 			</ol>
-			<h4><%=t :legal_h3 %></h4>
+			<h4 class="subheader"><%=t :legal_h3 %></h4>
 			<ol>
 				<li><%=t :legal_b3 %></li>
 				<li><%=t :legal_b3_1 %></li>
@@ -22,14 +22,16 @@
 				<li><%=t :legal_b3_4 %></li>
 				<li><%=t :legal_b3_5 %></li>		
 			</ol>
-			<p><%=t :legal_h4 %><a href="mailto:Complianceofficer@bibicoins.com.tw"><%=t :legal_email %></a></p>
-			<p><%=t :legal_b4 %></p>
+			<p><%=t :legal_h4 %><a href="mailto:bibicoins@gmail.com"><%=t :legal_email %></a></p><br>
+			<p><%=t :legal_b4 %></p><br>
 	  </div> 	  
-	  <div class="small-3 columns">
-		<h4><%=t :links_about %></h4>
-		<ul class="bibicoin-sidebar">
-			<%= render 'layouts/about_menu'%>
-		</ul>		  
+	  <div class="small-12 medium-3 large-3 columns">
+	  	<div class="hide-for-small-only">
+			<h4><%=t :links_about %></h4>
+			<ul>
+				<%= render 'layouts/about_menu'%>
+			</ul>
+		</div>		  
 	  </div>
 	</div>	
 </div>

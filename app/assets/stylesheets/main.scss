@@ -6,97 +6,82 @@
 /* -----------------------------------------
    CSS Reset
 ----------------------------------------- */
+
 html, body, div, span, applet, object, iframe,
 h1, h2,fo h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
 del, dfn, em, font, img, ins, kbd, q, s, samp,
 small, strike, strong, sub, tt, var,
 b, u, i, center,
-dl, dt, dd, ol, ul, li,
+dl, dt, dd,
 fieldset, form, label, legend,
 table, caption, tbody, tfoot, thead, tr, th, td, tr {
 	margin: 0;
 	padding: 0;
 	border: none;
 	outline: 0;
-	font-size: 100%;
 	vertical-align: baseline;
 	background: transparent;
-}
+} 
 
-html{ }
 
-body {
+/* -----------------------------------------
+   Common
+----------------------------------------- */
 
-  position:absolute; 
-  width:100%; 
-  left:100; 
-  top:0; 
-  min-height:100%;
-  line-height: 24px;
-
+.bibicoin-protectyourself {
+  padding-left: 68px;
+  float: right;
 }
 
 /* -----------------------------------------
    Header
 ----------------------------------------- */
-/*.bibicoin-sidebar {
-	padding-left: 18px;
-	background: url(image-path('bullet.png')) no-repeat 5px 16px;
-	border-top: 1px dashed #ccc;
-}*/
 
 .bibicoin-header-bg-orange {
-	background: #eb7314;
-}
-
-.bibicoin-body-main {
-	font-family: andale mono, lucida console, monospace ;
-}
-
-.bibicoin-footer-bg-black {
-	background: #333333;
-}
-
-#before-content-area { 
-	padding: 20px 0 10px; 
-}
-
-#before-content-area h1, #before-content-area h2 {
-	margin-left: 10px;
-	color: #f8f8f8;
-	font-weight: 600;
-	font-size: 36px;
-	line-height: 50px;
-}
-
-#before-content-area p, #before-content-area h4, #before-content-area h5, #before-content-area li  {
-	margin-left: 15px;
-	margin-right: 15px;
+	background: #ef632f;
 }
 
 .row {
   max-width: 80rem; }
-  .row.display-end {
-    background: #fff;
-    font-size: 11px;
-    margin-bottom: 10px;
-    line-height: 2rem;
-    border: solid 1px #c6c6c6;
-    margin-left: 0 !important;
-    margin-right: 0 !important; }
-    .row.display-end .columns {
-      background: #e1e1e1;
-      border-left: 1px solid #c6c6c6; }
-      .row.display-end .columns.color-end {
-        background: #d4d4d4; }
+
+/* -----------------------------------------
+   Body
+----------------------------------------- */
+
+.bibicoin-header-bg-orange {
+  background: #ef632f;
+}
+
+.bibicoin-bullets {
+  padding-left: 24px;
+  background: url(image-path('bullet.png')) no-repeat 5px 8px;
+  border-top: 1px  #ccc;
+}
+
+#before-content-area { 
+  padding: 20px 0 10px; 
+}
+
+#before-content-area h1 {
+  margin-left: 10px;
+  font-size: 36px;
+  color: #f8f8f8;
+  line-height: 50px;
+}
+
+#before-content-area p, #before-content-area h4, #before-content-area h5, #before-content-area li  {
+  margin-left: 10px;
+  margin-right: 10px;
+  max-width: 80rem;
+}
 		  
 /* -----------------------------------------
    Footer
 ----------------------------------------- */
 .bibicoin-footer-bottom {
   background: #333;
-  padding: 24px 0 10px; }
+  padding: 20px 0 10px; }
   .bibicoin-footer-bottom .design-border {
     border-bottom: 1px solid #484848;
     padding-bottom: 5px;

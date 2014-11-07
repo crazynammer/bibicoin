@@ -2,27 +2,29 @@
 
 <div id="before-content-area">
 	<div class="row">
-	  <div class="small-9 columns">
-			<h4><%=t :howtobuy_h1 %></h4>
-			<p><%=t :howtobuy_b1 %></p>
-			<p><b><%=t :howtobuy_h2 %></b></p>
-			<p><%=t :howtobuy_b2a %><%= link_to(t('howtobuy_b2b'), :wallets) %><%=t :howtobuy_b2c %></p>
-			<p><%=t :howtobuy_b2d %><%= link_to(t('howtobuy_b2e'), 'https://blockchain.info/wallet/', :target => "_blank") %><%=t :howtobuy_b2f %></p>
-			<p><b><%=t :howtobuy_h3 %></b></p>
-			<p><%=t :howtobuy_b3a %><%= link_to(t('howtobuy_b3b'), :buy) %><%=t :howtobuy_b3c %></p>
-			<p><b><%=t :howtobuy_h4 %></b></p>
-			<p><%=t :howtobuy_b4 %></p>
-			<p><%=t :howtobuy_b4_1 %></p>
-			<p><b><%=t :howtobuy_h5 %></b></p>
-			<p><%=t :howtobuy_b5 %></p>
-			<p><b><%=t :howtobuy_h6 %></b></p>
-			<p><%=t :howtobuy_b6a %><%= link_to(t('howtobuy_b6b'), :terms) %><%=t :howtobuy_b6c %><%= link_to(t('howtobuy_b6d'), :contact) %><%=t :howtobuy_b6e %></p>
+	  <div class="small-12 medium-9 large-9 columns">
+			<h4 class="subheader"><%=t :howtobuy_h1 %></h4>
+			<p><%=t :howtobuy_b1 %></p><br>
+			<p><b><%=t :howtobuy_h2 %></b></p><br>
+			<p><%=t :howtobuy_b2a %><%= link_to(t('howtobuy_b2b'), :wallets) %><%=t :howtobuy_b2c %></p><br>
+			<p><%=t :howtobuy_b2d %><%= link_to(t('howtobuy_b2e'), 'https://blockchain.info/wallet/', :target => "_blank") %><%=t :howtobuy_b2f %></p><br>
+			<p><b><%=t :howtobuy_h3 %></b></p><br>
+			<p><%=t :howtobuy_b3a %><%= link_to(t('howtobuy_b3b'), :buy) %><%=t :howtobuy_b3c %></p><br>
+			<p><b><%=t :howtobuy_h4 %></b></p><br>
+			<p><%=t :howtobuy_b4 %></p><br>
+			<p><%=t :howtobuy_b4_1 %></p><br>
+			<p><b><%=t :howtobuy_h5 %></b></p><br>
+			<p><%=t :howtobuy_b5 %></p><br>
+			<p><b><%=t :howtobuy_h6 %></b></p><br>
+			<p><%=t :howtobuy_b6a %><%= link_to(t('howtobuy_b6b'), :terms) %><%=t :howtobuy_b6c %><%= link_to(t('howtobuy_b6d'), :contact) %><%=t :howtobuy_b6e %></p><br>
   </div> 	  
-	  <div class="small-3 columns">
-		<h4><%=t :links_learnaboutbitcoin %></h4>
-		<ul class="bibicoin-sidebar">
-			<%= render 'layouts/learn_menu'%>
-		</ul>		  
+	  <div class="small-12 medium-3 large-3 columns">
+	  	<div class="hide-for-small-only">
+			<h4 class="subheader"><%=t :links_learnaboutbitcoin %></h4>
+			<ul>
+				<%= render 'layouts/learn_menu'%>
+			</ul>
+		</div>		  
 	  </div> 	  
 	</div>	
 </div>

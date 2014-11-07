@@ -2,20 +2,20 @@
 
 <div id="before-content-area">
 	<div class="row">
-	  <div class="small-9 columns">
-			<h4><%=t :jobs_h1 %></h4>
-			<p><%=t :jobs_b1 %></p>
+	  <div class="small-12 medium-9 large-9 columns">
+			<h4 class="subheader"><%=t :jobs_h1 %></h4>
+			<p><%=t :jobs_b1 %></p><br>
 			<p><%=t :jobs_h2 %></p>
-			<p><%=t :jobs_b2 %></p>
-			<h4><%=t :jobs_h3 %></h4><br>
-			<h5><%=t :jobs_b3 %></h5>
-			<p><%=t :jobs_b3_1 %></p>
-			<p><%=t :jobs_b3_2 %></p>	
-			<p><%=t :jobs_b3_3 %></p>
+			<p><%=t :jobs_b2 %></p><br>
+			<h4 class="subheader"><%=t :jobs_h3 %></h4>
+			<h5 class="subheader"><%=t :jobs_b3 %></h5>
+			<p><%=t :jobs_b3_1 %></p><br>
+			<p><%=t :jobs_b3_2 %></p><br>
+			<p><%=t :jobs_b3_3 %></p><br>
 			<ul>	
 				<li><%=t :jobs_b3_4 %></li>	
 			</ul>
-			<p><%=t :jobs_b3_5 %></p>	
+			<p><%=t :jobs_b3_5 %></p><br>	
 			<ul>
 				<li><%=t :jobs_b3_6 %></li>	
 				<li><%=t :jobs_b3_7 %></li>	
@@ -24,13 +24,15 @@
 				<li><%=t :jobs_b3_10 %></li>			
 			</ul>
 			<p><%=t :jobs_h4 %></p>
-			<p><%=t :jobs_b4 %><a href="mailto:recruitment@bibicoins.com.tw"><%=t :jobs_email %></a></p>
+			<p><%=t :jobs_b4 %><a href="mailto:bibicoins@gmail.com"><%=t :jobs_email %></a></p>
 	  </div> 	  
-	  <div class="small-3 columns">
-		<h4><%=t :links_about %></h4>
-		<ul class="bibicoin-sidebar">
-			<%= render 'layouts/about_menu'%>
-		</ul>		  
+	  <div class="small-12 medium-3 large-3 columns">
+	  	<div class="hide-for-small-only">
+			<h4><%=t :links_about %></h4>
+			<ul>
+				<%= render 'layouts/about_menu'%>
+			</ul>
+		</div>		  
 	  </div>
 	</div>	
 </div>

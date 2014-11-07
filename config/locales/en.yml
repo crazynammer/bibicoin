@@ -163,7 +163,7 @@ Your Buy Order 65220 submitted through Bibicoins.com on
 2014-06-30 at 12:26 pm was received by us as follows:"
   buy_email_b4: "To complete the transaction, please make a deposit of NTD 7,500.00 into the following bank account within 4 hours of the above submitted time and date.   Please also remember to include your Buy Order ID: 65220 as a reference when making the deposit."
   buy_email_b5: "Once we have verified we have received the Purchase Amounts into our account, the Bitcoin with you have ordered from us will be immediately transferred to your Wallet Address above."
-  buy_email_b6: "Please refer to the terms and conditions on Bibicoins.com if you have any questions or contact helpdesk@bibicoins.com for assistance."
+  buy_email_b6: "Please refer to the terms and conditions on Bibicoins.com if you have any questions or contact bibicoins@gmail.com for assistance."
   buy_whatiswallet: "What is wallet?"
   buy_paymentmethod: "Payment Method?"
 # ---------------------------------------------------------------------------------------------------------------------------
@@ -193,7 +193,7 @@ Your Buy Order 65220 submitted through Bibicoins.com on
   sell_email_b3: "Thank you NAME for submitting your Sell Order with Bibicoins.com!  Your Sell Order 65220 submitted through Bibicoins.com on 2014-06-30 at 12:26 pm was received by us follows:"
   sell_email_b4: "To complete the transaction, please transfer the Bitcoin Amount into the Bibicoin’s designated Wallet below within 15 mins of the above submitted time and date."
   sell_email_b5: "Once we have verified we have received your bitcoins into our Wallet, we will transfer the Sell Amounts into your Bank Account immediately.  You will usually receive the Sell Amounts in your bank account after 3 to 5 days of Bibicoins receipt of your Bitcoins."
-  sell_email_b6: "Please refer to the terms and conditions on Bibicoins.com if you have any questions or contact helpdesk@bibicoins.com for assistance."
+  sell_email_b6: "Please refer to the terms and conditions on Bibicoins.com if you have any questions or contact bibicoins@gmail.com for assistance."
 # ---------------------------------------------------------------------------------------------------------------------------
 # Form Fields
 # ---------------------------------------------------------------------------------------------------------------------------
@@ -288,7 +288,7 @@ Your Buy Order 65220 submitted through Bibicoins.com on
   jobs_b3_10: "Part of the role to be focused on social media growth for BTA platforms"	
   jobs_h4: ""
   jobs_b4: "Questions regarding Career Opportunities, Please Contact recruitment at: "	
-  jobs_email: "recruitment@bibicoins.com.tw"	
+  jobs_email: "bibicoins@gmail.com"	
 # ---------------------------------------------------------------------------------------------------------------------------
 # Frequently Asked Questions (FAQ)
 # ---------------------------------------------------------------------------------------------------------------------------
@@ -304,13 +304,13 @@ Your Buy Order 65220 submitted through Bibicoins.com on
   faq_h4: "Buying Bitcoins"
   faq_b4: ""	
   faq_h5: "How Long does it take to receive Bitcoins?"
-  faq_b5: "Usually we send Bitcoin within 2 to 4 hours of receiving payment. We recommend you buy Bitcoins during bank hours of operations. If it has been more than 4 hours since you have made your deposit and you haven’t received your Bitcoins, please contact us via email helpdesk@bibicoins.com or call us on: +886 922711415"	
+  faq_b5: "Usually we send Bitcoin within 2 to 4 hours of receiving payment. We recommend you buy Bitcoins during bank hours of operations. If it has been more than 4 hours since you have made your deposit and you haven’t received your Bitcoins, please contact us via email bibicoins@gmail.com or call us on: +886 922711415"	
   faq_h6: "Can I buy Bitcoins after hours and deposit the funds the next day?"
   faq_b6: "Yes, however buy orders are only valid 4 hours from the time you initiate your order. If we receive a payment for an order after our 4 hour cut off, we reserve the right (as per our T&C’s) to process your order at the current market rate, rather than to the rate at the time of the order. We suggest where possible that you resubmit a new order within 4 hours of making a deposit to ensure you get a locked in rate."	
   faq_h7: "How do you calculate your rates to buy Bitcoin?"
   faq_b7: "Our rates are based on the market rate buy price, plus the currency exchange buy rates and our service fee. This rate is live and refreshes constantly."	
   faq_h8: "What if I get my Wallet Address details wrong on my order?"
-  faq_b8: "Contact us immediately on (+886) 922711415 or helpdesk@bibicoins.com and we will do our best to correct the order."	
+  faq_b8: "Contact us immediately on (+886) 922711415 or bibicoins@gmail.com and we will do our best to correct the order."	
   faq_b8_1: "Always double check your Bitcoin Wallet Address when placing your order. We cannot reverse the transaction once it is processed. If you provide the wrong Bitcoin Address your Bitcoins may end up in someone else’s wallet and there’s nothing that can be done to get them back."
   faq_h9: "Selling Bitcoins"	
   faq_b9: ""	
@@ -480,7 +480,7 @@ Unlike most traditional currencies, however, Bitcoin is not bound to an institut
   legal_b3_5: "Bibicoins has implemented processes and procedures to ensure that records made in respect of customer identification are held for a minimum of 5 years;"	
   legal_h4: "AML/CTF Contact: "	
   legal_b4: "Address: XXX"	
-  legal_email: "Complianceofficer@bibicoins.com.tw"	
+  legal_email: "bibicoins@gmail.com"	
 # ---------------------------------------------------------------------------------------------------------------------------
 # Terms & Conditions
 # ---------------------------------------------------------------------------------------------------------------------------

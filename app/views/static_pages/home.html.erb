@@ -1,10 +1,11 @@
-<% provide(:title, 'Home') %>
-		<%= image_tag("logo.png", :alt => "logo") %><br>
-
+<% provide(:title, 'Bibicoin | 比特幣') %>
+<%= image_tag("logo.png", :alt => "logo") %>
+<div class="copyright"><p>test font</p></div>
 <div class="row">
-  <div class="small-12 columns">
-		 <%= image_tag("icon_lock.png", :alt => "Facebook") %> <%= link_to(t('links_howtoprotect'), :how) %><br><br> 		 		 		 
-  </div>   
+
+  	<div class="small-12 columns">
+		 <%= image_tag("icon_lock.png", :alt => "Lock") %><%= link_to(t('links_howtoprotect'), :how) %><br> 
+	</div>   
 </div>	
 <div class="row" data-equalizer="">
   <div class="small-12 columns">
@@ -23,7 +24,7 @@
     <h5><%=t :home_slogan1 %></h5>
   </div>
   <div class="medium-4 columns">
-    <%= image_tag("icon_fb.png", :alt => "Facebook") %> &nbsp;<%=t :home_facebook %><br><br>
+    <%= image_tag("icon_fb.png", :alt => "Facebook") %> &nbsp;<a href="http://www.facebook.com/Bibicoins"><%=t :home_facebook %></a><br><br>
   </div>  
 </div>
 <div class="bibicoin-header-bg-orange">
