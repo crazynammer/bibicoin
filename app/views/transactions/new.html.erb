@@ -89,7 +89,7 @@
 					<td><%= f.label :totalAmt,  "Total Amount" %> </td>
 					<td colspan='3'><p id = "totalAmt">0</p></td>
 				</tr>
-		
+		<!--
 				<tr>
 					<td><%= f.label :bankName, t('form_bankname') %> </td>
 					<td colspan='3'><%= f.text_field :bankName, :readonly => true %></td>
@@ -97,7 +97,8 @@
 				<tr>
 					<td><%= f.label :bankAcctNumber, t('form_banknumber') %> </td>
 					<td colspan='3'><%= f.text_field :bankAcctNumber, :readonly => true %></td>
-				</tr>	
+				</tr>
+		-->			
 			
 			<!-- Sell -->
 			<% elsif @transaction.transaction_type_id == 1 %>
@@ -163,7 +164,7 @@
 			<%= f.hidden_field :bibicoinBTCtoTWD, :value => @transaction.bibicoinBTCtoTWD %>				
 				<tr>
 					
-					<td colspan="4"><%= f.check_box :agreeTerms %> <%=t :form_terms %></td>
+					<td colspan="4"><%= f.check_box :agreeTerms %> <%=t :form_terms %><%= link_to(t('form_terms_1'), :terms) %><%=t :form_terms_2 %></td>
 				</tr>							
 	
 				<tr>

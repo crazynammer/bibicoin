@@ -32,7 +32,7 @@
 		<div class="small-6 columns">	
 	
 	<% if @transaction.transaction_type_id == 0 %>
-		<h4><%=t :header_buy_sell_complete %></h4>
+		<h4><%=t :header_buy_buy_complete %></h4>
 	<% elsif @transaction.transaction_type_id == 1 %>
 		<h4><%=t :header_buy_sell_complete %></h4>
 	<% end %>
@@ -70,10 +70,12 @@
 				<td><%=t :form_wallet %></td>
 				<td><%= @transaction.walletID %></td>
 			<tr>
+			<!--
 			<tr>
 				<td><%=t :form_makedepositto %></td>
 				<td><%=t :form_bankaccount %></td>
 			<tr>
+			-->
 			<tr>
 				<td><%=t :form_buyrequestsubmitted %></td>
 				<td><%= @transaction.created_at %></td>
@@ -135,9 +137,9 @@
 
 		<% if @transaction.transaction_type_id == 0 %>
 			<%= link_to t('form_ok'), buy_path, :class => "button" %>
-		<% else if @transaction.transaction_type_id == 1 %>
+		<% elsif @transaction.transaction_type_id == 1 %>
 			<%= link_to t('form_ok'), sell_path, :class => "button" %>
-		<% end >
+		<% end %>
 			
 	</div>	
 

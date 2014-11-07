@@ -30,7 +30,7 @@
 	<div class ="row">
 	  <div class="small-7 columns">	
 	<% if @transaction.transaction_type_id == 0 %>
-		<h4><%=t :header_buy_sell_confirm %></h4>
+		<h4><%=t :header_buy_buy_confirm %></h4>
 	<% elsif @transaction.transaction_type_id == 1 %>
 		<h4><%=t :header_buy_sell_confirm %></h4>
 	<% end %>
@@ -75,7 +75,8 @@
 			<tr>
 				<td><%= f.label :totalAmt,  "Total Amount" %> </td>
 				<td><p id = "totalAmt"><%= @transaction.TWDAmt + @transaction.commAmt %></p></td>
-			</tr>					
+			</tr>
+			<!--					
 			<tr>
 				<td><%= f.label :bankName, t('form_bankname') %> </td>
 				<td><%= f.text_field :bankName, :value => @transaction.bankName, :readonly => true %></td>
@@ -83,7 +84,8 @@
 			<tr>
 				<td><%= f.label :bankAcctNumber, t('form_banknumber') %></td>
 				<td><%= f.text_field :bankAcctNumber, :value => @transaction.bankAcctNumber, :readonly => true %></td>
-			</tr>					
+			</tr>
+			-->					
 
 	<% elsif @transaction.transaction_type_id == 1 %>
 			<!-- Update to Whole number-->
