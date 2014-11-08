@@ -8,7 +8,7 @@
 ----------------------------------------- */
 
 html, body, div, span, applet, object, iframe,
-h1, h2,fo h3, h4, h5, h6, p, blockquote, pre,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
 del, dfn, em, font, img, ins, kbd, q, s, samp,
 small, strike, strong, sub, tt, var,
@@ -32,6 +32,15 @@ table, caption, tbody, tfoot, thead, tr, th, td, tr {
 .bibicoin-protectyourself {
   padding-left: 68px;
   float: right;
+}
+
+.bibicoin-txt-slogan {
+  font-size: 16px;
+  color: #878787;
+}
+
+.bibicoin-facebok {
+  align: right;
 }
 
 /* -----------------------------------------
@@ -97,8 +106,7 @@ table, caption, tbody, tfoot, thead, tr, th, td, tr {
       font-weight: 700;
       font-size: 0.66666rem; }
       .bibicoin-footer-bottom ul.bibicoin-links li a {
-        color: #666;
-        padding: 3px 6px; }
+        color: #666; }
         .bibicoin-footer-bottom ul.bibicoin-links li a:hover {
           color: #777; }
   .bibicoin-footer-bottom p.copyright {
