@@ -28,6 +28,89 @@
 		</div>
 	<% end %>
 	
+	<!-- ***********Test Form Formatting --> 
+
+	<div id="before-content-area">
+		<div class="row">
+		  <div class="small-12 medium-6 large-6 columns">
+		  	<form data-abide>
+			  <fieldset>
+			    <legend>Buy Bitcoins</legend>
+			    <div class="ntdamt-field">
+				    <label>Purchase Amount <small>required</small><br><br>
+				    <label>NTD Amount
+				      <input type="text" placeholder="1Zvi22Q8Y3Cn6nPATEBSaFFbckD9sUq6C" required pattern="[a-zA-Z]+" maxlength="10">to<br><br>
+				    <label>BTC Amount
+				      <input type="text" placeholder="1Zvi22Q8Y3Cn6nPATEBSaFFbckD9sUq6C" required pattern="[a-zA-Z]+">
+				    </label>
+			    	<small class="error">Name is required and must be a string.</small>
+			    </div>
+			    <div class="btcamt-field">
+				    <label>Wallet Address <small>required</small>
+				      <input type="text" placeholder="1Zvi22Q8Y3Cn6nPATEBSaFFbckD9sUq6C"required pattern="[a-zA-Z]+">
+				    </label>
+			    	<small class="error">Name is required and must be a string.</small>
+			    </div>
+			    <div class="wallet-field">
+				    <label>Wallet Address <small>required</small>
+				      <input type="text" placeholder="1Zvi22Q8Y3Cn6nPATEBSaFFbckD9sUq6C"required pattern="[a-zA-Z]+">
+				    </label>
+			    	<small class="error">Name is required and must be a string.</small>
+			    </div>
+			    <div class="email-field">
+				    <label>Your Email Address <small>required</small>
+				      <input type="text" placeholder="jchan@gmail.com"required pattern="[a-zA-Z]+">
+				    </label>
+			    	<small class="error">Email is required.</small>
+			    </div>
+			    <div class="name-field">
+				    <label>Name <small>required</small>
+				      <input type="text" placeholder="Jackie Chan"required pattern="[a-zA-Z]+">
+				    </label>
+			    	<small class="error">Name is required and must be a string.</small>
+			    </div>
+			    <div class="birthdate-field">
+				    <label>Birthdate <small>required</small>
+				      <input type="text" placeholder=""required pattern="[a-zA-Z]+">
+				    </label>
+			    	<small class="error">Birthdate is required and must be a string.</small>
+			    </div>
+			    <div class="payment-field">
+				    <label>Payment Method
+				      <input type="text" placeholder="Make Bank Deposit to Shanghai Commercial Bank Account Number 1234567">
+				    </label>
+			    </div>
+			    <div class="totalamount-field">
+				    <label>Total Amount <small>required</small>
+				      <input type="text" placeholder="30,000"required pattern="[a-zA-Z]+">
+				    </label>
+			    	<small class="error">Total Amount is required and must be a string.</small>
+			    </div>
+			    <div class="commission-field">
+				    <label>Commission Amount <small>required</small>
+				      <input type="text" placeholder="0"required pattern="[a-zA-Z]+">
+				    </label>
+			    	<small class="error">Commission is required and must be a string.</small>
+			    </div>
+			    <div class="terms-field">
+				    <label>
+				      <input id="checkbox1" type="checkbox"> <small>Required: I have read and accept the terms and conditions of using this service.</small>
+				    </label>
+			    	<small class="error">Commission is required and must be a string.</small>
+			    </div>				    				    			    			    			    
+			  </fieldset>
+			  <button type="submit">Submit</button>  
+			</form>
+		  </div>
+		  <div class="small-12 medium-6 large-6 columns">
+			<h4 class="subheader"><%=t :buy_newrequest %></h4>
+			<p><%=t :buy_newrequest_b1%></p>
+			<p><%=t :buy_newrequest_b2%></p>
+		  </div>	
+		</div>
+	</div>	
+
+
 
 	
 	<div class ="row">
@@ -64,7 +147,12 @@
 				</tr>
 
 				<tr>
-					<td><%= f.label :walletID, t('form_wallet') %><a href=""><%=t :buy_whatiswallet %></a></td>
+					<td><%= f.label :walletID, t('form_wallet') %>
+						<a href="#" data-dropdown="hover1" data-options="is_hover:true"><%=t :buy_whatiswallet %></a>
+						<ul id="hover1" class="f-dropdown" data-dropdown-content>
+						  <li><a href="#">A Wallet is....</a></li>
+						</ul>
+					</td>
 					<td colspan='3'><%= f.text_field :walletID, :maxlength=>"75" %></td>
 				</tr>
 				<tr>
@@ -267,9 +355,5 @@ function calculateTotal()
 	document.getElementById("totalAmt").innerHTML = totalAmt;
 }
 </script>
-	
-	
-	
-	
 	
 </div>
