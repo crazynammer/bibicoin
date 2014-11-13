@@ -273,19 +273,10 @@ zh:
   jobs_h2: ""
   jobs_b2: "我們是建設者、工程師、設計師、企業家的組合。我們愛自己所做的，並力求發展。我們是和新興經濟發展一樣快的公司。如果您對比特幣有興趣，一直關注新興的數位化貨幣現象，且是個全"	
   jobs_h3: "目前開放的職位"
-  jobs_b3: "傳訊經理"	
-  jobs_b3_1: "TODO: Chinese Transation Required"	
-  jobs_b3_2: "TODO: Chinese Transation Required"	
-  jobs_b3_3: "TODO: Chinese Transation Required"	
-  jobs_b3_4: "TODO: Chinese Transation Required"	
-  jobs_b3_5: "TODO: Chinese Transation Required"	
-  jobs_b3_6: "TODO: Chinese Transation Required"	
-  jobs_b3_7: "TODO: Chinese Transation Required"	
-  jobs_b3_8: "TODO: Chinese Transation Required"	
-  jobs_b3_9: "TODO: Chinese Transation Required"	
-  jobs_b3_10: "TODO: Chinese Transation Required"	
-  jobs_h4: ""
-  jobs_b4: "“關於職缺問題，請聯繫招聘人員: "	
+  jobs_b3: "TODO: Chinese Translation Required"  
+  jobs_b4: "TODO: Chinese Translation Required"  
+  jobs_b5: "TODO: Chinese Translation Required"  
+  jobs_b6: "關於職缺問題，請聯繫招聘人員: "  
   jobs_email: "bibicoins@gmail.com"	
 # ---------------------------------------------------------------------------------------------------------------------------
 # Frequently Asked Questions (FAQ)
@@ -545,7 +536,7 @@ zh:
   privacy_h10: "我們隱私權政策的變更"	
   privacy_b10: "若我們決定變更隱私權政策，將刊登於網頁上"	
 # ---------------------------------------------------------------------------------------------------------------------------
-# About Bitcoins
+# Why Use Bitcoins?
 # ---------------------------------------------------------------------------------------------------------------------------
   bitcoins_h1: "行動付款更容易"	
   bitcoins_b1: "行動裝置上的比特幣，讓您只需掃描、付款兩個步驟就輕鬆交易。不須註冊、刷卡、輸入辨識碼或簽署任何文件。若要接受比特幣付款，您只需要顯示您的比特幣錢包App的 QR條碼，讓您的朋友掃描您的行動裝置，或是讓兩個電話相互接觸 (使用 NFC無線技術)"	

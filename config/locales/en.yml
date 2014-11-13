@@ -39,7 +39,7 @@ en:
   links_sellbitcoin: "Sell Bitcoin"
   links_learn: "Learn"
   links_about: "About"
-  links_bitcoins: "About Bitcoins"
+  links_bitcoins: "Why Use Bitcoins?"
   links_wallets: "About Wallets"
   links_howtobuy: "How to Buy"
   links_howtobuyfrombibicoin: "How to Buy from Bibicoin?"
@@ -63,7 +63,7 @@ en:
 # Section Headers
 # ---------------------------------------------------------------------------------------------------------------------------
   header_about: "About Us"
-  header_bitcoins: "About Bitcoins"
+  header_bitcoins: "Why Use Bitcoins"
   header_buy: "Buy Bitcoins"
   header_contact: "Contact Us"
   header_faq: "Frequently Asked Questions (FAQ)"
@@ -275,19 +275,10 @@ Your Buy Order 65220 submitted through Bibicoins.com on
   jobs_h2: ""
   jobs_b2: "We are a community of builders, engineers, designers, and entrepreneurs, who love what we do and we’re looking to grow.  We are a company that is growing almost as fast as this new economy. If you have an interest in Bitcoin, have been following the emerging digital currency phenomena, and punch above your weight at what you do, we would love to hear from you."	
   jobs_h3: "Current available positions:"
-  jobs_b3: "Communications Manager"	
-  jobs_b3_1: "Responsible for the creation and execution of public facing communications and co-ordinating social and digital publicity for Bit Trade Australia activities in order to position the company as leaders within both the Australian and International digital currency space."	
-  jobs_b3_2: "The role also includes advice and execution around social media engagements on key platforms- including but not limited to Facebook, Twitter, WordPress and forums."	
-  jobs_b3_3: "Key Responsibilities"	
-  jobs_b3_4: "Generate innovative ideas that will attract new audiences and clients by producing unique press releases and communications around Bit Trade activity."	
-  jobs_b3_5: "Communication responsibilities:"	
-  jobs_b3_6: "Create press releases and statements around BTA activity and release to media"	
-  jobs_b3_7: "Create and maintain relationships with key technology journalists, bloggers and other media contacts- both traditional media and digital."	
-  jobs_b3_8: "Write and execute full media plans in accordance with BTA activity"	
-  jobs_b3_9: "Work with the Bibicoin team to brainstorm, create and execute marketing activity to support the growth of bitcoin and Bit Trade Australia both nationally and internationally"	
-  jobs_b3_10: "Part of the role to be focused on social media growth for BTA platforms"	
-  jobs_h4: ""
-  jobs_b4: "Questions regarding Career Opportunities, Please Contact recruitment at: "	
+  jobs_b3: "(1) Web Administration Personnel - Looking for experienced web administrator who knows the front and back end of running a e-commerce business and has experience in web programming."	
+  jobs_b4: "(2) Merchant Sales Personnel – Looking for a sales personal who is eager and has sales experience and has ability to understand the technology behind Bitcoins."  
+  jobs_b5: "We are always looking for talent!"  
+  jobs_b6: "Questions regarding Career Opportunities, Please Contact recruitment at: "	
   jobs_email: "bibicoins@gmail.com"	
 # ---------------------------------------------------------------------------------------------------------------------------
 # Frequently Asked Questions (FAQ)
@@ -328,11 +319,11 @@ Your Buy Order 65220 submitted through Bibicoins.com on
 # ---------------------------------------------------------------------------------------------------------------------------
 # Customer Reviews
 # ---------------------------------------------------------------------------------------------------------------------------
-  reviews_h1: "One of the most simple and straight forward sites I have used to purchase bitcoins to date."
+  reviews_h1: "I tried Bibicoin for the first time and thoroughly enjoyed the experience.  The process was simple and fast and would recommend this site to anyone who is interested in getting into bitcoins."
   reviews_b1: ""	
-  reviews_h2: "Vu is the hottest crazy nammer I have ever met in my life."
+  reviews_h2: "One of the most simple and straight forward sites I have used to purchase bitcoins to date."
   reviews_b2: ""	
-  reviews_h3: "I tried Bibicoin for the first time and thoroughly enjoyed the experience.  The process was simple and fast and would recommend this site to anyone who is interested in getting into bitcoins."
+  reviews_h3: "Good to know that there is a safe and secure site out there for people to use to buy and sell Bitcoins in Taiwan."
   reviews_b3: ""	
 # ---------------------------------------------------------------------------------------------------------------------------
 # How to Protect Yourself Online
@@ -452,10 +443,10 @@ Your Buy Order 65220 submitted through Bibicoins.com on
 # ---------------------------------------------------------------------------------------------------------------------------
 # Bitcoin Vs Traditional Currencies
 # ---------------------------------------------------------------------------------------------------------------------------
-  traditional_b1: "In many ways Bitcoin is similar to traditional currencies: it is recognized and has a value, it can be used to buy things, and its value can change according to market variables. Increased demand for Bitcoin over the last few years has seen an increase in its circulation and its value.
+  traditional_b1: "In many ways Bitcoin is similar to traditional currencies: it is recognised and has a value, it can be used to buy things, and its value can change according to market variables. Increased demand for Bitcoin over the last few years has seen an increase in its circulation and its value.
 Unlike most traditional currencies, however, Bitcoin is not bound to an institution or country. It is in a sense, international, and it is not subject to authorities like banks or governments that are typically associated with other currencies."	
-  traditional_b2: "Despite being manufactured around complex technology, Bitcoin actually springs from a simple concept: that people all over the world, from any class or country, can exchange products, services and credits freely, instantly and easily – without the need for intermediary bodies like banks, merchant accounts or payment gateways. In a way it is a throwback to a purer form of trade, and it is for this reason that the potential and future of digital currencies has generated a lot of interest and investment. In today’s free, global and digital market, Bitcoin is standing up as a robust and recognized form of payment."	
-  traditional_b3: "Bitcoin is based on some fundamental characteristics of currency (or any thing of worth for that matter). In fact, Bitcoin follows the characteristics of a common pillar of today’s traditional currency market: gold. Like gold, Bitcoin is bound by some real world principles. Firstly, it needs to be reasonably difficult to produce (or find). Secondly, it needs to have a limited supply. And thirdly, it needs to be recognized."	
+  traditional_b2: "Despite being manufactured around complex technology, Bitcoin actually springs from a simple concept: that people all over the world, from any class or country, can exchange products, services and credits freely, instantly and easily – without the need for intermediary bodies like banks, merchant accounts or payment gateways. In a way it is a throwback to a purer form of trade, and it is for this reason that the potential and future of digital currencies has generated a lot of interest and investment. In today’s free, global and digital market, Bitcoin is standing up as a robust and recognised form of payment."	
+  traditional_b3: "Bitcoin is based on some fundamental characteristics of currency (or any thing of worth for that matter). In fact, Bitcoin follows the characteristics of a common pillar of today’s traditional currency market: gold. Like gold, Bitcoin is bound by some real world principles. Firstly, it needs to be reasonably difficult to produce (or find). Secondly, it needs to have a limited supply. And thirdly, it needs to be recognised."	
   traditional_b4: "Like gold, Bitcoin is governed by principles that can’t now be changed. Bitcoin technology can only ever produce a certain amount of Bitcoins. The more Bitcoins that are produced, the harder it is to create new ones. In this way, the value of Bitcoins is being regulated. Because of its parallels with gold, the production of Bitcoins is referred to as “mining”. Computers can be purchased that evaluate the complex Bitcoin algorithm and produce Bitcoins. The speed at which a Bitcoin computer can produce Bitcoins is mostly determined by its processing speed. A computer designed to produce Bitcoins is known as a “Bitcoin miner”."	
   traditional_b5: "Historically, humanity has used a variety of methods to trade other than just traditional money. Payment has often been made in produce or in services, and in some societies people have less need for money. Currencies do, however, fix some problems associated with trading in products and services, but even traditional currencies have some disadvantages. For one, trading with people internationally often involves the management of one or several third-parties, for example, a bank and a credit card company. The provision of these facilities has created opportunity, but it is also making a simple exchange more complicated and regulated than it needs to be, especially given today’s connectivity."	
   traditional_b6: "Bitcoin’s purpose is to get around the disadvantages of trading in traditional currencies. It provides an instantaneous, free and reliable way of exchanging goods and services with people over the world. This, combined with the principles over which it has been built, has seen Bitcoin become one of the most exciting currency advancements over recent years and similar systems may evolve in conjunction with Bitcoin to facility easy, free, and fast exchange of goods and services."	
@@ -547,19 +538,19 @@ Unlike most traditional currencies, however, Bitcoin is not bound to an institut
   privacy_h10: "Changes to our Privacy Policy"	
   privacy_b10: "If we decide to change our privacy policy, we will post those changes on this page."	
 # ---------------------------------------------------------------------------------------------------------------------------
-# About Bitcoins
+# Why Use Bitcoins
 # ---------------------------------------------------------------------------------------------------------------------------
-  bitcoins_h1: "Mobile Payments Made Easy"	
+  bitcoins_h1: "Mobile payments made easy"	
   bitcoins_b1: "Bitcoin on mobiles allows you to pay with a simple two step scan-and-pay. No need to sign up, swipe your card, type a PIN, or sign anything. All you need to receive Bitcoin payments is to display the QR code in your Bitcoin wallet app and let your friend scan your mobile, or touch the two phones together (using NFC radio technology)."	
-  bitcoins_h2: "Security and Control Over Your Money"	
+  bitcoins_h2: "Security and control over your money"	
   bitcoins_b2: "Bitcoin transactions are secured by military grade cryptography. Nobody can charge you money or make a payment on your behalf. So long as you take the required steps to protect your wallet, Bitcoin can give you control over your money and a strong level of protection against many types of fraud."	
-  bitcoins_h3: "Works Everywhere, Anytime"	
+  bitcoins_h3: "Works everywhere, anytime"	
   bitcoins_b3: "Just like with email, you don't need to ask your family to use the same software or the same service providers. Just let them stick to their own favorites. No problem there; they are all compatible as they use the same open technology. The Bitcoin network never sleeps, even on holidays!"	
-  bitcoins_h4: "Fast International Payments"	
+  bitcoins_h4: "Fast international payments"	
   bitcoins_b4: "Bitcoins can be transferred from Africa to Canada in 10 minutes. There is no bank to slow down the process, level outrageous fees, or freeze the transfer. You can pay your neighbors the same way as you can pay a member of your family in another country."	
-  bitcoins_h5: "Zero or Low Fees"	
+  bitcoins_h5: "Zero or low fees"	
   bitcoins_b5: "Bitcoin allows you to send and receive payments at very low cost. Except for special cases like very small payments, there is no enforced fee. It is however recommended to pay a higher voluntary fee for faster confirmation of your transaction and to remunerate the people who operate the Bitcoin network."	
-  bitcoins_h6: "Protect Your Identity"	
+  bitcoins_h6: "Protect your identity"	
   bitcoins_b6: "With Bitcoin, there is no credit card number that some malicious actor can collect in order to impersonate you. In fact, it is even possible to send a payment without revealing your identity, almost just like with physical money. You should however take note that some effort can be required to protect your privacy."	
   bitcoins_h7: "For more information on Bitcoins, please refer to the below link for details!"	
   bitcoins_link1: "https://bitcoin.org/en/"	
