@@ -27,7 +27,7 @@ class TransactionsController < ApplicationController
 		redirect_to @transaction
 		
 	else 
-		@transaction.errors.each do |attribute, message|
+		#@transaction.errors.each do |attribute, message|
 		render 'new'
 	end
    end 
