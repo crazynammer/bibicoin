@@ -23,10 +23,12 @@ class TransactionsController < ApplicationController
   def create
 	@transaction = Transaction.new(transaction_params)
 	if @transaction.save
+		flash[:success] = "Transaction successfully saved"
 		redirect_to @transaction
+		
 	else 
-		#add error message
-		render :action => new
+		@transaction.errors.each do |attribute, message|
+		render 'new'
 	end
    end 
 
