@@ -7,15 +7,9 @@
 	</div>   
 </div>
 
-<a href="#" data-dropdown="hover1" data-options="is_hover:true">Has Hover Dropdown</a>
+<!--
 
-<ul id="hover1" class="f-dropdown" data-dropdown-content>
-  <li><a href="#">This is a link</a></li>
-  <li><a href="#">This is another</a></li>
-  <li><a href="#">Yet another</a></li>
-</ul>
-
-<a href="#" data-reveal-id="myModal">Click Me For A Modal</a>
+<a href="#" data-reveal-id="myModal">Pop Up Window</a>
 
 <div id="myModal" class="reveal-modal" data-reveal>
   <h2>Awesome. I have it.</h2>
@@ -24,15 +18,16 @@
   <a class="close-reveal-modal">&#215;</a>
 </div>
 
+-->
+
 <!-- Stock Ticker -->	
 <div class="row" data-equalizer="">
   <div class="small-12 columns">
-    <div class="panel">	
-		 <div class="small-12 columns">
-			 <%=t :ticker_trading %>
-			 <%=t :ticker_buy%><%= number_with_precision(@buyValue, precision: 0) %> NTD
-			 <%=t :ticker_sell %><%= number_with_precision(@sellValue, precision: 0) %> NTD
-		 </div>	 		 		 		 		 
+  	 <fieldset align="center">
+		 <%=t :ticker_trading %>
+		 <%=t :ticker_buy%><%= number_with_precision(@buyValue, precision: 0) %> NTD
+		 <%=t :ticker_sell %><%= number_with_precision(@sellValue, precision: 0) %> NTD	 	
+	 </fieldset>	 		 		 
     </div>
   </div> 
 </div>
@@ -40,7 +35,7 @@
 <!-- Slogans and Facebook Link -->
 <br>
 <div class="row" data-equalizer="">
-  <div class="medium-8 columns">
+  <div class="small-12 medium-8 columns">
     <h5 class="bibicoin-slogan"><%=t :home_slogan1 %></h5>
   </div>
   <div class="medium-4 columns"><div class="bibicoin-facebook">
@@ -56,51 +51,43 @@
 
 <!-- Home Image Menu -->
 <div class="row" data-equalizer="">
-  <div class="medium-3 columns">
+  <div class="small-12 medium-4 columns">
+    <fieldset>
     <div class="row" data-equalizer=""><%= image_tag("icon_cart.png", :alt => "Cart", :size => "40x40")%> <%= link_to(t('links_buy'), :buy) %></div>
 	 <div class="row" data-equalizer=""><%= image_tag("icon_computer.png", :alt => "Computer", :size => "40x40")%> <%= link_to(t('links_sell'), :sell) %></div>
 	 <div class="row" data-equalizer=""><%= image_tag("icon_questions.png", :alt => "Questions", :size => "40x40")%> <%= link_to(t('links_howtobuy'), :howtobuy) %></div>
 	 <div class="row" data-equalizer=""><%= image_tag("icon_questions.png", :alt => "Questions", :size => "40x40")%><%= link_to(t('links_howtosell'), :howtosell) %></div>
 	 <div class="row" data-equalizer=""><%= image_tag("icon_information.png", :alt => "Info", :size => "40x40")%> <%= link_to(t('links_bitcoins'), :bitcoins) %></div>
 	 	 <div class="row" data-equalizer=""><%= image_tag("icon_wallets.png", :alt => "Wallet", :size => "40x40")%> <%= link_to(t('links_wallets'), :wallets) %> </div>
-	 	 <div class="row" data-equalizer=""><%= image_tag("icon_bitcoin.png", :alt => "Why", :size => "40x40")%> <%= link_to(t('links_why'), :why) %></div>		 
+	 	 <div class="row" data-equalizer=""><%= image_tag("icon_bitcoin.png", :alt => "Why", :size => "40x40")%> <%= link_to(t('links_why'), :why) %></div>
+	</fieldset>	 	 		 
   </div>
 
   <!-- Default Image -->
-  <div class="medium-4 columns">
+  <div class="small-12 medium-4 columns">
+    <fieldset>
     <%= image_tag("home_bitcoin.png", :alt => "Bitcoins", :size => "650x600")%>
+    </fieldset>
   </div>
 
-  <!-- Bibicoins Conversion -->
-  <div class="medium-5 columns">
-	 <table>
-		 <tr>
-			 <td colspan='2'><%=t :conversion_buy %></td>
-		 </tr>
-		 <tr>
-			 <td><%=t :conversion_ntdamt %></td>
-		    <td><input type="text" id="NTDBuy" placeholder="30,000" oninput="updateBuyAmt()"/></td>
-		 </tr>
-		 <tr>
-			 <td><%=t :conversion_btcamt %></td>
-			 <td><p id="BTCBuy"> </p></td>
-		 </tr>
-		 <tr>
-			 <td colspan='2'><%=t :conversion_sell %></td>
-		 </tr>
-		 <tr>
-			 <td><%=t :conversion_btcamt %></td>
-		    <td><input type="text" id="NTDSell" placeholder="10" oninput="updateSellAmt()"/></td>
-		 </tr>
-		 <tr>
-			 <td><%=t :conversion_ntdamt %></td>
-			 <td><p id="BTCSell"></p></td>
-		 </tr>		 		 		 		 
-	 </table>
-  </div> 
-    
+  <!-- TEST-->
+  <div class="small-12 medium-2 columns">
+     <fieldset>
+     	<legend><%=t :conversion_buy %></legend>
+     	<%=t :conversion_ntdamt %><input type="text" id="NTDBuy" placeholder="30,000" oninput="updateBuyAmt()" size="10" maxlength="10"/>
+     	<%=t :conversion_btcamt %><input type="text" id="BTCBuy" readonly />
+     </fieldset>
+  </div>
+  <div class="small-12 medium-2 columns">   
+     <fieldset>
+     	<legend><%=t :conversion_sell %></legend>
+     	<%=t :conversion_btcamt %><input type="text" id="NTDSell" placeholder="10" oninput="updateSellAmt()"/>
+     	<%=t :conversion_ntdamt %><input type="text" id="BTCSell" readonly />
+     </fieldset>     
+  </div>   
+      
 </div>
-<br><br>
+<br>
 
 <!-- How to Buy From Bibicoins -->
 <div class="row">
@@ -134,7 +121,7 @@
   		<%= link_to image_tag("step1.png"), :howtosell, anchor: "#1" %><p><b><%=t :home_sellstep1 %></b><br><%=t :home_sellstep1a %><%= link_to(t('home_sellstep1b'), :sell) %><%=t :home_sellstep1c %></p>
   	</div>
   	<div class="small-12 medium-3 large-3 columns">
-  		<%= link_to image_tag("step2.png"), :howtosell %><p class="text-center"><b><%=t :home_sellstep2 %></b><br><%=t :home_sellstep2a %></p>
+  		<%= link_to image_tag("step2.png"), :howtosell %><p><b><%=t :home_sellstep2 %></b><br><%=t :home_sellstep2a %></p>
   	</div>
   	<div class="small-12 medium-3 large-3 columns">
   		<%= link_to image_tag("step3.png"), :howtosell %><p><b><%=t :home_sellstep3 %></b><br><%=t :home_sellstep3a %>
@@ -247,7 +234,7 @@ function updateBuyAmt()
 	var twdAmt = document.getElementById("NTDBuy").value;
 	var btcToTwd = "<%= @buyValue %>";
 	var btcAmt = +twdAmt / +btcToTwd;
-	document.getElementById("BTCBuy").innerHTML = parseFloat(+btcAmt).toFixed(5);
+	document.getElementById("BTCBuy").value = parseFloat(+btcAmt).toFixed(5);
 }
 
 function updateSellAmt()
@@ -255,6 +242,6 @@ function updateSellAmt()
 	var btcAmt = document.getElementById("NTDSell").value;
 	var btcToTwd = "<%= @sellValue %>";
 	var twdAmt = +btcAmt * +btcToTwd;
-	document.getElementById("BTCSell").innerHTML = parseFloat(+twdAmt).toFixed(0);
+	document.getElementById("BTCSell").value = parseFloat(+twdAmt).toFixed(0);
 }
 </script>
