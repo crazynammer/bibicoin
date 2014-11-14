@@ -1,5 +1,5 @@
 class Transaction < ActiveRecord::Base
-
+=begin 
 	has_one :transaction_type, :inverse_of => :transaction
 	
 	validates :transaction_type_id, presence: true
@@ -29,7 +29,7 @@ class Transaction < ActiveRecord::Base
 	#validates :isComplete
 	
 	validates_associated :transaction_type_id
-
+=end
 	
 	
 end
