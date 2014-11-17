@@ -26,6 +26,192 @@
 		  <div class="small-4 columns"><a href="#" class="[tiny small large] button disabled"><b><%=t :sell_step3 %></b> <%=t :sell_step3_text %></a></div> 
 		</div>
 	<% end %>
+
+	<div id="before-content-area">
+		<div class="row">
+		  <div class="small-12 medium-6 large-6 columns">
+
+			<%= form_for @transaction do |f|  %>
+					<fieldset>
+					<!-- Buy: allow inputs form both sides and change values as needed -->	
+					<% if @transaction.transaction_type_id == 0 %>
+
+					<legend><%=t :header_buy %></legend>
+					
+					<div class="row">
+						 <div class="purchaseamt-field">		
+							 <div class="large-4 columns"><label><%=t :form_purchaseamt %></label></div>
+							 <div class="large-4 columns">
+							 	<label><%= f.label :TWDAmt, t('form_ntdamt') %></label>
+							 	<%= f.text_field :TWDAmt, :readonly => true %>
+							 </div>						 
+							 <div class="large-4 columns">
+							 	<label><%= f.label :BTCAmt, t('form_btcamt') %></label>
+							 	<%= f.text_field :BTCAmt, :readonly => true %>
+							 </div>
+						 </div>
+					</div>			
+			    	<div class="wallet-field">		    	
+					<label>
+					<a href="#" data-reveal-id="walletModal"><%=t :form_wallet %></a><br><br>
+						<div id="walletModal" class="reveal-modal" data-reveal>
+						  <h2>Wallet</h2>
+						  <p class="lead">Description</p>
+						  <a class="close-reveal-modal">&#215;</a>
+						</div>
+			    		<%= f.text_field :walletID, :readonly => true %>
+			    	</label>
+			    	</div>	
+			    	<div class="email-field">		    	
+						<label><%= f.label :email, t('form_email') %><br>
+				    		<%= f.text_field :email, :readonly => true %>
+				    	</label>
+			    	</div>	
+			    	<div class="name-field">		    	
+						<label><%= f.label :name, t('form_name') %><br>
+				    		<%= f.text_field :name, :readonly => true %>
+				    	</label>
+			    	</div>	
+			    	<div class="birthdate-field">		    	
+						<label><%= f.label :DoB, t('form_birthdate') %><br>
+				    		<%= f.date_field:DoB, :readonly => true  %>
+				    	</label>
+			    	</div>	
+			    	<div class="paymentmethod-field">		    	
+					<label>
+					<a href="#" data-reveal-id="paymentModal"><%=t :form_payment %></a><br><br>
+						<div id="paymentModal" class="reveal-modal" data-reveal>
+						  <h2>Payment Method</h2>
+						  <p class="lead">Description</p>
+						  <a class="close-reveal-modal">&#215;</a>
+						</div>
+			    		<%=t :form_bankinfo %><br><br>
+			    	</label>
+			    	</div>	
+		
+
+					<!-- Sell -->
+			    	<% elsif @transaction.transaction_type_id == 1 %>
+
+					<legend><%=t :header_sell %></legend>
+					
+					<div class="row">
+						 <div class="sellamt-field">		
+							 <div class="large-4 columns"><label><%=t :form_sellamt %></label></div>
+							 <div class="large-4 columns">
+							 	<label><%= f.label :BTCAmt, t('form_btcamt') %></label>
+							 	<%= f.text_field :BTCAmt, :readonly => true %>
+							 </div>
+							 <div class="large-4 columns">
+							 	<label><%= f.label :TWDAmt, t('form_ntdamt') %></label>
+							 	<%= f.text_field :TWDAmt, :readonly => true %>
+							 </div>						 
+						 </div>
+					</div>			
+			    	<div class="wallet-field">		    	
+					<label>
+					<a href="#" data-reveal-id="walletModal"><%=t :form_wallet %></a><br><%=t :sell_returnbitcoin%><br><br>
+						<div id="walletModal" class="reveal-modal" data-reveal>
+						  <h2>Wallet</h2>
+						  <p class="lead">Description</p>
+						  <a class="close-reveal-modal">&#215;</a>
+						</div>
+			    		<%= f.text_field :walletID, :readonly => true %>
+			    	</label>
+			    	</div>	
+			    	<div class="email-field">		    	
+						<label><%= f.label :email, t('form_email') %><br>
+				    		<%= f.text_field :email, :readonly => true %>
+				    	</label>
+			    	</div>	
+			    	<div class="name-field">		    	
+						<label><%= f.label :name, t('form_name') %><br>
+				    		<%= f.text_field :name, :readonly => true %>
+				    	</label>
+			    	</div>	
+			    	<div class="birthdate-field">		    	
+						<label><%= f.label :DoB, t('form_birthdate') %><br>
+				    		<%= f.date_field:DoB, :readonly => true  %>
+				    	</label>
+			    	</div>	
+			    	<div class="bankintro-field">		    	
+						<label><%=t :sell_bankdepositdetails%><br><a href="#"><%=t :sell_howtosell%></a><br><br></label>
+			    	</div>	
+			    	<div class="bankname-field">		    	
+						<label><%= f.label :bankName, t('form_bankname') %><br>
+				    		<%= f.text_field :bankName, :readonly => true %>
+				    	</label>
+			    	</div>
+		    		<div class="banknumber-field">		    	
+						<label><%= f.label :bankAcctNumber, t('form_banknumber') %><br>
+				    		<%= f.text_field :bankAcctNumber, :readonly => true %>
+				    	</label>
+			    	</div>
+
+			    	<% end %>
+
+			    	<!-- Common -->
+
+			    	<%= f.hidden_field :transaction_type_id, :value => @transaction.transaction_type_id %>
+					<%= f.hidden_field :bibicoinBTCtoTWD, :value => @transaction.bibicoinBTCtoTWD %>
+
+					<!-- TODO: Needs real logic added after --> 
+		    		<div class="captcha-field">		    	
+						<label><%= f.label :captcha, "The sum of 1 + 5 is:" %><%=t :form_verification %><br>
+				    		<%= f.text_field :TWDAmt %>
+				    	</label>
+			    	</div>
+
+			    	<div class="terms-field">		    	
+						<label><%= f.check_box :agreeTerms, :required=>true %> <%=t :form_terms %><%= link_to(t('form_terms_1'), :terms) %><%=t :form_terms_2 %>
+				    	</label><br>			    	
+			    	</div>	
+
+			    	<!-- TODO: Section for Validation for Debugging - Remove after for production -->
+			    	<div class="temp-field">		    	
+						<label><b>BiBicoins Commisions</b></label><br>
+			    	</div>	
+
+			    	<div class="totalamount-field">		    	
+						<label><%= f.label :totalAmt,  "Total Amount" %><br>
+				    		<p id = "totalAmt"><%= @transaction.TWDAmt + @transaction.commAmt %><br>
+				    	</label>
+			    	</div>	
+
+			    	<div class="commission-field">		    	
+						<label><%= f.label :commAmt,  "Commision Amount" %><br>
+				    		<%= f.text_field :commAmt, :readonly => true %>
+				    	</label>
+			    	</div>	
+
+			    	<div class="rate-field">		    	
+						<label>1 BTC to TWD Rate: <%= @transaction.bibicoinBTCtoTWD %></label><br>
+			    	</div>
+
+			    	</fieldset>			    	
+			<%= f.button t('form_back'), :class => 'button small large-3' %>
+			<%= f.submit t('form_confirmsubmit'), :class => 'button small large-4' %>  
+			<% end %>
+		  </div>
+
+		<% if @transaction.transaction_type_id == 0 %>
+			<div class="small-12 medium-6 large-6 columns">
+				<h4><%=t :buy_newrequest %></h4><br><br>
+				<p><%=t :buy_newrequest_b1%></p>
+				<p><%=t :buy_newrequest_b2%></p>		
+			</div> 
+		<% elsif @transaction.transaction_type_id == 1 %>
+			<div class="small-12 medium-6 large-6 columns">
+			<h4><%=t :sell_newrequest %></h4><br><br>
+			<p><%=t :sell_newrequest_b1%></p>
+			<p><%=t :sell_newrequest_b2%></p>		
+			</div> 
+		<% end %>	
+
+		</div>
+	</div>	
+
+	<!--
 	
 	<div class ="row">
 	  <div class="small-7 columns">	
@@ -41,9 +227,9 @@
 			
 	<% if @transaction.transaction_type_id == 0 %>
 				
-			<!-- Update to Whole number-->
+
 			<tr>
-				<!--TODO: Need to calculate this Buy Rate Amount -->
+
 				<td><%= f.label :TWDAmt, t('form_buyrate') %></td>
 				<td><%= f.text_field :TWDAmt, :value => @transaction.TWDAmt, :readonly => true %></td>
 			<tr>
@@ -55,7 +241,7 @@
 				<td><%= f.label :BTCAmt, t('form_btcamt') %></td>
 				<td><%= f.text_field :BTCAmt, :value => @transaction.BTCAmt, :readonly => true %></td>
 			</tr>
-<!-- Update to Whole number-->				
+			
 			<tr>
 				<td><%= f.label :walletID, t('form_wallet') %></td>
 				<td><%= f.text_field :walletID, :value => @transaction.walletID, :readonly => true %></td>
@@ -75,22 +261,12 @@
 			<tr>
 				<td><%= f.label :totalAmt,  "Total Amount" %> </td>
 				<td><p id = "totalAmt"><%= @transaction.TWDAmt + @transaction.commAmt %></p></td>
-			</tr>
-			<!--					
-			<tr>
-				<td><%= f.label :bankName, t('form_bankname') %> </td>
-				<td><%= f.text_field :bankName, :value => @transaction.bankName, :readonly => true %></td>
-			</tr>					
-			<tr>
-				<td><%= f.label :bankAcctNumber, t('form_banknumber') %></td>
-				<td><%= f.text_field :bankAcctNumber, :value => @transaction.bankAcctNumber, :readonly => true %></td>
-			</tr>
-			-->					
+			</tr>				
 
 	<% elsif @transaction.transaction_type_id == 1 %>
-			<!-- Update to Whole number-->
+
 			<tr>
-				<!--TODO: Need to calculate this Buy Rate Amount -->
+
 				<td><%= f.label :TWDAmt, t('form_sellrate') %></td>
 				<td><%= f.text_field :TWDAmt, :value => @transaction.TWDAmt, :readonly => true %></td>
 			<tr>
@@ -118,7 +294,7 @@
 				<td><%=t :form_paymentmethod_text %></td>
 			</tr>					
 
-<!-- Update to Whole number-->				
+		
 			<tr>
 				<td><%= f.label :totalAmt,  "Total Amount" %> </td>
 				<td><p id = "totalAmt"><%= @transaction.TWDAmt + @transaction.commAmt %></p></td>
@@ -134,7 +310,6 @@
 				<td><%= f.check_box :agreeTerms, :value =>@transaction.agreeTerms, :disabled => true %> <%=t :form_terms %></td>
 			</tr>
 
-	<!-- TODO: Captcha Verification -->
 			<tr>
 				<td><%= f.label :bankAcctNumber, "The sum of 1 + 5 is:" %><%=t :form_verification %></td>
 				<td><%= f.text_field :bankAcctNumber, :value => @transaction.bankAcctNumber  %></td>
@@ -144,8 +319,8 @@
 			<%= f.hidden_field :bibicoinBTCtoTWD, :value => @transaction.bibicoinBTCtoTWD %>
 			
 		</table>							
-			<%= f.button t('form_back') %>
-			<%= f.submit t('form_confirmsubmit') %><br><br>
+			<%= f.button t('form_back'), :class => 'button small large-3' %>
+			<%= f.submit t('form_confirmsubmit'), :class => 'button small large-4' %><br><br>
 				
 		<% end %>
 	  </div> 
@@ -166,6 +341,6 @@
 	  	  
 	  </div> 	  	
 	</div>		
-
+-->
 	</div>
 </div>

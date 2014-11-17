@@ -29,10 +29,10 @@
 
 
 	<div class ="row">
-		<div class="small-6 columns">	
+		<div class="small-12 medium-6 large-6 columns">	
 	
 	<% if @transaction.transaction_type_id == 0 %>
-		<h4><%=t :header_buy_buy_complete %></h4>
+		<h4><%=t :header_buy_order_email_confirmation %></h4>
 	<% elsif @transaction.transaction_type_id == 1 %>
 		<h4><%=t :header_buy_sell_complete %></h4>
 	<% end %>
@@ -145,14 +145,14 @@
 
 
 	<% if @transaction.transaction_type_id == 0 %>
-	  <div class="small-6 columns">
+	  <div class="small-12 medium-6 large-6 columns">
 		<h4><%=t :buy_confirmation %></h4><br><br>
 		<p><%=t :buy_confirmation_b1%></p>
 		<p><%=t :buy_confirmation_b2%></p>		
 		<p><%=t :buy_confirmation_b3%></p>	
 	  </div> 
 	<% elsif @transaction.transaction_type_id == 1 %>
-	  <div class="small-6 columns">
+	  <div class="small-12 medium-6 large-6 columns">
 		<h4><%=t :sell_confirmation %></h4><br><br>
 		<p><%=t :sell_confirmation_b1%></p>
 		<p><%=t :sell_confirmation_b2%></p>		

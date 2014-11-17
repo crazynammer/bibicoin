@@ -27,92 +27,198 @@
 		  <div class="small-4 columns"><a href="#" class="[tiny small large] button disabled"><b><%=t :sell_step3 %></b> <%=t :sell_step3_text %></a></div> 
 		</div>
 	<% end %>
-	
-	<!-- ***********Test Form Formatting --> 
 
 	<div id="before-content-area">
 		<div class="row">
 		  <div class="small-12 medium-6 large-6 columns">
-		  	<form data-abide>
-			  <fieldset>
-			    <legend>Buy Bitcoins</legend>
-			    <div class="ntdamt-field">
-				    <label>Purchase Amount <small>required</small><br><br>
-				    <label>NTD Amount
-				      <input type="text" placeholder="1Zvi22Q8Y3Cn6nPATEBSaFFbckD9sUq6C" required pattern="[a-zA-Z]+" maxlength="10">to<br><br>
-				    <label>BTC Amount
-				      <input type="text" placeholder="1Zvi22Q8Y3Cn6nPATEBSaFFbckD9sUq6C" required pattern="[a-zA-Z]+">
-				    </label>
-			    	<small class="error">Name is required and must be a string.</small>
-			    </div>
-			    <div class="btcamt-field">
-				    <label>Wallet Address <small>required</small>
-				      <input type="text" placeholder="1Zvi22Q8Y3Cn6nPATEBSaFFbckD9sUq6C"required pattern="[a-zA-Z]+">
-				    </label>
-			    	<small class="error">Name is required and must be a string.</small>
-			    </div>
-			    <div class="wallet-field">
-				    <label>Wallet Address <small>required</small>
-				      <input type="text" placeholder="1Zvi22Q8Y3Cn6nPATEBSaFFbckD9sUq6C"required pattern="[a-zA-Z]+">
-				    </label>
-			    	<small class="error">Name is required and must be a string.</small>
-			    </div>
-			    <div class="email-field">
-				    <label>Your Email Address <small>required</small>
-				      <input type="text" placeholder="jchan@gmail.com"required pattern="[a-zA-Z]+">
-				    </label>
-			    	<small class="error">Email is required.</small>
-			    </div>
-			    <div class="name-field">
-				    <label>Name <small>required</small>
-				      <input type="text" placeholder="Jackie Chan"required pattern="[a-zA-Z]+">
-				    </label>
-			    	<small class="error">Name is required and must be a string.</small>
-			    </div>
-			    <div class="birthdate-field">
-				    <label>Birthdate <small>required</small>
-				      <input type="text" placeholder=""required pattern="[a-zA-Z]+">
-				    </label>
-			    	<small class="error">Birthdate is required and must be a string.</small>
-			    </div>
-			    <div class="payment-field">
-				    <label>Payment Method
-				      <input type="text" placeholder="Make Bank Deposit to Shanghai Commercial Bank Account Number 1234567">
-				    </label>
-			    </div>
-			    <div class="totalamount-field">
-				    <label>Total Amount <small>required</small>
-				      <input type="text" placeholder="30,000"required pattern="[a-zA-Z]+">
-				    </label>
-			    	<small class="error">Total Amount is required and must be a string.</small>
-			    </div>
-			    <div class="commission-field">
-				    <label>Commission Amount <small>required</small>
-				      <input type="text" placeholder="0"required pattern="[a-zA-Z]+">
-				    </label>
-			    	<small class="error">Commission is required and must be a string.</small>
-			    </div>
-			    <div class="terms-field">
-				    <label>
-				      <input id="checkbox1" type="checkbox"> <small>Required: I have read and accept the terms and conditions of using this service.</small>
-				    </label>
-			    	<small class="error">Commission is required and must be a string.</small>
-			    </div>				    				    			    			    			    
-			  </fieldset>
-			  <button type="submit">Submit</button>  
-			</form>
+
+			<%= form_for @transaction, html: {"data-abide" => ''}, :url => {:action => "confirm"} do |f| %>
+					<fieldset>
+					<!-- Buy: allow inputs form both sides and change values as needed -->	
+					<% if @transaction.transaction_type_id == 0 %>
+
+					<legend><%=t :header_buy %></legend>
+					
+					<div class="row">
+						 <div class="purchaseamt-field">		
+							 <div class="large-4 columns"><label><%=t :form_purchaseamt %></label></div>
+							 <div class="large-4 columns">
+							 	<label><%= f.label :TWDAmt, t('form_ntdamt') %></label>
+							 	<%= f.text_field :TWDAmt, placeholder: "", :maxlength=>"10", :oninput => "updateBTCAmt()", :onkeyup => "calculateTotal()", :required => true, :pattern => "number" %>
+								<%= content_tag(:small, "Error", class: "error") %>
+							 </div>						 
+							 <div class="large-4 columns">
+							 	<label><%= f.label :BTCAmt, t('form_btcamt') %></label>
+							 	<%= f.text_field :BTCAmt, placeholder: "", :oninput => "updateNTDAmt()", :onkeyup => "calculateTotal()", :required => true, :pattern => "number" %>
+								<%= content_tag(:small, "Error", class: "error") %>
+							 </div>
+						 </div>
+					</div>			
+			    	<div class="wallet-field">		    	
+					<label>
+					<a href="#" data-reveal-id="walletModal"><%=t :form_wallet %></a><br><br>
+						<div id="walletModal" class="reveal-modal" data-reveal>
+						  <h2>Wallet</h2>
+						  <p class="lead">Description</p>
+						  <a class="close-reveal-modal">&#215;</a>
+						</div>
+			    		<%= f.text_field :walletID, :maxlength=>"75", placeholder: "1Zvi22Q8Y3Cn6nPATEBSaFFbckD9sUq6C", :required => true, :pattern => "alpha_numeric" %>
+			    	</label>
+			    		<%= content_tag(:small, "Error", class: "error") %>
+			    	</div>	
+			    	<div class="email-field">		    	
+						<label><%= f.label :email, t('form_email') %><br>
+				    		<%= f.text_field :email, :maxlength=>"75", :required => true, :pattern => "email" %>
+				    	</label>
+				    		<%= content_tag(:small, "Error", class: "error") %>
+			    	</div>	
+			    	<div class="name-field">		    	
+						<label><%= f.label :name, t('form_name') %><br>
+				    		<%= f.text_field :name, :maxlength=>"50", :required => true, :pattern => "" %>
+				    	</label>
+				    		<%= content_tag(:small, "Error", class: "error") %>
+			    	</div>	
+			    	<div class="birthdate-field">		    	
+						<label><%= f.label :DoB, t('form_birthdate') %><br>
+				    		<%= f.date_field:DoB, :maxlength=>"10", :required => true, :pattern => "date"  %>
+				    	</label>
+				    		<%= content_tag(:small, "Error", class: "error") %>
+			    	</div>	
+			    	<div class="paymentmethod-field">		    	
+					<label>
+					<a href="#" data-reveal-id="paymentModal"><%=t :form_payment %></a><br><br>
+						<div id="paymentModal" class="reveal-modal" data-reveal>
+						  <h2>Payment Method</h2>
+						  <p class="lead">Description</p>
+						  <a class="close-reveal-modal">&#215;</a>
+						</div>
+			    		<%=t :form_bankinfo %><br><br>
+			    	</label>
+			    	</div>	
+		
+
+					<!-- Sell -->
+			    	<% elsif @transaction.transaction_type_id == 1 %>
+
+					<legend><%=t :header_sell %></legend>
+					
+					<div class="row">
+						 <div class="sellamt-field">		
+							 <div class="large-4 columns"><label><%=t :form_sellamt %></label></div>
+							 <div class="large-4 columns">
+							 	<label><%= f.label :BTCAmt, t('form_btcamt') %></label>
+							 	<%= f.text_field :BTCAmt, placeholder: "", :oninput => "updateNTDAmt()", :onkeyup => "calculateTotal()", :required => true, :pattern => "number" %>
+								<%= content_tag(:small, "Error", class: "error") %>
+							 </div>
+							 <div class="large-4 columns">
+							 	<label><%= f.label :TWDAmt, t('form_ntdamt') %></label>
+							 	<%= f.text_field :TWDAmt, placeholder: "", :maxlength=>"10", :oninput => "updateBTCAmt()", :onkeyup => "calculateTotal()", :required => true, :pattern => "number" %>
+								<%= content_tag(:small, "Error", class: "error") %>
+							 </div>						 
+						 </div>
+					</div>			
+			    	<div class="wallet-field">		    	
+					<label>
+					<a href="#" data-reveal-id="walletModal"><%=t :form_wallet %></a><br><%=t :sell_returnbitcoin%><br><br>
+						<div id="walletModal" class="reveal-modal" data-reveal>
+						  <h2>Wallet</h2>
+						  <p class="lead">Description</p>
+						  <a class="close-reveal-modal">&#215;</a>
+						</div>
+			    		<%= f.text_field :walletID, :maxlength=>"75", placeholder: "1Zvi22Q8Y3Cn6nPATEBSaFFbckD9sUq6C", :required => true, :pattern => "alpha_numeric" %>
+			    	</label>
+			    		<%= content_tag(:small, "Error", class: "error") %>
+			    	</div>	
+			    	<div class="email-field">		    	
+						<label><%= f.label :email, t('form_email') %><br>
+				    		<%= f.text_field :email, :maxlength=>"75", :required => true, :pattern => "email" %>
+				    	</label>
+				    		<%= content_tag(:small, "Error", class: "error") %>
+			    	</div>	
+			    	<div class="name-field">		    	
+						<label><%= f.label :name, t('form_name') %><br>
+				    		<%= f.text_field :name, :maxlength=>"50", :required => true %>
+				    	</label>
+				    		<%= content_tag(:small, "Error", class: "error") %>
+			    	</div>	
+			    	<div class="birthdate-field">		    	
+						<label><%= f.label :DoB, t('form_birthdate') %><br>
+				    		<%= f.date_field:DoB, :maxlength=>"10", :required => true, :pattern => "date"  %>
+				    	</label>
+				    		<%= content_tag(:small, "Error", class: "error") %>
+			    	</div>	
+			    	<div class="bankintro-field">		    	
+						<label><%=t :sell_bankdepositdetails%><br><a href="#"><%=t :sell_howtosell%></a><br><br></label>
+			    	</div>	
+			    	<div class="bankname-field">		    	
+						<label><%= f.label :bankName, t('form_bankname') %><br>
+				    		<%= f.text_field :bankName, :maxlength=>"50", :required => true %>
+				    	</label>
+				    		<%= content_tag(:small, "Error", class: "error") %>
+			    	</div>
+		    		<div class="banknumber-field">		    	
+						<label><%= f.label :bankAcctNumber, t('form_banknumber') %><br>
+				    		<%= f.text_field :bankAcctNumber, :maxlength=>"50", :required => true, :pattern => "number" %>
+				    	</label>
+				    		<%= content_tag(:small, "Error", class: "error") %>
+			    	</div>
+
+			    	<% end %>
+
+			    	<!-- Common -->
+
+			    	<%= f.hidden_field :transaction_type_id, :value => @transaction.transaction_type_id %>
+					<%= f.hidden_field :bibicoinBTCtoTWD, :value => @transaction.bibicoinBTCtoTWD %>
+
+			    	<div class="terms-field">		    	
+						<label><%= f.check_box :agreeTerms, :required=>true %> <%=t :form_terms %><%= link_to(t('form_terms_1'), :terms) %><%=t :form_terms_2 %>
+				    	</label><%= content_tag(:small, "Error", class: "error") %><br>			    	
+			    	</div>	
+
+			    	<!-- TODO: Section for Validation for Debugging - Remove after for production -->
+			    	<div class="temp-field">		    	
+						<label><b>BiBicoins Commisions</b></label><br>
+			    	</div>	
+
+			    	<div class="totalamount-field">		    	
+						<label><%= f.label :totalAmt,  "Total Amount" %><br>
+				    		<label id = "totalAmt"></label><br>
+				    	</label>
+			    	</div>	
+
+			    	<div class="commission-field">		    	
+						<label><%= f.label :commAmt,  "Commision Amount" %><br>
+				    		<%= f.text_field :commAmt, :readonly => true %>
+				    	</label>
+			    	</div>	
+
+			    	<div class="rate-field">		    	
+						<label>1 BTC to TWD Rate: <%= @transaction.bibicoinBTCtoTWD %></label><br>
+			    	</div>
+
+			    	</fieldset>			    	
+			<%= f.submit t('form_next'), :class => 'button small large-3'%>   
+			<% end %>
 		  </div>
-		  <div class="small-12 medium-6 large-6 columns">
-			<h4 class="subheader"><%=t :buy_newrequest %></h4>
-			<p><%=t :buy_newrequest_b1%></p>
-			<p><%=t :buy_newrequest_b2%></p>
-		  </div>	
+
+		<% if @transaction.transaction_type_id == 0 %>
+			<div class="small-12 medium-6 large-6 columns">
+				<h4><%=t :buy_newrequest %></h4><br><br>
+				<p><%=t :buy_newrequest_b1%></p>
+				<p><%=t :buy_newrequest_b2%></p>		
+			</div> 
+		<% elsif @transaction.transaction_type_id == 1 %>
+			<div class="small-12 medium-6 large-6 columns">
+			<h4><%=t :sell_newrequest %></h4><br><br>
+			<p><%=t :sell_newrequest_b1%></p>
+			<p><%=t :sell_newrequest_b2%></p>		
+			</div> 
+		<% end %>	
+
 		</div>
 	</div>	
 
-
-
-	
+    <!--
 	<div class ="row">
 
 	  <div class="small-7 columns">
@@ -124,11 +230,11 @@
 		
 		<%= form_for @transaction, :url => {:action => "confirm"} do |f| %>
 		
-		<!-- Shared -->
+		<!- Shared
 		
 			<br />
 			<table>		
-			<!-- Buy: allow inputs form both sides and change values as needed -->	
+			<!- Buy: allow inputs form both sides and change values as needed	
 			<% if @transaction.transaction_type_id == 0 %>
 			
 				<tr>
@@ -139,7 +245,7 @@
 				</tr>
 				<tr>
 					<td><%=t :form_purchaseamt %></td>
-				<!-- minimum value is 0.25 -->
+				<!- minimum value is 0.25 --
 					<td>
 						<%= f.text_field :TWDAmt, :maxlength=>"10", :oninput => "updateBTCAmt()", :onkeyup => "calculateTotal()" %></td>
 					<td><%=t :form_to%></td>
@@ -177,7 +283,6 @@
 					<td><%= f.label :totalAmt,  "Total Amount" %> </td>
 					<td colspan='3'><p id = "totalAmt">0</p></td>
 				</tr>
-		<!--
 				<tr>
 					<td><%= f.label :bankName, t('form_bankname') %> </td>
 					<td colspan='3'><%= f.text_field :bankName, :readonly => true %></td>
@@ -185,10 +290,9 @@
 				<tr>
 					<td><%= f.label :bankAcctNumber, t('form_banknumber') %> </td>
 					<td colspan='3'><%= f.text_field :bankAcctNumber, :readonly => true %></td>
-				</tr>
-		-->			
+				</tr>		
 			
-			<!-- Sell -->
+			 Sell
 			<% elsif @transaction.transaction_type_id == 1 %>
 
 
@@ -200,7 +304,7 @@
 				</tr>
 				<tr>
 						<td><%=t :form_sellamt %></td>
-				<!-- minimum value is 0.25 -->
+				<!- minimum value is 0.25 
 					<td><%= f.text_field :BTCAmt, :oninput => "updateNTDAmt()", :onkeyup => "calculateTotal()" %></td>
 					<td><%=t :form_to%></td>
 					<td><%= f.text_field :TWDAmt, :oninput => "updateBTCAmt()", :onkeyup => "calculateTotal()" %></td>
@@ -222,7 +326,7 @@
 					<td><%= f.label :bankName, t('form_bankname') %> </td>
 					<td colspan='3'><%= f.text_field :bankName %></td>
 				</tr>		
-				<!-- TODO: BUG, Can't get the "Account Holder Name" Working -->		
+				<!- TODO: BUG, Can't get the "Account Holder Name" Working --		
 				<tr>
 					<td><%= f.label :name %></td>
 					<td colspan='3'><%= f.text_field :name, :maxlength=>"50" %></td>
@@ -262,7 +366,7 @@
 			</table>
 			
 
-			<!-- submit button -->
+			<!- submit button --
 			<%= f.submit t('form_next')%><br><br>
 			
 			
@@ -283,7 +387,7 @@
 		<p><%=t :sell_newrequest_b2%></p>		
 	  </div> 
 	<% end %>	  	  
-	  	
+-->	  	
 	</div>
 	
 <script type="text/javascript">
