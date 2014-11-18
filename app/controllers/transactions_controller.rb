@@ -100,6 +100,7 @@ HASH_XRATE_RATE = "rate"
   def create
 	@transaction = Transaction.new(transaction_params)
 	if @transaction.save
+		TransactionMailer.transaction_confirmation(@transaction).deliver
 		flash[:success] = "Transaction successfully saved"
 		redirect_to @transaction
 		
