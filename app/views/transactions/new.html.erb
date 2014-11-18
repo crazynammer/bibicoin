@@ -235,39 +235,47 @@ function updateNTDAmt()
 <!-- function to calculate commission and display on the screen -->
 function calculateTotal()
 {
-	var twdAmt = parseFloat(document.getElementById("transaction_TWDAmt").value).toFixed(2);
-	var btcAmt = parseFloat(document.getElementById("transaction_BTCAmt").value).toFixed(2);
+<!-- need to fix the rounding of the BTC for commission -->
+	var twdAmt = parseFloat(document.getElementById("transaction_TWDAmt").value).toFixed(0);
+	var btcAmt = parseFloat(document.getElementById("transaction_BTCAmt").value).toFixed(1);
 	<!-- this is twd for 1 BTC -->
 	var btcToTwd = "<%= @transaction.bibicoinBTCtoTWD %>";
 	var commRate = parseFloat(0).toFixed(2);
 	var commAmt = parseFloat(0).toFixed(2);
-	var COMM_LIMIT_1 = parseFloat("<%= @COMM_LIMIT_1 %>").toFixed(2);
-	var COMM_LIMIT_2 = parseFloat("<%= @COMM_LIMIT_2 %>").toFixed(2);
+	var COMM_LIMIT_1 = parseFloat("<%= @COMM_LIMIT_1 %>");
+	var COMM_LIMIT_2 = parseFloat("<%= @COMM_LIMIT_2 %>");
 	
-	<!-- Update with actual rates once the 
+	<!-- Buy: add / Sell: subtract -->
 	if (+btcAmt < +COMM_LIMIT_1)
 	{
-		commRate = (+0.01).toFixed(2);
+		commRate = (+0.0625);
 	}
 	else if (+btcAmt >= +COMM_LIMIT_1 && +btcAmt < +COMM_LIMIT_2)
 	{
-		commRate = (+0.02).toFixed(2);
+		commRate = (+0.0525);
 	}
 	else if (+btcAmt >= +COMM_LIMIT_2)
 	{
-		commRate = (+0.03).toFixed(2);
+		commRate = (+0.0425);
 	}
-	
-	 	
+		 	
 	commAmt = parseFloat(+twdAmt * +commRate).toFixed(0);
 	if (commAmt == 'NaN')
 	{
 		commAmt = 0;
 	}
-	var totalAmt = parseFloat(+twdAmt + +commAmt).toFixed(0);
+	var transactionType = "<%= @transaction.transaction_type_id %>";
+	if (transactionType == 0)
+	{
+		var totalAmt = parseFloat(+twdAmt +	+commAmt).toFixed(0);
+	}
+	else 
+	{
+		var totalAmt = parseFloat(+twdAmt - +commAmt).toFixed(0);
+	}
 	if (totalAmt == 'NaN')
 	{
-		totalAmt = 0	;
+		totalAmt = 0;
 	}
 	document.getElementById("transaction_commAmt").value = commAmt;
 	document.getElementById("totalAmt").innerHTML = totalAmt;
