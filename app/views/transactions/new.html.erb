@@ -8,24 +8,32 @@
 		<div id="before-content-area" class="bibicoin-header-bg-orange">
 			<h1><%=t :header_sell %></h1>
 		</div>
-	<% end %>
+	<% end %>			
 
-	<div class="row">
-		<br><br>
-	</div>		
+<% if @transaction.transaction_type_id == 0 %>
 
-	<% if @transaction.transaction_type_id == 0 %>
-		<div class="row">
-		  <div class="small-4 columns"><a href="#" class="[tiny small large] button"><b><%=t :buy_step1 %></b> <%=t :buy_step1_text %></a></div>
-		  <div class="small-4 columns"><a href="#" class="[tiny small large] button disabled"><b><%=t :buy_step2 %></b> <%=t :buy_step2_text %></a></div>
-		  <div class="small-4 columns"><a href="#" class="[tiny small large] button disabled"><b><%=t :buy_step3 %></b> <%=t :buy_step3_text %></a></div>  
-		</div>	
-	<% elsif @transaction.transaction_type_id == 1 %>
-		<div class="row">
-		  <div class="small-4 columns"><a href="#" class="[tiny small large] button"><b><%=t :sell_step1 %></b> <%=t :sell_step2_text %></a></div>
-		  <div class="small-4 columns"><a href="#" class="[tiny small large] button disabled"><b><%=t :sell_step2 %></b> <%=t :sell_step2_text %></a></div>
-		  <div class="small-4 columns"><a href="#" class="[tiny small large] button disabled"><b><%=t :sell_step3 %></b> <%=t :sell_step3_text %></a></div> 
+	<div>
+		<div id="before-content-area">
+			<div class="row">
+				<div class="small-12 medium-4 large-4 columns" align="center"><div class="bibicoin-button-blue-active"><b><%=t :buy_step1 %></b> <%=t :buy_step1_text %></div></div>
+		     	<div class="small-12 medium-4 large-4 columns" align="center"><div class="bibicoin-button-blue"><b><%=t :buy_step2 %></b> <%=t :buy_step2_text %></div></div>
+		     	<div class="small-12 medium-4 large-4 columns" align="center"><div class="bibicoin-button-blue"><b><%=t :buy_step3 %></b> <%=t :buy_step3_text %></div></div>
+	     	</div>
 		</div>
+	</div>	
+
+	<% elsif @transaction.transaction_type_id == 1 %>
+
+	<div>
+		<div id="before-content-area">
+			<div class="row">
+				<div class="small-12 medium-4 large-4 columns" align="center"><div class="bibicoin-button-blue-active"><%=t :sell_step1 %> <%=t :sell_step1_text %></div></div>
+		     	<div class="small-12 medium-4 large-4 columns" align="center"><div class="bibicoin-button-blue"><%=t :sell_step2 %> <%=t :sell_step2_text %></div></div>
+		     	<div class="small-12 medium-4 large-4 columns" align="center"><div class="bibicoin-button-blue"><%=t :sell_step3 %> <%=t :sell_step3_text %></div></div>
+	     	</div>
+		</div>
+	</div>	
+
 	<% end %>
 
 	<div id="before-content-area">
@@ -44,7 +52,7 @@
 							 <div class="large-4 columns"><label><%=t :form_purchaseamt %></label></div>
 							 <div class="large-4 columns">
 							 	<label><%= f.label :TWDAmt, t('form_ntdamt') %></label>
-							 	<%= f.number_field :TWDAmt, placeholder: "", :min => 3000, :max => 300000, :oninput => "updateBTCAmt()", :onkeyup => "calculateTotal()", :required => true, :title => "테스트 메시지" %>
+							 	<%= f.number_field :TWDAmt, placeholder: "", :min => 3000, :max => 300000, :oninput => "updateBTCAmt()", :onkeyup => "calculateTotal()", :required => true, :title => t('form_err_ntdamt') %>
 							 </div>						 
 							 <div class="large-4 columns">
 							 	<label><%= f.label :BTCAmt, t('form_btcamt') %></label>
@@ -60,22 +68,22 @@
 						  <p class="lead">Description</p>
 						  <a class="close-reveal-modal">&#215;</a>
 						</div>
-			    		<%= f.text_field :walletID, :maxlength=>"75", placeholder: "1Zvi22Q8Y3Cn6nPATEBSaFFbckD9sUq6C", :required => true, :pattern => "[a-zA-Z0-9]+" %>
+			    		<%= f.text_field :walletID, :maxlength=>"75", placeholder: "1Zvi22Q8Y3Cn6nPATEBSaFFbckD9sUq6C", :required => true, :pattern => "[a-zA-Z0-9]+", :title => t('form_err_wallet') %>
 			    	</label>
 			    	</div>	
 			    	<div class="email-field">		    	
 						<label><%= f.label :email, t('form_email') %><br>
-				    		<%= f.email_field :email, :maxlength=>"75", :required => true %>
+				    		<%= f.email_field :email, :maxlength=>"75", :required => true, :title => t('form_err_email') %>
 				    	</label>
 				    	</div>	
 			    	<div class="name-field">		    	
 						<label><%= f.label :name, t('form_name') %><br>
-				    		<%= f.text_field :name, :maxlength=>"50", :required => true %>
+				    		<%= f.text_field :name, :maxlength=>"50", :required => true, :title => t('form_err_name') %>
 				    	</label>
 				    </div>	
 			    	<div class="birthdate-field">		
 						<label><%= f.label :DoB, t('form_birthdate') %><br>
-				    		<%= f.date_field:DoB, :maxlength=>"10", :required => true, :max => @DOB_MIN  %>
+				    		<%= f.date_field:DoB, :maxlength=>"10", :required => true, :max => @DOB_MIN, :title => t('form_err_birthdate')  %>
 				    	</label>
 				    </div>	
 			    	<div class="paymentmethod-field">		    	
@@ -101,7 +109,7 @@
 							 <div class="large-4 columns"><label><%=t :form_sellamt %></label></div>
 							 <div class="large-4 columns">
 							 	<label><%= f.label :BTCAmt, t('form_btcamt') %></label>
-							 	<%= f.number_field :BTCAmt, placeholder: "", :oninput => "updateNTDAmt()", :onkeyup => "calculateTotal()", :required => true, :step => "any" %>
+							 	<%= f.number_field :BTCAmt, placeholder: "", :oninput => "updateNTDAmt()", :onkeyup => "calculateTotal()", :required => true, :step => "any", :title => t('form_err_ntdamt') %>
 							 </div>
 							 <div class="large-4 columns">
 							 	<label><%= f.label :TWDAmt, t('form_ntdamt') %></label>
@@ -117,22 +125,22 @@
 						  <p class="lead">Description</p>
 						  <a class="close-reveal-modal">&#215;</a>
 						</div>
-			    		<%= f.text_field :walletID, :maxlength=>"75", placeholder: "1Zvi22Q8Y3Cn6nPATEBSaFFbckD9sUq6C", :required => true, :pattern => "[a-zA-Z0-9]+" %>
+			    		<%= f.text_field :walletID, :maxlength=>"75", placeholder: "1Zvi22Q8Y3Cn6nPATEBSaFFbckD9sUq6C", :required => true, :pattern => "[a-zA-Z0-9]+", :title => t('form_err_wallet') %>
 			    	</label>
 			    	</div>	
 			    	<div class="email-field">		    	
 						<label><%= f.label :email, t('form_email') %><br>
-				    		<%= f.email_field :email, :maxlength=>"75", :required => true %>
+				    		<%= f.email_field :email, :maxlength=>"75", :required => true, :title => t('form_err_email') %>
 				    	</label>
 				    </div>	
 			    	<div class="name-field">		    	
 						<label><%= f.label :name, t('form_name') %><br>
-				    		<%= f.text_field :name, :maxlength=>"50", :required => true %>
+				    		<%= f.text_field :name, :maxlength=>"50", :required => true, :title => t('form_err_name') %>
 				    	</label>
 				    </div>	
 			    	<div class="birthdate-field">		    	
 						<label><%= f.label :DoB, t('form_birthdate') %><br>
-				    		<%= f.date_field:DoB, :maxlength=>"10", :required => true, :max => @DOB_MIN  %>
+				    		<%= f.date_field:DoB, :maxlength=>"10", :required => true, :max => @DOB_MIN, :title => t('form_err_birthdate')  %>
 				    	</label>
 				    </div>	
 			    	<div class="bankintro-field">		    	
@@ -140,12 +148,12 @@
 			    	</div>	
 			    	<div class="bankname-field">		    	
 						<label><%= f.label :bankName, t('form_bankname') %><br>
-				    		<%= f.text_field :bankName, :maxlength=>"50", :required => true %>
+				    		<%= f.text_field :bankName, :maxlength=>"50", :required => true, :title => t('form_err_bankname') %>
 				    	</label>
 				    </div>
 		    		<div class="banknumber-field">		    	
 						<label><%= f.label :bankAcctNumber, t('form_banknumber') %><br>
-				    		<%= f.text_field :bankAcctNumber, :maxlength=>"50", :required => true %>
+				    		<%= f.text_field :bankAcctNumber, :maxlength=>"50", :required => true, :title => t('form_err_banknumber') %>
 				    	</label>
 				    </div>
 
@@ -157,12 +165,12 @@
 					<%= f.hidden_field :bibicoinBTCtoTWD, :value => @transaction.bibicoinBTCtoTWD %>
 
 			    	<div class="terms-field">		    	
-						<label><%= f.check_box :agreeTerms, :required=>true %> <%=t :form_terms %><%= link_to(t('form_terms_1'), :terms) %><%=t :form_terms_2 %>
-				    </div>	
+						<label><%= f.check_box :agreeTerms, :required => true, :title => t('form_err_terms')  %> <%=t :form_terms %><%= link_to(t('form_terms_1'), :terms) %><%=t :form_terms_2 %>
+				    </div><br><br>	
 
-			    	<!-- TODO: Section for Validation for Debugging - Remove after for production -->
+
 			    	<div class="temp-field">		    	
-						<label><b>BiBicoins Commisions</b></label><br>
+						<label>BiBicoins Commisions</label><br>
 			    	</div>	
 
 			    	<div class="totalamount-field">		    	
@@ -178,11 +186,11 @@
 			    	</div>	
 
 			    	<div class="rate-field">		    	
-						<label>1 BTC to TWD Rate: <%= @transaction.bibicoinBTCtoTWD %></label><br>
+						<label>1 BTC to TWD Rate: <%= number_with_precision(@transaction.bibicoinBTCtoTWD, precision: 4) %></label><br>
 			    	</div>
 
 			    	</fieldset>			    	
-			<%= f.submit t('form_next'), :class => 'button small large-3'%>   
+			<div align="right"><%= f.submit t('form_next'), :class => 'button small large-3' %></div>   
 			<% end %>
 		  </div>
 
