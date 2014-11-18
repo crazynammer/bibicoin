@@ -73,9 +73,9 @@
 				    		<%= f.text_field :name, :maxlength=>"50", :required => true %>
 				    	</label>
 				    </div>	
-			    	<div class="birthdate-field">		    	
+			    	<div class="birthdate-field">		
 						<label><%= f.label :DoB, t('form_birthdate') %><br>
-				    		<%= f.date_field:DoB, :maxlength=>"10", :required => true  %>
+				    		<%= f.date_field:DoB, :maxlength=>"10", :required => true, :max => @DOB_MIN  %>
 				    	</label>
 				    </div>	
 			    	<div class="paymentmethod-field">		    	
@@ -132,7 +132,7 @@
 				    </div>	
 			    	<div class="birthdate-field">		    	
 						<label><%= f.label :DoB, t('form_birthdate') %><br>
-				    		<%= f.date_field:DoB, :maxlength=>"10", :required => true  %>
+				    		<%= f.date_field:DoB, :maxlength=>"10", :required => true, :max => @DOB_MIN  %>
 				    	</label>
 				    </div>	
 			    	<div class="bankintro-field">		    	
@@ -158,8 +158,7 @@
 
 			    	<div class="terms-field">		    	
 						<label><%= f.check_box :agreeTerms, :required=>true %> <%=t :form_terms %><%= link_to(t('form_terms_1'), :terms) %><%=t :form_terms_2 %>
-				    	</label><%= content_tag(:small, "Error", class: "error") %><br>			    	
-			    	</div>	
+				    </div>	
 
 			    	<!-- TODO: Section for Validation for Debugging - Remove after for production -->
 			    	<div class="temp-field">		    	

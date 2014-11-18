@@ -5,8 +5,13 @@ class TransactionsController < ApplicationController
 	#update with real limits when admin populated
 	@COMM_LIMIT_1 = 1
 	@COMM_LIMIT_2 = 5
-	
-	
+		
+	#calculate minimum DoB
+	todayDate = Date.today
+	dobYear = todayDate.year - 18
+	dobMonth = todayDate.month
+	dobDay = todayDate.day
+	@DOB_MIN = Date.new(dobYear, dobMonth, dobDay)
 	
   
 	@transaction = Transaction.new
