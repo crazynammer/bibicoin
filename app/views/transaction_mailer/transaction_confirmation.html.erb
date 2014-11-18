@@ -1,8 +1,51 @@
-<p> Transaction </p>
-<p> ID: <%= @transaction.id %> </p>
-<p> Name: <%= @transaction.name %> </p>
-<p> Email: <%= @transaction.email %> </p>
-<p> BTC Amount: <%= @transaction.BTCAmt %> </p>
-<p> NTD Amount: <%= @transaction.TWDAmt + @transaction.commAmt %> </p>
+<%= image_tag("http://fierce-ocean-4305.herokuapp.com/assets/logo-420f3b8fd3482d0880827ed0e4d2a9db.png", size: "200x150", :alt => "BiBicoins Logo") %>
 
-<p> Thank you </p>
+<% if @transaction.transaction_type_id == 0 %>
+	<div id="before-content-area" class="bibicoin-header-bg-orange">
+		<h1><%=t :buy_email_header %></h1>
+	</div>
+<% elsif @transaction.transaction_type_id == 1 %>
+	<div id="before-content-area" class="bibicoin-header-bg-orange">
+		<h1><%=t :sell_email_header %></h1>
+	</div>
+<% end %>
+
+<% if @transaction.transaction_type_id == 0 %>
+	<div>
+		<p><%=t :buy_email_b1 %><b><%= @transaction.name %></b><%=t :buy_email_b1a %><b><%= @transaction.id %></b><%=t :buy_email_b1b %><b><%= @transaction.created_at %></b><%=t :buy_email_b1c %></p><br><br>
+		<p><%=t :form_buyrate %> <%= number_with_precision(@transaction.TWDAmt/@transaction.BTCAmt, precision: 4) %></p>
+		<p><%=t :form_purchaseamt %> NTD <%= @transaction.TWDAmt%> </p>
+		<p><%=t :form_btcamt %> <%= @transaction.BTCAmt %> Bitcoins</p>
+		<p><%=t :form_wallet %> <%= @transaction.walletID %></p>		
+	</div>
+	<div>
+	<p><%=t :buy_email_b2 %><b><%= @transaction.TWDAmt%></b><%=t :buy_email_b2a %><b><%= @transaction.id %></b><%=t :buy_email_b2b %></p><br><br>
+		<p><%=t :form_makedepositto %> <%=t :form_bankinfo %></p>
+		<p><%=t :form_orderid %> <%= @transaction.id %></p>
+		<p><%=t :buy_email_b3 %></p>
+		<p><%=t :buy_email_b4 %></p>
+		<p><b><%=t :buy_email_b5 %></b></p>
+		<p><%=t :buy_email_b6 %></p>
+		<p><%=t :buy_email_b7 %></p>
+	</div>
+<% elsif @transaction.transaction_type_id == 1 %>
+	<div>
+		<p><%=t :sell_email_b1 %><b><%= @transaction.name %></b><%=t :sell_email_b1a %><b><%= @transaction.id %></b><%=t :sell_email_b1b %><b><%= @transaction.created_at %></b><%=t :sell_email_b1c %></p><br><br>
+		<p><%=t :form_sellrate %> <%= number_with_precision(@transaction.BTCAmt/@transaction.TWDAmt, precision: 4) %></p>
+		<p><%=t :form_sellamt %> NTD <%= number_to_currency(@transaction.TWDAmt, locale: :zh) %> </p>
+		<p><%=t :form_btcamt %> <%= @transaction.BTCAmt %> Bitcoins</p>
+		<p><%=t :form_wallet %> <%= @transaction.walletID %></p>
+		<p><%=t :form_bankname %> <%= @transaction.bankName %></p>
+		<p><%=t :form_name %> <%= @transaction.name %></p>
+		<p><%=t :form_sellaccountnumber %> <%= @transaction.bankAcctNumber %></p>		
+	</div>
+	<div>
+		<p><%=t :sell_email_b2 %></p>
+		<p><%=t :form_sellbibiwallet %> abcd1234</p>
+		<p><%=t :sell_email_b3 %></p>
+		<p><%=t :buy_email_b4 %></p>
+		<p><b><%=t :buy_email_b5 %></b></p>
+		<p><b><%=t :buy_email_b6 %></b></p>
+		<p><%=t :buy_email_b7 %></p>
+	</div>
+<% end %>
