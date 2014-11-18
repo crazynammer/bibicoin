@@ -7,24 +7,32 @@
 		<div id="before-content-area" class="bibicoin-header-bg-orange">
 			<h1><%=t :header_sell %></h1>
 		</div>
-	<% end %>
-	
-	<div class="row">
-		<br><br>
-	</div>		
+	<% end %>	
 
 	<% if @transaction.transaction_type_id == 0 %>
-		<div class="row">
-		  <div class="small-4 columns"><a href="#" class="[tiny small large] button disabled"><b><%=t :buy_step1 %></b> <%=t :buy_step1_text %></a></div>
-		  <div class="small-4 columns"><a href="#" class="[tiny small large] button"><b><%=t :buy_step2 %></b> <%=t :buy_step2_text %></a></div>
-		  <div class="small-4 columns"><a href="#" class="[tiny small large] button disabled"><b><%=t :buy_step3 %></b> <%=t :buy_step3_text %></a></div>	  
-		</div>	
-	<% elsif @transaction.transaction_type_id == 1 %>
-		<div class="row">
-		  <div class="small-4 columns"><a href="#" class="[tiny small large] button disabled"><b><%=t :sell_step1 %></b> <%=t :sell_step2_text %></a></div>
-		  <div class="small-4 columns"><a href="#" class="[tiny small large] button"><b><%=t :sell_step2 %></b> <%=t :sell_step2_text %></a></div>
-		  <div class="small-4 columns"><a href="#" class="[tiny small large] button disabled"><b><%=t :sell_step3 %></b> <%=t :sell_step3_text %></a></div> 
+
+	<div>
+		<div id="before-content-area">
+			<div class="row">
+				<div class="small-12 medium-4 large-4 columns" align="center"><div class="bibicoin-button-blue"><b><%=t :buy_step1 %></b> <%=t :buy_step1_text %></div></div>
+		     	<div class="small-12 medium-4 large-4 columns" align="center"><div class="bibicoin-button-blue-active"><b><%=t :buy_step2 %></b> <%=t :buy_step2_text %></div></div>
+		     	<div class="small-12 medium-4 large-4 columns" align="center"><div class="bibicoin-button-blue"><b><%=t :buy_step3 %></b> <%=t :buy_step3_text %></div></div>
+	     	</div>
 		</div>
+	</div>	
+
+	<% elsif @transaction.transaction_type_id == 1 %>
+
+	<div>
+		<div id="before-content-area">
+			<div class="row">
+				<div class="small-12 medium-4 large-4 columns" align="center"><div class="bibicoin-button-blue"><%=t :sell_step1 %> <%=t :sell_step1_text %></div></div>
+		     	<div class="small-12 medium-4 large-4 columns" align="center"><div class="bibicoin-button-blue-active"><%=t :sell_step2 %> <%=t :sell_step2_text %></div></div>
+		     	<div class="small-12 medium-4 large-4 columns" align="center"><div class="bibicoin-button-blue"><%=t :sell_step3 %> <%=t :sell_step3_text %></div></div>
+	     	</div>
+		</div>
+	</div>	
+
 	<% end %>
 
 	<div id="before-content-area">
@@ -174,7 +182,7 @@
 
 			    	<div class="totalamount-field">		    	
 						<label><%= f.label :totalAmt,  "Total Amount" %><br>
-				    		<p id = "totalAmt"><%= @transaction.TWDAmt + @transaction.commAmt %><br>
+				    		<p id = "totalAmt"><%= number_to_currency(@transaction.TWDAmt + @transaction.commAmt, locale: :zh) %><br>
 				    	</label>
 			    	</div>	
 
@@ -185,18 +193,18 @@
 			    	</div>	
 
 			    	<div class="rate-field">		    	
-						<label>1 BTC to TWD Rate: <%= @transaction.bibicoinBTCtoTWD %></label><br>
+						<label>1 BTC to TWD Rate: <%= number_with_precision(@transaction.bibicoinBTCtoTWD, precision: 4) %></label><br>
 			    	</div>
 
 			    	</fieldset>			    	
 			<%= f.button t('form_back'), :class => 'button small large-3' %>
-			<%= f.submit t('form_confirmsubmit'), :class => 'button small large-4' %>  
+			<%= f.submit t('form_confirmsubmit'), :class => 'button small large-4' %>
 			<% end %>
 		  </div>
 
 		<% if @transaction.transaction_type_id == 0 %>
 			<div class="small-12 medium-6 large-6 columns">
-				<h4><%=t :buy_newrequest %></h4><br><br>
+				<h4><%=t :buy_newrequest %></h4><br>
 				<p><%=t :buy_newrequest_b1%></p>
 				<p><%=t :buy_newrequest_b2%></p>		
 			</div> 
@@ -211,136 +219,5 @@
 		</div>
 	</div>	
 
-	<!--
-	
-	<div class ="row">
-	  <div class="small-7 columns">	
-	<% if @transaction.transaction_type_id == 0 %>
-		<h4><%=t :header_buy_buy_confirm %></h4>
-	<% elsif @transaction.transaction_type_id == 1 %>
-		<h4><%=t :header_buy_sell_confirm %></h4>
-	<% end %>
-	
-		<%= form_for @transaction do |f| %>
-
-		<table>
-			
-	<% if @transaction.transaction_type_id == 0 %>
-				
-
-			<tr>
-
-				<td><%= f.label :TWDAmt, t('form_buyrate') %></td>
-				<td><%= f.text_field :TWDAmt, :value => @transaction.TWDAmt, :readonly => true %></td>
-			<tr>
-			<tr>			
-				<td><%= f.label :TWDAmt, t('form_purchaseamt') %></td>
-				<td><%= f.text_field :TWDAmt, :value => @transaction.TWDAmt, :readonly => true %></td>
-			</tr>
-			<tr>
-				<td><%= f.label :BTCAmt, t('form_btcamt') %></td>
-				<td><%= f.text_field :BTCAmt, :value => @transaction.BTCAmt, :readonly => true %></td>
-			</tr>
-			
-			<tr>
-				<td><%= f.label :walletID, t('form_wallet') %></td>
-				<td><%= f.text_field :walletID, :value => @transaction.walletID, :readonly => true %></td>
-			</tr>					
-			<tr>
-				<td><%= f.label :email, t('form_email') %></td>
-				<td><%= f.text_field :email, :value => @transaction.email, :readonly => true %></td>
-			</tr>					
-			<tr>
-				<td><%= f.label :name, t('form_name') %></td>
-				<td><%= f.text_field :name, :value => @transaction.name, :readonly => true %></td>
-			</tr>					
-			<tr>
-				<td><%= f.label :DoB, t('form_birthdate') %></td>
-				<td><%= f.text_field :DoB, :value => @transaction.DoB, :readonly => true %></td>
-			</tr>					
-			<tr>
-				<td><%= f.label :totalAmt,  "Total Amount" %> </td>
-				<td><p id = "totalAmt"><%= @transaction.TWDAmt + @transaction.commAmt %></p></td>
-			</tr>				
-
-	<% elsif @transaction.transaction_type_id == 1 %>
-
-			<tr>
-
-				<td><%= f.label :TWDAmt, t('form_sellrate') %></td>
-				<td><%= f.text_field :TWDAmt, :value => @transaction.TWDAmt, :readonly => true %></td>
-			<tr>
-			<tr>			
-				<td><%= f.label :TWDAmt, t('form_sellamt') %></td>
-				<td><%= f.text_field :TWDAmt, :value => @transaction.TWDAmt, :readonly => true %></td>
-			</tr>
-			<tr>
-				<td><%= f.label :BTCAmt, t('form_btcamt') %></td>
-				<td><%= f.text_field :BTCAmt, :value => @transaction.BTCAmt, :readonly => true %></td>
-			</tr>
-			<tr>
-				<td><%= f.label :email, t('form_email') %></td>
-				<td><%= f.text_field :email, :value => @transaction.email, :readonly => true %></td>
-			</tr>					
-			<tr>
-				<td><%= f.label :walletID, t('form_wallet') %></td>
-				<td><%= f.text_field :walletID, :value => @transaction.walletID, :readonly => true %></td>
-			</tr>					
-			<tr>
-				<td colspan='2'><%=t :form_sellbibiwallet %></td>
-			</tr>					
-			<tr>
-				<td><%=t :form_paymentmethod %></td>
-				<td><%=t :form_paymentmethod_text %></td>
-			</tr>					
-
-		
-			<tr>
-				<td><%= f.label :totalAmt,  "Total Amount" %> </td>
-				<td><p id = "totalAmt"><%= @transaction.TWDAmt + @transaction.commAmt %></p></td>
-			</tr>					
-	<% end %>
-
-			<tr>
-				<td><%= f.label :commAmt, "Commission Amount" %></td>
-				<td><%= f.text_field :commAmt, :value => @transaction.commAmt, :readonly => true %></td>
-			</tr>
-	
-			<tr>
-				<td><%= f.check_box :agreeTerms, :value =>@transaction.agreeTerms, :disabled => true %> <%=t :form_terms %></td>
-			</tr>
-
-			<tr>
-				<td><%= f.label :bankAcctNumber, "The sum of 1 + 5 is:" %><%=t :form_verification %></td>
-				<td><%= f.text_field :bankAcctNumber, :value => @transaction.bankAcctNumber  %></td>
-			</tr>											
-
-			<%= f.hidden_field :transaction_type_id, :value => @transaction.transaction_type_id %>
-			<%= f.hidden_field :bibicoinBTCtoTWD, :value => @transaction.bibicoinBTCtoTWD %>
-			
-		</table>							
-			<%= f.button t('form_back'), :class => 'button small large-3' %>
-			<%= f.submit t('form_confirmsubmit'), :class => 'button small large-4' %><br><br>
-				
-		<% end %>
-	  </div> 
-
-	<% if @transaction.transaction_type_id == 0 %>
-	  <div class="small-5 columns">
-		<h4><%=t :buy_reviewconfirm %></h4><br><br>
-		<p><%=t :buy_reviewconfirm_b1%></p>
-		<p><%=t :buy_reviewconfirm_b2%></p>	
-	  </div> 
-	<% elsif @transaction.transaction_type_id == 1 %>
-	  <div class="small-5 columns">
-		<h4><%=t :sell_reviewconfirm %></h4><br><br>
-		<p><%=t :sell_reviewconfirm_b1%></p>
-		<p><%=t :sell_reviewconfirm_b2%></p>		
-	  </div> 
-	<% end %>	
-	  	  
-	  </div> 	  	
-	</div>		
--->
 	</div>
 </div>
