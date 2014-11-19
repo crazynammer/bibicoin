@@ -30,7 +30,7 @@ zh:
   common_address: "地址"
   common_email_value: "bibicoins@gmail.com"
   common_phone_value: "+886 989 627 705"
-  common_address_value: "Zhongxiao Dong Lu, Unit 18/C"
+  common_address_value: "太平洋電子商品交易有限公司 - 台北市忠孝東路四段148號7樓."
 # ---------------------------------------------------------------------------------------------------------------------------
 # Common Links
 # ---------------------------------------------------------------------------------------------------------------------------
@@ -154,7 +154,7 @@ zh:
   buy_confirmation: "查閱您的電子郵件信箱"
   buy_confirmation_b1: "電子郵件確認函已送到您的電子郵件信箱，內含有關下個步驟的詳細指示。若您未收到這封電子郵件，請檢查您的垃圾郵件夾."
   buy_confirmation_b2: "您必須在8小時內，將新台幣"
-  buy_confirmation_b3: "元存入台新銀行帳號 1234567"
+  buy_confirmation_b3: "TODO: 元存入台新銀行帳號 Bank Name 上海商業儲蓄銀行 20102000030694"
   buy_confirmation_b4: "在存款時， 請記得填入訂單號碼("
   buy_confirmation_b5: ")已做為參考"
   buy_email_header: "TODO: Bibicoins Buy Order Confirmation"
@@ -221,7 +221,7 @@ zh:
   form_name: "您的姓名:"
   form_birthdate: "您的生日:"
   form_payment: "付款方法:"
-  form_bankinfo: "存款至上海商業銀行帳號1234567"
+  form_bankinfo: "TODO: 存款至上海商業銀行帳號 上海商業儲蓄銀行 - 20102000030694"
   form_orderid: "訂單號碼:"
   form_terms: "我已閱讀並接受"
   form_terms_1: "上述使用此服務之同意書條款"
@@ -229,7 +229,7 @@ zh:
   form_verification: "* 請完成下列簡易的數學問題以授權您的訂單成立."
   form_bankname: "銀行名稱:"
   form_makedepositto: "存款至:"
-  form_bankaccount: "台新銀行帳戶 1234566"
+  form_bankaccount: "TODO: 台新銀行帳戶 上海商業儲蓄銀行 - 20102000030694"
   form_buyrequestsubmitted: "購買訂單已提交"
   form_sellrequestsubmitted: "已提交銷售要求:"
   form_sellbibiwallet: "Bibicoins.com公司的錢包網址:"

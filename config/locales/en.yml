@@ -30,7 +30,7 @@ en:
   common_address: "Address"
   common_email_value: "bibicoins@gmail.com"
   common_phone_value: "+886 989 627 705"
-  common_address_value: "Zhongxiao Dong Lu, Unit 18/C"
+  common_address_value: "Pacific Digital Commodity Trading Ltd. - 7th Floor, Nos. 148, Zhong Xiao Dong Lu Section 4, Taipei, R.O.C."
 # ---------------------------------------------------------------------------------------------------------------------------
 # Common Links
 # ---------------------------------------------------------------------------------------------------------------------------
@@ -154,7 +154,7 @@ en:
   buy_confirmation: "Check Your Email"
   buy_confirmation_b1: "An email confirmation has been sent to your email address with detailed instructions on what to do next.  Check your spam folders if you do not receive this email."
   buy_confirmation_b2: "You will need to make a deposit of NTD "
-  buy_confirmation_b3: " within 4 hours to: Shanghai Commercial  Bank Account number 1234567"
+  buy_confirmation_b3: " within 4 hours to: THE SHANGHAI COMMERCIAL & SAVINGS BANK, LTD  Bank Account Number 20102000030694"
   buy_confirmation_b4: "Remember to include your Order ID ("
   buy_confirmation_b5: ") as reference when making your deposit."
   buy_email_header: "Bibicoins Buy Order Confirmation"
@@ -221,7 +221,7 @@ en:
   form_name: "Your Name:"
   form_birthdate: "Your Birthdate:"
   form_payment: "Payment Method:"
-  form_bankinfo: "Make Bank Deposit to Shanghai Commercial Bank Account Number 1234567"
+  form_bankinfo: "Make Bank Deposit to THE SHANGHAI COMMERCIAL & SAVINGS BANK, LTD 20102000030694"
   form_orderid: "Order Id:"
   form_terms: "Required: I have read and accept the "
   form_terms_1: "terms and conditions "
@@ -230,14 +230,14 @@ en:
   form_bankname: "Bank Name:"
   form_banknumber: "Bank Account Number:"
   form_makedepositto: "Make Deposit To:"
-  form_bankaccount: "TaiShinBank Account Number 1234566"
+  form_bankaccount: "THE SHANGHAI COMMERCIAL & SAVINGS BANK, LTD 20102000030694"
   form_buyrequestsubmitted: "Buy Request Submitted:"
   form_sellrequestsubmitted: "Sell Request Submitted:"
   form_sellbibiwallet: "Bibicoins.com Wallet Address:"
   form_sellbankdetails: "Your Bank Deposit Details:"
   form_sellaccountnumber: "Account Number"
   form_paymentmethod: "Payment Method:"
-  form_paymentmethod_text: "Bibi.com will make Deposit to TaiShinBank Account Number 1234567"
+  form_paymentmethod_text: "Bibi.com will make Deposit to THE SHANGHAI COMMERCIAL & SAVINGS BANK, LTD 20102000030694"
   form_next: "Next >"
   form_back: "< Back"
   form_ok: "Ok"
@@ -325,7 +325,7 @@ en:
   faq_h13: "via email at: "
   faq_b13: ""	
   faq_h14: "by telephone on: +886 922711415"
-  faq_email: "helpdesk@bibicoins.com.tw"	
+  faq_email: "bibicoins@gmail.com"	
   faq_phone: "+886 922711415"	
 # ---------------------------------------------------------------------------------------------------------------------------
 # Customer Reviews
