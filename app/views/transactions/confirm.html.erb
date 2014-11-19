@@ -165,9 +165,7 @@
 
 					<!-- TODO: Needs real logic added after --> 
 		    		<div class="captcha-field">		    	
-						<label><%= f.label :captcha, "The sum of 1 + 5 is:" %><%=t :form_verification %><br>
-				    		<%= f.text_field :TWDAmt %>
-				    	</label>
+						<%= raw recaptcha_tags %>
 			    	</div>
 
 			    	<div class="terms-field">		    	

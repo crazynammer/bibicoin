@@ -81,6 +81,10 @@ Rails.application.configure do
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
   
+  #recaptcha
+  RECAPTCHA_PUBLIC_KEY = "6LeV_f0SAAAAAKQnXah4wAfOBtR1x30KbDNx_jax"
+  RECAPTCHA_PRIVATE_KEY = "6LeV_f0SAAAAAFj5JKBJcKlzjGGwdaklpb0UUu4J"
+  
   config.action_mailer.perform_deliveries = true
   ActionMailer::Base.delivery_method = :smtp
   ActionMailer::Base.smtp_settings = 

@@ -35,6 +35,10 @@ Rails.application.configure do
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
   
+  #recaptcha
+  RECAPTCHA_PUBLIC_KEY = "6Led_f0SAAAAAAtmqhgHjPZsgFcFi9ajnObUQi-A"
+  RECAPTCHA_PRIVATE_KEY = "6Led_f0SAAAAAKKnTJIUmPFlCpwTej-J3tKDYAQ_"
+  
   
   #smtp gmail settings
   config.action_mailer.perform_deliveries = true
