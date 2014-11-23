@@ -64,8 +64,8 @@
 					<label>
 					<a href="#" data-reveal-id="walletModal"><%=t :form_wallet %></a><br><br>
 						<div id="walletModal" class="reveal-modal" data-reveal>
-						  <h2>Wallet</h2>
-						  <p class="lead">Description</p>
+						  <h2><%=t :form_wallet_1 %></h2>
+						  <p class="lead"><%=t :form_wallet_2 %></p>
 						  <a class="close-reveal-modal">&#215;</a>
 						</div>
 			    		<%= f.text_field :walletID, :maxlength=>"75", placeholder: "1Zvi22Q8Y3Cn6nPATEBSaFFbckD9sUq6C", :required => true, :pattern => "[a-zA-Z0-9]+", :title => t('form_err_wallet') %>
@@ -77,7 +77,7 @@
 				    	</label>
 				    	</div>	
 			    	<div class="name-field">		    	
-						<label><%= f.label :name, t('form_name') %><br>
+						<label><%= f.label :name, t('form_name') %><small><%=t :form_name_1 %></small>
 				    		<%= f.text_field :name, :maxlength=>"50", :required => true, :title => t('form_err_name') %>
 				    	</label>
 				    </div>	
@@ -90,14 +90,13 @@
 					<label>
 					<a href="#" data-reveal-id="paymentModal"><%=t :form_payment %></a><br><br>
 						<div id="paymentModal" class="reveal-modal" data-reveal>
-						  <h2>Payment Method</h2>
-						  <p class="lead">Description</p>
+						  <h2><%=t :form_payment_1 %></h2>
+						  <p class="lead"><%=t :form_payment_2 %></p>
 						  <a class="close-reveal-modal">&#215;</a>
 						</div>
 			    		<%=t :form_bankinfo %><br><br>
 			    	</label>
-			    	</div>	
-		
+			    	</div>			
 
 					<!-- Sell -->
 			    	<% elsif @transaction.transaction_type_id == 1 %>
@@ -134,7 +133,7 @@
 				    	</label>
 				    </div>	
 			    	<div class="name-field">		    	
-						<label><%= f.label :name, t('form_name') %><br>
+						<label><%= f.label :name, t('form_name') %><br><small><%=t :form_name_1 %></small>
 				    		<%= f.text_field :name, :maxlength=>"50", :required => true, :title => t('form_err_name') %>
 				    	</label>
 				    </div>	
