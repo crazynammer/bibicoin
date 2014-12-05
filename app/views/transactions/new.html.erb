@@ -147,7 +147,7 @@
 			    	</div>	
 			    	<div class="bankname-field">		    	
 						<label><%= f.label :bankName, t('form_bankname') %><br>
-				    		<%= f.text_field :bankName, :maxlength=>"50", :required => true, :title => t('form_err_bankname') %>
+				    		<%= f.select :bankName, @BANKS, :required => true, :title => t('form_err_bankname') %>
 				    	</label>
 				    </div>
 		    		<div class="banknumber-field">		    	

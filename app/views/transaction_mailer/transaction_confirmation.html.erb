@@ -12,7 +12,7 @@
 
 <% if @transaction.transaction_type_id == 0 %>
 	<div>
-		<p><%=t :buy_email_b1 %><b><%= @transaction.name %></b><%=t :buy_email_b1a %><b><%= @transaction.id %></b><%=t :buy_email_b1b %><b><%= @transaction.created_at %></b><%=t :buy_email_b1c %></p>
+		<p><%=t :buy_email_b1 %><b><%= @transaction.name %></b><%=t :buy_email_b1a %><b><%= @transaction.id %></b><%=t :buy_email_b1b %><b><%= @transaction.created_at.in_time_zone("Taipei") %></b><%=t :buy_email_b1c %></p>
 	</div>
 	<div>
 		<table>
@@ -58,7 +58,7 @@
 	</div>
 <% elsif @transaction.transaction_type_id == 1 %>
 	<div>
-		<p><%=t :sell_email_b1 %><b><%= @transaction.name %></b><%=t :sell_email_b1a %><b><%= @transaction.id %></b><%=t :sell_email_b1b %><b><%= @transaction.created_at %></b><%=t :sell_email_b1c %></p><br>
+		<p><%=t :sell_email_b1 %><b><%= @transaction.name %></b><%=t :sell_email_b1a %><b><%= @transaction.id %></b><%=t :sell_email_b1b %><b><%= @transaction.created_at.in_time_zone("Taipei") %></b><%=t :sell_email_b1c %></p><br>
 	</div>
 	<div>
 		<table>

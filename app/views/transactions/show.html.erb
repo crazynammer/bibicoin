@@ -86,7 +86,7 @@
 			-->
 			<tr>
 				<td><%=t :form_buyrequestsubmitted %></td>
-				<td><%= @transaction.created_at %></td>
+				<td><%= @transaction.created_at.in_time_zone("Taipei") %></td>
 			<tr>
 	<% elsif @transaction.transaction_type_id == 1 %>
 			<tr>
@@ -124,7 +124,7 @@
 
 			<tr>
 				<td><%=t :form_sellrequestsubmitted %></td>
-				<td><%= @transaction.created_at %></td>
+				<td><%= @transaction.created_at.in_time_zone("Taipei") %></td>
 			<tr>
 
 	<% end %>

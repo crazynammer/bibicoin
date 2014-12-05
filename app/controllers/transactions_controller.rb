@@ -14,8 +14,11 @@ XCODE_RMB = "CNY"
 HASH_XRATE_CODE = "code"
 HASH_XRATE_RATE = "rate"
 
+
+
  
   def new
+  
     #need to add error handling in case the site is down
 	response = Net::HTTP.get_response(URI.parse($bitcoinRatesURI))
 	exchangeRateRawData = response.body
@@ -92,6 +95,54 @@ HASH_XRATE_RATE = "rate"
 	@transaction.transaction_type_id = params[:ttype] 
 	#BTC to TWD from previously calculated value
 	@transaction.bibicoinBTCtoTWD = @twdValue
+	
+	#list of banks
+	@BANKS = 
+	[
+		[ "Agricultural Bank of Taiwan - 農業金庫" , "Agricultural Bank of Taiwan - 農業金庫" ],
+		[ "ANZ Taiwan - 澳盛(台灣)銀行", "ANZ Taiwan - 澳盛(台灣)銀行" ],
+		[ "Bank of America - 美國銀行", "Bank of America - 美國銀行" ],
+		[ "Bank of East Asia - 東亞銀行", "Bank of East Asia - 東亞銀行" ],
+		[ "Bank of Kaohsiung - 高雄銀行", "Bank of Kaohsiung - 高雄銀行" ],
+		[ "Bank of Panshin - 板信商業銀行", "Bank of Panshin - 板信商業銀行" ],
+		[ "Bank of Taipei - 大台北銀行", "Bank of Taipei - 大台北銀行" ],
+		[ "Bank of Taiwan - 臺灣銀行", "Bank of Taiwan - 臺灣銀行" ],
+		[ "Bank SinoPac - 永豐銀行", "Bank SinoPac - 永豐銀行" ],
+		[ "Cathay United Bank - 國泰世華銀行", "Cathay United Bank - 國泰世華銀行" ],
+		[ "Chang Hwa Bank - 彰化銀行", "Chang Hwa Bank - 彰化銀行" ],
+		[ "China Development Industrial Bank - 中華開發工銀", "China Development Industrial Bank - 中華開發工銀" ],
+		[ "Chinatrust Commercial Bank - 中國信託", "Chinatrust Commercial Bank - 中國信託" ],
+		[ "Chunghwa Post - 中華郵政", "Chunghwa Post - 中華郵政" ],
+		[ "Citibank Taiwan - 花旗(台灣)銀行", "Citibank Taiwan - 花旗(台灣)銀行" ],
+		[ "Cosmos Bank - 萬泰銀行", "Cosmos Bank - 萬泰銀行" ],
+		[ "COTA Commercial Bank - 三信商業銀行", "COTA Commercial Bank - 三信商業銀行" ],
+		[ "DBS Taiwan - 星展(台灣)銀行", "DBS Taiwan - 星展(台灣)銀行" ],
+		[ "Deutsche Bank - 德意志銀行", "Deutsche Bank - 德意志銀行" ],
+		[ "E.Sun Bank - 玉山銀行", "E.Sun Bank - 玉山銀行" ],
+		[ "EnTie Bank - 安泰商業銀行", "EnTie Bank - 安泰商業銀行" ],
+		[ "Far Eastern International Bank - 遠東國際商業銀行", "Far Eastern International Bank - 遠東國際商業銀行" ],
+		[ "First Bank - 第一銀行", "First Bank - 第一銀行" ],
+		[ "Fubon Financial - 台北富邦銀行", "Fubon Financial - 台北富邦銀行" ],
+		[ "HSBC Taiwan - 匯豐(台灣)銀行", "HSBC Taiwan - 匯豐(台灣)銀行" ],
+		[ "Hua Nan Bank - 華南銀行", "Hua Nan Bank - 華南銀行" ],
+		[ "Hwatai Bank - 華泰銀行", "Hwatai Bank - 華泰銀行" ],
+		[ "JihSun Bank - 日盛銀行", "JihSun Bank - 日盛銀行" ],
+		[ "King's Town Bank - 京城商銀", "King's Town Bank - 京城商銀" ],
+		[ "Land Bank of Taiwan - 土地銀行", "Land Bank of Taiwan - 土地銀行" ],
+		[ "Mega International Commercial Bank - 兆豐國際商業銀行", "Mega International Commercial Bank - 兆豐國際商業銀行" ],
+		[ "Metrobank - 首都銀行", "Metrobank - 首都銀行" ],
+		[ "Shanghai Commercial and Savings Bank - 上海商業儲蓄銀行", "Shanghai Commercial and Savings Bank - 上海商業儲蓄銀行" ],
+		[ "Shin Kong Bank - 臺灣新光商銀", "Shin Kong Bank - 臺灣新光商銀" ],
+		[ "Standard Chartered - 渣打商銀", "Standard Chartered - 渣打商銀" ],
+		[ "Sunny Bank - 陽信銀行", "Sunny Bank - 陽信銀行" ],
+		[ "Taichung Bank - 台中商銀", "Taichung Bank - 台中商銀" ],
+		[ "Taishin International Bank - 台新銀行", "Taishin International Bank - 台新銀行" ],
+		[ "Taiwan Business Bank - 臺灣企銀", "Taiwan Business Bank - 臺灣企銀" ],
+		[ "Taiwan Cooperative Bank - 合作金庫銀行", "Taiwan Cooperative Bank - 合作金庫銀行" ],
+		[ "TC Bank - 大眾銀行", "TC Bank - 大眾銀行" ],
+		[ "Union Bank of Taiwan - 聯邦銀行", "Union Bank of Taiwan - 聯邦銀行" ],
+		[ "Yuanta Bank - 元大銀行", "Yuanta Bank - 元大銀行" ]		
+	]
 
 	
   
