@@ -68,7 +68,7 @@
 						  <p class="lead"><%=t :form_wallet_2 %></p>
 						  <a class="close-reveal-modal">&#215;</a>
 						</div>
-			    		<%= f.text_field :walletID, :maxlength=>"75", placeholder: "1Zvi22Q8Y3Cn6nPATEBSaFFbckD9sUq6C", :required => true, :pattern => "[a-zA-Z0-9]+", :title => t('form_err_wallet') %>
+			    			<%= f.text_field :walletID, :minlength=>"26", :maxlength=>"35", placeholder: "1Zvi22Q8Y3Cn6nPATEBSaFFbckD9sUq6C", :required => true, :pattern => "^[13][a-zA-Z0-9]+", :title => t('form_err_wallet') %>
 			    	</label>
 			    	</div>	
 			    	<div class="email-field">		    	
@@ -124,7 +124,7 @@
 						  <p class="lead">Description</p>
 						  <a class="close-reveal-modal">&#215;</a>
 						</div>
-			    		<%= f.text_field :walletID, :maxlength=>"75", placeholder: "1Zvi22Q8Y3Cn6nPATEBSaFFbckD9sUq6C", :required => true, :pattern => "[a-zA-Z0-9]+", :title => t('form_err_wallet') %>
+			    		<%= f.text_field :walletID, :minlength=>"26", :maxlength=>"35", placeholder: "1Zvi22Q8Y3Cn6nPATEBSaFFbckD9sUq6C", :required => true, :pattern => "^[13][a-zA-Z0-9]+", :title => t('form_err_wallet') %>
 			    	</label>
 			    	</div>	
 			    	<div class="email-field">		    	

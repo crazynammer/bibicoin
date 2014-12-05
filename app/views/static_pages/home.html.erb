@@ -53,8 +53,8 @@
 <div class="row" data-equalizer="">
   <div class="small-12 medium-4 columns">
     <fieldset>
-    <div class="row" data-equalizer=""><%= image_tag("icon_cart.png", :alt => "Cart", :size => "40x40")%> <%= link_to(t('links_buy'), :buy) %></div>
-	 <div class="row" data-equalizer=""><%= image_tag("icon_computer.png", :alt => "Computer", :size => "40x40")%> <%= link_to(t('links_sell'), :sell) %></div>
+    <div class="row" data-equalizer=""><%= image_tag("icon_cart.png", :alt => "Cart", :size => "40x40")%> <%= link_to(t('links_buy'), new_transaction_path(:ttype => 0)) %></div>
+	 <div class="row" data-equalizer=""><%= image_tag("icon_computer.png", :alt => "Computer", :size => "40x40")%> <%= link_to(t('links_sell'), new_transaction_path(:ttype => 1)) %></div>
 	 <div class="row" data-equalizer=""><%= image_tag("icon_questions.png", :alt => "Questions", :size => "40x40")%> <%= link_to(t('links_howtobuy'), :howtobuy) %></div>
 	 <div class="row" data-equalizer=""><%= image_tag("icon_questions.png", :alt => "Questions", :size => "40x40")%><%= link_to(t('links_howtosell'), :howtosell) %></div>
 	 <div class="row" data-equalizer=""><%= image_tag("icon_information.png", :alt => "Info", :size => "40x40")%> <%= link_to(t('links_bitcoins'), :bitcoins) %></div>
@@ -99,7 +99,7 @@
   		<%= link_to image_tag("step1.png"), :howtobuy, anchor: "#1" %><p><b><%=t :home_buystep1 %></b><br><%=t :home_buystep1a %><%= link_to(t('home_buystep1b'), :wallets) %><%=t :home_buystep1c %></p>
   	</div>
   	<div class="small-12 medium-3 large-3 columns">
-  		<%= link_to image_tag("step2.png"), :howtobuy %><p><b><%=t :home_buystep2 %></b><br><%=t :home_buystep2a %><%= link_to(t('home_buystep2b'), :buy) %><%=t :home_buystep2c %></p>
+  		<%= link_to image_tag("step2.png"), :howtobuy %><p><b><%=t :home_buystep2 %></b><br><%=t :home_buystep2a %><%= link_to(t('home_buystep2b'), new_transaction_path(:ttype => 0)) %><%=t :home_buystep2c %></p>
   	</div>
   	<div class="small-12 medium-3 large-3 columns">
   		<%= link_to image_tag("step3.png"), :howtobuy %><p><b><%=t :home_buystep3 %></b><br><%=t :home_buystep3a %>
@@ -118,7 +118,7 @@
 
 <div class="row">
   	<div class="small-12 medium-3 large-3 columns">
-  		<%= link_to image_tag("step1.png"), :howtosell, anchor: "#1" %><p><b><%=t :home_sellstep1 %></b><br><%=t :home_sellstep1a %><%= link_to(t('home_sellstep1b'), :sell) %><%=t :home_sellstep1c %></p>
+  		<%= link_to image_tag("step1.png"), :howtosell, anchor: "#1" %><p><b><%=t :home_sellstep1 %></b><br><%=t :home_sellstep1a %><%= link_to(t('home_sellstep1b'), new_transaction_path(:ttype => 1)) %><%=t :home_sellstep1c %></p>
   	</div>
   	<div class="small-12 medium-3 large-3 columns">
   		<%= link_to image_tag("step2.png"), :howtosell %><p><b><%=t :home_sellstep2 %></b><br><%=t :home_sellstep2a %></p>

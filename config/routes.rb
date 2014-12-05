@@ -7,8 +7,6 @@ Rails.application.routes.draw do
   get 'static_pages/bitcoins', :as => :bitcoins
   get 'static_pages/terms', :as => :terms
   #Need to get the variable :locale to generate uri 'transactions/new?locale=zh&ttype=0'
-  get 'transactions/new?ttype=0', :as => :buy, :controller => "transactions", :action => "new"
-  get 'transactions/new?ttype=1', :as => :sell, :controller => "transactions", :action => "new"
   get 'static_pages/howtobuy', :as => :howtobuy
   get 'static_pages/howtosell', :as => :howtosell
   get 'static_pages/jobs', :as => :jobs
@@ -31,7 +29,7 @@ Rails.application.routes.draw do
   
   # Locale settings
   scope "(:locale)", locale: /en|zh/ do
-    resources :static_pages
+    resources :static_pages, :transactions, :layouts
   end  
 
   # The priority is based upon order of creation: first created -> highest priority.
