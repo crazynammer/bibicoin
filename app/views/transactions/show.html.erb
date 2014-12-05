@@ -150,9 +150,9 @@
 			<% end %>
 
 		<% if @transaction.transaction_type_id == 0 %>
-			<%= link_to t('form_ok'), buy_path, :class => "button" %>
+			<%= link_to t('form_ok'), new_transaction_path(:ttype => 0), :class => "button" %>
 		<% elsif @transaction.transaction_type_id == 1 %>
-			<%= link_to t('form_ok'), sell_path, :class => "button" %>
+			<%= link_to t('form_ok'), new_transaction_path(:ttype => 1), :class => "button" %>
 		<% end %>
 			
 	</div>	
