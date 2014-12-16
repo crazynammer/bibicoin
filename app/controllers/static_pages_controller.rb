@@ -7,8 +7,8 @@ class StaticPagesController < ApplicationController
   
     respond_to :json
     $bitcoinRatesURI = "https://bitpay.com/api/rates"
-	$bitcoinStatsURI = "http://blockchain.info/stats?format=json"
-	$bitcoinChartsURI = "http://blockchain.info/charts/market-price?format=json"
+	$bitcoinStatsURI = "https://blockchain.info/stats?format=json"
+	$bitcoinChartsURI = "https://blockchain.info/charts/market-price?format=json"
 	
 	
 	TWDEXCHANGERATEXML = "http://themoneyconverter.com/rss-feed/TWD/rss.xml"
@@ -159,7 +159,7 @@ class StaticPagesController < ApplicationController
 	@statsHash.store("Trade Volume", @statsRaw["trade_volume_btc"].round(2).to_s + " BTC")
 	
 	@statsHash.store("Total Miners Revenue (USD)", "$" + @statsRaw["miners_revenue_usd"].round(2).to_s)
-		
+	
 	@statsHash.store("Difficulty", @statsRaw["difficulty"].round(2).to_s)
 	@statsHash.store("Hash Rate", @statsRaw["hash_rate"].to_s + " GH/s")
 	
