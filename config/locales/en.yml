@@ -20,11 +20,10 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello World!"
 # ---------------------------------------------------------------------------------------------------------------------------
 # Common Text
 # ---------------------------------------------------------------------------------------------------------------------------
-  footer_copyright: "Copyright © 2014 bibicoins.com.tw"
+  footer_copyright: "Copyright © 2015 bibicoins.com"
   common_email: "Email"
   common_phone: "Phone"
   common_address: "Address"
