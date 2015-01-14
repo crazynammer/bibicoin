@@ -139,6 +139,7 @@
 
 <!-- BTC Market Value (USD) -->
 <div class="row">
+	<p> <%= @chartError %> </p>
 	<div class="small-12 columns"><%= image_tag(@marketValueChart) %></div>
 </div>
 
@@ -151,9 +152,12 @@
 <div class="row">
   <div class="small-12 columns">
 	  <ul>
-		  <% @rssNewsFeed.each do |item| %>
-			<li><a href = <%= item.link %> target="_blank"> <%= item.title %> </a> <br> <%= item.pubDate %></li>
-			<br/>
+		  <p><%= @feedError %></p>
+		  <% if @rssNewsFeed %>
+			<% @rssNewsFeed.each do |item| %>
+				<li><a href = <%= item.link %> target="_blank"> <%= item.title %> </a> <br> <%= item.pubDate %></li>
+				<br/>
+			<% end %>
 		  <% end %>
 	  </ul>
   </div>   
@@ -167,10 +171,13 @@
 
 <div class="row">
 	<div class="small-12 columns">
-		<% @statsHash.each_pair do |key, value| %>
-			<div class="row">
-				<div class="small-12 columns"><%= key %> | <%= value %></div>
-			</div>
+		<p><%= @statsError %> </p>
+		<% if @statsHash %>
+			<% @statsHash.each_pair do |key, value| %>
+				<div class="row">
+					<div class="small-12 columns"><%= key %> | <%= value %></div>
+				</div>
+			<% end %>
 		<% end %>
 	</div>   
 </div>
