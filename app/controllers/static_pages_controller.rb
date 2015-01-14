@@ -12,7 +12,7 @@ class StaticPagesController < ApplicationController
 	
 	
 	TWDEXCHANGERATEXML = "http://themoneyconverter.com/rss-feed/TWD/rss.xml"
-	RSSNEWSFEED = "http://newsbtc.com/feed/"
+	RSSNEWSFEED = "http://news1btc.com/feed/"
 	
 	
  
@@ -91,30 +91,62 @@ class StaticPagesController < ApplicationController
 		#render :text =>  twdValue
 		
 		
-	#charts section
-	chartResponse = Net::HTTP.get_response(URI.parse($bitcoinChartsURI))	
-	chartBody = chartResponse.body
-	@chartRaw = JSON.parse(chartBody)
-	@chartValues = @chartRaw["values"]
-	@chartXValues = Array.new
-	@chartYValues = Array.new
-	for value in @chartValues
-		@chartXValues.push(Time.at(value["x"]))
-		@chartYValues.push(value["y"])
-	end	
 	
-	#need to figure out how to dynamically size the charts
-	@marketValueChart = Gchart.line(:width => 750, :height => 400, :grid_lines => (100/(@chartYValues.max+100))*100, :data => @chartYValues, :title => 'BTC Market Value (USD)', :axis_with_labels => [['y']], :max_value => @chartYValues.max + 100, :min_value => 0)
+	begin
+		#charts section
+		chartResponse = Net::HTTP.get_response(URI.parse($bitcoinChartsURI))	
+			chartBody = chartResponse.body
+		@chartRaw = JSON.parse(chartBody)
+		@chartValues = @chartRaw["values"]
+		@chartXValues = Array.new
+		@chartYValues = Array.new
+		for value in @chartValues
+			@chartXValues.push(Time.at(value["x"]))
+			@chartYValues.push(value["y"])
+		end
+			
+		#render the chart - need to figure out how to dynamically size the charts
+		@marketValueChart = Gchart.line(:width => 750, :height => 400, :grid_lines => (100/(@chartYValues.max+100))*100, :data => @chartYValues, :title => 'BTC Market Value (USD)', :axis_with_labels => [['y']], :max_value => @chartYValues.max + 100, :min_value => 0)
 		
-	#rss section
-	@rssNewsFeed = RSS::Parser.parse(RSSNEWSFEED, false).items[0..4]
+		
+		#rss section
+		@rssNewsFeed = RSS::Parser.parse(RSSNEWSFEED, false).items[0..4]
 	
-	#statistic info
-	statsResponse = Net::HTTP.get_response(URI.parse($bitcoinStatsURI))
-	statsBody = statsResponse.body
-	@statsRaw = JSON.parse(statsBody)
-	@statsHash = Hash.new
-	#populate the stats hash with legible values
+		#statistic info
+		statsResponse = Net::HTTP.get_response(URI.parse($bitcoinStatsURI))
+		statsBody = statsResponse.body
+		@statsRaw = JSON.parse(statsBody)
+		@statsHash = Hash.new
+		#populate the stats hash with legible values
+		
+		@statsDateTime = DateTime.now.in_time_zone("Taipei")
+		
+		@statsHash.store("Blocked Mined", @statsRaw["n_blocks_mined"].round(2).to_s)
+		@statsHash.store("Time Between Blocks", @statsRaw["minutes_between_blocks"].round(2).to_s + " minutes")
+		@statsHash.store("Bitcoins Mined", (@statsRaw["n_btc_mined"] / 100000000).to_s + " BTC")
+		@statsHash.store("Total Transaction Fees", (@statsRaw["total_fees_btc"].to_f / 100000000).round(2).to_s + " BTC")
+		@statsHash.store("Number of Transactions", @statsRaw["n_tx"].to_s)
+		@statsHash.store("Total Output Volume", (@statsRaw["total_btc_sent"].to_f / 100000000).to_s + " BTC")
+		@statsHash.store("Estimated Transaction Volume", (@statsRaw["estimated_btc_sent"].to_f / 100000000).to_s + " BTC")
+		@statsHash.store("Estimated Transaction Volume (USD)", "$" + @statsRaw["estimated_transaction_volume_usd"].round(2).to_s)
+	
+		@statsHash.store("Market Price (USD)", "$" + @statsRaw["market_price_usd"].to_s)
+		@statsHash.store("Trade Volume (USD)", "$" + @statsRaw["trade_volume_usd"].round(2).to_s)
+		@statsHash.store("Trade Volume", @statsRaw["trade_volume_btc"].round(2).to_s + " BTC")
+	
+		@statsHash.store("Total Miners Revenue (USD)", "$" + @statsRaw["miners_revenue_usd"].round(2).to_s)
+	
+		@statsHash.store("Difficulty", @statsRaw["difficulty"].round(2).to_s)
+		@statsHash.store("Hash Rate", @statsRaw["hash_rate"].to_s + " GH/s")
+				
+	rescue JSON::JSONError => e
+		@error = "JSON Error in Chart and/or Statistics"
+	rescue RSS::Error => e
+		@error = "RSS Error with the newsfeed"
+	rescue SocketError => e
+		@error = "Socket Error"
+	end
+	
 
 	#example of json raw
 =begin
@@ -141,27 +173,6 @@ class StaticPagesController < ApplicationController
 ["timestamp", 1413240242465] 
 =end
 
-	
-	@statsDateTime = DateTime.now.in_time_zone("Taipei")
-	
-	
-	@statsHash.store("Blocked Mined", @statsRaw["n_blocks_mined"].round(2).to_s)
-	@statsHash.store("Time Between Blocks", @statsRaw["minutes_between_blocks"].round(2).to_s + " minutes")
-	@statsHash.store("Bitcoins Mined", (@statsRaw["n_btc_mined"] / 100000000).to_s + " BTC")
-	@statsHash.store("Total Transaction Fees", (@statsRaw["total_fees_btc"].to_f / 100000000).round(2).to_s + " BTC")
-	@statsHash.store("Number of Transactions", @statsRaw["n_tx"].to_s)
-	@statsHash.store("Total Output Volume", (@statsRaw["total_btc_sent"].to_f / 100000000).to_s + " BTC")
-	@statsHash.store("Estimated Transaction Volume", (@statsRaw["estimated_btc_sent"].to_f / 100000000).to_s + " BTC")
-	@statsHash.store("Estimated Transaction Volume (USD)", "$" + @statsRaw["estimated_transaction_volume_usd"].round(2).to_s)
-	
-	@statsHash.store("Market Price (USD)", "$" + @statsRaw["market_price_usd"].to_s)
-	@statsHash.store("Trade Volume (USD)", "$" + @statsRaw["trade_volume_usd"].round(2).to_s)
-	@statsHash.store("Trade Volume", @statsRaw["trade_volume_btc"].round(2).to_s + " BTC")
-	
-	@statsHash.store("Total Miners Revenue (USD)", "$" + @statsRaw["miners_revenue_usd"].round(2).to_s)
-	
-	@statsHash.store("Difficulty", @statsRaw["difficulty"].round(2).to_s)
-	@statsHash.store("Hash Rate", @statsRaw["hash_rate"].to_s + " GH/s")
 	
   end
 
