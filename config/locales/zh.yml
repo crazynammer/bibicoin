@@ -20,11 +20,10 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 zh:
-  hello: "Ni Hao World! "
 # ---------------------------------------------------------------------------------------------------------------------------
 # Common Text
 # ---------------------------------------------------------------------------------------------------------------------------
-  footer_copyright: "© 2014 bibicoin.com.tw 的版權"
+  footer_copyright: "© 2015 bibicoin.com 的版權"
   common_email: "電子郵件"
   common_phone: "電子郵件"
   common_address: "地址"
