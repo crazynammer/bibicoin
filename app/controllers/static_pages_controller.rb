@@ -7,12 +7,12 @@ class StaticPagesController < ApplicationController
   
     respond_to :json
     $bitcoinRatesURI = "https://bitpay.com/api/rates"
-	$bitcoinStatsURI = "https://blockchain.info/stats?format=json"
+	$bitcoinStatsURI = "https://blockchain.info/stats?format=json1"
 	$bitcoinChartsURI = "https://blockchain.info/charts/market-price?format=json"
 	
 	
 	TWDEXCHANGERATEXML = "http://themoneyconverter.com/rss-feed/TWD/rss.xml"
-	RSSNEWSFEED = "http://news1btc.com/feed/"
+	RSSNEWSFEED = "http://newsbtc.com/feed/"
 	
 	
  
@@ -107,11 +107,20 @@ class StaticPagesController < ApplicationController
 			
 		#render the chart - need to figure out how to dynamically size the charts
 		@marketValueChart = Gchart.line(:width => 750, :height => 400, :grid_lines => (100/(@chartYValues.max+100))*100, :data => @chartYValues, :title => 'BTC Market Value (USD)', :axis_with_labels => [['y']], :max_value => @chartYValues.max + 100, :min_value => 0)
+	rescue JSON::JSONError => e
+		@chartError = "Could not generate USD vs BTC trend chart"
+	end
 		
-		
+	begin	
 		#rss section
 		@rssNewsFeed = RSS::Parser.parse(RSSNEWSFEED, false).items[0..4]
+	rescue RSS::Error => e
+		@feedError = "RSS Error with the Newsfeed"
+	rescue SocketError => e
+		@feedError = "Could not connect to Bitcoin News Feed"
+	end
 	
+	begin
 		#statistic info
 		statsResponse = Net::HTTP.get_response(URI.parse($bitcoinStatsURI))
 		statsBody = statsResponse.body
@@ -140,11 +149,7 @@ class StaticPagesController < ApplicationController
 		@statsHash.store("Hash Rate", @statsRaw["hash_rate"].to_s + " GH/s")
 				
 	rescue JSON::JSONError => e
-		@error = "JSON Error in Chart and/or Statistics"
-	rescue RSS::Error => e
-		@error = "RSS Error with the newsfeed"
-	rescue SocketError => e
-		@error = "Socket Error"
+		@statsError = "Could not retrieve bitcoin network data"
 	end
 	
 
