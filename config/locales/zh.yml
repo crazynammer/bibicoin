@@ -173,6 +173,7 @@ zh:
   buy_email_b7: "請注意：由於比特幣的匯率會波動，如果在下單4小時後才將款項存入，我們將保留以現有匯率來處理訂單的權利。我們將盡可能處理所有訂單。但我們保 留因任何原因而不處理訂單的權力，在這種情況下，我們會將款項退還給您。"
   buy_whatiswallet: "甚麼是錢包"
   buy_paymentmethod: "付款方法?"
+  buy_howtobuy: "TODO: How to buy?"
 # ---------------------------------------------------------------------------------------------------------------------------
 # Sell
 # ---------------------------------------------------------------------------------------------------------------------------
@@ -250,6 +251,9 @@ zh:
   form_next: "下一步"
   form_back: "上一步"
   form_ok: "OK"
+  form_returnhome: "TODO: Return to Home Page"
+  form_placeanotherbuy: "TODO: Place Another Buy Order"
+  form_placeanothersell: "TODO: Place Another Sell Order"
   form_confirmsubmit: "確認並開出訂單"
   form_err: "很抱歉，有錯誤產生:"
   form_err_ntdamt: "TODO: 請輸入一個有效的新台幣金額."

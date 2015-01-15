@@ -163,7 +163,7 @@ en:
   buy_email_b1a: " for submitting your Buy order with Bibicoins.com! Your Buy Order "
   buy_email_b1b: " submitted through Bibicoins.com on "
   buy_email_b1c: " was received by us as follows:"
-  buy_email_b2: "To complete the transaction, please make a deposit of NTD "
+  buy_email_b2: "To complete the transaction, please make a deposit of "
   buy_email_b2a: " into the following bank account within 4 hours of the above submitted time and date.   Please also remember to include your Buy Order ID: "
   buy_email_b2b: " as a reference when making the deposit."
   buy_email_b3: "Once we have verified we have received the Purchase Amounts into our account, the Bitcoin with you have ordered from us will be immediately transferred to your Wallet Address above."
@@ -173,6 +173,7 @@ en:
   buy_email_b7: "Please note: Because Bitcoin rates can fluctuate, we maintain the right to process any requests at our current rate if a deposit is made into our account after 4 hours from the time of the request initiation.  Where possible, we attempt to fulfill all order requests, however, we maintain the right to not process any order requests for any reason, in which case your deposit will be refunded."
   buy_whatiswallet: "What is wallet?"
   buy_paymentmethod: "Payment Method?"
+  buy_howtobuy: "How to buy?"
 # ---------------------------------------------------------------------------------------------------------------------------
 # Sell
 # ---------------------------------------------------------------------------------------------------------------------------
@@ -200,7 +201,7 @@ en:
   sell_email_b1a: " for submitting your Sell order with Bibicoins.com! Your Sell Order "
   sell_email_b1b: " submitted through Bibicoins.com on "
   sell_email_b1c: " was received by us as follows:"
-  sell_email_b2: "To complete the transaction, please transfer the Bitcoin Amount into the Bibicoin’s designated Wallet below within 15 mins of the above submitted time and date."
+  sell_email_b2: "To complete the transaction, please transfer the Bitcoin Amount into the Bibicoins’ designated Wallet below within 15 mins of the above submitted time and date."
   sell_email_b3: "Once we have verified we have received your bitcoins into our Wallet, we will transfer the Sell Amounts into your Bank Account immediately.  You will usually receive the Sell Amounts in your bank account after 3 to 5 days of Bibicoins receipt of your Bitcoins."
   sell_email_b4: "Please refer to the terms and conditions on Bibicoins.com if you have any questions or contact bibicoins@gmail.com for assistance."
   sell_email_b5: "Please Note:"
@@ -250,6 +251,9 @@ en:
   form_next: "Next >"
   form_back: "< Back"
   form_ok: "Ok"
+  form_returnhome: "Return to Home Page"
+  form_placeanotherbuy: "Place Another Buy Order"
+  form_placeanothersell: "Place Another Sell Order"
   form_confirmsubmit: "Confirm & Submit Order"
   form_err: "Sorry, something went wrong:"
   form_err_ntdamt: "Please note Bibicoins.com can only process purchases greater than NTD 3,000 and less than NTD 300,000.00 per customer per day.  Please kindly input another purchase amount within the purchase limits.  For any questions please contact our support staff at bibicoins@gmail.com"

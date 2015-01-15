@@ -45,7 +45,7 @@
 					<!-- Buy: allow inputs form both sides and change values as needed -->	
 					<% if @transaction.transaction_type_id == 0 %>
 
-					<legend><%=t :header_buy %></legend>
+					<legend><%=t :header_buy %> (<%= link_to(t('buy_howtobuy'), :howtobuy, target: '_blank') %>)</legend>
 					
 					<div class="row">
 						 <div class="purchaseamt-field">		
@@ -103,7 +103,7 @@
 					<!-- Sell -->
 			    	<% elsif @transaction.transaction_type_id == 1 %>
 
-					<legend><%=t :header_sell %></legend>
+					<legend><%=t :header_sell %> (<%= link_to(t('sell_howtosell'), :howtosell, target: '_blank') %>)</legend>
 					
 					<div class="row">
 						 <div class="sellamt-field">		
@@ -146,7 +146,7 @@
 				    	</label>
 				    </div>	
 			    	<div class="bankintro-field">		    	
-						<label><%=t :sell_bankdepositdetails%><br><a href="#"><%=t :sell_howtosell%></a><br><br></label>
+						<label><%=t :sell_bankdepositdetails%><br><br></label>
 			    	</div>	
 			    	<div class="bankname-field">		    	
 						<label><%= f.label :bankName, t('form_bankname') %><br>

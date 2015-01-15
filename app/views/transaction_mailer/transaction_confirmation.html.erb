@@ -35,7 +35,7 @@
 		</table>
 	</div>
 	<div>
-	<p><%=t :buy_email_b2 %><b><%= number_with_precision(@transaction.TWDAmt, precision: 0) %></b><%=t :buy_email_b2a %><b><%= @transaction.id %></b><%=t :buy_email_b2b %></p>
+	<p><%=t :buy_email_b2 %><b>NTD <%= number_with_precision(@transaction.TWDAmt, precision: 0) %></b><%=t :buy_email_b2a %><b><%= @transaction.id %></b><%=t :buy_email_b2b %></p>
 	</div>
 	<div>
 		<table>
@@ -106,9 +106,9 @@
 	</div>
 	<div>	
 		<p><%=t :sell_email_b3 %></p>
-		<p><%=t :buy_email_b4 %></p><br>
-		<p><b><%=t :buy_email_b5 %></b></p>
-		<p><%=t :buy_email_b6 %></p>
-		<p><%=t :buy_email_b7 %></p>
+		<p><%=t :sell_email_b4 %></p><br>
+		<p><b><%=t :sell_email_b5 %></b></p>
+		<p><%=t :sell_email_b6 %></p>
+		<p><%=t :sell_email_b7 %></p>
 	</div>
 <% end %>

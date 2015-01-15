@@ -99,7 +99,7 @@
 			<tr>
 			<tr>
 				<td><%=t :form_sellamt %></td>
-				<td><%= number_with_precision(@transaction.TWDAmt, precision: 4) %></td>
+				<td><%= number_with_precision(@transaction.TWDAmt, precision: 0) %></td>
 			<tr>
 			<tr>
 				<td><%=t :form_btcamt %></td>
@@ -150,9 +150,11 @@
 			<% end %>
 
 		<% if @transaction.transaction_type_id == 0 %>
-			<%= link_to t('form_ok'), new_transaction_path(:ttype => 0), :class => "button" %>
+		    <%= link_to t('form_returnhome'), :home, :class => "button" %>
+			<%= link_to t('form_placeanotherbuy'), new_transaction_path(:ttype => 0), :class => "button" %>
 		<% elsif @transaction.transaction_type_id == 1 %>
-			<%= link_to t('form_ok'), new_transaction_path(:ttype => 1), :class => "button" %>
+			<%= link_to t('form_returnhome'), :home, :class => "button" %>
+			<%= link_to t('form_placeanothersell'), new_transaction_path(:ttype => 1), :class => "button" %>
 		<% end %>
 			
 	</div>	
