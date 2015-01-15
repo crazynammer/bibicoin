@@ -22,7 +22,7 @@
 			</tr>
 			<tr>
 				<td><%=t :form_purchaseamt %></td>
-				<td>NTD <%= @transaction.TWDAmt%></td>
+				<td>NTD <%= number_to_currency(@transaction.TWDAmt, locale: :zh)%></td>
 			</tr>
 			<tr>
 				<td><%=t :form_btcamount %></td>
@@ -35,7 +35,7 @@
 		</table>
 	</div>
 	<div>
-	<p><%=t :buy_email_b2 %><b><%= @transaction.TWDAmt%></b><%=t :buy_email_b2a %><b><%= @transaction.id %></b><%=t :buy_email_b2b %></p>
+	<p><%=t :buy_email_b2 %><b><%= number_to_currency(@transaction.TWDAmt, locale: :zh) %></b><%=t :buy_email_b2a %><b><%= @transaction.id %></b><%=t :buy_email_b2b %></p>
 	</div>
 	<div>
 		<table>
@@ -68,7 +68,7 @@
 			</tr>
 			<tr>
 				<td><%=t :form_sellamt %></td>
-				<td>NTD <%= @transaction.TWDAmt %></td>
+				<td>NTD <%= number_to_currency(@transaction.TWDAmt, locale: :zh) %></td>
 			</tr>
 			<tr>
 				<td><%=t :form_btcamount %></td>
