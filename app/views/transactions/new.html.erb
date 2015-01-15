@@ -52,11 +52,11 @@
 							 <div class="large-4 columns"><label><%=t :form_purchaseamt %></label></div>
 							 <div class="large-4 columns">
 							 	<label><%= f.label :TWDAmt, t('form_ntdamt') %></label>
-							 	<%= f.number_field :TWDAmt, placeholder: "", :min => 3000, :max => 300000, :oninput => "updateBTCAmt()", :onkeyup => "calculateTotal()", :required => true, :title => t('form_err_ntdamt') %>
+							 	<%= f.number_field :TWDAmt, placeholder: "", :min => 3000, :max => 300000, :oninput => "updateBTCAmt();calculateTotal()", :required => true, :title => t('form_err_ntdamt') %>
 							 </div>						 
 							 <div class="large-4 columns">
 							 	<label><%= f.label :BTCAmt, t('form_btcamt') %></label>
-							 	<%= f.number_field :BTCAmt, placeholder: "", :oninput => "updateNTDAmt()", :onkeyup => "calculateTotal()", :required => true, :step => "any" %>
+							 	<%= f.number_field :BTCAmt, placeholder: "", :oninput => "updateNTDAmt();calculateTotal()", :required => true, :step => "any" %>
 							</div>
 						 </div>
 					</div>			
@@ -110,11 +110,11 @@
 							 <div class="large-4 columns"><label><%=t :form_sellamt %></label></div>
 							 <div class="large-4 columns">
 							 	<label><%= f.label :BTCAmt, t('form_btcamt') %></label>
-							 	<%= f.number_field :BTCAmt, placeholder: "", :oninput => "updateNTDAmt()", :onkeyup => "calculateTotal()", :required => true, :step => "any", :title => t('form_err_ntdamt') %>
+							 	<%= f.number_field :BTCAmt, placeholder: "", :oninput => "updateNTDAmt();calculateTotal()", :required => true, :step => "any", :title => t('form_err_ntdamt') %>
 							 </div>
 							 <div class="large-4 columns">
 							 	<label><%= f.label :TWDAmt, t('form_ntdamt') %></label>
-							 	<%= f.number_field :TWDAmt, placeholder: "", :maxlength=>"10", :oninput => "updateBTCAmt()", :onkeyup => "calculateTotal()", :required => true, :min => 3000, :max => 300000 %>
+							 	<%= f.number_field :TWDAmt, placeholder: "", :maxlength=>"10", :oninput => "updateBTCAmt();calculateTotal()", :required => true, :min => 3000, :max => 300000 %>
 								</div>						 
 						 </div>
 					</div>			
@@ -181,7 +181,7 @@
 			    	</div>	
 
 			    	<div class="commission-field">		    	
-						<label><%= f.label :commAmt,  "Commision Amount" %><br>
+						<label><%= f.label :commAmt,  "Commission Amount" %><br>
 				    		<%= f.text_field :commAmt, :readonly => true %>
 				    	</label>
 			    	</div>	
