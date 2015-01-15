@@ -182,7 +182,7 @@
 
 			    	<div class="totalamount-field">		    	
 						<label><%= f.label :totalAmt,  "Total Amount" %><br>
-				    		<p id = "totalAmt"><%= number_to_currency(@transaction.TWDAmt + @transaction.commAmt, locale: :zh) %><br>
+				    		<p id = "totalAmt"><%= number_with_precision(@transaction.TWDAmt + @transaction.commAmt, precision: 0) %><br>
 				    	</label>
 			    	</div>	
 
@@ -193,7 +193,7 @@
 			    	</div>	
 
 			    	<div class="rate-field">		    	
-						<label>1 BTC to TWD Rate: <%= number_with_precision(@transaction.bibicoinBTCtoTWD, precision: 4) %></label><br>
+						<label>1 BTC to TWD Rate: <%= number_with_precision(@transaction.bibicoinBTCtoTWD, precision: 0) %></label><br>
 			    	</div>
 
 			    	</fieldset>			    	

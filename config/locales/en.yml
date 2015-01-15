@@ -252,7 +252,7 @@ en:
   form_ok: "Ok"
   form_confirmsubmit: "Confirm & Submit Order"
   form_err: "Sorry, something went wrong:"
-  form_err_ntdamt: "Please enter a valid NTD amount.  The minimum amount is NTD 3,000 and maximum is NTD 300,000"
+  form_err_ntdamt: "Please note Bibicoins.com can only process purchases greater than NTD 3,000 and less than NTD 300,000.00 per customer per day.  Please kindly input another purchase amount within the purchase limits.  For any questions please contact our support staff at bibicoins@gmail.com"
   form_err_btcamt: "Please enter a valid Bitcoin amount."
   form_err_wallet: "Please enter a valid Wallet Address."
   form_err_email: "Please enter a valid Email Address."

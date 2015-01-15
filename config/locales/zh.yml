@@ -252,7 +252,7 @@ zh:
   form_ok: "OK"
   form_confirmsubmit: "確認並開出訂單"
   form_err: "很抱歉，有錯誤產生:"
-  form_err_ntdamt: "請輸入一個有效的新台幣金額."
+  form_err_ntdamt: "TODO: 請輸入一個有效的新台幣金額."
   form_err_btcamt: "請輸入一個有效的比特幣金額."
   form_err_wallet: "請輸入一個有效的比特幣帳戶."
   form_err_email: "請輸入一個有效的電子郵件地址."
