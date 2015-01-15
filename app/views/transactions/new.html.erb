@@ -68,7 +68,7 @@
 						  <p class="lead"><%=t :form_wallet_2 %></p>
 						  <a class="close-reveal-modal">&#215;</a>
 						</div>
-			    			<%= f.text_field :walletID, :minlength=>"26", :maxlength=>"35", placeholder: "1Zvi22Q8Y3Cn6nPATEBSaFFbckD9sUq6C", :required => true, :pattern => "^[13][a-zA-Z0-9]+", :title => t('form_err_wallet') %>
+			    			<%= f.text_field :walletID, placeholder: "1Zvi22Q8Y3Cn6nPATEBSaFFbckD9sUq6C", :required => true, :pattern => "^[13][a-zA-Z0-9]{25,34}", :title => t('form_err_wallet') %>
 			    	</label>
 			    	</div>	
 			    	<div class="email-field">		    	
@@ -126,7 +126,7 @@
 						  <p class="lead">Description</p>
 						  <a class="close-reveal-modal">&#215;</a>
 						</div>
-			    		<%= f.text_field :walletID, :minlength=>"26", :maxlength=>"35", placeholder: "1Zvi22Q8Y3Cn6nPATEBSaFFbckD9sUq6C", :required => true, :pattern => "^[13][a-zA-Z0-9]+", :title => t('form_err_wallet') %>
+			    		<%= f.text_field :walletID, :placeholder: "1Zvi22Q8Y3Cn6nPATEBSaFFbckD9sUq6C", :required => true, :pattern => "^[13][a-zA-Z0-9]{25,34}", :title => t('form_err_wallet') %>
 			    	</label>
 			    	</div>	
 			    	<div class="email-field">		    	
@@ -214,9 +214,7 @@
 	</div>
 	
 <script type="text/javascript">
-
-
-<!-- function for buy going from NTD to BTC -->
+<!-- buy going from NTD to BTC -->
 function updateBTCAmt()
 {
 	var twdAmt = document.getElementById("transaction_TWDAmt").value;
@@ -229,7 +227,7 @@ function updateBTCAmt()
 	document.getElementById("transaction_BTCAmt").value = parseFloat(+btcAmt).toFixed(5);
 }
 
-<!-- function for sale going from BTC to NTD -->
+<!--  sale going from BTC to NTD -->
 function updateNTDAmt()
 {
 	var btcAmt = document.getElementById("transaction_BTCAmt").value;
@@ -241,7 +239,8 @@ function updateNTDAmt()
 	}
 	document.getElementById("transaction_TWDAmt").value = parseFloat(+twdAmt).toFixed(0);
 }
-<!-- function to calculate commission and display on the screen -->
+
+<!-- calculate commission and display on the screen -->
 function calculateTotal()
 {
 <!-- need to fix the rounding of the BTC for commission -->
@@ -289,6 +288,8 @@ function calculateTotal()
 	document.getElementById("transaction_commAmt").value = commAmt;
 	document.getElementById("totalAmt").innerHTML = totalAmt;
 }
+
+
 </script>
 	
 </div>
