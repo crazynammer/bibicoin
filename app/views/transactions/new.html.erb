@@ -166,7 +166,7 @@
 					<%= f.hidden_field :bibicoinBTCtoTWD, :value => @transaction.bibicoinBTCtoTWD %>
 
 			    	<div class="terms-field">		    	
-						<label><%= f.check_box :agreeTerms, :required => true, :title => t('form_err_terms')  %> <%=t :form_terms %><%= link_to(t('form_terms_1'), :terms) %><%=t :form_terms_2 %>
+						<label><%= f.check_box :agreeTerms, :required => true, :title => t('form_err_terms')  %> <%=t :form_terms %><%= link_to(t('form_terms_1'), :terms, target: '_blank') %><%=t :form_terms_2 %>
 				    </div><br><br>	
 
 
