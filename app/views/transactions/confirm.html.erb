@@ -197,7 +197,7 @@
 			    	</div>
 
 			    	</fieldset>			    	
-			<%= f.button t('form_back'), :class => 'button small large-3' %>
+			<%= f.button t('form_back'), :class => 'button small large-3', :onclick => 'history.go(-1);return false;'  %>
 			<%= f.submit t('form_confirmsubmit'), :class => 'button small large-4' %>
 			<% end %>
 
