@@ -167,7 +167,7 @@
 
 					<!-- TODO: Needs real logic added after --> 
 		    		<div class="captcha-field">		    	
-						<%= raw recaptcha_tags %>
+						<%= raw recaptcha_tags %><br><br>
 			    	</div>
 
 			    	<div class="terms-field">		    	
@@ -197,7 +197,7 @@
 			    	</div>
 
 			    	</fieldset>			    	
-			<%= f.button t('form_back'), :class => 'button small large-3' %>
+			<%= f.button t('form_back'), :class => 'button small large-3', :onclick => 'history.go(-1);return false;'  %>
 			<%= f.submit t('form_confirmsubmit'), :class => 'button small large-4' %>
 			<% end %>
 
