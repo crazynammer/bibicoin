@@ -7,7 +7,7 @@ class StaticPagesController < ApplicationController
   
     respond_to :json
     $bitcoinRatesURI = "https://bitpay.com/api/rates"
-	$bitcoinStatsURI = "https://blockchain.info/stats?format=json1"
+	$bitcoinStatsURI = "https://blockchain.info/stats?format=json"
 	$bitcoinChartsURI = "https://blockchain.info/charts/market-price?format=json"
 	
 	
