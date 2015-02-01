@@ -90,6 +90,30 @@ a.header:active {
     text-transform: uppercase;   
 }
 
+a.footer:link {
+    text-decoration: none;
+    color: #f3f3f3;
+    font-size: 10px;
+}
+
+a.footer:visited {
+    text-decoration: none;
+    color: #f3f3f3;
+    font-size: 10px;  
+}
+
+a.footer:hover {
+    text-decoration: none;
+    color: #f3f3f3;
+    font-size: 10px;
+}
+
+a.footer:active {
+    text-decoration: none;
+    color: #f3f3f3;
+    font-size: 10px; 
+}
+
 /* -----------------------------------------
    TEXT
 ----------------------------------------- */
@@ -102,6 +126,21 @@ a.header:active {
   padding: 2px 2px 2px 2px; 
 }
 
+.bibicoins-footer-menu-header-text {
+  color: #898989;
+  font-size: 14px;
+  text-transform: uppercase;
+  padding: 2px 2px 2px 2px; 
+  color: #f8f8ff;
+}
+
+.bibicoins-footer-menu-text {
+  color: #898989;
+  font-size: 10px;
+  color: #f8f8ff;
+  text-transform: capitalize;
+}
+
 .bibicoins-header-text-orange {
   color: #f16221;
   font-weight: 700;
@@ -112,6 +151,7 @@ a.header:active {
 .bibicoins-body-text {
   color: #898989;
   font-weight: 400;
+  font-size: 14;
 }
 
 .bibicoins-header-text-darkgrey {
@@ -131,6 +171,16 @@ a.header:active {
 
 .bibicoins-form-input-homepage {
   padding: 2px 40px 2px 2px; 
+}
+
+.bibicoins-header-text-orange-block {
+  padding: 10px 50px 10px 50px;
+  text-transform: uppercase;
+  background-color: #f16221; 
+  font-size: 37px;
+  font-family: 'Roboto Slab';
+  display:inline-block; 
+  color: #f8f8ff;
 }
 
 .bibicoins-subheader-txt {
@@ -237,6 +287,12 @@ a.header:active {
   margin-right: 10px;
   max-width: 80rem;
 }
+
+.bibicoins-footer-bottom-lightgrey-line {
+    border-top: 1px solid #f3f3f3;
+    padding-bottom: 5px;
+    margin-bottom: 25px; 
+}
 		  
 /* -----------------------------------------
    Footer
@@ -259,15 +315,16 @@ a.header:active {
       font-weight: 700;
       font-size: 0.66666rem; }
       .bibicoins-footer-bottom ul.bibicoins-links li a {
-        color: #666;
+        color: #f3f3f3;
         padding: 3px 6px; }
         .bibicoins-footer-bottom ul.bibicoins-links li a:hover {
-          color: #777; }
+          color: #f3f3f3; }
   .bibicoins-footer-bottom p.copyright {
     margin: 0px 0 0;
-	 padding: 3px 6px;
+	  padding: 3px 6px;
+    float: right;
     font-size: 0.66667rem;
-    color: #666; }
+    color: #f3f3f3; }
   .bibicoins-footer-bottom ul.home-social {
     display: block;
     float: right;

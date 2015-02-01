@@ -1,47 +1,5 @@
 <!DOCTYPE html>
 
-<!-- To DELETE 
-
-		    <ul class="right">
- 		      <li><%= link_to(t('links_home'), :home) %></li>
- 				<li class="divider"></li>
-		      <li><%= link_to(t('links_buybitcoin'), new_transaction_path(:ttype => 0))%></li>
-				<li class="divider"></li>
-				<li><%= link_to(t('links_sellbitcoin'), new_transaction_path(:ttype => 1)) %></li>
-				<li class="divider"></li>
-
-		      <li class="has-dropdown">
-		        <%= link_to(t('links_learn'), :bitcoins) %>
-		        <ul class="dropdown">
-					<li><%= link_to(t('links_traditional'), :traditional) %></li>
-					<li><%= link_to(t('links_bitcoins'), :bitcoins) %></li>
-					<li><%= link_to(t('links_wallets'), :wallets) %></li>
-					<li><%= link_to(t('links_howtobuy'), :howtobuy) %></li>
-					<li><%= link_to(t('links_howtosell'), :howtosell) %></li>
-					<li><%= link_to(t('links_howtoprotect'), :how) %></li>					 					 
-					<li><%= link_to(t('links_faq'), :faq) %></li>					 					 
-		        </ul>
-		      </li>
-				<li class="divider"></li>
-		
-		      <li class="has-dropdown">
-		         <%= link_to(t('links_about'), :about) %>
-		        <ul class="dropdown">
-		          <li><%= link_to(t('links_aboutus'), :about) %></li>
-					 <li><%= link_to(t('links_why'), :why) %></li>
-					 <li><%= link_to(t('links_reviews'), :reviews) %></li>					 
-					 <li><%= link_to(t('links_terms'), :terms) %></li>
-					 <li><%= link_to(t('links_privacy'), :privacy) %></li>					  
-					 <li><%= link_to(t('links_legal'), :legal) %></li>
-					 <li><%= link_to(t('links_jobs'), :jobs) %></li>
-					 <li><%= link_to(t('links_contact'), :contact) %></li>
-			       <li><%= link_to(t('links_faq'), :faq) %></li>			 					 
-		        </ul>
-		      </li>
-		    </ul>
-
--->
-
 <html lang="en">
   <head>
     <meta charset="utf-8" />
@@ -99,36 +57,70 @@
    <%= yield %>
    <%= javascript_include_tag "application" %>		
 
+<!-- Footer -->
+<div class="row bibicoins-bg-darkgrey bibicoins-footer-menu-header-text">
+	<br><br>
+	<div class="small-1 large-2 columns "></div>
+	<div class="small-10 large-8 columns  small-centered ">
+	 	<div class="row">
+	 		<div class="small-12 large-5 columns">
+	 			<%=t :header_contact %>
+	 			<div class="bibicoins-footer-menu-text">
+			 	<%=t :common_email %>: <%= mail_to t('common_email_value'), t('common_email_value'), :class=>"footer" %><br>
+			 	<%=t :common_phone %>: <%=t :common_phone_value %><br>
+			 	<%=t :common_address %>: <%=t :common_address_value %><br><br>
+			 	</div>	 			
+	 		</div>
+	 		<div class="small-12 large-4 columns">
+	 			<%=t :home_learn %>
+	 			<div class="bibicoins-footer-menu-text">
+	       		<%= link_to(t('links_traditional'), :traditional, :class=>"footer") %><br>
+				<%= link_to(t('links_bitcoins'), :bitcoins, :class=>"footer") %><br>
+				<%= link_to(t('links_wallets'), :wallets, :class=>"footer") %><br>
+				<%= link_to(t('links_howtobuy'), :howtobuy, :class=>"footer") %><br>
+				<%= link_to(t('links_howtosell'), :howtosell, :class=>"footer") %><br>
+				<%= link_to(t('links_howtoprotect'), :how, :class=>"footer") %><br>
+				<%= link_to(t('links_faq'), :faq, :class=>"footer") %><br><br>
+				</div>
+	 		</div>
+	 		<div class="small-12 large-2 columns">
+	 			 <%=t :home_about %>
+	 			 <div class="bibicoins-footer-menu-text">
+	 			 <%= link_to(t('links_aboutus'), :about, :class=>"footer") %><br>
+				 <%= link_to(t('links_why'), :why, :class=>"footer") %><br>
+				 <%= link_to(t('links_reviews'), :reviews, :class=>"footer") %><br>
+				 <%= link_to(t('links_terms'), :terms, :class=>"footer") %><br>
+				 <%= link_to(t('links_privacy'), :privacy, :class=>"footer") %><br>
+			     <%= link_to(t('links_legal'), :legal, :class=>"footer") %><br>
+				 <%= link_to(t('links_jobs'), :jobs, :class=>"footer") %><br>
+				 <%= link_to(t('links_contact'), :contact, :class=>"footer") %><br>
+				 <%= link_to(t('links_faq'), :faq, :class=>"footer") %><br>
+				 </div>
+	 		</div>		
+	 	</div>
+	</div>
+	<div class="small-1 large-4 columns "></div>
+</div>
+<div class="row bibicoins-bg-darkgrey bibicoins-footer-menu-header-text">
+<div class="small-12 columns right ">
+	<div class="bibicoins-footer-menu-text right"><%=t :footer_copyright %></div>
+</div>
+</div>
+
 	 <!-- Social Media Icons -->			 
 	 <div class="bibicoins-footer-bottom">
+
  		<div class="row">
-   		<div class="medium-4 medium-4 push-8 columns">
+   		<!--<div class="medium-4 medium-4 push-8 columns">-->
+   		<div class="small-12">
      		 <ul class="home-social">
           <li><a href="http://www.twitter.com/Bibicoins" class="twitter"></a></li>
           <li><a href="http://www.facebook.com/Bibicoins" class="facebook"></a></li>
           <li><a href="mailto:bibicoins@gmail.com" class="mail"></a></li>
         </ul>
+       	<br>
      </div>
 	  
-	 <!-- Footer Menu Links -->		
-	 <div class="medium-8 medium-8 pull-4 columns">
-        <ul class="bibicoins-links">
-          <li><%= link_to(t('links_home'), :home) %></li>
-			 <li><%= link_to(t('links_buybitcoin'), new_transaction_path(:ttype => 0)) %></li>
-			 <li><%= link_to(t('links_sellbitcoin'), new_transaction_path(:ttype => 1)) %></li>
-			 <li><%= link_to(t('links_contact'), :contact) %></li>
-          <li><%= link_to(t('links_aboutus'), :about) %></li>
-			 <li><%= link_to(t('links_faq'), :faq) %></li>
-          <li><%= link_to(t('links_terms'), :terms) %></li>
-			 <li><%= link_to(t('links_privacy'), :privacy) %></li>
-			 <li><%= link_to(t('links_legal'), :legal) %></li>
-			 <li><%= link_to(t('links_jobs'), :jobs) %></li>			 
-       </ul>
-       <p class="copyright"><%=t :footer_copyright %></p>
-  	  </div>
- 	 </div>
-	</div>	
-
 	<script>
 	$(document).foundation();
 	</script>
