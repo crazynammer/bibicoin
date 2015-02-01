@@ -2,22 +2,173 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-
 /* -----------------------------------------
    Custom Bibicoins CSS
 ----------------------------------------- */
 
-.bibicoin-protectyourself {
+/* -----------------------------------------
+   FONTS
+----------------------------------------- */
+@import url(http://fonts.googleapis.com/css?family=Lato:400,700);
+@import url(http://fonts.googleapis.com/css?family=Roboto+Slab);
+
+/* -----------------------------------------
+   COLOR SCHEME
+----------------------------------------- */
+
+.bibicoins-bg-darkgrey {
+  background: #898989;
+}
+
+.bibicoins-bg-lightgrey {
+  background: #f3f3f3;
+}
+
+.bibicoins-bg-orange {
+  background: #f16221;
+}
+
+.bibicoins-bg-pink {
+  background: #ffcfab;
+}
+
+.bibicoins-bg-beige {
+  background: #ffebdc;
+}
+
+
+/* -----------------------------------------
+   LINKS
+----------------------------------------- */
+
+a:link {
+    text-decoration: none;
+    color: #878787;
+}
+
+a:visited {
+    text-decoration: none;
+    color: #878787;
+}
+
+a:hover {
+    text-decoration: none;
+    color: #878787;
+}
+
+a:active {
+    text-decoration: none;
+    color: #878787;
+}
+
+a.header:link {
+    text-decoration: none;
+    color: #f16221;
+    font-size: 37px;
+    text-transform: uppercase;
+    font-family: 'Roboto Slab';
+}
+
+a.header:visited {
+    text-decoration: none;
+    color: #f16221;
+    font-size: 37px;
+    text-transform: uppercase;    
+}
+
+a.header:hover {
+    text-decoration: none;
+    color: #f16221;
+    font-size: 37px;
+    text-transform: uppercase;
+}
+
+a.header:active {
+    text-decoration: none;
+    color: #f16221;
+    font-size: 37px;
+    text-transform: uppercase;   
+}
+
+/* -----------------------------------------
+   TEXT
+----------------------------------------- */
+
+.bibicoins-icons-menu-text {
+  color: #898989;
+  font-size: 14px;
+  font-weight: 700;  
+  text-transform: uppercase;
+  padding: 2px 2px 2px 2px; 
+}
+
+.bibicoins-header-text-orange {
+  color: #f16221;
+  font-weight: 700;
+  padding: 10px 10px;
+  text-transform: uppercase; 
+}
+
+.bibicoins-body-text {
+  color: #898989;
+  font-weight: 400;
+}
+
+.bibicoins-header-text-darkgrey {
+  color: #898989;
+  font-weight: 700;
+  padding: 2px 2px 2px 2px; 
+  text-transform: uppercase;   
+}
+
+.bibicoins-form-text-homepage {
+  font-size: 14px;
+  padding: 2px 2px 2px 40px;
+  text-transform: uppercase; 
+  vertical-align: text-middle;
+
+}
+
+.bibicoins-form-input-homepage {
+  padding: 2px 40px 2px 2px; 
+}
+
+.bibicoins-subheader-txt {
+  font-size: 17px;
+  font-weight: 700;
+  color: #f16221;
+  text-transform: uppercase;
+  padding: 4px 4px;   
+}
+
+
+.bibicoins-protectyourself {
   padding-left: 68px;
   float: right;
 }
 
-.bibicoin-txt-slogan {
+.bibicoins-main-menu {
+  font-size: 14px;
+  color: #878787;
+  padding: 20px 10px 5px 10px;
+  text-transform: uppercase;
+}
+
+.bibicoins-icon-menu-txt {
+  float: right;
   font-size: 16px;
   color: #878787;
 }
 
-.bibicoin-facebook {
+.bibicoins-home-buy-form {
+  background-color: #ffcfab;
+}
+
+.bibicoins-home-sell-form {
+  background-color: #ffebdc;
+}
+
+.bibicoins-facebook {
   align: right;
 }
 
@@ -25,11 +176,12 @@
    Header
 ----------------------------------------- */
 
-.bibicoin-header-bg-orange {
-	background: #ef632f;
+.no-padding {
+    padding-left: 0px;
+    padding-right: 0px; 
 }
 
-.bibicoin-button-blue {
+.bibicoins-button-blue {
   background: #008CBA;
   padding: 16px 20px;
   color: #333333;
@@ -38,7 +190,7 @@
   border-style: solid;
 }
 
-.bibicoin-button-blue-active {
+.bibicoins-button-blue-active {
   background: #008CBA;
   padding: 16px 20px;
   color: #fff;
@@ -54,11 +206,15 @@
    Body
 ----------------------------------------- */
 
-.bibicoin-header-bg-orange {
-  background: #ef632f;
+.bibicoins-header-bg-orange {
+  background: #f16221;
+  font-size: 18px;
+  text-transform: uppercase;
+  font-family: 'Roboto Slab';
+  text-align: center;  
 }
 
-.bibicoin-bullets {
+.bibicoins-bullets {
   padding-left: 24px;
   background: url(image-path('bullet.png')) no-repeat 5px 8px;
   border-top: 1px  #ccc;
@@ -85,54 +241,54 @@
 /* -----------------------------------------
    Footer
 ----------------------------------------- */
-.bibicoin-footer-bottom {
-  background: #333;
+.bibicoins-footer-bottom {
+  background: #898989;
   padding: 20px 0 10px; }
-  .bibicoin-footer-bottom .design-border {
+  .bibicoins-footer-bottom .design-border {
     border-bottom: 1px solid #484848;
     padding-bottom: 5px;
     margin-bottom: 25px; }
-  .bibicoin-footer-bottom ul.bibicoin-links {
+  .bibicoins-footer-bottom ul.bibicoins-links {
     margin: 0;
     display: inline-block; }
-    .bibicoin-footer-bottom ul.bibicoin-links li {
+    .bibicoins-footer-bottom ul.bibicoins-links li {
       display: block;
       float: left;
       margin-left: 0px;
       text-transform: uppercase;
       font-weight: 700;
       font-size: 0.66666rem; }
-      .bibicoin-footer-bottom ul.bibicoin-links li a {
+      .bibicoins-footer-bottom ul.bibicoins-links li a {
         color: #666;
         padding: 3px 6px; }
-        .bibicoin-footer-bottom ul.bibicoin-links li a:hover {
+        .bibicoins-footer-bottom ul.bibicoins-links li a:hover {
           color: #777; }
-  .bibicoin-footer-bottom p.copyright {
+  .bibicoins-footer-bottom p.copyright {
     margin: 0px 0 0;
 	 padding: 3px 6px;
     font-size: 0.66667rem;
     color: #666; }
-  .bibicoin-footer-bottom ul.home-social {
+  .bibicoins-footer-bottom ul.home-social {
     display: block;
     float: right;
     margin-bottom: 8px; }
-    .bibicoin-footer-bottom ul.home-social li {
+    .bibicoins-footer-bottom ul.home-social li {
       list-style: none;
       display: block;
       float: left;
       margin-left: 10px; }
-      .bibicoin-footer-bottom ul.home-social li:first-child {
+      .bibicoins-footer-bottom ul.home-social li:first-child {
         margin-left: 0; }
-      .bibicoin-footer-bottom ul.home-social li a {
+      .bibicoins-footer-bottom ul.home-social li a {
         display: block;
         height: 50px;
         width: 50px;
         background: url(image-path('social.png')) no-repeat center 0; }
-        .bibicoin-footer-bottom ul.home-social li a:hover {
+        .bibicoins-footer-bottom ul.home-social li a:hover {
           opacity: 0.8; }
-        .bibicoin-footer-bottom ul.home-social li a.twitter {
+        .bibicoins-footer-bottom ul.home-social li a.twitter {
           background-position: center 0; }
-        .bibicoin-footer-bottom ul.home-social li a.facebook {
+        .bibicoins-footer-bottom ul.home-social li a.facebook {
           background-position: center -200px; }
-        .bibicoin-footer-bottom ul.home-social li a.mail {
+        .bibicoins-footer-bottom ul.home-social li a.mail {
           background-position: center -400px; }		  

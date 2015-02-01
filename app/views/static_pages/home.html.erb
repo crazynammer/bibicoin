@@ -1,13 +1,5 @@
-<% provide(:title, 'Bibicoins | 比特幣') %>
-<%= image_tag("logo.png", size: "200x150", :alt => "BiBicoins Logo") %>
-
-<div class="row">
-  	<div class="small-12 columns">
-		 <%= image_tag("icon_lock.png", :alt => "Lock") %><%= link_to(t('links_howtoprotect'), :how) %><br> 
-	</div>   
-</div>
-
-<!-- Stock Ticker -->	
+<!-- TO DELETE SECTION -->
+<!-- Stock Ticker 	
 <div class="row" data-equalizer="">
   <div class="small-12 columns">
   	 <fieldset align="center">
@@ -19,153 +11,247 @@
   </div> 
 </div>
 
-<!-- Slogans and Facebook Link -->
 <br>
 <div class="row" data-equalizer="">
   <div class="small-12 medium-8 columns">
-    <h5 class="bibicoin-slogan"><%=t :home_slogan1 %></h5>
+    <h5 class="bibicoins-slogan"><%=t :home_slogan1 %></h5>
   </div>
-  <div class="medium-4 columns"><div class="bibicoin-facebook">
+  <div class="medium-4 columns"><div class="bibicoins-facebook">
     <%= image_tag("icon_fb.png", :alt => "Facebook") %> &nbsp;<a href="http://www.facebook.com/Bibicoins"><%=t :home_facebook %></a><br><br></div>
   </div>  
 </div>
+      
+</div>
+<br>
+-->
 
-<div class="bibicoin-header-bg-orange">
-	<div id="before-content-area">
-		<h1><%=t :home_slogan2 %></h1>
+  <!-- Twitter  
+  <div class="small-12 medium-12 large-3 columns">
+    <div data-equalizer-watch="" style="height: 450px;">
+		 <a class="twitter-timeline" href="https://twitter.com/Bibicoins" data-widget-id="540640462814453762">Tweets by @Bibicoins</a>
+		 <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+    </div>
+  </div> --> 
+
+<% provide(:title, 'Bibicoins | 比特幣') %>
+
+<!-- Banner -->
+<div>
+	<%= image_tag("home_banner_en.jpg", :alt => "WE HELP PEOPLE OF TAIWAN BUY AND SELL BITCOINS.  SAFE. SECURE. CONVENIENT.") %>
+</div>
+<br>
+<br>
+
+<!-- Icon Menu -->
+<div class="row">
+    <div class="small-2 columns text-center">
+        <%= link_to(image_tag("icon_buy.png", :alt =>  "Buy"), new_transaction_path(:ttype => 0)) %>
+    </div>
+    <div class="small-2 columns text-center">
+        <%= link_to(image_tag("icon_sell.png", :alt =>  "Sell"), new_transaction_path(:ttype => 1)) %>
+    </div>
+    <div class="small-2 columns text-center">
+        <%= link_to(image_tag("icon_howtobuy.png", :alt =>  "How To Buy"), :howtobuy) %>
+    </div>
+    <div class="small-2 columns text-center">
+        <%= link_to(image_tag("icon_howtosell.png", :alt =>  "How To Sell"), :howtosell) %>
+    </div>
+     <div class="small-2 columns text-center">
+        <%= link_to(image_tag("icon_aboutwallets.png", :alt =>  "About Wallets"), :wallets) %>     
+    </div>
+    <div class="small-2 columns text-center">
+       <%= link_to(image_tag("icon_whybibicoins.png", :alt =>  "Why Bibioins"), :why) %>     
+    </div>       
+</div>
+<div class="row">
+	<div class="bibicoins-icons-menu-text">
+    <div class="small-2 columns text-center">
+        <%= link_to(t('links_buy'), new_transaction_path(:ttype => 0), :class=>"bibicoins-icons-menu-text")%>
+    </div>
+    <div class="small-2 columns text-center">
+        <%= link_to(t('links_sell'), new_transaction_path(:ttype => 1), :class=>"bibicoins-icons-menu-text") %>
+    </div>
+    <div class="small-2 columns text-center">
+        <%= link_to(t('links_howtobuy'), :howtobuy, :class=>"bibicoins-icons-menu-text") %>
+    </div>
+    <div class="small-2 columns text-center">
+        <%= link_to(t('links_howtosell'), :howtosell, :class=>"bibicoins-icons-menu-text") %>
+    </div>
+     <div class="small-2 columns text-center">
+        <%= link_to(t('links_wallets'), :wallets, :class=>"bibicoins-icons-menu-text") %>
+    </div>
+    <div class="small-2 columns text-center">
+        <%= link_to(t('links_whybibicoins'), :why) %>
+    </div> 
+    </div>      
+</div>
+<br>
+<br>
+
+<!-- Buy / Sell Bitcoin Form -->
+<div class="row">
+	<div class="small-12 medium-6 large-6 columns no-padding bibicoins-bg-pink">
+	    <br><br>
+	    <div class="row">
+		    <div class="small-6 medium-4 large-4 columns"></div>
+			<div class="small-6 medium-8 large-8 columns">
+				<div class="bibicoins-header-text-darkgrey"><%=t :links_buybitcoin %></div>
+		    </div>
+	    </div>	    
+	    <div class="row">
+		    <div class="small-6 medium-4 large-4 columns">
+		    	<div class="bibicoins-form-text-homepage"><%=t :conversion_ntdamt %></div>
+		    </div>
+			<div class="small-6 medium-8 large-8 columns">
+		    		<div class="bibicoins-form-input-homepage"><input type="text" id="NTDBuy" placeholder="30,000" oninput="updateBuyAmt()" size="10" maxlength="10"/></div>
+		    </div>	    
+	    </div>
+	    <div class="row">
+		    <div class="small-6 medium-4 large-4 columns">
+		    	<div class="bibicoins-form-text-homepage"><%=t :conversion_btcamt %></div>
+		    </div>
+			<div class="small-6 medium-8 large-8 columns">
+		    		<div class="bibicoins-form-input-homepage"><input type="text" id="BTCBuy" readonly /></div>
+		    </div>	    
+	    </div>
+	    <br><br>	    
+	</div>
+
+	<div class="small-12 medium-6 large-6 columns no-padding bibicoins-bg-beige">
+	    <br><br>
+	    <div class="row">
+		    <div class="small-6 medium-4 large-4 columns"></div>
+			<div class="small-6 medium-8 large-8 columns">
+				<div class="bibicoins-header-text-darkgrey"><%=t :links_sellbitcoin %></div>
+		    </div>
+	    </div>	    
+	    <div class="row">
+		    <div class="small-6 medium-4 large-4 columns">
+		    	<div class="bibicoins-form-text-homepage"><%=t :conversion_btcamt %></div>
+		    </div>
+			<div class="small-6 medium-8 large-8 columns">
+		    		<div class="bibicoins-form-input-homepage"><input type="text" id="NTDSell" placeholder="10" oninput="updateSellAmt()"/></div>
+		    </div>	    
+	    </div>
+	    <div class="row">
+		    <div class="small-6 medium-4 large-4 columns">
+		    	<div class="bibicoins-form-text-homepage"><%=t :conversion_ntdamt %></div>
+		    </div>
+			<div class="small-6 medium-8 large-8 columns">
+		    		<div class="bibicoins-form-input-homepage"><input type="text" id="BTCSell" readonly /></div>
+		    </div>	    
+	    </div>
+	    <br><br>	    
 	</div>
 </div>
 
-<!-- Home Image Menu -->
-<div class="row" data-equalizer="">
-  <div class="small-12 medium-4 columns">
-    <fieldset>
-    <div class="row" data-equalizer=""><%= image_tag("icon_cart.png", :alt => "Cart", :size => "40x40")%> <%= link_to(t('links_buy'), new_transaction_path(:ttype => 0)) %></div>
-	 <div class="row" data-equalizer=""><%= image_tag("icon_computer.png", :alt => "Computer", :size => "40x40")%> <%= link_to(t('links_sell'), new_transaction_path(:ttype => 1)) %></div>
-	 <div class="row" data-equalizer=""><%= image_tag("icon_questions.png", :alt => "Questions", :size => "40x40")%> <%= link_to(t('links_howtobuy'), :howtobuy) %></div>
-	 <div class="row" data-equalizer=""><%= image_tag("icon_questions.png", :alt => "Questions", :size => "40x40")%><%= link_to(t('links_howtosell'), :howtosell) %></div>
-	 <div class="row" data-equalizer=""><%= image_tag("icon_information.png", :alt => "Info", :size => "40x40")%> <%= link_to(t('links_bitcoins'), :bitcoins) %></div>
-	 	 <div class="row" data-equalizer=""><%= image_tag("icon_wallets.png", :alt => "Wallet", :size => "40x40")%> <%= link_to(t('links_wallets'), :wallets) %> </div>
-	 	 <div class="row" data-equalizer=""><%= image_tag("icon_bitcoin.png", :alt => "Why", :size => "40x40")%> <%= link_to(t('links_why'), :why) %></div>
-	</fieldset>	 	 		 
-  </div>
-
-  <!-- Default Image -->
-  <div class="small-12 medium-4 columns">
-    <fieldset>
-    <%= image_tag("home_bitcoin.png", :alt => "Bitcoins", :size => "650x600")%>
-    </fieldset>
-  </div>
-
-  <!-- TEST-->
-  <div class="small-12 medium-2 columns">
-     <fieldset>
-     	<legend><%=t :conversion_buy %></legend>
-     	<%=t :conversion_ntdamt %><input type="text" id="NTDBuy" placeholder="30,000" oninput="updateBuyAmt()" size="10" maxlength="10"/>
-     	<%=t :conversion_btcamt %><input type="text" id="BTCBuy" readonly />
-     </fieldset>
-  </div>
-  <div class="small-12 medium-2 columns">   
-     <fieldset>
-     	<legend><%=t :conversion_sell %></legend>
-     	<%=t :conversion_btcamt %><input type="text" id="NTDSell" placeholder="10" oninput="updateSellAmt()"/>
-     	<%=t :conversion_ntdamt %><input type="text" id="BTCSell" readonly />
-     </fieldset>     
-  </div>         
-</div>
 <br>
 
 <!-- How to Buy From Bibicoins -->
 <div class="row">
-  <div class="small-12 columns"><h3 class="subheader"><%= link_to(t('links_howtobuyfrombibicoin'), :howtobuy) %><h3></div>   
+  <br><br>
+  <div class="small-12 columns" align="center"><div class="bibicoins-icons-menu-text"><%= link_to(t('links_howtobuyfrombibicoin'), :howtobuy, :class=>"header") %></div><br></div>
 </div>
-
+<br>
 <div class="row">
-  	<div class="small-12 medium-3 large-3 columns">
-  		<%= link_to image_tag("step1.png"), :howtobuy, anchor: "#1" %><p><b><%=t :home_buystep1 %></b><br><%=t :home_buystep1a %><%= link_to(t('home_buystep1b'), :wallets) %><%=t :home_buystep1c %></p>
+  	<div class="small-12 medium-3 large-3 columns" align="center">
+  		<%= link_to image_tag("step1.png"), :howtobuy, anchor: "#1" %><br>
+  		<div class="bibicoins-subheader-txt"><%=t :home_buystep1 %></div>
+  		<p><%=t :home_buystep1a %><%= link_to(t('home_buystep1b'), :wallets) %><%=t :home_buystep1c %></p>
   	</div>
-  	<div class="small-12 medium-3 large-3 columns">
-  		<%= link_to image_tag("step2.png"), :howtobuy %><p><b><%=t :home_buystep2 %></b><br><%=t :home_buystep2a %><%= link_to(t('home_buystep2b'), new_transaction_path(:ttype => 0)) %><%=t :home_buystep2c %></p>
+  	<div class="small-12 medium-3 large-3 columns" align="center">
+  		<%= link_to image_tag("step2.png"), :howtobuy %><br>
+  		<div class="bibicoins-subheader-txt"><%=t :home_buystep2 %></div>
+  		<p><%=t :home_buystep2a %><%= link_to(t('home_buystep2b'), new_transaction_path(:ttype => 0)) %><%=t :home_buystep2c %></p>
   	</div>
-  	<div class="small-12 medium-3 large-3 columns">
-  		<%= link_to image_tag("step3.png"), :howtobuy %><p><b><%=t :home_buystep3 %></b><br><%=t :home_buystep3a %>
+  	<div class="small-12 medium-3 large-3 columns" align="center">
+  		<%= link_to image_tag("step3.png"), :howtobuy %>
+  		<div class="bibicoins-subheader-txt"><%=t :home_buystep3 %></div>
+  		<p><%=t :home_buystep3a %></p>
   	</div>
-	<div class="small-12 medium-3 large-3 columns">
-		<%= link_to image_tag("step4.png"), :howtobuy %><p><b><%=t :home_buystep4 %></b><br><%=t :home_buystep4a %></p>
+	<div class="small-12 medium-3 large-3 columns" align="center">
+		<%= link_to image_tag("step4.png"), :howtobuy %>
+		<div class="bibicoins-subheader-txt"><%=t :home_buystep4 %></div>
+		<p><%=t :home_buystep4a %></p>
 	</div> 
 </div>
 <br>
 <br>
 
 <!-- How to Sell From Bibicoins -->
-<div class="row">
-  <div class="small-12 columns"><h3 class="subheader"><%= link_to(t('links_howtosellfrombibicoin'), :howtosell) %></h3></div>   
+<div class="row bibicoins-bg-lightgrey">
+  <br><br>
+  <div class="small-12 columns" align="center"><br><%= link_to(t('links_howtosellfrombibicoin'), :howtosell, :class=>"header") %><br><br><br></div>  
 </div>
-
-<div class="row">
-  	<div class="small-12 medium-3 large-3 columns">
-  		<%= link_to image_tag("step1.png"), :howtosell, anchor: "#1" %><p><b><%=t :home_sellstep1 %></b><br><%=t :home_sellstep1a %><%= link_to(t('home_sellstep1b'), new_transaction_path(:ttype => 1)) %><%=t :home_sellstep1c %></p>
+<div class="row bibicoins-bg-lightgrey" >
+  	<div class="small-12 medium-3 large-3 columns" align="center">
+  		<%= link_to image_tag("step1.png"), :howtosell, anchor: "#1" %>
+  		<div class="bibicoins-subheader-txt"><%=t :home_sellstep1 %></div>
+  		<p><%=t :home_sellstep1a %><%= link_to(t('home_sellstep1b'), new_transaction_path(:ttype => 1)) %><%=t :home_sellstep1c %></p>
   	</div>
-  	<div class="small-12 medium-3 large-3 columns">
-  		<%= link_to image_tag("step2.png"), :howtosell %><p><b><%=t :home_sellstep2 %></b><br><%=t :home_sellstep2a %></p>
+  	<div class="small-12 medium-3 large-3 columns" align="center">
+  		<%= link_to image_tag("step2.png"), :howtosell %>
+  		<div class="bibicoins-subheader-txt"><%=t :home_sellstep2 %></div>
+  		<p><%=t :home_sellstep2a %></p>
   	</div>
-  	<div class="small-12 medium-3 large-3 columns">
-  		<%= link_to image_tag("step3.png"), :howtosell %><p><b><%=t :home_sellstep3 %></b><br><%=t :home_sellstep3a %>
+  	<div class="small-12 medium-3 large-3 columns" align="center">
+  		<%= link_to image_tag("step3.png"), :howtosell %>
+  		<div class="bibicoins-subheader-txt"><%=t :home_sellstep3 %></div>
+  		<p><%=t :home_sellstep3a %>
   	</div>
-	<div class="small-12 medium-3 large-3 columns">
-		<%= link_to image_tag("step4.png"), :howtosell %><p><b><%=t :home_sellstep4 %></b><br><%=t :home_sellstep4a %></p><br>
+	<div class="small-12 medium-3 large-3 columns" align="center">
+		<%= link_to image_tag("step4.png"), :howtosell %>
+		<div class="bibicoins-subheader-txt"><%=t :home_sellstep4 %></div>
+		<p><%=t :home_sellstep4a %></p><br>
 	</div> 
 </div>			
 
 <!-- About Bibicoins -->
+<br>
+<br>
 <div class="row">
-  	<div class="small-12 columns"><h3 class="subheader"><%=t :home_aboutbibicoin %><h3></div>   
-	<div class="small-12 columns"><p><%=t :home_aboutbibicoin_text %>("<%= link_to(t('header_why'), :why) %>")</p><br></div>
-</div>
-
-<!-- BTC Market Value (USD) -->
-<div class="row">
-	<p><%= @chartError %></p>
-	<div class="small-12 columns"><%= image_tag(@marketValueChart) %></div>
+  	<div class="small-12 medium-6 large-6 columns">
+  		<%= image_tag("logo.png", size: "100x75", :alt => "BiBicoins Logo") %>
+  		<h3><%=t :home_aboutbibicoin %><h3>
+  		<p><%=t :home_aboutbibicoin_text %>("<%= link_to(t('header_why'), :why) %>")</p>
+  	</div>
+  	<div class="small-12 medium-6 large-6 columns" align="center">
+  		<p><%= @chartError %></p>
+		<%= image_tag(@marketValueChart) %>
+  	</div>
 </div>
 
 <!-- News Feed -->
-<div id="before-content-area">
+<br>
+<br>
 <div class="row">
-  <div class="small-12 columns"><h3 class="subheader"><%=t :home_newsfeed %><h3></div>   
-</div>
-
-<div class="row">
-  <div class="small-12 columns">
-	  <ul>
-		  <p><%= @feedError %></p>
-		  <% if @rssNewsFeed %>
-			<% @rssNewsFeed.each do |item| %>
-				<li><a href = <%= item.link %> target="_blank"> <%= item.title %> </a> <br> <%= item.pubDate %></li>
-				<br/>
-			<% end %>
-		  <% end %>
-	  </ul>
-  </div>   
-</div>
-
-<!-- BTC Network Data -->
-<div class="row">
-	<div class="small-12 columns"><h3 class="subheader"><%=t :home_btcnetworkdata %><h3></div>
-	<div class="small-12 columns"><h5 class="subheader"><%= @statsDateTime %><h5></div>      
-</div>	
-
-<div class="row">
-	<div class="small-12 columns">
-		<p><%= @statsError %></p>
+	<div class="bibicoins-body-text">
+  	<div class="small-12 medium-6 large-6 columns">
+		<h3 class="subheader"><%=t :home_newsfeed %>
+			<h5 class="subheader"><%= @statsDateTime %><h5>
+			  <ul>
+				  <p><%= @feedError %></p>
+				  <% if @rssNewsFeed %>
+					<% @rssNewsFeed.each do |item| %>
+						<li><a href = <%= item.link %> target="_blank"> <%= item.title %> </a> <br> <%= item.pubDate %></li>
+						<br/>
+					<% end %>
+				  <% end %>
+			  </ul>
+	</div>   
+	</div>
+  	<div class="small-12 medium-6 large-6 columns">
+	<h3 class="subheader"><%=t :home_btcnetworkdata %><h3>
+	<h5 class="subheader"><%= @statsDateTime %><h5>
+	<p><%= @statsError %></p>
 		<% if @statsHash %>
 			<% @statsHash.each_pair do |key, value| %>
 				<div class="row">
-					<div class="small-12 columns"><%= key %> | <%= value %></div>
+					<div class="small-12 columns bibicoins-body-text"><%= key %> | <%= value %></div>
 				</div>
 			<% end %>
 		<% end %>
-	</div>   
+  	</div>
 </div>
 <br>
 	
@@ -212,13 +298,7 @@
 		 </p>		 
     </div>
   </div>
-  <!-- Twitter -->  
-  <div class="small-12 medium-12 large-3 columns">
-    <div data-equalizer-watch="" style="height: 450px;">
-		 <a class="twitter-timeline" href="https://twitter.com/Bibicoins" data-widget-id="540640462814453762">Tweets by @Bibicoins</a>
-		 <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-    </div>
-  </div>
+
 </div>
 
 <script>
@@ -237,4 +317,5 @@ function updateSellAmt()
 	var twdAmt = +btcAmt * +btcToTwd;
 	document.getElementById("BTCSell").value = parseFloat(+twdAmt).toFixed(0);
 }
+$(document).foundation();
 </script>

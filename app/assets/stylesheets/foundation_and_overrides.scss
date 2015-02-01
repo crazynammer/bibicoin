@@ -38,9 +38,6 @@ $include-html-global-classes: $include-html-classes;
 
 // Global
 
-// BIBICOIN: Google Fonts
-@import url(http://fonts.googleapis.com/css?family=Open+Sans);
-
 // We use these to define default font weights
 // $font-weight-normal: normal !default;
 // $font-weight-bold: bold !default;
@@ -48,9 +45,9 @@ $include-html-global-classes: $include-html-classes;
 // We use these to control various global styles
 // $body-bg: #fff;
 // $body-font-color: #222;
+$body-font-color: #898989;
 // $body-font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
-// BIBICOIN: Addition of custom fonts and chinese fonts
-$body-font-family: 'Open Sans', STXihei, "华文细黑", "Microsoft YaHei", "微软雅黑", sans-serif; 
+$body-font-family: 'Lato', STXihei, "华文细黑", "Microsoft YaHei", "微软雅黑", sans-serif; 
 $font-weight-normal:normal;
 $body-font-weight: $font-weight-normal;
 // $body-font-style: normal;
@@ -129,6 +126,7 @@ $primary-color: #008CBA;
 
 // We use these to control header font styles
 // $header-font-family: $body-font-family;
+$header-font-family: 'Roboto Slab';
 // $header-font-weight: $font-weight-normal;
 // $header-font-style: normal;
 // $header-font-color: #222;
@@ -1215,6 +1213,7 @@ $sub-nav-active-cursor: default;
 
 // Background color for the top bar
 // $topbar-bg-color: #333;
+$topbar-bg-color: #898989;
 // $topbar-bg: $topbar-bg-color;
 
 // Height and margin
@@ -1227,8 +1226,10 @@ $sub-nav-active-cursor: default;
 
 // Style the top bar dropdown elements
 // $topbar-dropdown-bg: #333;
+$topbar-dropdown-bg: #898989;
 // $topbar-dropdown-link-color: #fff;
 // $topbar-dropdown-link-bg: #333;
+$topbar-dropdown-link-bg: #898989;
 // $topbar-dropdown-link-weight: $font-weight-normal;
 // $topbar-dropdown-toggle-size: 5px;
 // $topbar-dropdown-toggle-color: #fff;

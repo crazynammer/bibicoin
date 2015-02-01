@@ -1,31 +1,7 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title><%= content_for?(:title) ? yield(:title) : "Bibicoins | 比特幣" %></title>
+<!-- To DELETE 
 
-    <%= stylesheet_link_tag "application" %>
-    <%= javascript_include_tag "vendor/modernizr" %>
-    <%= csrf_meta_tags %>
-	 
-  </head>
-
-  <body>
-	   <!-- Top Nav Bar -->			
-		<nav class="top-bar" data-topbar role="navigation">
-		  <ul class="title-area">
-		    <li class="name">
-		      <h1><%= link_to "bibicoins.com", :home %></h2>
-		    </li>
-		     <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
-		    <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
-		  </ul>
-
-		  <section class="top-bar-section">
-
-		    <!-- Right Nav Section -->
 		    <ul class="right">
  		      <li><%= link_to(t('links_home'), :home) %></li>
  				<li class="divider"></li>
@@ -34,7 +10,6 @@
 				<li><%= link_to(t('links_sellbitcoin'), new_transaction_path(:ttype => 1)) %></li>
 				<li class="divider"></li>
 
-				<!-- Learn Menu -->
 		      <li class="has-dropdown">
 		        <%= link_to(t('links_learn'), :bitcoins) %>
 		        <ul class="dropdown">
@@ -48,8 +23,7 @@
 		        </ul>
 		      </li>
 				<li class="divider"></li>
-
-				<!-- About Menu -->				
+		
 		      <li class="has-dropdown">
 		         <%= link_to(t('links_about'), :about) %>
 		        <ul class="dropdown">
@@ -65,23 +39,68 @@
 		        </ul>
 		      </li>
 		    </ul>
-			 
-		    <!-- Left Nav Section for Language Menu -->
+
+-->
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title><%= content_for?(:title) ? yield(:title) : "Bibicoins | 比特幣" %></title>
+
+    <%= stylesheet_link_tag "application" %>
+    <%= javascript_include_tag "vendor/modernizr" %>
+    <%= csrf_meta_tags %>
+	 
+  </head>
+
+  <body>
+
+<div>
+	<nav class="top-bar" data-topbar role="navigation">
+	  <ul class="title-area">
+	    <li class="name"></li>
+	     <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
+	    <li class="toggle-topbar menu-icon"><a href="#"><span></span></a></li>
+	  </ul>
+		<section class="top-bar-section">
 		    <ul class="left">
-				<li class="divider"></li>
 				<li><%= link_to 'English', params.merge({:locale => :en})%></li>
-				<li class="divider"></li>
 				<li><%= link_to 'Chinese', params.merge({:locale => :zh})%></li>				
 		    </ul>
-			 
-		  </section>
-		</nav>
+		    <ul class="right">
+		    	<li><%= link_to(t('links_howtoprotect'), :how) %></li>
+		    </ul>
+		</section>
+  	</nav>
+</div>
+
+<!-- Text Menu -->
+<div class="row">
+  <div class="small-12 medium-12 large-1 columns" align="center">
+  	<%= link_to(image_tag("logo.png", :alt =>  "BiBicoins", :size =>"100x75"), :home) %>
+  </div>
+  <div class="show-for-large-up medium-12 large-11 columns">
+  <div class="bibicoins-main-menu">
+	<dl class="sub-nav right">
+	  <dd><%= link_to(t('links_home'), :home) %></dd>
+	  <dd><%= link_to(t('links_buybitcoin'), new_transaction_path(:ttype => 0))%></dd>
+	  <dd><%= link_to(t('links_sellbitcoin'), new_transaction_path(:ttype => 1))%></dd>
+	  <dd><%= link_to(t('links_learn'), :bitcoins) %></dd>  
+	  <dd><%= link_to(t('links_about'), :about) %></dd>   
+	</dl>
+	</div>	
+  </div>   
+</div>
+
+<br>
 
    <%= yield %>
    <%= javascript_include_tag "application" %>		
 
 	 <!-- Social Media Icons -->			 
-	 <div class="bibicoin-footer-bottom">
+	 <div class="bibicoins-footer-bottom">
  		<div class="row">
    		<div class="medium-4 medium-4 push-8 columns">
      		 <ul class="home-social">
@@ -93,7 +112,7 @@
 	  
 	 <!-- Footer Menu Links -->		
 	 <div class="medium-8 medium-8 pull-4 columns">
-        <ul class="bibicoin-links">
+        <ul class="bibicoins-links">
           <li><%= link_to(t('links_home'), :home) %></li>
 			 <li><%= link_to(t('links_buybitcoin'), new_transaction_path(:ttype => 0)) %></li>
 			 <li><%= link_to(t('links_sellbitcoin'), new_transaction_path(:ttype => 1)) %></li>

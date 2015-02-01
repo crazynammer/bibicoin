@@ -35,8 +35,8 @@ en:
 # Common Links
 # ---------------------------------------------------------------------------------------------------------------------------
   links_home: "Home"
-  links_buybitcoin: "Buy Bitcoin"  
-  links_sellbitcoin: "Sell Bitcoin"
+  links_buybitcoin: "Buy Bitcoins"  
+  links_sellbitcoin: "Sell Bitcoins"
   links_learn: "Learn"
   links_about: "About"
   links_bitcoins: "Why Use Bitcoins?"
@@ -48,6 +48,7 @@ en:
   links_howtoprotect: "How to Protect Yourself Online"
   links_aboutus: "About Us"
   links_why: "Why Choose Bibicoins?"
+  links_whybibicoins: "Why Bibicoins"
   links_reviews: "Customer Reviews"
   links_faq: "FAQs"
   links_terms: "Terms & Conditions"
@@ -121,7 +122,7 @@ en:
   home_sellstep3a: "Transfer the amount in Bitcoins to the unique wallet address provided in your order confirmation. "
   home_sellstep4: "Receive Cash "
   home_sellstep4a: "Once your Sell Request is fulfilled, cash is transferred to your nominated account."
-  home_aboutbibicoin: "About Bibicoin"
+  home_aboutbibicoin: "About Bibicoins"
   home_aboutbibicoin_text: "Bibicoins Taiwan specializes in delivering Bitcoins to Taiwan customers.  We achieve this by dealing only with New Taiwan Dollars and working with local Taiwan bank accounts.  Bibicoins Taiwan is an Taiwan incorporated company owned and operated by Taiwanese.  Our goal is to establish ourselves as the most trustworthy place for people in Taiwan to purchase and sell bitcoins and other crypto-currencies and help develop bitcoins as a long-term payment tool for the people of Taiwan. "
   home_newsfeed: "News Feed"
   home_btcnetworkdata: "Bitcoin Network Data"
