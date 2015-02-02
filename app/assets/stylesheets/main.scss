@@ -6,12 +6,6 @@
    Custom Bibicoins CSS
 ----------------------------------------- */
 
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big,
-cite, code, del, dfn, em, font, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, figcaption,
-figure, footer, header, hgroup, menu, nav, section, summary, time, mark, audio, video { border: 0;
-    margin: 0; outline: 0; padding: 0; vertical-align: baseline; }
-
 /* -----------------------------------------
    FONTS
 ----------------------------------------- */
@@ -24,22 +18,27 @@ figure, footer, header, hgroup, menu, nav, section, summary, time, mark, audio, 
 
 .bibicoins-bg-darkgrey {
   background: #898989;
+  padding: 20px 0 10px;
 }
 
 .bibicoins-bg-lightgrey {
   background: #f3f3f3;
+  padding: 20px 0 10px;
 }
 
 .bibicoins-bg-orange {
   background: #f16221;
+  padding: 20px 0 10px;
 }
 
 .bibicoins-bg-pink {
   background: #ffcfab;
+  padding: 20px 0 10px;
 }
 
 .bibicoins-bg-beige {
   background: #ffebdc;
+  padding: 20px 0 10px;
 }
 
 
@@ -206,11 +205,6 @@ a.footer:active {
 }
 
 
-.bibicoins-protectyourself {
-  padding-left: 68px;
-  float: right;
-}
-
 .bibicoins-main-menu {
   font-size: 14px;
   color: #878787;
@@ -232,12 +226,8 @@ a.footer:active {
   background-color: #ffebdc;
 }
 
-.bibicoins-facebook {
-  align: right;
-}
-
 /* -----------------------------------------
-   Header
+   Spacing
 ----------------------------------------- */
 
 .no-padding {
@@ -245,26 +235,8 @@ a.footer:active {
     padding-right: 0px; 
 }
 
-.bibicoins-button-blue {
-  background: #008CBA;
-  padding: 16px 20px;
-  color: #333333;
-  border-color: #fff;
-  border-width: 0 0 1px 1px;
-  border-style: solid;
-}
-
-.bibicoins-button-blue-active {
-  background: #008CBA;
-  padding: 16px 20px;
-  color: #fff;
-  border-color: #fff;
-  border-width: 0 0 1px 1px;
-  border-style: solid;
-}
-
-.row {
-  max-width: 80rem; }
+/*.row {
+  max-width: 80rem; }*/
 
 /* -----------------------------------------
    Body
