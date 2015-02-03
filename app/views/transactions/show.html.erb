@@ -62,16 +62,16 @@
 
 
 	<div class ="row">
-		<div class="small-12 medium-6 large-6 columns">	
-	
+		<div class="small-12 medium-6 large-6 columns bibicoins-bg-beige">	
+		<br>
 	<% if @transaction.transaction_type_id == 0 %>
-		<h4><%=t :header_buy_order_email_confirmation %></h4>
+		<div class="bibicoins-subheader-txt"><%=t :header_buy_order_email_confirmation %></div>
 	<% elsif @transaction.transaction_type_id == 1 %>
-		<h4><%=t :header_buy_sell_complete %></h4>
+		<div class="bibicoins-subheader-txt"><%=t :header_buy_sell_complete %></div>
 	<% end %>
 	<br>
 
-		<table>
+		<table class="bibicoins-bg-beige bibicoins-table-confirmation">
 
 	<% if @transaction.transaction_type_id == 0 %>
 			
@@ -103,12 +103,6 @@
 				<td><%=t :form_wallet %></td>
 				<td><%= @transaction.walletID %></td>
 			<tr>
-			<!--
-			<tr>
-				<td><%=t :form_makedepositto %></td>
-				<td><%=t :form_bankaccount %></td>
-			<tr>
-			-->
 			<tr>
 				<td><%=t :form_buyrequestsubmitted %></td>
 				<td><%= @transaction.created_at.in_time_zone("Taipei") %></td>
@@ -175,11 +169,11 @@
 			<% end %>
 
 		<% if @transaction.transaction_type_id == 0 %>
-		    <%= link_to t('form_returnhome'), :home, :class => "button" %>
-			<%= link_to t('form_placeanotherbuy'), new_transaction_path(:ttype => 0), :class => "button" %>
+		    <%= link_to t('form_returnhome'), :home, :class => "button small large-4 bibicoin-button" %>
+			<%= link_to t('form_placeanotherbuy'), new_transaction_path(:ttype => 0), :class => "button small large-5 bibicoin-button" %>
 		<% elsif @transaction.transaction_type_id == 1 %>
-			<%= link_to t('form_returnhome'), :home, :class => "button" %>
-			<%= link_to t('form_placeanothersell'), new_transaction_path(:ttype => 1), :class => "button" %>
+			<%= link_to t('form_returnhome'), :home, :class => "button small large-4 bibicoin-button" %>
+			<%= link_to t('form_placeanothersell'), new_transaction_path(:ttype => 1), :class => "button small large-5 bibicoin-button" %>
 		<% end %>
 			
 	</div>	
@@ -187,14 +181,14 @@
 
 	<% if @transaction.transaction_type_id == 0 %>
 	  <div class="small-12 medium-6 large-6 columns">
-		<h4><%=t :buy_confirmation %></h4><br>
+		<h3 class="subheader"><%=t :buy_confirmation %></h3>
 		<p><%=t :buy_confirmation_b1%></p>
 		<p><%=t :buy_confirmation_b2%><%= number_with_precision(@transaction.TWDAmt, precision: 0) %><%=t :buy_confirmation_b3%></p>		
 		<p><%=t :buy_confirmation_b4%><%= @transaction.id %><%=t :buy_confirmation_b5%></p>	
 	  </div> 
 	<% elsif @transaction.transaction_type_id == 1 %>
 	  <div class="small-12 medium-6 large-6 columns">
-		<h4><%=t :sell_confirmation %></h4><br><br>
+		<h3 class="subheader"><%=t :sell_confirmation %></h3>
 		<p><%=t :sell_confirmation_b1%></p>
 		<p><%=t :sell_confirmation_b2%><%= @transaction.TWDAmt %><%=t :sell_confirmation_b3%></p>		
 	  </div> 

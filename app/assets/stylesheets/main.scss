@@ -3,7 +3,7 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 /* -----------------------------------------
-   Custom Bibicoins CSS
+   Custom BiBicoins CSS
 ----------------------------------------- */
 
 /* -----------------------------------------
@@ -114,6 +114,50 @@ a.footer:active {
     font-size: 10px; 
 }
 
+a.form:link {
+    text-decoration: none;
+    color: #898989;
+    text-transform: capitalize;
+}
+
+a.form:visited {
+    text-decoration: none;
+    color: #898989;
+    text-transform: capitalize;     
+}
+
+a.form:hover {
+    text-decoration: none;
+    color: #898989;
+    text-transform: capitalize;  
+}
+
+a.form:active {
+    text-decoration: none;
+    color: #898989;
+    text-transform: capitalize;  
+}
+
+a.bibicoin-button:link {
+    text-decoration: none;
+    color: #ffffff;
+}
+
+a.bibicoin-button:visited {
+    text-decoration: none;
+    color: #ffffff;   
+}
+
+a.bibicoin-button:hover {
+    text-decoration: none;
+    color: #ffffff;
+}
+
+a.bibicoin-button:active {
+    text-decoration: none;
+    color: #ffffff;
+}
+
 /* -----------------------------------------
    TEXT
 ----------------------------------------- */
@@ -169,6 +213,11 @@ a.footer:active {
   text-transform: uppercase;   
 }
 
+.bibicoins-form-text-darkgrey {
+  color: #898989;
+  font-weight: 700;
+}
+
 .bibicoins-form-text-homepage {
   font-size: 14px;
   padding: 2px 2px 2px 40px;
@@ -221,22 +270,6 @@ a.footer:active {
   background-color: #ffebdc;
 }
 
-/* -----------------------------------------
-   Spacing
------------------------------------------ */
-
-.no-padding {
-    padding-left: 0px;
-    padding-right: 0px; 
-}
-
-.row {
-  max-width: 100rem; }
-
-/* -----------------------------------------
-   Body
------------------------------------------ */
-
 .bibicoins-header-bg-orange {
   background: #f16221;
   font-size: 18px;
@@ -244,6 +277,25 @@ a.footer:active {
   font-family: 'Roboto Slab';
   text-align: center;  
 }
+
+/* -----------------------------------------
+   BODY
+----------------------------------------- */
+
+.no-padding {
+    padding-left: 0px;
+    padding-right: 0px; 
+}
+
+.bibicoins-table-confirmation {
+  border-style:none;
+  color: #f3f3f3;
+  font-weight: 400;
+  font-size: 14;  
+}
+
+.row {
+  max-width: 100rem; }
 
 .bibicoins-bullets {
   padding-left: 24px;
@@ -276,7 +328,7 @@ a.footer:active {
 }
 		  
 /* -----------------------------------------
-   Footer
+   FOOTER
 ----------------------------------------- */
 .bibicoins-footer-bottom {
   background: #898989;

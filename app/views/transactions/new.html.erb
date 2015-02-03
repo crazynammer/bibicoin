@@ -60,16 +60,17 @@
 
 	<% end %>
 
-	<div id="before-content-area">
+	<div>
 		<div class="row">
-		  <div class="small-12 medium-6 large-6 columns">
+		  <div class="small-12 medium-6 large-6 columns bibicoins-bg-beige">
 
 			<%= form_for @transaction,:url => {:action => "confirm"} do |f| %>
-					<fieldset>
+					
 					<!-- Buy: allow inputs form both sides and change values as needed -->	
 					<% if @transaction.transaction_type_id == 0 %>
-
-					<legend><%=t :header_buy %> (<%= link_to(t('buy_howtobuy'), :howtobuy, target: '_blank') %>)</legend>
+					<br>
+					<div class="bibicoins-subheader-txt"><%=t :header_buy %>  <%= link_to(t('form_howtobuy'), :howtobuy, :class=>"form", target: '_blank') %></div>
+					<br>
 					
 					<div class="row">
 						 <div class="purchaseamt-field">		
@@ -126,8 +127,9 @@
 
 					<!-- Sell -->
 			    	<% elsif @transaction.transaction_type_id == 1 %>
-
-					<legend><%=t :header_sell %> (<%= link_to(t('sell_howtosell'), :howtosell, target: '_blank') %>)</legend>
+			    	<br>
+					<div class="bibicoins-subheader-txt"><%=t :header_sell %> <%= link_to(t('form_howtosell'), :howtosell, :class=>"form", target: '_blank') %></div>
+					<br>
 					
 					<div class="row">
 						 <div class="sellamt-field">		
@@ -215,20 +217,20 @@
 						<label>1 BTC to TWD Rate: <%= number_with_precision(@transaction.bibicoinBTCtoTWD, precision: 4) %></label><br>
 			    	</div>
 
-			    	</fieldset>			    	
+			    			    	
 			<div align="right"><%= f.submit t('form_next'), :class => 'button small large-3' %></div>   
 			<% end %>
 		  </div>
 
 		<% if @transaction.transaction_type_id == 0 %>
 			<div class="small-12 medium-6 large-6 columns">
-				<h4><%=t :buy_newrequest %></h4><br><br>
+				<h3 class="subheader"><%=t :buy_newrequest %></h3>
 				<p><%=t :buy_newrequest_b1%></p>
 				<p><%=t :buy_newrequest_b2%></p>		
 			</div> 
 		<% elsif @transaction.transaction_type_id == 1 %>
 			<div class="small-12 medium-6 large-6 columns">
-			<h4><%=t :sell_newrequest %></h4><br><br>
+			<h3 class="subheader"><%=t :sell_newrequest %></h3>
 			<p><%=t :sell_newrequest_b1%></p>
 			<p><%=t :sell_newrequest_b2%></p>		
 			</div> 

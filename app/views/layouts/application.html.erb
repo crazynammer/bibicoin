@@ -1,124 +1,128 @@
 <!DOCTYPE html>
 
 <html lang="en">
+
   <head>
+
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta name="description" content="Bibicoins Taiwan specializes in delivering Bitcoins to Taiwan customers."/>
 
-    <title><%= content_for?(:title) ? yield(:title) : "Bibicoins | 比特幣" %></title>
+    <title><%= content_for?(:title) ? yield(:title) : "Bibicoins | 比特幣 - Buy and Sell Bitcoins in Taiwan" %></title>
 
     <%= stylesheet_link_tag "application" %>
     <%= javascript_include_tag "vendor/modernizr" %>
-    <%= csrf_meta_tags %>
-	 
+    <%= csrf_meta_tags %>	
+
   </head>
 
   <body>
 
-<div>
-	<nav class="top-bar" data-topbar role="navigation">
-	  <ul class="title-area">
-	    <li class="name"></li>
-	     <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
-	    <li class="toggle-topbar menu-icon"><a href="#"><span></span></a></li>
-	  </ul>
-		<section class="top-bar-section">
-		    <ul class="left">
-				<li><%= link_to 'English', params.merge({:locale => :en})%></li>
-				<li><%= link_to 'Chinese', params.merge({:locale => :zh})%></li>				
-		    </ul>
-		    <ul class="right">
-		    	<li><%= link_to(t('links_howtoprotect'), :how) %></li>
-		    </ul>
-		</section>
-  	</nav>
-</div>
+	<!-- Language Menu -->
+	<div>
+		<nav class="top-bar" data-topbar role="navigation">
+		  <ul class="title-area">
+		    <li class="name"></li>
+		    <li class="toggle-topbar menu-icon"><a href="#"><span></span></a></li>
+		  </ul>
+			<section class="top-bar-section">
+			    <ul class="left">
+					<li><%= link_to 'English', params.merge({:locale => :en})%></li>
+					<li><%= link_to 'Chinese', params.merge({:locale => :zh})%></li>				
+			    </ul>
+			    <ul class="right">
+			    	<li><%= link_to(t('links_howtoprotect'), :how) %></li>
+			    </ul>
+			</section>
+	  	</nav>
+	</div>
 
-<!-- Text Menu -->
-<div class="row">
-  <div class="small-12 medium-2 large-1 columns text-left">
-  	<%= link_to(image_tag("logo.png", :alt =>  "BiBicoins", :size =>"100x75"), :home) %>
-  </div>
-  <div class="show-for-medium-up medium-10 large-11 columns">
-  <div class="bibicoins-main-menu">
-	<dl class="sub-nav right">
-	  <dd><%= link_to(t('links_home'), :home) %></dd>
-	  <dd><%= link_to(t('links_buybitcoin'), new_transaction_path(:ttype => 0))%></dd>
-	  <dd><%= link_to(t('links_sellbitcoin'), new_transaction_path(:ttype => 1))%></dd>
-	  <dd><%= link_to(t('links_learn'), :bitcoins) %></dd>  
-	  <dd><%= link_to(t('links_about'), :about) %></dd>   
-	</dl>
-	</div>	
-  </div>   
-</div>
+	<!-- Text Menu -->
+	<div class="row">
+	  <div class="small-12 medium-2 large-1 columns text-left">
+	  	<div align="center"><%= link_to(image_tag("logo.png", :alt =>  "BiBicoins", :size =>"100x75"), :home) %></div>
+	  </div>
+	  <div class="show-for-medium-up medium-10 large-11 columns">
+	  <div class="bibicoins-main-menu">
+		<dl class="sub-nav right">
+		  <dd><%= link_to(t('links_home'), :home) %></dd>
+		  <dd><%= link_to(t('links_buybitcoin'), new_transaction_path(:ttype => 0))%></dd>
+		  <dd><%= link_to(t('links_sellbitcoin'), new_transaction_path(:ttype => 1))%></dd>
+		  <dd><%= link_to(t('links_learn'), :bitcoins) %></dd>  
+		  <dd><%= link_to(t('links_about'), :about) %></dd>   
+		</dl>
+		</div>	
+	  </div>   
+	</div>
 
-<br>
+	<br>
 
    <%= yield %>
    <%= javascript_include_tag "application" %>		
 
-<!-- Footer -->
-<div class="row bibicoins-footer-menu-header-text">
-	<br><br>
-	<div class="small-10 large-8 columns  small-centered ">
-	 	<div class="row">
-	 		<div class="small-12 large-5 columns">
-	 			<%=t :header_contact %>
-	 			<div class="bibicoins-footer-menu-text">
-			 	<%=t :common_email %>: <%= mail_to t('common_email_value'), t('common_email_value'), :class=>"footer" %><br>
-			 	<%=t :common_phone %>: <%=t :common_phone_value %><br>
-			 	<%=t :common_address %>: <%=t :common_address_value %><br><br>
-			 	</div>	 			
-	 		</div>
-	 		<div class="small-12 large-4 columns">
-	 			<%=t :home_learn %>
-	 			<div class="bibicoins-footer-menu-text">
-	       		<%= link_to(t('links_traditional'), :traditional, :class=>"footer") %><br>
-				<%= link_to(t('links_bitcoins'), :bitcoins, :class=>"footer") %><br>
-				<%= link_to(t('links_wallets'), :wallets, :class=>"footer") %><br>
-				<%= link_to(t('links_howtobuy'), :howtobuy, :class=>"footer") %><br>
-				<%= link_to(t('links_howtosell'), :howtosell, :class=>"footer") %><br>
-				<%= link_to(t('links_howtoprotect'), :how, :class=>"footer") %><br>
-				<%= link_to(t('links_faq'), :faq, :class=>"footer") %><br><br>
-				</div>
-	 		</div>
-	 		<div class="small-12 large-2 columns">
-	 			 <%=t :home_about %>
-	 			 <div class="bibicoins-footer-menu-text">
-	 			 <%= link_to(t('links_aboutus'), :about, :class=>"footer") %><br>
-				 <%= link_to(t('links_why'), :why, :class=>"footer") %><br>
-				 <%= link_to(t('links_reviews'), :reviews, :class=>"footer") %><br>
-				 <%= link_to(t('links_terms'), :terms, :class=>"footer") %><br>
-				 <%= link_to(t('links_privacy'), :privacy, :class=>"footer") %><br>
-			     <%= link_to(t('links_legal'), :legal, :class=>"footer") %><br>
-				 <%= link_to(t('links_jobs'), :jobs, :class=>"footer") %><br>
-				 <%= link_to(t('links_contact'), :contact, :class=>"footer") %><br>
-				 <%= link_to(t('links_faq'), :faq, :class=>"footer") %><br>
-				 </div>
-	 		</div>		
-	 	</div>
+	<!-- Footer Menu -->
+	<div class="row bibicoins-footer-menu-header-text">
+		<br><br>
+		<div class="small-10 large-8 columns  small-centered ">
+		 	<div class="row">
+		 		<div class="small-12 large-5 columns">
+		 			<%=t :header_contact %>
+		 			<div class="bibicoins-footer-menu-text">
+				 	<%=t :common_email %>: <%= mail_to t('common_email_value'), t('common_email_value'), :class=>"footer" %><br>
+				 	<%=t :common_phone %>: <%=t :common_phone_value %><br>
+				 	<%=t :common_address %>: <%=t :common_address_value %><br><br>
+				 	</div>	 			
+		 		</div>
+		 		<div class="small-12 large-4 columns">
+		 			<%=t :home_learn %>
+		 			<div class="bibicoins-footer-menu-text">
+		       		<%= link_to(t('links_traditional'), :traditional, :class=>"footer") %><br>
+					<%= link_to(t('links_bitcoins'), :bitcoins, :class=>"footer") %><br>
+					<%= link_to(t('links_wallets'), :wallets, :class=>"footer") %><br>
+					<%= link_to(t('links_howtobuy'), :howtobuy, :class=>"footer") %><br>
+					<%= link_to(t('links_howtosell'), :howtosell, :class=>"footer") %><br>
+					<%= link_to(t('links_howtoprotect'), :how, :class=>"footer") %><br>
+					<%= link_to(t('links_faq'), :faq, :class=>"footer") %><br><br>
+					</div>
+		 		</div>
+		 		<div class="small-12 large-2 columns">
+		 			 <%=t :home_about %>
+		 			 <div class="bibicoins-footer-menu-text">
+		 			 <%= link_to(t('links_aboutus'), :about, :class=>"footer") %><br>
+					 <%= link_to(t('links_why'), :why, :class=>"footer") %><br>
+					 <%= link_to(t('links_reviews'), :reviews, :class=>"footer") %><br>
+					 <%= link_to(t('links_terms'), :terms, :class=>"footer") %><br>
+					 <%= link_to(t('links_privacy'), :privacy, :class=>"footer") %><br>
+				     <%= link_to(t('links_legal'), :legal, :class=>"footer") %><br>
+					 <%= link_to(t('links_jobs'), :jobs, :class=>"footer") %><br>
+					 <%= link_to(t('links_contact'), :contact, :class=>"footer") %><br>
+					 <%= link_to(t('links_faq'), :faq, :class=>"footer") %><br>
+					 </div>
+		 		</div>		
+		 	</div>
+		</div>
 	</div>
-</div>
-<div class="row bibicoins-bg-darkgrey bibicoins-footer-menu-header-text">
-<div class="small-12 columns right ">
-	<div class="bibicoins-footer-menu-text right"><%=t :footer_copyright %></div>
-</div>
-</div>
 
-	 <!-- Social Media Icons -->			 
-	 <div class="bibicoins-footer-bottom">
+	<!-- Copyright -->
+	<div class="row bibicoins-bg-darkgrey bibicoins-footer-menu-header-text">
+	<div class="small-12 columns right ">
+		<div class="bibicoins-footer-menu-text right"><%=t :footer_copyright %></div>
+	</div>
+	</div>
 
- 		<div class="row">
-   		<!--<div class="medium-4 medium-4 push-8 columns">-->
-   		<div class="small-12">
-     		 <ul class="home-social">
-          <li><a href="http://www.twitter.com/Bibicoins" class="twitter"></a></li>
-          <li><a href="http://www.facebook.com/Bibicoins" class="facebook"></a></li>
-          <li><a href="mailto:bibicoins@gmail.com" class="mail"></a></li>
-        </ul>
-       	<br>
-     </div>
-	  
+		 <!-- Social Media Icons -->			 
+		 <div class="bibicoins-footer-bottom">
+
+	 		<div class="row">
+	   		<div class="small-12">
+	     		 <ul class="home-social">
+	          <li><a href="http://www.twitter.com/Bibicoins" class="twitter"></a></li>
+	          <li><a href="http://www.facebook.com/Bibicoins" class="facebook"></a></li>
+	          <li><a href="mailto:bibicoins@gmail.com" class="mail"></a></li>
+	        </ul>
+	       	<br>
+	     </div>
+		  
 	<script>
 	$(document).foundation();
 	</script>

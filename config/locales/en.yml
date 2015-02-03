@@ -211,6 +211,8 @@ en:
 # ---------------------------------------------------------------------------------------------------------------------------
 # Form Fields
 # ---------------------------------------------------------------------------------------------------------------------------
+  form_howtobuy: "(How To Buy?)"
+  form_howtosell: "(How To Sell?)"
   form_buyrate: "Buy Rate (NTD/Bitcoin):"
   form_sellrate: "Sell Rate (NTD/Bitcoin):"
   form_purchaseamt: "Purchase Amounts:"
@@ -306,7 +308,7 @@ en:
 # ---------------------------------------------------------------------------------------------------------------------------
 # Frequently Asked Questions (FAQ)
 # ---------------------------------------------------------------------------------------------------------------------------
-  faq_h1: "About our Rates"
+  faq_h1: "About Our Rates"
   faq_b1: "Bibicoins prides it-self on our sterling record of timely delivery, service provision, and customer satisfaction."	
   faq_b1_1: "In response to the shifting landscape of Bitcoin prices in the world markets, we employ a proprietary model of rates based on the global averages of Bitcoin from the worlds leading Bitcoin exchanges. In the past, it was common to see providers base their rates solely on one exchange. However, to ensure our service remains robust and stable for the long-term, we, along with many of the worlds leading Bitcoin service providers, have recently begun moving toward a ‘Global Weighted Average’ system. This method of system ensures a more balanced equilibrium when unexpected market changes may occur, as well as reflect a truer price of the Global Bitcoin value."
   faq_h2: "Daily Buy/Sell Order Limits"
@@ -493,7 +495,7 @@ Unlike most traditional currencies, however, Bitcoin is not bound to an institut
   legal_b3_4: "Bibicoins has appointed an in-house foreign registered lawyer as the AML/CTF Compliance Officer at a Senior Management level who is responsible person to coordinate and supervise the implementation of AML Act prevention guidelines and procedures including oversight supported by internal compliance committee;"	
   legal_b3_5: "Bibicoins has implemented processes and procedures to ensure that records made in respect of customer identification are held for a minimum of 5 years;"	
   legal_h4: "AML/CTF Contact: "	
-  legal_b4: "Address: XXX"	
+  legal_b4: "Address: Pacific Digital Commodity Trading Ltd. - 7th Floor, Nos. 148, Zhong Xiao Dong Lu Section 4, Taipei, R.O.C."	
   legal_email: "bibicoins@gmail.com"	
 # ---------------------------------------------------------------------------------------------------------------------------
 # Terms & Conditions

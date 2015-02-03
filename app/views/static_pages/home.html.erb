@@ -1,85 +1,3 @@
-<!-- TO DELETE SECTION -->
-
-<!-- Menus 
-<div class="row" data-equalizer="">
-  <div class="small-12 medium-12 large-3 columns">
-    <div class="panel" data-equalizer-watch="" style="height: 350px;">
-		 <h5 class="subheader"><%=t :header_contact %>:</h5>
-		 <p><%=t :home_contactus_text %></p>
-		 <p>
-			 <%=t :common_email %>: <%= mail_to t('common_email_value'), t('common_email_value') %><br><br>
-			 <%=t :common_phone %>: <%=t :common_phone_value %><br>
-			 <%=t :common_address %>: <%=t :common_address_value %><br>
-		 </p>
-    </div>
-  </div>
-  <div class="small-12 medium-12 large-3 columns">
-    <div class="panel" data-equalizer-watch="" style="height: 350px;">
-		 <h5 class="subheader"><%=t :home_learn %></h5>
-		 <p>
-       <%= link_to(t('links_traditional'), :traditional) %><br>
-			 <%= link_to(t('links_bitcoins'), :bitcoins) %><br>
-			 <%= link_to(t('links_wallets'), :wallets) %><br>
-			 <%= link_to(t('links_howtobuy'), :howtobuy) %><br>
-			 <%= link_to(t('links_howtosell'), :howtosell) %><br>
-			 <%= link_to(t('links_howtoprotect'), :how) %><br>
-			 <%= link_to(t('links_faq'), :faq) %><br><br>
-		 </p>		 
-    </div>
-  </div>
-  <div class="small-12 medium-12 large-3 columns">
-    <div class="panel" data-equalizer-watch="" style="height: 350px;">
-		 <h5 class="subheader"><%=t :home_about %></h5>
-		 <p>
-			 <%= link_to(t('links_aboutus'), :about) %><br>
-			 <%= link_to(t('links_why'), :why) %><br>
-			 <%= link_to(t('links_reviews'), :reviews) %><br>
-			 <%= link_to(t('links_terms'), :terms) %><br>
-			 <%= link_to(t('links_privacy'), :privacy) %><br>
-		     <%= link_to(t('links_legal'), :legal) %><br>
-			 <%= link_to(t('links_jobs'), :jobs) %><br>
-			 <%= link_to(t('links_contact'), :contact) %><br>
-			 <%= link_to(t('links_faq'), :faq) %><br><br>
-		 </p>		 
-    </div>
-  </div>
-
-</div> -->
-
-<!-- Stock Ticker 	
-<div class="row" data-equalizer="">
-  <div class="small-12 columns">
-  	 <fieldset align="center">
-		 <%=t :ticker_trading %>
-		 <%=t :ticker_buy%><%= number_with_precision(@buyValue, precision: 0) %> NTD
-		 <%=t :ticker_sell %><%= number_with_precision(@sellValue, precision: 0) %> NTD	 	
-	 </fieldset>	 		 		 
-    </div>
-  </div> 
-</div>
-
-<br>
-<div class="row" data-equalizer="">
-  <div class="small-12 medium-8 columns">
-    <h5 class="bibicoins-slogan"><%=t :home_slogan1 %></h5>
-  </div>
-  <div class="medium-4 columns"><div class="bibicoins-facebook">
-    <%= image_tag("icon_fb.png", :alt => "Facebook") %> &nbsp;<a href="http://www.facebook.com/Bibicoins"><%=t :home_facebook %></a><br><br></div>
-  </div>  
-</div>
-      
-</div>
-<br>
--->
-
-  <!-- Twitter  
-  <div class="small-12 medium-12 large-3 columns">
-    <div data-equalizer-watch="" style="height: 450px;">
-		 <a class="twitter-timeline" href="https://twitter.com/Bibicoins" data-widget-id="540640462814453762">Tweets by @Bibicoins</a>
-		 <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-    </div>
-  </div> --> 
-
 <% provide(:title, 'Bibicoins | 比特幣') %>
 
 <!-- Banner -->
@@ -262,6 +180,7 @@
   		<span class="bibicoins-header-text-orange-block"><%=t :home_aboutbibicoin %></span><br><br>
   		<p><%=t :home_aboutbibicoin_text %>("<%= link_to(t('header_why'), :why) %>")</p>
   	</div>
+  	<!-- Bitcoin Chart -->
   	<div class="small-12 medium-6 large-6 columns" align="center">
   		<p><%= @chartError %></p>
 		<%= image_tag(@marketValueChart) %>
@@ -285,6 +204,7 @@
 				  <% end %>
 			  </ul> 
 	</div>
+	<!-- BTC Network Data -->
   	<div class="small-12 medium-6 large-6 columns">
 	<h3 class="subheader"><%=t :home_btcnetworkdata %></h3>
 	<p><%= @statsDateTime %></p>
@@ -317,3 +237,26 @@ function updateSellAmt()
 	document.getElementById("BTCSell").value = parseFloat(+twdAmt).toFixed(0);
 }
 </script>
+
+<!-- TO DELETE  -->
+<!-- Stock Ticker 	
+<div class="row" data-equalizer="">
+	<div class="small-12 columns">
+		<fieldset align="center">
+			<%=t :ticker_trading %>
+			<%=t :ticker_buy%><%= number_with_precision(@buyValue, precision: 0) %> NTD
+			<%=t :ticker_sell %><%= number_with_precision(@sellValue, precision: 0) %> NTD	 	
+		</fieldset>	 		 		 
+		</div>
+	</div> 
+</div>
+-->
+
+<!-- Twitter  
+<div class="small-12 medium-12 large-3 columns">
+	<div data-equalizer-watch="" style="height: 450px;">
+		 <a class="twitter-timeline" href="https://twitter.com/Bibicoins" data-widget-id="540640462814453762">Tweets by @Bibicoins</a>
+		 <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+	</div>
+</div> 
+ --> 

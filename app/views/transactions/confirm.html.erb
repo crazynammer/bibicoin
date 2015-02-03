@@ -59,16 +59,17 @@
 
 	<% end %>
 
-	<div id="before-content-area">
+	<div>
 		<div class="row">
-		  <div class="small-12 medium-6 large-6 columns">
+		  <div class="small-12 medium-6 large-6 columns bibicoins-bg-beige">
+		  <br>
 
 			<%= form_for @transaction do |f|  %>
-					<fieldset>
+
 					<!-- Buy: allow inputs form both sides and change values as needed -->	
 					<% if @transaction.transaction_type_id == 0 %>
 
-					<legend><%=t :header_buy %></legend>
+					<div class="bibicoins-subheader-txt"><%=t :header_buy %></div><br>
 					
 					<div class="row">
 						 <div class="purchaseamt-field">		
@@ -126,8 +127,9 @@
 
 					<!-- Sell -->
 			    	<% elsif @transaction.transaction_type_id == 1 %>
-
-					<legend><%=t :header_sell %></legend>
+			    	<br>
+					<div class="bibicoins-subheader-txt"><%=t :header_sell %></div>
+					<br>
 					
 					<div class="row">
 						 <div class="sellamt-field">		
@@ -220,7 +222,7 @@
 						<label>1 BTC to TWD Rate: <%= number_with_precision(@transaction.bibicoinBTCtoTWD, precision: 0) %></label><br>
 			    	</div>
 
-			    	</fieldset>			    	
+		    	
 			<%= f.button t('form_back'), :class => 'button small large-3', :onclick => 'history.go(-1);return false;'  %>
 			<%= f.submit t('form_confirmsubmit'), :class => 'button small large-4' %>
 			<% end %>
@@ -229,14 +231,14 @@
 
 		<% if @transaction.transaction_type_id == 0 %>
 			<div class="small-12 medium-6 large-6 columns">
-				<h4><%=t :buy_reviewconfirm %></h4><br>
+				<h3 class="subheader"><%=t :buy_reviewconfirm %></h3>
 				<p><%=t :buy_reviewconfirm_b1%></p>
 				<p><%=t :buy_reviewconfirm_b2%></p>
 				<p><%=t :buy_reviewconfirm_b3%></p>			
 			</div> 
 		<% elsif @transaction.transaction_type_id == 1 %>
 			<div class="small-12 medium-6 large-6 columns">
-			<h4><%=t :sell_reviewconfirm %></h4><br><br>
+			<h3 class="subheader"><%=t :sell_reviewconfirm %></h3>
 			<p><%=t :sell_reviewconfirm_b1%></p>
 			<p><%=t :sell_reviewconfirm_b2%></p>		
 			</div> 
