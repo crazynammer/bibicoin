@@ -68,7 +68,7 @@
 		    	<div class="bibicoins-form-text-homepage"><%=t :conversion_ntdamt %></div>
 		    </div>
 			<div class="small-6 medium-8 large-8 columns">
-		    		<div class="bibicoins-form-input-homepage"><input type="text" id="NTDBuy" placeholder="30,000" oninput="updateBuyAmt()" size="10" maxlength="10"/></div>
+		    		<div class="bibicoins-form-input-homepage"><input type="text" data-value="<%= @buyValue %>" id="NTDBuy" placeholder="30,000" size="10" maxlength="10"/></div>
 		    </div>	    
 	    </div>
 	    <div class="row">
@@ -95,7 +95,7 @@
 		    	<div class="bibicoins-form-text-homepage"><%=t :conversion_btcamt %></div>
 		    </div>
 			<div class="small-6 medium-8 large-8 columns">
-		    		<div class="bibicoins-form-input-homepage"><input type="text" id="NTDSell" placeholder="10" oninput="updateSellAmt()"/></div>
+		    		<div class="bibicoins-form-input-homepage"><input type="text" id="NTDSell" data-value="<%= @sellValue %>" placeholder="10" oninput="updateSellAmt()"/></div>
 		    </div>	    
 	    </div>
 	    <div class="row">
@@ -220,23 +220,6 @@
 </div>
 <br>
 
-<script>
-function updateBuyAmt()
-{
-	var twdAmt = document.getElementById("NTDBuy").value;
-	var btcToTwd = "<%= @buyValue %>";
-	var btcAmt = +twdAmt / +btcToTwd;
-	document.getElementById("BTCBuy").value = parseFloat(+btcAmt).toFixed(5);
-}
-
-function updateSellAmt()
-{
-	var btcAmt = document.getElementById("NTDSell").value;
-	var btcToTwd = "<%= @sellValue %>";
-	var twdAmt = +btcAmt * +btcToTwd;
-	document.getElementById("BTCSell").value = parseFloat(+twdAmt).toFixed(0);
-}
-</script>
 
 <!-- TO DELETE  -->
 <!-- Stock Ticker 	

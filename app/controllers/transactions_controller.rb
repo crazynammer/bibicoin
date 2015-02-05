@@ -80,6 +80,9 @@ HASH_XRATE_RATE = "rate"
 	#update with real limits when admin populated
 	@COMM_LIMIT_1 = 1
 	@COMM_LIMIT_2 = 5
+	@COMM_RATE_1 = 0.0625
+	@COMM_RATE_2 = 0.0525
+	@COMM_RATE_3 = 0.0425
 		
 	#calculate minimum DoB
 	todayDate = Date.today
