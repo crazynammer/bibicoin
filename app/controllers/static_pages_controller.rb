@@ -118,6 +118,8 @@ class StaticPagesController < ApplicationController
 		@feedError = "RSS Error with the Newsfeed"
 	rescue SocketError => e
 		@feedError = "Could not connect to Bitcoin News Feed"
+	rescue HTTPError => e
+		@feedError = "Could not reach Bitcoin News Feed"
 	end
 	
 	begin
