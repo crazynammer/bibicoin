@@ -63,6 +63,7 @@ zh:
 # ---------------------------------------------------------------------------------------------------------------------------
 # Section Headers
 # ---------------------------------------------------------------------------------------------------------------------------
+  header_chinese: "中国"
   header_about: "關於我們"
   header_bitcoins: "關於比特幣"
   header_buy: "買比特幣"
@@ -223,6 +224,7 @@ zh:
   form_btcmount: "TODO: 比特幣金額"
   form_to: "給"
   form_wallet: "錢包網址:"
+  form_refertowallet: "TODO: * Refer to Wallets"
   form_wallet_1: "TODO: Wallet"
   form_wallet_2: "TODO: Please double check your wallet address.  Bibicoins will only transfer Bitcoins or other Cryto-currency to the Wallet address confirmed in this Review & Submit Order form.  Bibicoins will not be responsible for any mistakes in the input of your Wallet address and any transfer of the Bitcoins to the confirmed Wallet address cannot be reversed or refunded."
   form_email: "您的電子郵件地址:"
@@ -345,11 +347,11 @@ zh:
 # ---------------------------------------------------------------------------------------------------------------------------
 # Customer Reviews
 # ---------------------------------------------------------------------------------------------------------------------------
-  reviews_h1: "Ｖu 是我一輩子遇過最狂熱的 nammer 族"
+  reviews_h1: "TODO: Ｖu 是我一輩子遇過最狂熱的 nammer 族"
   reviews_b1: ""	
-  reviews_h2: "到目前為止，我用來購買比特幣的網站中，這是最簡單且一目了然的一個。"
+  reviews_h2: "TODO: 到目前為止，我用來購買比特幣的網站中，這是最簡單且一目了然的一個。"
   reviews_b2: ""	
-  reviews_h3: "我初次嘗試Bibicoin，而我非常地享受這次經驗。交易過程簡單、快速。對於任何有興趣接觸比特幣的人，我都向他們推薦此網站。"
+  reviews_h3: "TODO: 我初次嘗試Bibicoin，而我非常地享受這次經驗。交易過程簡單、快速。對於任何有興趣接觸比特幣的人，我都向他們推薦此網站。"
   reviews_b3: ""	
 # ---------------------------------------------------------------------------------------------------------------------------
 # How to Protect Yourself Online

@@ -63,6 +63,7 @@ en:
 # ---------------------------------------------------------------------------------------------------------------------------
 # Section Headers
 # ---------------------------------------------------------------------------------------------------------------------------
+  header_chinese: "中国"
   header_about: "About Us"
   header_bitcoins: "Why Use Bitcoins"
   header_buy: "Buy Bitcoins"
@@ -161,7 +162,7 @@ en:
   buy_confirmation_b5: ") as reference when making your deposit."
   buy_email_header: "Bibicoins Buy Order Confirmation"
   buy_email_b1: "Thank you "
-  buy_email_b1a: " for submitting your Buy order with Bibicoins.com! Your Buy Order "
+  buy_email_b1a: " for submitting your Buy order with Bibicoins.com! Your Buy Order No. "
   buy_email_b1b: " submitted through Bibicoins.com on "
   buy_email_b1c: " was received by us as follows:"
   buy_email_b2: "To complete the transaction, please make a deposit of "
@@ -199,7 +200,7 @@ en:
   sell_confirmation_b3: " within 24 hours to your Bank Account after receipt of Bitcoins in our Wallet.  You should receive the deposit within 3 to 5 days in your bank account depending on the processing times of your bank."
   sell_email_header: "Bibicoins Sell Order Confirmation"
   sell_email_b1: "Thank you "
-  sell_email_b1a: " for submitting your Sell order with Bibicoins.com! Your Sell Order "
+  sell_email_b1a: " for submitting your Sell order with Bibicoins.com! Your Sell Order No. "
   sell_email_b1b: " submitted through Bibicoins.com on "
   sell_email_b1c: " was received by us as follows:"
   sell_email_b2: "To complete the transaction, please transfer the Bitcoin Amount into the Bibicoins’ designated Wallet below within 15 mins of the above submitted time and date."
@@ -223,6 +224,7 @@ en:
   form_btcamt: "Bitcoin Amt"
   form_btcamount: "Bitcoin Amount:"
   form_wallet: "Wallet Address:"
+  form_refertowallet: "* Refer to Wallets"
   form_wallet_1: "Wallet"
   form_wallet_2: "Please double check your wallet address.  Bibicoins will only transfer Bitcoins or other Cryto-currency to the Wallet address confirmed in this Review & Submit Order form.  Bibicoins will not be responsible for any mistakes in the input of your Wallet address and any transfer of the Bitcoins to the confirmed Wallet address cannot be reversed or refunded."
   form_email: "Your Email Address:"
@@ -279,7 +281,7 @@ en:
   about_b2: "The Bitcoin Foundation is the world's leading global organization determined to keep Bitcoin rooted in its core principles: non-political economy, openness and independence. With its aim to advance standards and security, the foundation remains strong advocates of the liberating power of decentralized money. The Bitcoin Foundation’s goal is to act as both an organizing body for Bitcoin and simultaneously be inclusive of the general Bitcoin community. As Taiwan’s Bitcoin service provider, Bibicoin is proud to be a Member of the global Bitcoin Foundation."			
   about_h3: "Our Team"
   about_b3: "Bibicoins brings together skill, insight and passion to offer the best reach to the global bitcoin market for people of Taiwan.  Like the Bitcoin market, the people who work in our company come from with a unique blend of experience and talents ranging from legal to business to technology.  Combined our team has over 30 years of IT, finance and entrepreneur experience."	
-  about_h4: "Bibcoins’ management team consist of:"
+  about_h4: "Bibcoins’ management team consists of:"
   about_b4: ""	
   about_h5: "P. Chen – General Manager & Director of Business Development "
   about_b5: "P. Chen is a successful entrepreneur in the gaming industry with extensive experience in both Asia and in the U.S."	
@@ -479,7 +481,7 @@ Unlike most traditional currencies, however, Bitcoin is not bound to an institut
 # Legal Information
 # ---------------------------------------------------------------------------------------------------------------------------
   legal_h1: "Taiwan Consumer Protection Law"	
-  legal_b1: "Bibicoins can be seen as operating as a brokerage/trading  company for digital commodities/currencies in Taiwan and will interactive with consumers in Taiwan directly.   In this respect, Bibicoins seeks to adhere to Taiwan’s Consumer Protection Laws.  Details of Taiwan’s Consumer Protection Law can be found here: "	
+  legal_b1: "Bibicoins can be seen as operating as a brokerage/trading  company for digital commodities/currencies in Taiwan and will interact with consumers in Taiwan directly.   In this respect, Bibicoins seeks to adhere to Taiwan’s Consumer Protection Laws.  Details of Taiwan’s Consumer Protection Law can be found here: "	
   legal_b1a: "http://www.cpc.ey.gov.tw/"	
   legal_h2: "Know Your Customer/Anti-Money Laundering & Countering the Financing of Terrorism  Program"	
   legal_b2: "The Republic of China (Taiwan) introduced the Money Laundering Control Act (“AML”) (latest amendment 2009) in response to the global pressures to strengthen Taiwan ’s ability to detect and prevent money laundering and terrorism financing.  As one of the country’s digital currency providers, Bibicoins takes the implementation of the AML Act seriously and has voluntarily taken comprehensive steps to implement an assertive AML/CTF Program which is benchmarked against the obligations set out with-in the AML Act."	

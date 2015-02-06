@@ -62,7 +62,6 @@
 	<div>
 		<div class="row">
 		  <div class="small-12 medium-6 large-6 columns bibicoins-bg-beige">
-		  <br>
 
 			<%= form_for @transaction do |f|  %>
 
@@ -86,7 +85,8 @@
 					</div>			
 			    	<div class="wallet-field">		    	
 					<label>
-					<a href="#" data-reveal-id="walletModal"><%=t :form_wallet %></a><br><br>
+					<a href="#" data-reveal-id="walletModal"><%=t :form_wallet %></a><br>
+					<small><%= link_to(t('form_refertowallet'), :wallets, target: '_blank') %></small><br>
 						<div id="walletModal" class="reveal-modal" data-reveal>
 						  <h2><%=t :form_wallet_1 %></h2>
 						  <p class="lead"><%=t :form_wallet_2 %></p>
@@ -101,7 +101,7 @@
 				    	</label>
 			    	</div>	
 			    	<div class="name-field">		    	
-						<label><%= f.label :name, t('form_name') %><br>
+						<label><%= f.label :name, t('form_name') %><small><%=t :form_name_1 %></small><br>
 				    		<%= f.text_field :name, :readonly => true %>
 				    	</label>
 			    	</div>	
@@ -127,7 +127,6 @@
 
 					<!-- Sell -->
 			    	<% elsif @transaction.transaction_type_id == 1 %>
-			    	<br>
 					<div class="bibicoins-subheader-txt"><%=t :header_sell %></div>
 					<br>
 					

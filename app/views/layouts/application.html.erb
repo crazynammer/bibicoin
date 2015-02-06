@@ -28,7 +28,7 @@
 			<section class="top-bar-section">
 			    <ul class="left">
 					<li><%= link_to 'English', params.merge({:locale => :en})%></li>
-					<li><%= link_to 'Chinese', params.merge({:locale => :zh})%></li>				
+					<li><%= link_to (t('header_chinese')), params.merge({:locale => :zh})%></li>				
 			    </ul>
 			    <ul class="right">
 			    	<li><%= link_to(t('links_howtoprotect'), :how) %></li>
