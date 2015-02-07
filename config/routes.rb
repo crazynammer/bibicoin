@@ -6,7 +6,6 @@ Rails.application.routes.draw do
   get 'static_pages/how', :as => :how
   get 'static_pages/bitcoins', :as => :bitcoins
   get 'static_pages/terms', :as => :terms
-  #Need to get the variable :locale to generate uri 'transactions/new?locale=zh&ttype=0'
   get 'static_pages/howtobuy', :as => :howtobuy
   get 'static_pages/howtosell', :as => :howtosell
   get 'static_pages/jobs', :as => :jobs
@@ -24,8 +23,6 @@ Rails.application.routes.draw do
     
   # Bibicoin Root Route
   root 'static_pages#home' 
-  
-  #TODO: Need to add this for production https://github.com/iain/http_accept_language/tree/master
   
   # Locale settings
   scope "(:locale)", locale: /en|zh/ do
