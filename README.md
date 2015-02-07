@@ -18,9 +18,7 @@ gem 'rails_12factor', '0.0.2'
 
 ## Contributors
 
-http://www.twitter.com/Bibicoins
 http://www.facebook.com/Bibicoins
-bibicoins@gmail.com
 
 ## License
 
