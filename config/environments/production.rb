@@ -82,19 +82,19 @@ Rails.application.configure do
   config.active_record.dump_schema_after_migration = false
   
   #recaptcha
-  RECAPTCHA_PUBLIC_KEY = "6LeV_f0SAAAAAKQnXah4wAfOBtR1x30KbDNx_jax"
-  RECAPTCHA_PRIVATE_KEY = "6LeV_f0SAAAAAFj5JKBJcKlzjGGwdaklpb0UUu4J"
+  RECAPTCHA_PUBLIC_KEY = ENV['RECAPTCHA_PUBLIC_KEY']
+  RECAPTCHA_PRIVATE_KEY = ENV['RECAPTCHA_PRIVATE_KEY']
   
   config.action_mailer.perform_deliveries = true
   ActionMailer::Base.delivery_method = :smtp
   ActionMailer::Base.smtp_settings = 
   {
-	:address => "smtp.gmail.com",
-	:port => 587,
-	:domain => "gmail.com",
-	:user_name => "bibicoins",
-	:password => "Taiwan2014",
-	:authentication => "plain",
-	:enable_starttls_auto => true
+  :address => ENV['SMTP_ADDRESS'],
+  :port => 587,
+  :domain => ENV['SMTP_DOMAIN'],
+  :user_name => ENV['SMTP_USER_NAME'],
+  :password => ENV['SMTP_PASSWORD'],
+  :authentication => "plain",
+  :enable_starttls_auto => true
   }
 end

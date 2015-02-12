@@ -16,15 +16,6 @@ default: &default
   host: localhost
   port: 5432
 
-#default: &default
- # adapter: postgresql
-  #encoding: unicode
-  #database: dc121aocqc2k1v
-  #username: ahwbptgowgcltz
-  #password: fzwm6H4L6RevRAHGMySCkPAWZR
-  #host: ec2-107-20-234-127.compute-1.amazonaws.com
-  #port: 5432
-
 development:
   <<: *default
 
@@ -36,10 +27,3 @@ test:
 
 production:
   <<: *default
-  adapter: postgresql
-  encoding: unicode
-  database: dc121aocqc2k1v
-  username: ahwbptgowgcltz
-  password: fzwm6H4L6RevRAHGMySCkPAWZR
-  host: ec2-107-20-234-127.compute-1.amazonaws.com
-  port: 5432
