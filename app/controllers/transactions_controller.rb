@@ -155,7 +155,7 @@ HASH_XRATE_RATE = "rate"
 	@transaction = Transaction.new(transaction_params)
 	@transaction.valid?
 #	if verify_recaptcha(:model => @transaction, :message => "Please correct the CAPTCHA entry and try again")
-		if @transaction.save
+		if @transaction.save then
 			TransactionMailer.transaction_confirmation(@transaction).deliver
 			flash[:success] = "Transaction successfully saved"
 			redirect_to @transaction

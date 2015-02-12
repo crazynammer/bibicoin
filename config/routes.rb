@@ -26,7 +26,11 @@ Rails.application.routes.draw do
   
   # Locale settings
   scope "(:locale)", locale: /en|zh/ do
+	#need the local routes for confirmation page to ensure proper routing on that page
+  	post 'transactions/confirm'
+	get 'transactions/confirm'
     resources :static_pages, :transactions, :layouts
+
   end  
 
   # The priority is based upon order of creation: first created -> highest priority.
