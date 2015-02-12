@@ -1,9 +1,15 @@
 <% provide(:title, 'Bibicoins | 比特幣') %>
 
 <!-- Banner -->
+<% if I18n.locale == :en %>
 <div>
 	<%= image_tag("home_banner_en.jpg", :alt => "WE HELP PEOPLE OF TAIWAN BUY AND SELL BITCOINS.  SAFE. SECURE. CONVENIENT.") %>
 </div>
+<% else %>
+<div>
+	<%= image_tag("home_banner_zh.jpg", :alt => "WE HELP PEOPLE OF TAIWAN BUY AND SELL BITCOINS.  SAFE. SECURE. CONVENIENT.") %>
+</div>
+<% end %>
 <br>
 <br>
 
