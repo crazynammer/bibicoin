@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
   
+  post 'transactions/confirm', :as => "confirm_transaction"
+  get 'transactions/confirm', :as => :confirmpage
   resources :transactions
-
-  post 'transactions/confirm'
   get 'static_pages/how', :as => :how
   get 'static_pages/bitcoins', :as => :bitcoins
   get 'static_pages/terms', :as => :terms

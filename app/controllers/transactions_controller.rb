@@ -154,7 +154,7 @@ HASH_XRATE_RATE = "rate"
   def create
 	@transaction = Transaction.new(transaction_params)
 	@transaction.valid?
-#	if verify_recaptcha(:model => @transaction, :message => "Please correct the CAPTCHA entry and try again")
+	if verify_recaptcha(:model => @transaction, :message => "Please correct the CAPTCHA entry and try again") then
 		if @transaction.save then
 			TransactionMailer.transaction_confirmation(@transaction).deliver
 			flash[:success] = "Transaction successfully saved"
@@ -168,14 +168,10 @@ HASH_XRATE_RATE = "rate"
 			end
 		end
 		
-#	else 
-#		flash[:error] = @transaction.errors.full_messages
-#		if @transaction.transaction_type_id == 0
-#			redirect_to :action => "new", :ttype => "0"
-#		else
-#			redirect_to :action => "new", :ttype => "1"
-#		end
-#	end
+else 
+		flash[:error] = @transaction.errors.full_messages
+		redirect_to confirmpage_path(params)
+	end
    end 
 
   
