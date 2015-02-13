@@ -1,3 +1,10 @@
+
+
+	
+	<% flash.each do |name, msg| %>
+		<%= content_tag :div, msg, class: name %>
+	<% end %>
+
 <div>
 	<% if @transaction.transaction_type_id == 0 %>
 		<div id="before-content-area" class="bibicoins-header-bg-orange">

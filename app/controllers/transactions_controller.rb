@@ -146,6 +146,8 @@ HASH_XRATE_RATE = "rate"
 		[ "Union Bank of Taiwan - 聯邦銀行", "Union Bank of Taiwan - 聯邦銀行" ],
 		[ "Yuanta Bank - 元大銀行", "Yuanta Bank - 元大銀行" ]		
 	]
+	
+	flash[:success] = "Rates Loaded"
 
 	
   
@@ -177,9 +179,11 @@ else
   
   def show
 	@transaction = Transaction.find(params[:id])
+	flash[:success] = "Transaction " + params[:id] + " Retrieved"
   end
   
   def confirm
+	flash[:notice] = "Transaction Values Confirm"
 	@transaction = Transaction.new(transaction_params)
   end
   
