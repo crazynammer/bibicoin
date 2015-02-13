@@ -1,9 +1,3 @@
-
-	
-	<% flash.each do |name, msg| %>
-		<%= content_tag :div, msg, class: name %>
-	<% end %>
-
 <div>
 	<% if @transaction.transaction_type_id == 0 %>
 		<div id="before-content-area" class="bibicoins-header-bg-orange">
@@ -81,6 +75,12 @@
 
 	<% if @transaction.transaction_type_id == 0 %>
 			
+			<!-- Flash Error Message -->
+			<% flash.each do |name, msg| %>						
+				<%= content_tag :div, msg, class: name, :class => "bibicoins-error-text-red" %>
+			<% end %>
+			<br>
+
 			<tr>
 				<td><%=t :form_orderid %></td>
 				<td><%= @transaction.id %></td>
@@ -114,6 +114,13 @@
 				<td><%= @transaction.created_at.in_time_zone("Taipei") %></td>
 			<tr>
 	<% elsif @transaction.transaction_type_id == 1 %>
+
+			<!-- Flash Error Message -->
+			<% flash.each do |name, msg| %>						
+				<%= content_tag :div, msg, class: name, :class => "bibicoins-error-text-red" %>
+			<% end %>
+			<br>
+
 			<tr>
 				<td><%=t :form_orderid %></td>
 				<td><%= @transaction.id %></td>
